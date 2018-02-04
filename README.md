@@ -1,4 +1,4 @@
-# O3PO - The OP's Public eProcurement Ontology
+# ePO - The OP's Public eProcurement Ontology
 
 ## Role and main functions
 This O3PO repository has been set up to support the collaborative work around the development of the Publications Office Public eProcurement Ontology (O3PO).
