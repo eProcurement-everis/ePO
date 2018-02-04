@@ -3,9 +3,48 @@
 Given the increasing importance of data standards for e-Procurement, a number of initiatives driven by the public sector, the industry and academia have been kick started in the recent years. Some have grown organically, while others are the result of standardisation work. The vocabularies and the semantics that they are introducing, the phases of public procurement that they are covering, and the technologies that they are using all differ. These differences hamper data interoperability and thus its reuse by them or by the wider public. 
 
 This creates the need for a common data standard for publishing procurement data, hence allowing data from different sources to be easily accessed and linked, and consequently reused. 
-This document describes the efforts made by the European Commission to develop such a standard through the developemtn of an "*eProcurement Ontology*" (henceforth referred to as the ePO). 
+In 2016 the link:++https://publications.europa.eu/en/home++[Publications Office of the European Union] (Publications Office or OP) was commissioned by the link:++https://ec.europa.eu/isa2/home_en++[ISA Programme] 
+to organise and support the development of such a standard. This document describes the efforts made by the European Commission to develop the developemtn of an "*eProcurement Ontology*" (henceforth referred to as the ePO). 
 
-The ultimate objective of the ePO is to put forth a commonly agreed OWL Ontology that will conceptualise, formally encode and make available in an open, structured and machine-readable format data about public procurement, covering it from end to end, i.e. from notification, through tendering to awarding, ordering, invoicing and payment. The figure below represents the eProcurement Value-Chain as commonly envisaged in Europe (source: OP).
+=== About ePO v1.00
+
+One fundamental document for the development of the eOP is its link:++https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.02_project_charter_proposal_v1.00_0.pdf++[Project Charter]. This document defines the principles, scope and the foreseen time-line and resources needed to develop the Ontology. 
+
+In this document the ultimate objective was stated as "_to put forth a commonly agreed OWL Ontology that will conceptualise, formally encode and make available in an open, structured and machine-readable format data about public procurement, covering it from end to end, i.e. from notification, through tendering to awarding, ordering, invoicing and payment. The figure below represents the eProcurement Value-Chain as commonly envisaged in Europe (source: OP).
 
 .eProcurement Value-Chain, EU vision
 image::eProcurement_Value_Chain.png[EU eProcurement Value-Chain, alt="EU eProcurement Value-Chain", align="center"]
+
+An the scope was set to the "_specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the link:++http://publications.europa.eu/mdr/++[Metadata Registry]"._
+
+The aim was to produce the final Ontology within twelve months including a public review of at least two months; and a set of three deliverables was identified as the main outcome of the project:
+
+.ePO Main Deliverables
+image::Main_Deliverables.png[ePO Main Deliverables, align="center"]
+
+=== Project governance overview
+
+In order to develop these global deliverables the following Governance Structure, roles and responsibilities were established:
+
+.ePO Project - Governance Structure
+image::Governance_Structure.png[ePO Governance Structure, 600, align="center"]
+
+With the following *roles and responsibilites*:
+
+.ePO Project - Roles and responsibilites
+image::Roles_Responsibilities.png[ePO - Roles and responsibilities, 900, align="center"]
+      
+For more details on the members of each governance body see the document link:++https://joinup.ec.europa.eu/document/report-policy-support-e-procurement++[D04.07 Report on policy support for e-Procurement, e-Procurement ontology]; e.g. "_Editors: are responsible for the operational work of defining and documenting the ePO_".
+
+=== ePO v2.0.0 - Objectives and scope
+
+[TODO: Objectives]
+
+[TODO: Scope]
+The Knowledge Map (K-Map) footnoteref:[note1, See link:++http://lice.licef.ca/index.php/gmot-motplus-et-mot/++[LICEF's MOTPlus] method and tool.] below provides an abstract representation of the scope for the ePO v2.0.0. 
+  
+.ePO Project v2.0.0 - Objectives and scope
+image::v2.0.0-Scope.png[ePO v2.0.0 - Scope, align="center"]
+
+[TODO: Provide the interpretation of the K-Map as an ordered list]
+
