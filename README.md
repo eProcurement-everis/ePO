@@ -29,9 +29,9 @@ The repository is divided into different sections:
 1. [eForms EU Regulation (preparing for consultation) 2017-2018]
 2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
 3. EU Directives:
-..*Directive 2014/23/EU]()
-..*[Directive 2014/24/EU]()
-..*[Directive 2014/25/EU]()
-..*[Directive 2009/81/EC]()
+..* [Directive 2014/23/EU]()
+..* [Directive 2014/24/EU]()
+..* [Directive 2014/25/EU]()
+..* [Directive 2009/81/EC]()
 
 
