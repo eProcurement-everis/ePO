@@ -1,19 +1,38 @@
-# O3PO - The OP's eProcurement Ontology
+# O3PO - The OP's Public eProcurement Ontology
 
 ## Role and main functions
-The O3PO repository has been set up to support the collaborative work around the development of the e-procurement ontology.
-This repository is divided into different sections:
-1. Ontology committed in different versions.
-2. The wiki (https://github.com/eProcurement-everis/O3PO/wiki) documents the evolution of the ontology and the decisions taken into account during its analysis and implementation.
-3. The issues (https://github.com/eProcurement-everis/O3PO/issues) section tracks all discussions about the ontology.
+This O3PO repository has been set up to support the collaborative work around the development of the Publications Office Public eProcurement Ontology (O3PO).
 
-## Current Release (v2.0.0)
+The repository is divided into different sections:
 
-1. [Online Documentation](https://eprocurement-everis.github.io/)
-2. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
-2. [Release Notes](https://eprocurement-everis.github.io/release_notes.html)
-3. [Online Resources Github](https://github.com/eProcurement-everis/O3PO)
+1. The Ontology development repository branches (this section), for the public distribution of any resource related to the Ontology;
+2. The [Issues](https://github.com/eProcurement-everis/O3PO/issues) section, where any question, doubt and specific topics are presented and discussed;
+3. The [Projects](https://github.com/eProcurement-everis/O3PO/projects) section, reserved to organise the TO-DOs tasks, events, project milestones, etc.;
+4. The [Wiki](https://github.com/eProcurement-everis/O3PO/wiki), a section dedicated to organise and document the final decisions made by the working group and at analysis, design and implementation time.
 
-## Previous Release (v1.0)
+## Relevant Documentation
 
-1. [OP v1.0.0 - Github](https://github.com/eprocurementontology)
+### Current Release (v2.0.0)
+
+1. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
+2. [OP v2.0.0 - Github landing page](https://github.com/eProcurement-everis/O3PO)
+3. [Specification and methodology](https://eprocurement-everis.github.io/)
+4. [Release notes](https://eprocurement-everis.github.io/release_notes.html)
+
+### Previous Release (v1.00)
+
+1. [OP v1.00 - Github landing page](https://github.com/eprocurementontology)
+2. [Project Charter proposal v1.00](https://joinup.ec.europa.eu/document/d0202-project-charter-proposal-v100)
+3. [Specification and Methodology](https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf)
+
+### Foundational works
+1. [eForms EU Regulation (preparing for consultation) 2017-2018]
+2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
+3. EU Directives:
+* [Directive 2014/23/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2014.094.01.0001.01.ENG), on the award of concession contracts Text
+* [Directive 2014/24/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0024), on public procurement and repealing Directive 2004/18/EC
+* [Directive 2014/25/EU](https://publications.europa.eu/en/publication-detail/-/publication/3c100e84-b654-11e3-86f9-01aa75ed71a1/language-en), on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC
+* [Directive 2014/55/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055), on electronic invoicing in public procurement Text with EEA relevance
+* [Directive 2009/81/EC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081), on the coordination of procedures for the award of certain works contracts, supply contracts and service contracts by contracting authorities or entities in the fields of defence and security, and amending Directives 2004/17/EC and 2004/18/EC
+
+
