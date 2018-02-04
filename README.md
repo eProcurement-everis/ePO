@@ -5,10 +5,10 @@ This O3PO repository has been set up to support the collaborative work around th
 
 The repository is divided into different sections:
 
-#The Ontology development repository branches (this section), for the public distribution of any resource related to the Ontology;
-#The [Issues](https://github.com/eProcurement-everis/O3PO/issues) section, where any question, doubt and specific topics are presented and discussed;
-#The [Projects](https://github.com/eProcurement-everis/O3PO/projects) section, reserved to organise the TO-DOs tasks, events, project milestones, etc.;
-#The [Wiki](https://github.com/eProcurement-everis/O3PO/wiki), a section dedicated to organise and document the final decisions made by the working group and at analysis, design and implementation time.
+1. The Ontology development repository branches (this section), for the public distribution of any resource related to the Ontology;
+2. The [Issues](https://github.com/eProcurement-everis/O3PO/issues) section, where any question, doubt and specific topics are presented and discussed;
+3. The [Projects](https://github.com/eProcurement-everis/O3PO/projects) section, reserved to organise the TO-DOs tasks, events, project milestones, etc.;
+4. The [Wiki](https://github.com/eProcurement-everis/O3PO/wiki), a section dedicated to organise and document the final decisions made by the working group and at analysis, design and implementation time.
 
 ## Relevant Documentation
 
@@ -29,9 +29,9 @@ The repository is divided into different sections:
 1. [eForms EU Regulation (preparing for consultation) 2017-2018]
 2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
 3. EU Directives:
-..* [Directive 2014/23/EU]()
-..* [Directive 2014/24/EU]()
-..* [Directive 2014/25/EU]()
-..* [Directive 2009/81/EC]()
+* [Directive 2014/23/EU]()
+* [Directive 2014/24/EU]()
+* [Directive 2014/25/EU]()
+* [Directive 2009/81/EC]()
 
 
