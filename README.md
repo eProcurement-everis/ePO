@@ -29,10 +29,10 @@ The repository is divided into different sections:
 1. [eForms EU Regulation (preparing for consultation) 2017-2018]
 2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
 3. EU Directives:
-* [Directive 2014/23/EU, on the award of concession contracts Text](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2014.094.01.0001.01.ENG)
-* [Directive 2014/24/EU, on public procurement and repealing Directive 2004/18/EC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0024)
-* [Directive 2014/25/EU, on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC](https://publications.europa.eu/en/publication-detail/-/publication/3c100e84-b654-11e3-86f9-01aa75ed71a1/language-en)
-* [Directive 2014/55/EU, on electronic invoicing in public procurement Text with EEA relevance](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055)
-* [Directive 2009/81/EC, on the coordination of procedures for the award of certain works contracts, supply contracts and service contracts by contracting authorities or entities in the fields of defence and security, and amending Directives 2004/17/EC and 2004/18/EC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081)
+* [Directive 2014/23/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2014.094.01.0001.01.ENG), on the award of concession contracts Text
+* [Directive 2014/24/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0024), on public procurement and repealing Directive 2004/18/EC
+* [Directive 2014/25/EU](https://publications.europa.eu/en/publication-detail/-/publication/3c100e84-b654-11e3-86f9-01aa75ed71a1/language-en), on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC
+* [Directive 2014/55/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055), on electronic invoicing in public procurement Text with EEA relevance
+* [Directive 2009/81/EC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081), on the coordination of procedures for the award of certain works contracts, supply contracts and service contracts by contracting authorities or entities in the fields of defence and security, and amending Directives 2004/17/EC and 2004/18/EC
 
 
