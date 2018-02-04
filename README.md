@@ -11,10 +11,10 @@ This repository is divided into different sections:
 
 ### Current Release (v2.0.0)
 
-1. [Online documentation](https://eprocurement-everis.github.io/)
-2. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
-2. [Release notes](https://eprocurement-everis.github.io/release_notes.html)
-3. [Online resources (Github)](https://github.com/eProcurement-everis/O3PO)
+1. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
+2. [OP v2.0.0 - Github landing page](https://github.com/eProcurement-everis/O3PO)
+3. [Specification and methodology](https://eprocurement-everis.github.io/)
+4. [Release notes](https://eprocurement-everis.github.io/release_notes.html)
 
 ### Previous Release (v1.00)
 
@@ -27,9 +27,9 @@ This repository is divided into different sections:
 1. [eForms EU Regulation (preparing for consultation) 2017-2018]
 2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
 3. Directives:
-3.1. [Directive 2014/23/EU]()
-3.2. [Directive 2014/24/EU]()
-3.3. [Directive 2014/25/EU]()
-3.4. [Directive 2009/81/EC]()
+** [Directive 2014/23/EU]()
+** [Directive 2014/24/EU]()
+** [Directive 2014/25/EU]()
+** [Directive 2009/81/EC]()
 
 
