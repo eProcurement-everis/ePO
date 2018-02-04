@@ -9,6 +9,3 @@ The ultimate objective of the ePO is to put forth a commonly agreed OWL Ontology
 
 .eProcurement Value-Chain, EU vision
 image::eProcurement_Value_Chain.png[EU eProcurement Value-Chain, alt="EU eProcurement Value-Chain", align="center"]
-
-
-
