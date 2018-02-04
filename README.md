@@ -1,9 +1,7 @@
-# ePO - The OP's Public eProcurement Ontology
+# ePO - The OP's eProcurement Ontology
 
 ## Role and main functions
-This O3PO repository has been set up to support the collaborative work around the development of the Publications Office Public eProcurement Ontology (O3PO).
-
-The repository is divided into different sections:
+This repository has been set up to support the collaborative work around the development of the  eProcurement Ontology (ePO). The repository is divided into different sections:
 
 1. The Ontology development repository branches (this section), for the public distribution of any resource related to the Ontology;
 2. The [Issues](https://github.com/eProcurement-everis/O3PO/issues) section, where any question, doubt and specific topics are presented and discussed;
