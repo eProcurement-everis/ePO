@@ -13,7 +13,7 @@ One fundamental document for the development of the eOP is its link:++https://jo
 In this document the ultimate objective was stated as "_to put forth a commonly agreed OWL Ontology that will conceptualise, formally encode and make available in an open, structured and machine-readable format data about public procurement, covering it from end to end, i.e. from notification, through tendering to awarding, ordering, invoicing and payment. The figure below represents the eProcurement Value-Chain as commonly envisaged in Europe (source: OP).
 
 .eProcurement Value-Chain, EU vision
-image::eProcurement_Value_Chain.png[EU eProcurement Value-Chain, alt="EU eProcurement Value-Chain", align="center"]
+image::eProcurement_Value_Chain.png[EU eProcurement Value-Chain, 1000, align="center"]
 
 An the scope was set to the "_specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the link:++http://publications.europa.eu/mdr/++[Metadata Registry]"._
 
@@ -24,7 +24,7 @@ image::Main_Deliverables.png[ePO Main Deliverables, align="center"]
 
 === Project governance overview
 
-In order to develop these global deliverables the following Governance Structure, roles and responsibilities were established:
+In order to develop these global deliverables the following Governance Structure, the following roles and responsibilities were established:
 
 .ePO Project - Governance Structure
 image::Governance_Structure.png[ePO Governance Structure, 600, align="center"]
@@ -36,9 +36,14 @@ image::Roles_Responsibilities.png[ePO - Roles and responsibilities, 900, align="
       
 For more details on the members of each governance body see the document link:++https://joinup.ec.europa.eu/document/report-policy-support-e-procurement++[D04.07 Report on policy support for e-Procurement, e-Procurement ontology]; e.g. "_Editors: are responsible for the operational work of defining and documenting the ePO_".
 
-=== ePO v2.0.0 - Objectives and scope
+=== Main Objective of the ePO v2.0.0
 
 [TODO: Objectives]
+
+
+.ePO v2.0.0 main objective: Develop deeply and test the e-Tendering phase
+image::V2.0.0-Value_Chain_Focus.png[ePO v2.0.0 main objective, 1000, align="center"]
+
 
 [TODO: Scope]
 The Knowledge Map (K-Map) footnoteref:[note1, See link:++http://lice.licef.ca/index.php/gmot-motplus-et-mot/++[LICEF's MOTPlus] method and tool.] below provides an abstract representation of the scope for the ePO v2.0.0. 
@@ -47,4 +52,5 @@ The Knowledge Map (K-Map) footnoteref:[note1, See link:++http://lice.licef.ca/in
 image::v2.0.0-Scope.png[ePO v2.0.0 - Scope, align="center"]
 
 [TODO: Provide the interpretation of the K-Map as an ordered list]
+
 
