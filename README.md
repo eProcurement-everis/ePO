@@ -1,4 +1,4 @@
-# O3PO - The OP's eProcurement Ontology
+# O3PO - The OP's Public eProcurement Ontology
 
 ## Role and main functions
 The O3PO repository has been set up to support the collaborative work around the development of the e-procurement ontology.
@@ -7,13 +7,29 @@ This repository is divided into different sections:
 2. The wiki (https://github.com/eProcurement-everis/O3PO/wiki) documents the evolution of the ontology and the decisions taken into account during its analysis and implementation.
 3. The issues (https://github.com/eProcurement-everis/O3PO/issues) section tracks all discussions about the ontology.
 
-## Current Release (v2.0.0)
+## Relevant Documentation
 
-1. [Online Documentation](https://eprocurement-everis.github.io/)
+### Current Release (v2.0.0)
+
+1. [Online documentation](https://eprocurement-everis.github.io/)
 2. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
-2. [Release Notes](https://eprocurement-everis.github.io/release_notes.html)
-3. [Online Resources Github](https://github.com/eProcurement-everis/O3PO)
+2. [Release notes](https://eprocurement-everis.github.io/release_notes.html)
+3. [Online resources (Github)](https://github.com/eProcurement-everis/O3PO)
 
-## Previous Release (v1.0)
+### Previous Release (v1.00)
 
-1. [OP v1.0.0 - Github](https://github.com/eprocurementontology)
+1. [OP v1.00 - Github landing page](https://github.com/eprocurementontology)
+2. [Project Charter proposal v1.00](https://joinup.ec.europa.eu/document/d0202-project-charter-proposal-v100)
+3. [Specification and Methodology](https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf)
+
+
+### Foundational works
+1. [eForms EU Regulation (preparing for consultation) 2017-2018]
+2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
+3. Directives:
+3.1. [Directive 2014/23/EU]()
+3.2. [Directive 2014/24/EU]()
+3.3. [Directive 2014/25/EU]()
+3.4. [Directive 2009/81/EC]()
+
+
