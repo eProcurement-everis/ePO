@@ -2,11 +2,12 @@ ifndef::imagesdir[:imagesdir: images]
 ifndef::downloaddir[:downloaddir: download]
 
 
-= *O3PO - Public eProcurement Ontology*
+= *ePO - The European eProcurement Ontology (v2.0.0)*
 
 :toc:
 :toclevels: 3
 
+include::chapters/0_Abstract.adoc[]
 include::chapters/I_Introduction.adoc[]
 include::chapters/II_Methodological_Approach.adoc[]
 include::chapters/III_Information_Requirements.adoc[]
