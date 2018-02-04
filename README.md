@@ -14,24 +14,24 @@ The repository is divided into different sections:
 
 ### Current Release (v2.0.0)
 
-#[Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
-#[OP v2.0.0 - Github landing page](https://github.com/eProcurement-everis/O3PO)
-#[Specification and methodology](https://eprocurement-everis.github.io/)
-#[Release notes](https://eprocurement-everis.github.io/release_notes.html)
+1. [Joinup collection](https://joinup.ec.europa.eu/solution/eprocurement-ontology)
+2. [OP v2.0.0 - Github landing page](https://github.com/eProcurement-everis/O3PO)
+3. [Specification and methodology](https://eprocurement-everis.github.io/)
+4. [Release notes](https://eprocurement-everis.github.io/release_notes.html)
 
 ### Previous Release (v1.00)
 
-#[OP v1.00 - Github landing page](https://github.com/eprocurementontology)
-#[Project Charter proposal v1.00](https://joinup.ec.europa.eu/document/d0202-project-charter-proposal-v100)
-#[Specification and Methodology](https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf)
+1. [OP v1.00 - Github landing page](https://github.com/eprocurementontology)
+2. [Project Charter proposal v1.00](https://joinup.ec.europa.eu/document/d0202-project-charter-proposal-v100)
+3. [Specification and Methodology](https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf)
 
 ### Foundational works
-#[eForms EU Regulation (preparing for consultation) 2017-2018]
-#[Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
-#EU Directives:
-#*Directive 2014/23/EU]()
-#*[Directive 2014/24/EU]()
-#*[Directive 2014/25/EU]()
-#*[Directive 2009/81/EC]()
+1. [eForms EU Regulation (preparing for consultation) 2017-2018]
+2. [Report on policy support for e-Procurement (landscaping report, 2016)](https://joinup.ec.europa.eu/node/159724)
+3. EU Directives:
+..*Directive 2014/23/EU]()
+..*[Directive 2014/24/EU]()
+..*[Directive 2014/25/EU]()
+..*[Directive 2009/81/EC]()
 
 
