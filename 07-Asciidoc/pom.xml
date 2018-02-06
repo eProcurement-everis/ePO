@@ -1,17 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>eu.europa.publicationsoffice.o3po</groupId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>eu.europa.publicationsoffice.o3po</groupId>
+    <artifactId>07-Asciidoc</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-<build>
-	<plugins>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <asciidoctorj.version>1.5.6</asciidoctorj.version>
+    </properties>
+
+    <build>
+        <plugins>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.3</version>
+                <version>1.5.6</version>
                 <executions>
                     <execution>
                         <id>asciidoc-techdocs-to-html</id>
@@ -23,7 +29,6 @@
                             <backend>html5</backend>
                             <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
-                                <imagesdir>./images</imagesdir>
                                 <toc>left</toc>
                                 <icons>font</icons>
                                 <sectanchors>true</sectanchors>
@@ -40,7 +45,7 @@
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj</artifactId>
-                        <version>1.5.4</version>
+                        <version>${asciidoctorj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -48,8 +53,6 @@
     </build>
 
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <artifactId>07-Asciidoc</artifactId>
+
+
 </project>
