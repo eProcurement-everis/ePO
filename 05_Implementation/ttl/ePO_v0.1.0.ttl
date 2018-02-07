@@ -1,0 +1,217 @@
+@prefix : <http://data.europa.eu/ePO/ontology#> .
+@prefix ns: <http://w3id.org/ocds/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://data.europa.eu/ePO/ontology#> .
+
+<http://data.europa.eu/ePO/ontology#> rdf:type owl:Ontology ;
+                                       dcterms:creator "Publications Office"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
+:buysOnBehalfOf rdf:type owl:ObjectProperty ;
+                owl:inverseOf :buysThrough ;
+                rdfs:domain :Buyer ;
+                rdfs:range ns:ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#buysThrough
+:buysThrough rdf:type owl:ObjectProperty ;
+             rdfs:domain ns:ProcuringEntity ;
+             rdfs:range :Buyer .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAccessTool
+:hasAccessTool rdf:type owl:ObjectProperty ;
+               rdfs:domain ns:ProcuringEntity ;
+               rdfs:range :AccessTool .
+
+
+###  http://data.europa.eu/ePO/ontology#hasBuyerCategory
+:hasBuyerCategory rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Buyer ;
+                  rdfs:range :BuyerCategory .
+
+
+###  http://data.europa.eu/ePO/ontology#hasBuyerProfile
+:hasBuyerProfile rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Buyer ;
+                 rdfs:range :BuyerProfile .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEntityType
+:hasEntityType rdf:type owl:ObjectProperty ;
+               rdfs:domain ns:ProcuringEntity ;
+               rdfs:range :ProcuringEntityType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               rdfs:domain :BuyerProfile ,
+                           ns:ProcuringEntity ;
+               rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasRoleType
+:hasRoleType rdf:type owl:ObjectProperty ;
+             rdfs:domain ns:ProcuringEntity ;
+             rdfs:range :ProcuringEntityRoleType .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#hasAdditionalInformation
+:hasAdditionalInformation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :AccessTool ;
+                          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasURI
+:hasURI rdf:type owl:DatatypeProperty ;
+        rdfs:domain :AccessTool ,
+                    :BuyerProfile ;
+        rdfs:range xsd:anyURI .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#AccessTool
+:AccessTool rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#Buyer
+:Buyer rdf:type owl:Class ;
+       rdfs:subClassOf org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerCategory
+:BuyerCategory rdf:type owl:Class ;
+               rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerProfile
+:BuyerProfile rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerRole
+:BuyerRole rdf:type owl:Class ;
+           rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementProcedure
+:ProcurementProcedure rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType
+:ProcuringEntityRoleType rdf:type owl:Class ;
+                         rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcuringEntityType
+:ProcuringEntityType rdf:type owl:Class ;
+                     rdfs:subClassOf ccts:Code .
+
+
+###  http://w3id.org/ocds/ns#ProcuringEntity
+ns:ProcuringEntity rdf:type owl:Class ;
+                   rdfs:subClassOf org:Organization .
+
+
+###  http://www.w3.org/ns/org#Organization
+org:Organization rdf:type owl:Class .
+
+
+###  urn:un:unece:uncefact:documentation:2#Code
+ccts:Code rdf:type owl:Class .
+
+
+###  urn:un:unece:uncefact:documentation:2#Identifier
+ccts:Identifier rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#BOPE
+:BOPE rdf:type owl:NamedIndividual ,
+               :BuyerRole ;
+      dcterms:title "Buyer On Behalf of Other Procuring Entities" ;
+      rdfs:label "BOPE" .
+
+
+###  http://data.europa.eu/ePO/ontology#CA
+:CA rdf:type owl:NamedIndividual ,
+             :ProcuringEntityType ;
+    dcterms:title "Contracting  Authority" ;
+    rdfs:label "CONTRACTING_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#CPB
+:CPB rdf:type owl:NamedIndividual ,
+              :BuyerRole ;
+     dcterms:title "Central Purchasing Body" ;
+     rdfs:label "CPB" .
+
+
+###  http://data.europa.eu/ePO/ontology#JPL
+:JPL rdf:type owl:NamedIndividual ,
+              :ProcuringEntityRoleType ;
+     dcterms:title "Joint Procurement Lead" ;
+     rdfs:label "JPL" .
+
+
+###  http://data.europa.eu/ePO/ontology#JPM
+:JPM rdf:type owl:NamedIndividual ,
+              :ProcuringEntityRoleType ;
+     dcterms:title "Joint Procurement Member" ;
+     rdfs:label "JPM" .
+
+
+###  http://data.europa.eu/ePO/ontology#OTHER_CONTRACTING_ENTITY
+:OTHER_CONTRACTING_ENTITY rdf:type owl:NamedIndividual ,
+                                   :ProcuringEntityType ;
+                          dcterms:title "Other contracting entity" ;
+                          rdfs:label "OTHER_CONTRACTING_ENTITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#SA
+:SA rdf:type owl:NamedIndividual ,
+             :ProcuringEntityRoleType ;
+    dcterms:title "Sole Agency" ;
+    rdfs:label "SA" .
+
+
+###  http://data.europa.eu/ePO/ontology#UNDERTAKING
+:UNDERTAKING rdf:type owl:NamedIndividual ,
+                      :ProcuringEntityType ;
+             dcterms:title "Undertaking" ;
+             rdfs:label "UNDERTAKING" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
