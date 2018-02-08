@@ -4,3 +4,6 @@
 # Other resources, such as ppt with raw drawings, etc.
 07-Asciidoc/src/main/asciidoc/rscs
 
+# IntelliJ files
+.idea
+*.iml
