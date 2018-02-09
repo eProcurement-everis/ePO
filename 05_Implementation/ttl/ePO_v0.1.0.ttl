@@ -3,9 +3,11 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rov: <http://www.w3.org/ns/regorg#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
+@prefix espd: <urn:grow:names:specification:ubl:schema:xsd:ESPDResponse-1#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://data.europa.eu/ePO/ontology#> .
@@ -42,6 +44,18 @@ dcterms:title rdf:type owl:AnnotationProperty .
              rdfs:range :Buyer .
 
 
+###  http://data.europa.eu/ePO/ontology#concludes
+:concludes rdf:type owl:ObjectProperty ;
+           rdfs:domain :ProcurementProcedure ;
+           rdfs:range :Technique .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAcceleratedProcedureType
+:hasAcceleratedProcedureType rdf:type owl:ObjectProperty ;
+                             rdfs:domain :AcceleratedProcedure ;
+                             rdfs:range :AcceleratedProcedureType .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
 :hasAccessTool rdf:type owl:ObjectProperty ;
                rdfs:domain ns:ProcuringEntity ;
@@ -66,17 +80,64 @@ dcterms:title rdf:type owl:AnnotationProperty .
                rdfs:range :ProcuringEntityType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasEstimatedValue
+:hasEstimatedValue rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:range ccts:Amount .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEvaluationMethodType
+:hasEvaluationMethodType rdf:type owl:ObjectProperty .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasIdentifier
 :hasIdentifier rdf:type owl:ObjectProperty ;
                rdfs:domain :BuyerProfile ,
+                           :Criterion ,
                            ns:ProcuringEntity ;
                rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislation
+:hasLegislation rdf:type owl:ObjectProperty ;
+                rdfs:domain :ProcurementProcedure ;
+                rdfs:range espd:Legislation .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLots
+:hasLots rdf:type owl:ObjectProperty ;
+         rdfs:domain :ProcurementProcedure ;
+         rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcurementProcedureType
+:hasProcurementProcedureType rdf:type owl:ObjectProperty ;
+                             rdfs:domain :ProcurementProcedure ;
+                             rdfs:range :ProcurementProcedureType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasRoleType
 :hasRoleType rdf:type owl:ObjectProperty ;
              rdfs:domain ns:ProcuringEntity ;
              rdfs:range :ProcuringEntityRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTender
+:hasTender rdf:type owl:ObjectProperty ;
+           rdfs:domain :ProcurementProcedure ;
+           rdfs:range :Tender .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTotalValue
+:hasTotalValue rdf:type owl:ObjectProperty ;
+               rdfs:domain :ProcurementProcedure ;
+               rdfs:range ccts:Amount .
+
+
+###  http://data.europa.eu/ePO/ontology#isAcceleratedProcedure
+:isAcceleratedProcedure rdf:type owl:ObjectProperty ;
+                        rdfs:domain :ProcurementProcedure ;
+                        rdfs:range :AcceleratedProcedure .
 
 
 #################################################################
@@ -89,6 +150,24 @@ dcterms:title rdf:type owl:AnnotationProperty .
                           rdfs:range xsd:string .
 
 
+###  http://data.europa.eu/ePO/ontology#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Criterion ;
+                rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasJustification
+:hasJustification rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :AcceleratedProcedure ;
+                  rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Criterion ;
+         rdfs:range xsd:string .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasURI
 :hasURI rdf:type owl:DatatypeProperty ;
         rdfs:domain :AccessTool ,
@@ -96,9 +175,32 @@ dcterms:title rdf:type owl:AnnotationProperty .
         rdfs:range xsd:anyURI .
 
 
+###  http://data.europa.eu/ePO/ontology#hasWeight
+:hasWeight rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Criterion ;
+           rdfs:range xsd:decimal .
+
+
+###  http://data.europa.eu/ePO/ontology#hasWeightingConsiderationDescription
+:hasWeightingConsiderationDescription rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                      rdfs:domain :Criterion ;
+                                      rdfs:range xsd:string .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://data.europa.eu/ePO/ontology#AcceleratedProcedure
+:AcceleratedProcedure rdf:type owl:Class ;
+                      rdfs:subClassOf :ProcurementProcedure .
+
+
+###  http://data.europa.eu/ePO/ontology#AcceleratedProcedureType
+:AcceleratedProcedureType rdf:type owl:Class ;
+                          rdfs:subClassOf ccts:Code .
+
 
 ###  http://data.europa.eu/ePO/ontology#AccessTool
 :AccessTool rdf:type owl:Class .
@@ -123,8 +225,27 @@ dcterms:title rdf:type owl:AnnotationProperty .
            rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#Criterion
+:Criterion rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#EconomicOperator
+:EconomicOperator rdf:type owl:Class ;
+                  rdfs:subClassOf rov:RegisteredOrganization .
+
+
+###  http://data.europa.eu/ePO/ontology#Lot
+:Lot rdf:type owl:Class ;
+     rdfs:subClassOf :ProcurementProcedure .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcurementProcedure
 :ProcurementProcedure rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementProcedureType
+:ProcurementProcedureType rdf:type owl:Class ;
+                          rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType
@@ -137,6 +258,15 @@ dcterms:title rdf:type owl:AnnotationProperty .
                      rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#Technique
+:Technique rdf:type owl:Class ;
+           rdfs:subClassOf :ProcurementProcedure .
+
+
+###  http://data.europa.eu/ePO/ontology#Tender
+:Tender rdf:type owl:Class .
+
+
 ###  http://w3id.org/ocds/ns#ProcuringEntity
 ns:ProcuringEntity rdf:type owl:Class ;
                    rdfs:subClassOf org:Organization .
@@ -144,6 +274,18 @@ ns:ProcuringEntity rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/org#Organization
 org:Organization rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/regorg#RegisteredOrganization
+rov:RegisteredOrganization rdf:type owl:Class .
+
+
+###  urn:grow:names:specification:ubl:schema:xsd:ESPDResponse-1#Legislation
+espd:Legislation rdf:type owl:Class .
+
+
+###  urn:un:unece:uncefact:documentation:2#Amount
+ccts:Amount rdf:type owl:Class .
 
 
 ###  urn:un:unece:uncefact:documentation:2#Code
@@ -179,6 +321,11 @@ ccts:Identifier rdf:type owl:Class .
      rdfs:label "CPB" .
 
 
+###  http://data.europa.eu/ePO/ontology#EMERGENCY
+:EMERGENCY rdf:type owl:NamedIndividual ,
+                    :AcceleratedProcedureType .
+
+
 ###  http://data.europa.eu/ePO/ontology#JPL
 :JPL rdf:type owl:NamedIndividual ,
               :ProcuringEntityRoleType ;
@@ -212,6 +359,11 @@ ccts:Identifier rdf:type owl:Class .
                       :ProcuringEntityType ;
              dcterms:title "Undertaking" ;
              rdfs:label "UNDERTAKING" .
+
+
+###  http://data.europa.eu/ePO/ontology#URGENCY
+:URGENCY rdf:type owl:NamedIndividual ,
+                  :AcceleratedProcedureType .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
