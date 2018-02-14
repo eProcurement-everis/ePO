@@ -121,31 +121,50 @@ dcterms:title rdf:type owl:AnnotationProperty .
 
 ###  http://data.europa.eu/ePO/ontology#hasEstimatedValue
 :hasEstimatedValue rdf:type owl:ObjectProperty ;
-                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:domain :Lot ,
+                               :ProcurementProcedure ;
                    rdfs:range ccts:Amount .
+
+
+###  http://data.europa.eu/ePO/ontology#hasGroupOfLots
+:hasGroupOfLots rdf:type owl:ObjectProperty ;
+                rdfs:domain :ProcurementProcedure ;
+                rdfs:range :GroupOfLots ;
+                owl:propertyDisjointWith :hasLots .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasIdentifier
 :hasIdentifier rdf:type owl:ObjectProperty ;
-               rdfs:domain :BuyerProfile ,
+               rdfs:domain :Buyer ,
+                           :BuyerProfile ,
                            :Criterion ,
                            :CriterionProperty ,
                            :CriterionPropertyGroup ,
                            :CriterionPropertyResponse ,
-                           ns:ProcuringEntity ;
+                           :Lot ,
+                           ns:ProcuringEntity ,
+                           espd:Legislation ;
                rdfs:range ccts:Identifier .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLegislation
 :hasLegislation rdf:type owl:ObjectProperty ;
-                rdfs:domain :ProcurementProcedure ;
+                rdfs:domain :Criterion ,
+                            :ProcurementProcedure ;
                 rdfs:range espd:Legislation .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLots
 :hasLots rdf:type owl:ObjectProperty ;
-         rdfs:domain :ProcurementProcedure ;
+         rdfs:domain :GroupOfLots ,
+                     :ProcurementProcedure ;
          rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#hasMaxValue
+:hasMaxValue rdf:type owl:ObjectProperty ;
+             rdfs:domain :GroupOfLots ;
+             rdfs:range ccts:Amount .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcurementProcedureType
@@ -172,6 +191,12 @@ dcterms:title rdf:type owl:AnnotationProperty .
 :hasRoleType rdf:type owl:ObjectProperty ;
              rdfs:domain ns:ProcuringEntity ;
              rdfs:range :ProcuringEntityRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTechniqueType
+:hasTechniqueType rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Technique ;
+                  rdfs:range :TechniqueType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasTender
@@ -204,14 +229,30 @@ ccev:validates rdf:type owl:ObjectProperty ;
 
 ###  http://data.europa.eu/ePO/ontology#hasAdditionalInformation
 :hasAdditionalInformation rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :AccessTool ;
+                          rdfs:domain :AccessTool ,
+                                      :Technique ;
                           rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasArticle
+:hasArticle rdf:type owl:DatatypeProperty ;
+            rdfs:domain espd:Legislation ;
+            rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasDescription
 :hasDescription rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Criterion ;
+                rdfs:domain :Criterion ,
+                            :CriterionProperty ,
+                            :CriterionPropertyGroup ,
+                            espd:Legislation ;
                 rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasJurisdictionLevel
+:hasJurisdictionLevel rdf:type owl:DatatypeProperty ;
+                      rdfs:domain espd:Legislation ;
+                      rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasJustification
@@ -222,14 +263,24 @@ ccev:validates rdf:type owl:ObjectProperty ;
 
 ###  http://data.europa.eu/ePO/ontology#hasName
 :hasName rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Criterion ;
+         rdfs:domain :Criterion ,
+                     :CriterionProperty ,
+                     :CriterionPropertyGroup ,
+                     :CriterionPropertyResponse ;
          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:domain espd:Legislation ;
+          rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasURI
 :hasURI rdf:type owl:DatatypeProperty ;
         rdfs:domain :AccessTool ,
-                    :BuyerProfile ;
+                    :BuyerProfile ,
+                    espd:Legislation ;
         rdfs:range xsd:anyURI .
 
 
@@ -335,6 +386,11 @@ ccev:validates rdf:type owl:ObjectProperty ;
                   rdfs:subClassOf rov:RegisteredOrganization .
 
 
+###  http://data.europa.eu/ePO/ontology#GroupOfLots
+:GroupOfLots rdf:type owl:Class ;
+             owl:disjointWith :Lot .
+
+
 ###  http://data.europa.eu/ePO/ontology#Lot
 :Lot rdf:type owl:Class ;
      rdfs:subClassOf :ProcurementProcedure .
@@ -361,6 +417,11 @@ ccev:validates rdf:type owl:ObjectProperty ;
 
 ###  http://data.europa.eu/ePO/ontology#Technique
 :Technique rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#TechniqueType
+:TechniqueType rdf:type owl:Class ;
+               rdfs:subClassOf :Technique .
 
 
 ###  http://data.europa.eu/ePO/ontology#Tender
