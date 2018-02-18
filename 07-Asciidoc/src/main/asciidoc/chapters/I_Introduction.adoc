@@ -63,7 +63,7 @@ To reach the strategic objectives stated above this version 2.0.0 of the ePO pro
 
 . *User Stories around the policy area should be defined to (i) complement the identification of information requirements; and (ii) test the completeness, correctness and performance of the Ontology*;
 
-** The "Use Cases" defined in the ePO v1.00 (we prefer calling them "User Stories") are essential instruments to complete and test the information requirements elicited during the analysis of the business processes. In this version we propose to focus on the "User Story 1: Journalism and Transparency" as the e-Notification and e-Access provide the largest part of the requirements necessary to implement the story.
+** The "Use Cases" defined in the ePO v1.00 (we prefer calling them "User Stories") are essential instruments to complete and test the information requirements elicited during the analysis of the business processes. In this version we propose to focus on the "Use Case 1: Data Journalism" as the e-Notification and e-Access provide the largest part of the requirements necessary to implement the case.
 
 . *The Ontology must always be tested and perfected using a sufficiently large sample of real data*;
 
