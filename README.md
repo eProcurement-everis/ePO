@@ -29,7 +29,7 @@ This repository has been set up to support the collaborative work around the dev
 3. EU Directives:
 * [Directive 2014/23/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2014.094.01.0001.01.ENG), on the award of concession contracts Text
 * [Directive 2014/24/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0024), on public procurement and repealing Directive 2004/18/EC
-* [Directive 2014/25/EU](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0025), on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC
+* [Directive 2014/25/EU](http://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:JOL_2014_094_R_0243_01), on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC
 * [Directive 2014/55/EU](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055), on electronic invoicing in public procurement Text with EEA relevance
 * [Directive 2009/81/EC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081), on the coordination of procedures for the award of certain works contracts, supply contracts and service contracts by contracting authorities or entities in the fields of defence and security, and amending Directives 2004/17/EC and 2004/18/EC
 
