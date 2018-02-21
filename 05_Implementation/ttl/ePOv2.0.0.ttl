@@ -14,7 +14,10 @@
 @base <http://data.europa.eu/ePO/ontology#> .
 
 <http://data.europa.eu/ePO/ontology#> rdf:type owl:Ontology ;
-                                       dcterms:creator "Publications Office"@en .
+                                       dcterms:creator "Publications Office"@en ;
+                                       dcterms:title "e-Procurement Ontology"@en ;
+                                       owl:versionInfo "2.0.0" ;
+                                       rdfs:label "e-Procurement Ontology"@en .
 
 #################################################################
 #    Annotation properties
