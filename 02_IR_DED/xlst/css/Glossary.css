@@ -43,9 +43,12 @@
 
 .qa definition {
 	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.qa additional_info {
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 }
-
 .qa sources {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight:normal;
@@ -62,7 +65,17 @@
 	font-weight: normal;
 	font-size: small;
 }
+.qa alternative {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
 
+.qa alternative_definitions {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight:bold;
+	/* text-decoration:underline; */
+}
 .nqa {
 			margin-bottom:10px;  
 }
@@ -84,7 +97,7 @@
 	margin-top:20px;
 	margin-bottom:20px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;s
+	font-weight: normal;
 	color:blue;
 }
 
