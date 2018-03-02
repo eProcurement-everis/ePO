@@ -11,14 +11,14 @@ xmlns:epo="http://data.europa.eu/ePO/ontology#"
 xmlns:math="http://exslt.org/math"
 extension-element-prefixes="math">
 
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
 	<xsl:template match="/">
 		<xsl:call-template name="HTMLHeader"/>
 		<xsl:call-template name="beginBody"/>
 			<xsl:text disable-output-escaping="yes">&lt;tr&gt;</xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;td&gt;</xsl:text>
-					<xsl:apply-templates/>
+					<xsl:apply-templates/> 
 				<xsl:text disable-output-escaping="yes">&lt;/td&gt;</xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;tr&gt;</xsl:text>
 		<xsl:call-template name="endBody"/>		
@@ -33,51 +33,80 @@ extension-element-prefixes="math">
 	</xsl:template>
 
 <xsl:template match="xsd:documentation">
-		<xsl:variable name="examples" select="ccts:Examples"/>
-		<xsl:variable name="source" select="epo:Sources"/>
-		<xsl:variable name="usedIn" select="ccts:UsageRule"/>
-		
-		<xsl:variable name="entryPos">
-			<xsl:number count="epo:DictionaryEntry" format="1"/>
-		</xsl:variable>		
-
-		<xsl:variable name="Entry" select="upper-case(substring(ccts:DictionaryEntryName/text(), 1,1))"/>
-		<xsl:variable name="nextEntry" select="upper-case(substring(../../../epo:DictionaryEntry[$entryPos + 1]/xsd:annotation/xsd:documentation/ccts:DictionaryEntryName/text(), 1,1))"/>		
-		
-		<xsl:if test="$entryPos = 1">
-			<div class="nqa">
-				<hr style="height: 10px; border-style: solid; border-color: #8c8b8b; border-width: 1px 0 0 0; border-radius: 30px;"/>
-				<entry_letter>
-					<xsl:value-of select="$Entry"/>
-					<a href="#index" style="text-decoration:none;"> ↑ </a>
-				</entry_letter>
-			</div>
-		</xsl:if>		
-		
-		<div class="qa">
-			  <xsl:text disable-output-escaping="yes">&lt;input type="checkbox" id="qa</xsl:text><xsl:value-of select="$entryPos"/><xsl:text disable-output-escaping="yes">"/&gt;</xsl:text>
-			  <xsl:text disable-output-escaping="yes">&lt;label for="qa</xsl:text><xsl:value-of select="$entryPos"/><xsl:text disable-output-escaping="yes">"&gt;</xsl:text><entry><xsl:value-of select="ccts:DictionaryEntryName"/></entry><xsl:text disable-output-escaping="yes">&lt;/label&gt;</xsl:text>
-			<div>
-				<definition><xsl:value-of select="ccts:Definition"/></definition>
-				<br>
-				<xsl:if test="$examples !=''"><examples><bn>Ex.: </bn><xsl:value-of select="$examples"/></examples></xsl:if>	
-				<xsl:if test="$source !=''"><sources><br><bn>Source: </bn><xsl:value-of select="$source"/></br></sources></xsl:if>	
-				<xsl:if test="$usedIn !=''"><usedIn><br><bn>Used in: </bn><xsl:value-of select="$usedIn"/></br></usedIn></xsl:if>	
-				</br>
-			</div>
+	
+	<xsl:variable name="examples" select="ccts:Examples"/>
+	<xsl:variable name="source" select="epo:Sources"/>
+	<xsl:variable name="usedIn" select="ccts:UsageRule"/>
+	
+	<xsl:variable name="entryPos">
+		<xsl:number count="epo:DictionaryEntry" format="1"/>
+	</xsl:variable>		
+	
+	<xsl:variable name="altC" select="count(ccts:AlternativeDataEntry)"/>	
+	
+	<xsl:variable name="Entry" select="upper-case(substring(ccts:DictionaryEntryName/text(), 1,1))"/>
+	<xsl:variable name="nextEntry" select="upper-case(substring(../../../epo:DictionaryEntry[$entryPos + 1]/xsd:annotation/xsd:documentation/ccts:DictionaryEntryName/text(), 1,1))"/>		
+	
+	<xsl:if test="$entryPos = 1">
+		<div class="nqa">
+			<hr style="height: 10px; border-style: solid; border-color: #8c8b8b; border-width: 1px 0 0 0; border-radius: 30px;"/>
+			<entry_letter>
+				<xsl:value-of select="$Entry"/>
+				<a href="#index" style="text-decoration:none;"> ↑ </a>
+			</entry_letter>
 		</div>
-		
-		<xsl:if test="$Entry != $nextEntry">
-			<div class="nqa">
-				<hr style="height: 10px; border-style: solid; border-color: #8c8b8b; border-width: 1px 0 0 0; border-radius: 30px;"/>
-				<entry_letter>
-				<xsl:text disable-output-escaping="yes">&lt;div id="</xsl:text><xsl:value-of select="$nextEntry"/><xsl:text disable-output-escaping="yes">"&gt;</xsl:text><xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-					<xsl:value-of select="$nextEntry"/>
-					<a href="#index" style="text-decoration:none;"> ↑ </a>
-				</entry_letter>				
-			</div>
-		</xsl:if>
-		
+	</xsl:if>		
+	
+	<div class="qa">
+		  <xsl:text disable-output-escaping="yes">&lt;input type="checkbox" id="qa</xsl:text><xsl:value-of select="$entryPos"/><xsl:text disable-output-escaping="yes">"/&gt;</xsl:text>
+		  <xsl:text disable-output-escaping="yes">&lt;label for="qa</xsl:text><xsl:value-of select="$entryPos"/><xsl:text disable-output-escaping="yes">"&gt;</xsl:text><entry><xsl:value-of select="ccts:DictionaryEntryName"/></entry><xsl:text disable-output-escaping="yes">&lt;/label&gt;</xsl:text>
+		<div>
+			<definition><xsl:value-of select="ccts:Definition"/></definition>
+			<xsl:if test="ccts:AdditionalInformation !=''">
+				<additional_info>
+					<p>(<xsl:value-of select="ccts:AdditionalInformation"/>)</p>
+				</additional_info>
+			</xsl:if> 	
+			
+			<xsl:if test="$altC >= 1">
+				<alternative_definitions><p>Alternative definition<xsl:if test="$altC > 1">s</xsl:if>:</p></alternative_definitions>
+			
+				<xsl:for-each select="ccts:AlternativeDataEntry">
+					<xsl:variable name="alternativeDataEntry" select="ccts:AlternativeEntryName"/>
+					<xsl:variable name="alternativeDefinition" select="ccts:AlternativeDefinition"/>
+					<xsl:variable name="alternativeSource" select="ccts:AlternativeSource"/>
+					
+					<xsl:if test="$alternativeDefinition!=''">
+						
+						<alternative>
+							<li><xsl:value-of select="$alternativeDefinition"/> 
+							<xsl:if test="$alternativeSource!=''">
+								(Source: <xsl:value-of select="$alternativeSource"/>).
+							</xsl:if>
+							</li>
+						</alternative>
+					</xsl:if>
+				<br/>		
+				</xsl:for-each>
+			</xsl:if>
+			
+				<xsl:if test="$examples !=''"><examples><b>Ex.: </b><xsl:value-of select="$examples"/></examples></xsl:if>	
+				<xsl:if test="$source !=''"><sources><br><b>Source: </b><xsl:value-of select="$source"/></br></sources></xsl:if>	
+				<xsl:if test="$usedIn !=''"><usedIn><br><b>Used in: </b><xsl:value-of select="$usedIn"/></br></usedIn></xsl:if>	
+		</div>
+	</div>
+	
+	<xsl:if test="$Entry != $nextEntry">
+		<div class="nqa">
+			<hr style="height: 10px; border-style: solid; border-color: #8c8b8b; border-width: 1px 0 0 0; border-radius: 30px;"/>
+			<entry_letter>
+			<xsl:text disable-output-escaping="yes">&lt;div id="</xsl:text><xsl:value-of select="$nextEntry"/><xsl:text disable-output-escaping="yes">"&gt;</xsl:text><xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+				<xsl:value-of select="$nextEntry"/>
+				<a href="#index" style="text-decoration:none;"> ↑ </a>
+			</entry_letter>				
+		</div>
+	</xsl:if>
+	
 	</xsl:template>
 
 	<xsl:template name="HTMLHeader">
