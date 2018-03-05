@@ -25,7 +25,7 @@ xmlns:epo="http://data.europa.eu/ePO/ontology#">
 	</xsl:template>
 	
 	<xsl:template match="office:spreadsheet/table:table">
-		<xsl:if test="upper-case(@table:name)= upper-case('Concepts')">
+		<xsl:if test="upper-case(@table:name)= upper-case('ePO-Glossary')">
 					<xsl:apply-templates select="table:table-row"/>
 		</xsl:if>				
 	</xsl:template>
@@ -37,7 +37,7 @@ xmlns:epo="http://data.europa.eu/ePO/ontology#">
 	</xsl:function>
 
 	<xsl:template match="table:table-row">
-		<xsl:if test="position() >3">
+		<xsl:if test="position() >2">
 			<xsl:call-template name="createComponent"/>
 		</xsl:if>
 	</xsl:template>

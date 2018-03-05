@@ -129,6 +129,16 @@ extension-element-prefixes="math">
 					<p>The following list of e-Procurement concepts have been identified through an analysis of the e-Notification and e-Access phases and also taking into account the labels in the <b>e-Forms</b>, to be used soon by all tenderers in the EU.</p>
 					<p><b>e-Forms</b> are one of the actions in the Single Market Strategy, where the European Commission has committed to "facilitate the collection, consolidation, management and analysis of procurement data, supporting Member States’ efforts towards better governance in public procurement".</p>
 					<p>In the GitHub section <a href="https://github.com/eProcurement-everis/ePO/wiki/Glossary-Management" style="text-decoration:none">Glossary Management</a> you will find instructions of how to contribute to the enrichment and improvement of the ePO Glossary.</p>
+					
+					This file was automatically generated using as the source a spreadsheet containing the Foundational e-Forms, the ePO Glossary maintained through the ePO Github Issues workspace, and the Data Element Dictionary (DED), which takes its definitions from the ePO Glossary. 
+					Click here to download this spreadsheet.
+					<p>
+						This page was automatically generated using as the source a spreadsheet containing the <b><a href="https://github.com/eProcurement-everis/ePO/blob/master/02_IR_DED/eProcurement_glossary_and%20DED.ods" style="text-decoration:none;">Foundational e-Forms, the ePO Glossary maintained through the ePO Github Issues workspace, and the Data Element Dictionary (DED)</a></b>, which takes its definitions from the ePO Glossary 
+						(click on the link to download this spreadsheet).
+					</p>
+					<p>	
+						The transfomation is based on two XSL-T stylesheets. The resources used to generate the page can be downloaded from the folder "<a href="https://github.com/eProcurement-everis/ePO/tree/master/02_IR_DED/xlst" style="text-decoration:none;">02_IR_DED/xslt</a>", in the ePO Github source repository.
+					</p>
 				</div>
 
 				<p>
