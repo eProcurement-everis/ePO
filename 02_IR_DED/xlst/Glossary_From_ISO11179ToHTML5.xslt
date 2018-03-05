@@ -130,10 +130,8 @@ extension-element-prefixes="math">
 					<p><b>e-Forms</b> are one of the actions in the Single Market Strategy, where the European Commission has committed to "facilitate the collection, consolidation, management and analysis of procurement data, supporting Member States’ efforts towards better governance in public procurement".</p>
 					<p>In the GitHub section <a href="https://github.com/eProcurement-everis/ePO/wiki/Glossary-Management" style="text-decoration:none">Glossary Management</a> you will find instructions of how to contribute to the enrichment and improvement of the ePO Glossary.</p>
 					
-					This file was automatically generated using as the source a spreadsheet containing the Foundational e-Forms, the ePO Glossary maintained through the ePO Github Issues workspace, and the Data Element Dictionary (DED), which takes its definitions from the ePO Glossary. 
-					Click here to download this spreadsheet.
 					<p>
-						This page was automatically generated using as the source a spreadsheet containing the <b><a href="https://github.com/eProcurement-everis/ePO/blob/master/02_IR_DED/eProcurement_glossary_and%20DED.ods" style="text-decoration:none;">Foundational e-Forms, the ePO Glossary maintained through the ePO Github Issues workspace, and the Data Element Dictionary (DED)</a></b>, which takes its definitions from the ePO Glossary 
+						This page was automatically generated using as the source a spreadsheet containing the "<b><a href="https://github.com/eProcurement-everis/ePO/blob/master/02_IR_DED/eProcurement_glossary_and%20DED.ods" style="text-decoration:none;">Foundational e-Forms, the ePO Glossary and the Data Element Dictionary (DED)</a></b>", which takes its definitions from the ePO Glossary 
 						(click on the link to download this spreadsheet).
 					</p>
 					<p>	
