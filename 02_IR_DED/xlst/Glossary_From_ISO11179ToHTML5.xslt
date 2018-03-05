@@ -135,7 +135,7 @@ extension-element-prefixes="math">
 						(click on the link to download this spreadsheet).
 					</p>
 					<p>	
-						The transfomation is based on two XSL-T stylesheets. The resources used to generate the page can be downloaded from the folder "<a href="https://github.com/eProcurement-everis/ePO/tree/master/02_IR_DED/xlst" style="text-decoration:none;">02_IR_DED/xslt</a>", in the ePO Github source repository.
+						The transfomation is based on two XSL-T stylesheets. The resources used to generate the page can be downloaded from the folder "<a href="https://github.com/eProcurement-everis/ePO/tree/master/02_IR_DED/xlst" style="text-decoration:none;">02_IR_DED/xslt</a>", in the ePO Github source repository. Any suggestion to improve its layout and behaviour will be appreciated.
 					</p>
 				</div>
 
