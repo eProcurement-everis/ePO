@@ -497,7 +497,7 @@
             </ccts:AlternativeDataEntry>
             <ccts:AlternativeDataEntry>
                <ccts:AlternativeEntryName>Buyer Role</ccts:AlternativeEntryName>
-               <ccts:AlternativeDefinition>• If the buyer is acquiring goods or services intended for other buyers, no other buyers need to be specified in the notice. (2014/24/EU Art. 2(1) 14a and Art. 37(1) first subparagraph.)• If the buyer is awarding public contracts intended for other buyers, these buyers must be indicated in thissection.• If the buyer is concluding a framework agreement or a dynamic purchasing system intended for other buyers,these buyers must be clearly indicated in this section or in the techniques section (...).In case of dynamic purchasing systems, other buyers can join the system later (...).This box should not be ticked if the procurement is not intended for other buyers.</ccts:AlternativeDefinition>
+               <ccts:AlternativeDefinition>If the buyer is acquiring goods or services intended for other buyers, no other buyers need to be specified in the notice. (2014/24/EU Art. 2(1) 14a and Art. 37(1) first subparagraph.)• If the buyer is awarding public contracts intended for other buyers, these buyers must be indicated in thissection.• If the buyer is concluding a framework agreement or a dynamic purchasing system intended for other buyers,these buyers must be clearly indicated in this section or in the techniques section (...).In case of dynamic purchasing systems, other buyers can join the system later (...).This box should not be ticked if the procurement is not intended for other buyers.</ccts:AlternativeDefinition>
                <ccts:AlternativeSource>eForms consultation</ccts:AlternativeSource>
             </ccts:AlternativeDataEntry>
             <ccts:UsageRule>| e-Notification |</ccts:UsageRule>
@@ -2024,7 +2024,7 @@
       <xsd:annotation>
          <xsd:documentation xml:lang="en">
             <ccts:DictionaryEntryName>GPA Usage</ccts:DictionaryEntryName>
-            <ccts:Definition>The procurement procedure is cobered byt the Government Procurement Agreement (GPA), which has the aim to establish a multilateral framework of balanced rights and obligations relating to public contracts with a view to achieving the liberalisation and expansion of world trade.</ccts:Definition>
+            <ccts:Definition>The procurement procedure is covered by the Government Procurement Agreement (GPA), which has the aim to establish a multilateral framework of balanced rights and obligations relating to public contracts with a view to achieving the liberalisation and expansion of world trade.</ccts:Definition>
             <ccts:AdditionalInformation>Based on DIRECTIVE 2014/24/EUAn indicator to specify if the procurement is covered by the Government Procurement Agreement (GPA)</ccts:AdditionalInformation>
             <ccts:Justification>It makes the definition of the Directive more comprehensible either because of its complexity, vocabulary, or semantics.</ccts:Justification>
             <ccts:AlternativeDataEntry>
