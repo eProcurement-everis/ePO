@@ -1,6 +1,3 @@
-<!--- the Title above should include "GLOSSARY" -->
-<!--- Please, use the label "glossary" (on the right column) before submitting the issue -->
-
 ### Improvement of existing terms and definitions
 
 #### Previous term or definition:
