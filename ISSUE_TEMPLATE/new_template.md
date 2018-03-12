@@ -1,6 +1,3 @@
-<!--- the Title above should include "GLOSSARY" -->
-<!--- Please, use the label "glossary" (on the right column) before submitting the issue -->
-
 ### New terms and definitions
 
 #### Term:
@@ -9,5 +6,6 @@
 #### Definition:
 <!--- Please, provide the new definition you would like to propose. -->
 
-#### Issue reason:
-<!--- Please, provide a detailed description of the addition you are proposing. -->
+#### Reason:
+<!--- Please, provide the motivation for your proposal, e.g. "The definition provided is not conformat to our internal rules, namely it contains definitions about the defnition and reuses terms present in the glossary entry." -->
+
