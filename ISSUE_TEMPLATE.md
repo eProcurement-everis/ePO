@@ -4,7 +4,7 @@
 ### Improvement of existing terms and definitions
 
 #### Previous term or definition:
-<!--- Please, provide the previous term or definition you would like to imporve. -->
+<!--- Please, provide the previous term or definition you would like to improve. -->
 
 #### Issue description:
 <!--- Please, provide a detailed description of the change or addition you are proposing. -->
