@@ -1,4 +1,4 @@
-### Improvement of an existing concept and/or definition
+### Improvement of an existing term and/or definition
 
 #### Current:
 <!--- Please, provide the current term or definition. -->
@@ -7,7 +7,7 @@
 * Definition:
 
 #### New:
-<!--- Please, provide the new term or definition you would like to improve. -->
+<!--- Please, provide the term or definition you would like to improve. -->
 * Term:
 
 * Definition:
