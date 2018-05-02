@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://data.europa.eu/ePO/ontology#"
+     xml:base="http://data.europa.eu/ePO/ontology"
+     xmlns:ns="http://w3id.org/ocds/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:espd="https://github.com/ESPD/ESPD-EDM/"
+     xmlns:ccts="urn:un:unece:uncefact:documentation:2#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rov="http://www.w3.org/ns/regorg#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:ccev="https://joinup.ec.europa.eu/node/157823/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lbotapor/ontologies/2018/3/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#buysOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#buysOnBehalfOf">
+        <owl:inverseOf rdf:resource="http://data.europa.eu/ePO/ontology#buysThrough"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#buysThrough -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#buysThrough">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#groupsEconomicOperators -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#groupsEconomicOperators">
+        <owl:inverseOf rdf:resource="http://data.europa.eu/ePO/ontology#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperatorGroup"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasAccessTool -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasAccessTool">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#AccessTool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasAccountFormatCode -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasAccountFormatCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#AccountFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasAccountType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasAccountType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#AccountType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasBuyerCategoryType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasBuyerCategoryType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#BuyerCategoryType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasBuyerProfile -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasBuyerProfile">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#BuyerProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasBuyerRoleType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasBuyerRoleType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#Buyer"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#BuyerRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasCountryCode -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasCountryCode">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasCurrencyCode -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasCurrencyCode">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#Currency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasEOGroupCodeType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasEOGroupCodeType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperatorGroup"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EOGroupCodeType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasEconomicOperator -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasEconomicOperator">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcurementProcedure"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <owl:propertyDisjointWith rdf:resource="http://data.europa.eu/ePO/ontology#hasEconomicOperatorGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasEconomicOperatorGroup -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasEconomicOperatorGroup">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcurementProcedure"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperatorGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasFinancialAccount -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasFinancialAccount">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasIdentifier">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="urn:un:unece:uncefact:documentation:2#Identifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasLegalFormCode -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasLegalFormCode">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#LegalForm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasProcuringEntity -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasProcuringEntity">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcurementProcedure"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasProcuringEntityRoleType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasProcuringEntityRoleType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasProcuringEntityType -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasProcuringEntityType">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasQualifyingParty -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#hasQualifyingParty">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#isMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperatorGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#isSubcontractedBy -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#isSubcontractedBy">
+        <owl:inverseOf rdf:resource="http://data.europa.eu/ePO/ontology#subcontracts"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#jointProcurement -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#jointProcurement">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#subcontracts -->
+
+    <owl:ObjectProperty rdf:about="http://data.europa.eu/ePO/ontology#subcontracts">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+        <rdfs:range rdf:resource="http://data.europa.eu/ePO/ontology#EconomicOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasAdditionalInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://data.europa.eu/ePO/ontology#hasAdditionalInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#AccessTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasPaymentNote -->
+
+    <owl:DatatypeProperty rdf:about="http://data.europa.eu/ePO/ontology#hasPaymentNote">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasProcurementDocuments -->
+
+    <owl:DatatypeProperty rdf:about="http://data.europa.eu/ePO/ontology#hasProcurementDocuments">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#AccessTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasTendersSubmission -->
+
+    <owl:DatatypeProperty rdf:about="http://data.europa.eu/ePO/ontology#hasTendersSubmission">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#AccessTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#hasURI -->
+
+    <owl:DatatypeProperty rdf:about="http://data.europa.eu/ePO/ontology#hasURI">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#BuyerProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:un:unece:uncefact:documentation:2#hasAliasName -->
+
+    <owl:DatatypeProperty rdf:about="urn:un:unece:uncefact:documentation:2#hasAliasName">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:un:unece:uncefact:documentation:2#hasName -->
+
+    <owl:DatatypeProperty rdf:about="urn:un:unece:uncefact:documentation:2#hasName">
+        <rdfs:domain rdf:resource="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#AccessTool -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#AccessTool"/>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#AccountFormat -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#AccountFormat">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#AccountType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#AccountType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#Buyer -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#Buyer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#BuyerCategoryType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#BuyerCategoryType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#BuyerProfile -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#BuyerProfile"/>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#BuyerRoleType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#BuyerRoleType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#Code -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#Code"/>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#Country -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#Country">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#Currency -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#Currency">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#EOGroupCodeType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#EOGroupCodeType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#EconomicOperator -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#EconomicOperator">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#EconomicOperatorGroup -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#EconomicOperatorGroup">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#FinancialAccount -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#FinancialAccount"/>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#LegalForm -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#LegalForm">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#ProcurementProcedure -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#ProcurementProcedure">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#ProcurementProject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#ProcurementProject -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#ProcurementProject"/>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#ProcuringEntity -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#ProcuringEntity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#ProcuringEntityType -->
+
+    <owl:Class rdf:about="http://data.europa.eu/ePO/ontology#ProcuringEntityType">
+        <rdfs:subClassOf rdf:resource="http://data.europa.eu/ePO/ontology#Code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/org#Organization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#Organization"/>
+    
+
+
+    <!-- http://www.w3.org/ns/regorg#RegisteredOrganization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/regorg#RegisteredOrganization"/>
+    
+
+
+    <!-- urn:un:unece:uncefact:documentation:2#Identifier -->
+
+    <owl:Class rdf:about="urn:un:unece:uncefact:documentation:2#Identifier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#BOPE -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#BOPE">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#BuyerRoleType"/>
+        <dcterms:title>Buyer On Behalf Of Other Procuring Entities</dcterms:title>
+        <rdfs:label>BUYER_ON_BEHALF_OF_OTHER_PROCURING_ENTITIES</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#CA -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#CA">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityType"/>
+        <dcterms:title>Contracting Authority</dcterms:title>
+        <rdfs:label>CONTRACTING_AUTHORITY</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#CE -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#CE">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityType"/>
+        <dcterms:title>Contracting Entity</dcterms:title>
+        <rdfs:label>CONTRACTING_ENTITY</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#CONSORTIUM -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#CONSORTIUM">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#EOGroupCodeType"/>
+        <dcterms:title>Consortium</dcterms:title>
+        <rdfs:label>CONSORTIUM</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#CPB -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#CPB">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#BuyerRoleType"/>
+        <dcterms:title>Central Purchasing Body</dcterms:title>
+        <rdfs:label>CENTRAL_PURCHASING_BODY</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#JPL -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#JPL">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType"/>
+        <dcterms:title>Joint Procurement Lead</dcterms:title>
+        <rdfs:label>JOINT_PROCUREMENT_LEAD</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#JPM -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#JPM">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType"/>
+        <dcterms:title>Joint Procurement Member</dcterms:title>
+        <rdfs:label>JOINT_PROCUREMENT_MEMBER</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#JV -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#JV">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#EOGroupCodeType"/>
+        <dcterms:title>Joint Venture</dcterms:title>
+        <rdfs:label>JOINT_VENTURE</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#OPP -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#OPP">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#BuyerRoleType"/>
+        <dcterms:title>Outsourced Procuring Party</dcterms:title>
+        <rdfs:label>OUTSOURCED_PURCHASING_BODY</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.europa.eu/ePO/ontology#UNDERTAKING -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/ePO/ontology#UNDERTAKING">
+        <rdf:type rdf:resource="http://data.europa.eu/ePO/ontology#EOGroupCodeType"/>
+        <dcterms:title>Undertaking</dcterms:title>
+        <rdfs:label>UNDERTAKING</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
