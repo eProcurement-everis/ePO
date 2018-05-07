@@ -27,6 +27,19 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://data.europa.eu/ePO/ontology#EOPrepares
+:EOPrepares rdf:type owl:ObjectProperty ;
+            owl:inverseOf :preparedBy ;
+            rdfs:domain :EconomicOperator ;
+            rdfs:range :TenderDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#appliesTo
+:appliesTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Tender ;
+           rdfs:range :Lot .
+
+
 ###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
 :buysOnBehalfOf rdf:type owl:ObjectProperty ;
                 owl:inverseOf :buysThrough ;
@@ -96,6 +109,12 @@ dcterms:title rdf:type owl:AnnotationProperty .
                  rdfs:range :Currency .
 
 
+###  http://data.europa.eu/ePO/ontology#hasDeliveryCountryCode
+:hasDeliveryCountryCode rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Tender ;
+                        rdfs:range :Country .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasEOGroupCodeType
 :hasEOGroupCodeType rdf:type owl:ObjectProperty ;
                     rdfs:domain :EconomicOperatorGroup ;
@@ -157,11 +176,24 @@ dcterms:title rdf:type owl:AnnotationProperty .
                     rdfs:range org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#hasTenderDocument
+:hasTenderDocument rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Tender ;
+                   rdfs:range :TenderDocument .
+
+
 ###  http://data.europa.eu/ePO/ontology#isMemberOf
 :isMemberOf rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf owl:topObjectProperty ;
             rdfs:domain :EconomicOperator ;
             rdfs:range :EconomicOperatorGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#isReferedIn
+:isReferedIn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :refersTo ;
+             rdfs:domain :Tender ;
+             rdfs:range :Contract .
 
 
 ###  http://data.europa.eu/ePO/ontology#isSubcontractedBy
@@ -177,10 +209,48 @@ dcterms:title rdf:type owl:AnnotationProperty .
                   rdfs:range :ProcuringEntity .
 
 
+###  http://data.europa.eu/ePO/ontology#preparedBy
+:preparedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :TenderDocument ;
+            rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#refersTo
+:refersTo rdf:type owl:ObjectProperty ;
+          rdfs:domain :Contract ;
+          rdfs:range :Tender .
+
+
 ###  http://data.europa.eu/ePO/ontology#subcontracts
 :subcontracts rdf:type owl:ObjectProperty ;
               rdfs:domain :EconomicOperator ;
               rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#submits
+:submits rdf:type owl:ObjectProperty ;
+         owl:inverseOf :submittedByEO ;
+         rdfs:domain :EconomicOperator ;
+         rdfs:range :Tender .
+
+
+###  http://data.europa.eu/ePO/ontology#submittedByEO
+:submittedByEO rdf:type owl:ObjectProperty ;
+               rdfs:domain :Tender ;
+               rdfs:range :EconomicOperator ;
+               owl:propertyDisjointWith :submittedByEOGroup ,
+                                        :submittedByServiceProvider .
+
+
+###  http://data.europa.eu/ePO/ontology#submittedByEOGroup
+:submittedByEOGroup rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Tender ;
+                    rdfs:range :EconomicOperatorGroup ;
+                    owl:propertyDisjointWith :submittedByServiceProvider .
+
+
+###  http://data.europa.eu/ePO/ontology#submittedByServiceProvider
+:submittedByServiceProvider rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -222,6 +292,12 @@ dcterms:title rdf:type owl:AnnotationProperty .
 ccts:hasAliasName rdf:type owl:DatatypeProperty ;
                   rdfs:domain :FinancialAccount ;
                   rdfs:range xsd:string .
+
+
+###  urn:un:unece:uncefact:documentation:2#hasElectronicSumbission
+ccts:hasElectronicSumbission rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Tender ;
+                             rdfs:range xsd:boolean .
 
 
 ###  urn:un:unece:uncefact:documentation:2#hasName
@@ -271,6 +347,10 @@ ccts:hasName rdf:type owl:DatatypeProperty ;
 :Code rdf:type owl:Class .
 
 
+###  http://data.europa.eu/ePO/ontology#Contract
+:Contract rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf :Code .
@@ -279,6 +359,10 @@ ccts:hasName rdf:type owl:DatatypeProperty ;
 ###  http://data.europa.eu/ePO/ontology#Currency
 :Currency rdf:type owl:Class ;
           rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#Document
+:Document rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#EOGroupCodeType
@@ -305,6 +389,11 @@ ccts:hasName rdf:type owl:DatatypeProperty ;
            rdfs:subClassOf :Code .
 
 
+###  http://data.europa.eu/ePO/ontology#Lot
+:Lot rdf:type owl:Class ;
+     rdfs:subClassOf :ProcurementProject .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcurementProcedure
 :ProcurementProcedure rdf:type owl:Class ;
                       rdfs:subClassOf :ProcurementProject .
@@ -327,6 +416,20 @@ ccts:hasName rdf:type owl:DatatypeProperty ;
 ###  http://data.europa.eu/ePO/ontology#ProcuringEntityType
 :ProcuringEntityType rdf:type owl:Class ;
                      rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ServiceProvider
+:ServiceProvider rdf:type owl:Class ;
+                 rdfs:subClassOf rov:RegisteredOrganization .
+
+
+###  http://data.europa.eu/ePO/ontology#Tender
+:Tender rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#TenderDocument
+:TenderDocument rdf:type owl:Class ;
+                rdfs:subClassOf :Document .
 
 
 ###  http://www.w3.org/ns/org#Organization
