@@ -37,15 +37,28 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#EOPrepares
 :EOPrepares rdf:type owl:ObjectProperty ;
-            owl:inverseOf :preparedBy ;
+            owl:inverseOf :preparedByEO ;
             rdfs:domain :EconomicOperator ;
             rdfs:range :TenderDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#TechnicalSpecificationAttachedTo
+:TechnicalSpecificationAttachedTo rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf :attachesTechnicalSpecification ;
+                                  rdfs:domain :TechnicalSpecifications ;
+                                  rdfs:range :CallForCompetition .
 
 
 ###  http://data.europa.eu/ePO/ontology#appliesTo
 :appliesTo rdf:type owl:ObjectProperty ;
            rdfs:domain :Tender ;
            rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#attachesTechnicalSpecification
+:attachesTechnicalSpecification rdf:type owl:ObjectProperty ;
+                                rdfs:domain :CallForCompetition ;
+                                rdfs:range :TechnicalSpecifications .
 
 
 ###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
@@ -190,10 +203,23 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:range :EconomicOperator .
 
 
+###  http://data.europa.eu/ePO/ontology#hasPreviousPublication
+:hasPreviousPublication rdf:type owl:ObjectProperty ;
+                        rdfs:domain :InvitationToTender ;
+                        rdfs:range :Notice .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasProcedureChoiceJustificationCode
 :hasProcedureChoiceJustificationCode rdf:type owl:ObjectProperty ;
                                      rdfs:domain :TenderingTerms ;
                                      rdfs:range :ProcedureChoiceJustificationCode .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcurementDocument
+:hasProcurementDocument rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :procurementDocumentRefersTo ;
+                        rdfs:domain :ProcurementProcedure ;
+                        rdfs:range :ProcurementDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcurementProcedureType
@@ -246,7 +272,9 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasTenderDocument
 :hasTenderDocument rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Tender ;
+                   owl:inverseOf :tenderDocumentRefersTo ;
+                   rdfs:domain :ProcurementProcedure ,
+                               :Tender ;
                    rdfs:range :TenderDocument .
 
 
@@ -289,16 +317,79 @@ ccts:date rdf:type rdfs:Datatype .
                   rdfs:range :ProcuringEntity .
 
 
-###  http://data.europa.eu/ePO/ontology#preparedBy
-:preparedBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :TenderDocument ;
-            rdfs:range :EconomicOperator .
+###  http://data.europa.eu/ePO/ontology#notifiedThrough
+:notifiedThrough rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :notifiesAbout ;
+                 rdfs:domain :CallForCompetition ;
+                 rdfs:range :Notice .
+
+
+###  http://data.europa.eu/ePO/ontology#notifiesAbout
+:notifiesAbout rdf:type owl:ObjectProperty ;
+               rdfs:domain :Notice ;
+               rdfs:range :CallForCompetition .
+
+
+###  http://data.europa.eu/ePO/ontology#preparedByEO
+:preparedByEO rdf:type owl:ObjectProperty ;
+              rdfs:domain :TenderDocument ;
+              rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#preparedByProcuringEntity
+:preparedByProcuringEntity rdf:type owl:ObjectProperty ;
+                           owl:inverseOf :procurintEntityPrepares ;
+                           rdfs:domain :ProcurementDocument ;
+                           rdfs:range :ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#procurementDocumentRefersTo
+:procurementDocumentRefersTo rdf:type owl:ObjectProperty ;
+                             rdfs:domain :ProcurementDocument ;
+                             rdfs:range :ProcurementProcedure .
+
+
+###  http://data.europa.eu/ePO/ontology#procurintEntityPrepares
+:procurintEntityPrepares rdf:type owl:ObjectProperty ;
+                         rdfs:domain :ProcuringEntity ;
+                         rdfs:range :ProcurementDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#refersTo
 :refersTo rdf:type owl:ObjectProperty ;
           rdfs:domain :Contract ;
           rdfs:range :Tender .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToCallForProposal
+:refersToCallForProposal rdf:type owl:ObjectProperty ;
+                         rdfs:domain :InvitationToTender ;
+                         rdfs:range :CallForProposal .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToInvitation
+:refersToInvitation rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ExpressionOfInterest ;
+                    rdfs:range :InvitationToTender .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToNotice
+:refersToNotice rdf:type owl:ObjectProperty ;
+                rdfs:domain :ContractAwardNotice ;
+                rdfs:range :ContractNotice .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToPriorInformationNotice
+:refersToPriorInformationNotice rdf:type owl:ObjectProperty ;
+                                rdfs:domain :ContractAwardNotice ,
+                                            :ContractNotice ;
+                                rdfs:range :PriorInformationNotice .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToProcurementProject
+:refersToProcurementProject rdf:type owl:ObjectProperty ;
+                            rdfs:domain :PriorInformationNotice ;
+                            rdfs:range :ProcurementProject .
 
 
 ###  http://data.europa.eu/ePO/ontology#subcontracts
@@ -331,6 +422,12 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#submittedByServiceProvider
 :submittedByServiceProvider rdf:type owl:ObjectProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#tenderDocumentRefersTo
+:tenderDocumentRefersTo rdf:type owl:ObjectProperty ;
+                        rdfs:domain :TenderDocument ;
+                        rdfs:range :ProcurementProcedure .
 
 
 #################################################################
@@ -600,7 +697,8 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#CallForProposal
 :CallForProposal rdf:type owl:Class ;
-                 rdfs:subClassOf :CallForCompetition .
+                 rdfs:subClassOf :CallForCompetition ;
+                 owl:disjointWith :CallForTenders .
 
 
 ###  http://data.europa.eu/ePO/ontology#CallForTenders
