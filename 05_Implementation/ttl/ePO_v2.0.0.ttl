@@ -593,8 +593,33 @@ ccts:date rdf:type rdfs:Datatype .
                rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#CallForCompetition
+:CallForCompetition rdf:type owl:Class ;
+                    rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#CallForProposal
+:CallForProposal rdf:type owl:Class ;
+                 rdfs:subClassOf :CallForCompetition .
+
+
+###  http://data.europa.eu/ePO/ontology#CallForTenders
+:CallForTenders rdf:type owl:Class ;
+                rdfs:subClassOf :CallForCompetition .
+
+
 ###  http://data.europa.eu/ePO/ontology#Contract
 :Contract rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractAwardNotice
+:ContractAwardNotice rdf:type owl:Class ;
+                     rdfs:subClassOf :Notice .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractNotice
+:ContractNotice rdf:type owl:Class ;
+                rdfs:subClassOf :Notice .
 
 
 ###  http://data.europa.eu/ePO/ontology#Country
@@ -630,8 +655,17 @@ ccts:date rdf:type rdfs:Datatype .
                        rdfs:subClassOf rov:RegisteredOrganization .
 
 
+###  http://data.europa.eu/ePO/ontology#ExpressionOfInterest
+:ExpressionOfInterest rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#FinancialAccount
 :FinancialAccount rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#FinancialTender
+:FinancialTender rdf:type owl:Class ;
+                 rdfs:subClassOf :TenderDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#FundsIdentification
@@ -641,6 +675,11 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#IdentifierProvider
 :IdentifierProvider rdf:type owl:Class ;
                     rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#InvitationToTender
+:InvitationToTender rdf:type owl:Class ;
+                    rdfs:subClassOf :ProcurementDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#LegalForm
@@ -653,6 +692,16 @@ ccts:date rdf:type rdfs:Datatype .
      rdfs:subClassOf :ProcurementProject .
 
 
+###  http://data.europa.eu/ePO/ontology#Notice
+:Notice rdf:type owl:Class ;
+        rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#PriorInformationNotice
+:PriorInformationNotice rdf:type owl:Class ;
+                        rdfs:subClassOf :Notice .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcedureChoiceJustificationCode
 :ProcedureChoiceJustificationCode rdf:type owl:Class ;
                                   rdfs:subClassOf ccts:Code .
@@ -661,6 +710,11 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ProcedureType
 :ProcedureType rdf:type owl:Class ;
                rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementDocument
+:ProcurementDocument rdf:type owl:Class ;
+                     rdfs:subClassOf :Document .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcurementProcedure
@@ -705,6 +759,16 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#SubmissionLanguage
 :SubmissionLanguage rdf:type owl:Class ;
                     rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#TechnicalSpecifications
+:TechnicalSpecifications rdf:type owl:Class ;
+                         rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#TechnicalTender
+:TechnicalTender rdf:type owl:Class ;
+                 rdfs:subClassOf :TenderDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#Tender
