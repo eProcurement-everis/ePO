@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FORM_SECTION xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ProcuringEntityType>
+        <section root="F01_2014" petype=":CA"/>
+        <section root="F02_2014" petype=":CA"/>
+        <section root="F03_2014" petype=":CA"/>
+        <section root="F04_2014" petype=":CE"/>
+        <section root="F05_2014" petype=":CE"/>
+        <section root="F06_2014" petype=":CE"/>
+        <section root="F07_2014" petype=":CE"/>
+        <!--section root="F08_2014" petype=":CA"/--><!-- BOTH -->
+        <!--section root="F12_2014" petype=":CA"/--><!-- BOTH -->
+        <!--section root="F13_2014" petype=":CA"/--><!-- BOTH -->
+        <section root="F14_2014" petype=":CA"/>
+        <!--section root="F15_2014" petype=":CA"/--><!-- BOTH -->
+        <!---section root="F20_2014" petype=":CA"/--><!-- NOT DEFINED -->
+        <section root="F21_2014" petype=":CA"/>
+        <section root="F22_2014" petype=":CE"/>
+        <section root="F23_2014" petype=":CA"/>
+        <section root="F24_2014" petype=":CA"/>
+        <section root="F25_2014" petype=":CA"/>
+    </ProcuringEntityType>
+</FORM_SECTION>

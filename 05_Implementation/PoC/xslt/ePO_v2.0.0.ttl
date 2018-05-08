@@ -1,0 +1,418 @@
+@prefix : <http://data.europa.eu/ePO/ontology#> .
+@prefix ns: <http://w3id.org/ocds/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rov: <http://www.w3.org/ns/regorg#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ccev: <https://joinup.ec.europa.eu/node/157823/> .
+@prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
+@prefix espd: <https://github.com/ESPD/ESPD-EDM/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://www.semanticweb.org/lbotapor/ontologies/2018/3/untitled-ontology-12> .
+
+<http://www.semanticweb.org/lbotapor/ontologies/2018/3/untitled-ontology-12> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
+:buysOnBehalfOf rdf:type owl:ObjectProperty ;
+                owl:inverseOf :buysThrough ;
+                rdfs:domain :Buyer ;
+                rdfs:range :ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#buysThrough
+:buysThrough rdf:type owl:ObjectProperty ;
+             rdfs:domain :ProcuringEntity ;
+             rdfs:range :Buyer .
+
+
+###  http://data.europa.eu/ePO/ontology#groupsEconomicOperators
+:groupsEconomicOperators rdf:type owl:ObjectProperty ;
+                         owl:inverseOf :isMemberOf ;
+                         rdfs:domain :EconomicOperatorGroup ;
+                         rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAccessTool
+:hasAccessTool rdf:type owl:ObjectProperty ;
+               rdfs:domain :Buyer ;
+               rdfs:range :AccessTool .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAccountFormatCode
+:hasAccountFormatCode rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :FinancialAccount ;
+                      rdfs:range :AccountFormat .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAccountType
+:hasAccountType rdf:type owl:ObjectProperty ;
+                rdfs:domain :FinancialAccount ;
+                rdfs:range :AccountType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasBuyerCategoryType
+:hasBuyerCategoryType rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Buyer ;
+                      rdfs:range :BuyerCategoryType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasBuyerProfile
+:hasBuyerProfile rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Buyer ;
+                 rdfs:range :BuyerProfile .
+
+
+###  http://data.europa.eu/ePO/ontology#hasBuyerRoleType
+:hasBuyerRoleType rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Buyer ;
+                  rdfs:range :BuyerRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCountryCode
+:hasCountryCode rdf:type owl:ObjectProperty ;
+                rdfs:domain :FinancialAccount ;
+                rdfs:range :Country .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCurrencyCode
+:hasCurrencyCode rdf:type owl:ObjectProperty ;
+                 rdfs:domain :FinancialAccount ;
+                 rdfs:range :Currency .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEOGroupCodeType
+:hasEOGroupCodeType rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EconomicOperatorGroup ;
+                    rdfs:range :EOGroupCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEconomicOperator
+:hasEconomicOperator rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ProcurementProcedure ;
+                     rdfs:range :EconomicOperator ;
+                     owl:propertyDisjointWith :hasEconomicOperatorGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEconomicOperatorGroup
+:hasEconomicOperatorGroup rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ProcurementProcedure ;
+                          rdfs:range :EconomicOperatorGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#hasFinancialAccount
+:hasFinancialAccount rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EconomicOperator ;
+                     rdfs:range :FinancialAccount .
+
+
+###  http://data.europa.eu/ePO/ontology#hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               rdfs:domain :FinancialAccount ;
+               rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegalFormCode
+:hasLegalFormCode rdf:type owl:ObjectProperty ;
+                  rdfs:domain :EconomicOperator ;
+                  rdfs:range :LegalForm .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcuringEntity
+:hasProcuringEntity rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ProcurementProcedure ;
+                    rdfs:range :ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcuringEntityRoleType
+:hasProcuringEntityRoleType rdf:type owl:ObjectProperty ;
+                            rdfs:domain :ProcuringEntity ;
+                            rdfs:range :ProcuringEntityRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcuringEntityType
+:hasProcuringEntityType rdf:type owl:ObjectProperty ;
+                        rdfs:domain :ProcuringEntity ;
+                        rdfs:range :ProcuringEntityType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasQualifyingParty
+:hasQualifyingParty rdf:type owl:ObjectProperty ;
+                    rdfs:domain :EconomicOperator ;
+                    rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :EconomicOperator ;
+            rdfs:range :EconomicOperatorGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#isSubcontractedBy
+:isSubcontractedBy rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :subcontracts ;
+                   rdfs:domain :EconomicOperator ;
+                   rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#jointProcurement
+:jointProcurement rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcuringEntity ;
+                  rdfs:range :ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#subcontracts
+:subcontracts rdf:type owl:ObjectProperty ;
+              rdfs:domain :EconomicOperator ;
+              rdfs:range :EconomicOperator .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#hasAdditionalInformation
+:hasAdditionalInformation rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :AccessTool ;
+                          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPaymentNote
+:hasPaymentNote rdf:type owl:DatatypeProperty ;
+                rdfs:domain :FinancialAccount ;
+                rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcurementDocuments
+:hasProcurementDocuments rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :AccessTool ;
+                         rdfs:range xsd:anyURI .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTendersSubmission
+:hasTendersSubmission rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :AccessTool ;
+                      rdfs:range xsd:anyURI .
+
+
+###  http://data.europa.eu/ePO/ontology#hasURI
+:hasURI rdf:type owl:DatatypeProperty ;
+        rdfs:domain :BuyerProfile ;
+        rdfs:range xsd:anyURI .
+
+
+###  urn:un:unece:uncefact:documentation:2#hasAliasName
+ccts:hasAliasName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :FinancialAccount ;
+                  rdfs:range xsd:string .
+
+
+###  urn:un:unece:uncefact:documentation:2#hasName
+ccts:hasName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :FinancialAccount ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#AccessTool
+:AccessTool rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#AccountFormat
+:AccountFormat rdf:type owl:Class ;
+               rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#AccountType
+:AccountType rdf:type owl:Class ;
+             rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#Buyer
+:Buyer rdf:type owl:Class ;
+       rdfs:subClassOf org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerCategoryType
+:BuyerCategoryType rdf:type owl:Class ;
+                   rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerProfile
+:BuyerProfile rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#BuyerRoleType
+:BuyerRoleType rdf:type owl:Class ;
+               rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#Code
+:Code rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#Currency
+:Currency rdf:type owl:Class ;
+          rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#EOGroupCodeType
+:EOGroupCodeType rdf:type owl:Class ;
+                 rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#EconomicOperator
+:EconomicOperator rdf:type owl:Class ;
+                  rdfs:subClassOf rov:RegisteredOrganization .
+
+
+###  http://data.europa.eu/ePO/ontology#EconomicOperatorGroup
+:EconomicOperatorGroup rdf:type owl:Class ;
+                       rdfs:subClassOf rov:RegisteredOrganization .
+
+
+###  http://data.europa.eu/ePO/ontology#FinancialAccount
+:FinancialAccount rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#LegalForm
+:LegalForm rdf:type owl:Class ;
+           rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementProcedure
+:ProcurementProcedure rdf:type owl:Class ;
+                      rdfs:subClassOf :ProcurementProject .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementProject
+:ProcurementProject rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcuringEntity
+:ProcuringEntity rdf:type owl:Class ;
+                 rdfs:subClassOf org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType
+:ProcuringEntityRoleType rdf:type owl:Class ;
+                         rdfs:subClassOf :Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcuringEntityType
+:ProcuringEntityType rdf:type owl:Class ;
+                     rdfs:subClassOf :Code .
+
+
+###  http://www.w3.org/ns/org#Organization
+org:Organization rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/regorg#RegisteredOrganization
+rov:RegisteredOrganization rdf:type owl:Class .
+
+
+###  urn:un:unece:uncefact:documentation:2#Identifier
+ccts:Identifier rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.europa.eu/ePO/ontology#BOPE
+:BOPE rdf:type owl:NamedIndividual ,
+               :BuyerRoleType ;
+      dcterms:title "Buyer On Behalf Of Other Procuring Entities" ;
+      rdfs:label "BUYER_ON_BEHALF_OF_OTHER_PROCURING_ENTITIES" .
+
+
+###  http://data.europa.eu/ePO/ontology#CA
+:CA rdf:type owl:NamedIndividual ,
+             :ProcuringEntityType ;
+    dcterms:title "Contracting Authority" ;
+    rdfs:label "CONTRACTING_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE
+:CE rdf:type owl:NamedIndividual ,
+             :ProcuringEntityType ;
+    dcterms:title "Contracting Entity" ;
+    rdfs:label "CONTRACTING_ENTITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONSORTIUM
+:CONSORTIUM rdf:type owl:NamedIndividual ,
+                     :EOGroupCodeType ;
+            dcterms:title "Consortium" ;
+            rdfs:label "CONSORTIUM" .
+
+
+###  http://data.europa.eu/ePO/ontology#CPB
+:CPB rdf:type owl:NamedIndividual ,
+              :BuyerRoleType ;
+     dcterms:title "Central Purchasing Body" ;
+     rdfs:label "CENTRAL_PURCHASING_BODY" .
+
+
+###  http://data.europa.eu/ePO/ontology#JPL
+:JPL rdf:type owl:NamedIndividual ,
+              :ProcuringEntityRoleType ;
+     dcterms:title "Joint Procurement Lead" ;
+     rdfs:label "JOINT_PROCUREMENT_LEAD" .
+
+
+###  http://data.europa.eu/ePO/ontology#JPM
+:JPM rdf:type owl:NamedIndividual ,
+              :ProcuringEntityRoleType ;
+     dcterms:title "Joint Procurement Member" ;
+     rdfs:label "JOINT_PROCUREMENT_MEMBER" .
+
+
+###  http://data.europa.eu/ePO/ontology#JV
+:JV rdf:type owl:NamedIndividual ,
+             :EOGroupCodeType ;
+    dcterms:title "Joint Venture" ;
+    rdfs:label "JOINT_VENTURE" .
+
+
+###  http://data.europa.eu/ePO/ontology#OPP
+:OPP rdf:type owl:NamedIndividual ,
+              :BuyerRoleType ;
+     dcterms:title "Outsourced Procuring Party" ;
+     rdfs:label "OUTSOURCED_PURCHASING_BODY" .
+
+
+###  http://data.europa.eu/ePO/ontology#UNDERTAKING
+:UNDERTAKING rdf:type owl:NamedIndividual ,
+                      :EOGroupCodeType ;
+             dcterms:title "Undertaking" ;
+             rdfs:label "UNDERTAKING" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

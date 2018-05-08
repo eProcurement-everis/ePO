@@ -1,0 +1,246 @@
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+   
+   
+   
+   
+   
+      
+      
+         
+INSERT DATA
+{
+	_:PE rdf:type :ProcuringEntity;
+		:hasProcuringEntityType :CA;
+		:hasProcuringEntityRoleType :JPL;
+		:jointProcurement _PE16;
+		:jointProcurement _PE15;
+		:jointProcurement _PE14;
+		:jointProcurement _PE13;
+		:jointProcurement _PE12;
+		:jointProcurement _PE11;
+		:jointProcurement _PE10;
+		:jointProcurement _PE9;
+		:jointProcurement _PE8;
+		:jointProcurement _PE7;
+		:jointProcurement _PE6;
+		:jointProcurement _PE5;
+		:jointProcurement _PE4;
+		:jointProcurement _PE3;
+		:jointProcurement _PE2;
+		:jointProcurement _PE1;
+		:jointProcurement _PE0.
+
+               Belfast Health and Social Care Trust
+               A Floor, Belfast City Hospital, Lisburn Road
+               Belfast
+               BT9 7AB
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Public Health Agency
+               Linenhall Street Unit, 12-22 Linenhall Street
+               Belfast
+               BT2 8BS
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               Northern Health and Social Care Trust
+               Bretten Hall, Bush Road
+               Antrim
+               BT41 2RL
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               South Eastern Health and Social Care Trust
+               Ulster Hospital, Upper Newtownards Rd
+               Belfast
+               BT16 1RH
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               Southern Health and Social Care Trust
+               Craigavon Area Hospital, 68 Lurgan Road
+               Portadown
+               BT63 5QQ
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               Western Health and Social Care Trust
+               Altnagelvin Area Hospital, Glenshane Road
+               Londonderry
+               BT47 6SB
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               Business Services Organisation
+               2 Franklin Street
+               Belfast
+               BT2 8DQ
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Ambulance Service Trust
+               Knockbracken Healthcare Park, Saintfield Road
+               Belfast
+               BT8 8SG
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Blood Transfusion Service
+               Lisburn Road
+               Belfast
+               BT9 7TS
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Fire and Rescue Services
+               1 Seymour Street
+               Lisburn
+               BT27 4SX
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Guardian Ad Litem Agency
+               Centre House, 79 Chichester Street
+               Belfast
+               BT1 4JE
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Medical and Dental Training Agency
+               Beechill House, 42 Beechill Rd
+               Belfast
+               BT8 7RL
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Patient Client Council
+               1st Floor, Ormeau Baths 18 Ormeau Avenue
+               Belfast
+               BT2 8HS
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Practice and Education Council for Nursing and
+                  Midwifery
+               Centre House, 79 Chichester St
+               Belfast
+               BT1 4JE
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Regulation and Quality Improvement Authority
+               9th Floor Riverside Tower, 5 Lanyon Place
+               Belfast
+               BT1 3BT
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               NI Social Care Council
+               Millennium House, 19-25 Great Victoria St
+               Belfast
+               BT2 7AQ
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+             
+               Regional Health and Social Care Board
+               12-22 Linenhall Street
+               Belfast
+               BT2 8BS
+               
+               sourcing.palsballymena@hscni.net
+               
+               https://etendersni.gov.uk/epps
+               https://etendersni.gov.uk/epps
+            	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+	_PE20 rdf:type ::ProcuringEntity;
+
+};
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+   
