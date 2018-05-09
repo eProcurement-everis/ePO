@@ -8,11 +8,11 @@
         <section root="F05_2014" petype=":CE"/>
         <section root="F06_2014" petype=":CE"/>
         <section root="F07_2014" petype=":CE"/>
-        <!--section root="F08_2014" petype=":CA"/--><!-- BOTH -->
-        <!--section root="F12_2014" petype=":CA"/--><!-- BOTH -->
-        <!--section root="F13_2014" petype=":CA"/--><!-- BOTH -->
+        <section root="F08_2014" petype="both"/><!-- BOTH -->
+        <section root="F12_2014" petype="both"/><!-- BOTH -->
+        <section root="F13_2014" petype="both"/><!-- BOTH -->
         <section root="F14_2014" petype=":CA"/>
-        <!--section root="F15_2014" petype=":CA"/--><!-- BOTH -->
+        <section root="F15_2014" petype="both"/><!-- BOTH -->
         <!---section root="F20_2014" petype=":CA"/--><!-- NOT DEFINED -->
         <section root="F21_2014" petype=":CA"/>
         <section root="F22_2014" petype=":CE"/>

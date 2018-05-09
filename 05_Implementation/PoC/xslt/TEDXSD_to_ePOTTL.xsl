@@ -16,6 +16,7 @@
     -->
     <xsl:import href="common/CommonFunctions.xsl"/>
     <xsl:import href="common/ProcuringEntity.xsl"/>
+    <xsl:import href="common/EconomicOperator.xsl"/>
     
     <xsl:template match="/">
         <xsl:result-document method="text" href="SPARQL_Inserts.txt">
