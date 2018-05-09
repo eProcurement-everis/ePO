@@ -14,7 +14,7 @@
     -->
     
     <!-- TED - CONTRACTING_BODY maps to ePO - ProcuringEntity -->
-    <xsl:template match="ted:CONTRACTING_BODY">
+    <xsl:template match="ted:CONTRACTING_BODY[parent::*/@CATEGORY = 'ORIGINAL']">
         <xsl:variable name="root_name" select="/*[1]/ted:FORM_SECTION/child::*[contains(name(), '_2014')]/name()"/>
         
         <!-- :ProcuringEntity individual (TED XML has only one CONTRACTING_BODY. ePO :ProcuringProcedure has one and only one :ProcuringEntity) -->

@@ -29,6 +29,10 @@
         <xsl:call-template name="create_individual_end"/>
     </xsl:template>
     
+    <xsl:template name="create_insert">
+        <xsl:text>&#x0A;INSERT DATA&#x0A;{&#x0A;</xsl:text>  
+    </xsl:template>
+    
     <xsl:template name="create_individual_begin">
         <xsl:param name="subject"/>
         <xsl:param name="object"/>

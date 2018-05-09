@@ -22,7 +22,7 @@
         <xsl:result-document method="text" href="SPARQL_Inserts.txt">
             <xsl:call-template name="prefixes"/>
             
-            <xsl:apply-templates/>
+            <xsl:apply-templates/>            
         </xsl:result-document>        
     </xsl:template>
     
@@ -33,7 +33,13 @@
     <xsl:template match="ted:TRANSLATION_SECTION"/>
     <xsl:template match="ted:OBJECT_CONTRACT"/>
     <xsl:template match="ted:PROCEDURE"/>
-    <xsl:template match="ted:AWARD_CONTRACT"/>
+    <xsl:template match="ted:AWARD_CONTRACT/ted:CONTRACT_NO"/>
+    <xsl:template match="ted:AWARD_CONTRACT/ted:LOT_NO"/>
+    <xsl:template match="ted:AWARD_CONTRACT/ted:TITLE"/>
+    <xsl:template match="ted:AWARD_CONTRACT/ted:NO_AWARDED_CONTRACT"/>
     <xsl:template match="ted:COMPLEMENTARY_INFO"/>
+    <xsl:template match="ted:CONTRACTING_BODY[parent::*/@CATEGORY != 'ORIGINAL']"/>
+    <xsl:template match="ted:AWARD_CONTRACT[parent::*/@CATEGORY != 'ORIGINAL']/ted:AWARDED_CONTRACT"/>
+    
     
 </xsl:stylesheet>
