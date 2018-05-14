@@ -35,13 +35,6 @@ ccts:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://data.europa.eu/ePO/ontology#EOPrepares
-:EOPrepares rdf:type owl:ObjectProperty ;
-            owl:inverseOf :preparedByEO ;
-            rdfs:domain :EconomicOperator ;
-            rdfs:range :TenderDocument .
-
-
 ###  http://data.europa.eu/ePO/ontology#TechnicalSpecificationAttachedTo
 :TechnicalSpecificationAttachedTo rdf:type owl:ObjectProperty ;
                                   owl:inverseOf :attachesTechnicalSpecification ;
@@ -361,12 +354,6 @@ ccts:date rdf:type rdfs:Datatype .
 :notifiesAbout rdf:type owl:ObjectProperty ;
                rdfs:domain :Notice ;
                rdfs:range :CallForCompetition .
-
-
-###  http://data.europa.eu/ePO/ontology#preparedByEO
-:preparedByEO rdf:type owl:ObjectProperty ;
-              rdfs:domain :TenderDocument ;
-              rdfs:range :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#preparedByProcuringEntity
