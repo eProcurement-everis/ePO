@@ -69,7 +69,8 @@ ccts:date rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#buysThrough
-:buysThrough rdf:type owl:ObjectProperty ;
+:buysThrough rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :ProcuringEntity ;
              rdfs:range :Buyer .
 
@@ -229,7 +230,8 @@ ccts:date rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcuringEntity
-:hasProcuringEntity rdf:type owl:ObjectProperty ;
+:hasProcuringEntity rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :ProcurementProcedure ;
                     rdfs:range :ProcuringEntity .
 
