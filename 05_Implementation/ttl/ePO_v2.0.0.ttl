@@ -75,6 +75,12 @@ ccts:date rdf:type rdfs:Datatype .
              rdfs:range :Buyer .
 
 
+###  http://data.europa.eu/ePO/ontology#definesSubcontractTerms
+:definesSubcontractTerms rdf:type owl:ObjectProperty ;
+                         rdfs:domain :ProcurementProcedure ;
+                         rdfs:range :SubcontractTerms .
+
+
 ###  http://data.europa.eu/ePO/ontology#groupsEconomicOperators
 :groupsEconomicOperators rdf:type owl:ObjectProperty ;
                          owl:inverseOf :isMemberOf ;
@@ -162,16 +168,29 @@ ccts:date rdf:type rdfs:Datatype .
                           rdfs:range :EconomicOperatorGroup .
 
 
+###  http://data.europa.eu/ePO/ontology#hasEnvironmentalParty
+:hasEnvironmentalParty rdf:type owl:ObjectProperty ;
+                       rdfs:domain :ProcurementProcedure ;
+                       rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEvaluationCriterion
+:hasEvaluationCriterion rdf:type owl:ObjectProperty ;
+                        rdfs:domain :TenderEvaluationTerms ;
+                        rdfs:range :EvaluationCriterion .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasFinancialAccount
 :hasFinancialAccount rdf:type owl:ObjectProperty ;
                      rdfs:domain :EconomicOperator ;
                      rdfs:range :FinancialAccount .
 
 
-###  http://data.europa.eu/ePO/ontology#hasFunds
-:hasFunds rdf:type owl:ObjectProperty ;
-          rdfs:domain :TenderingTerms ;
-          rdfs:range :FundsIdentification .
+###  http://data.europa.eu/ePO/ontology#hasFinancialTerms
+:hasFinancialTerms rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:range :FinancialTerms .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasIdentifier
@@ -198,6 +217,18 @@ ccts:date rdf:type rdfs:Datatype .
                   rdfs:range :LegalForm .
 
 
+###  http://data.europa.eu/ePO/ontology#hasMediationBody
+:hasMediationBody rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcedureTerms ;
+                  rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasNotificationTerms
+:hasNotificationTerms rdf:type owl:ObjectProperty ;
+                      rdfs:domain :ProcurementProcedure ;
+                      rdfs:range :NotificationTerms .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasPreselectedTenderers
 :hasPreselectedTenderers rdf:type owl:ObjectProperty ;
                          rdfs:domain :TenderShortList ;
@@ -210,10 +241,10 @@ ccts:date rdf:type rdfs:Datatype .
                         rdfs:range :Notice .
 
 
-###  http://data.europa.eu/ePO/ontology#hasProcedureChoiceJustificationCode
-:hasProcedureChoiceJustificationCode rdf:type owl:ObjectProperty ;
-                                     rdfs:domain :TenderingTerms ;
-                                     rdfs:range :ProcedureChoiceJustificationCode .
+###  http://data.europa.eu/ePO/ontology#hasProcedureTerms
+:hasProcedureTerms rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:range :ProcedureTerms .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcurementDocument
@@ -254,22 +285,28 @@ ccts:date rdf:type rdfs:Datatype .
                     rdfs:range org:Organization .
 
 
-###  http://data.europa.eu/ePO/ontology#hasReservedContract
-:hasReservedContract rdf:type owl:ObjectProperty ;
-                     rdfs:domain :TenderingTerms ;
-                     rdfs:range :ReservedContract .
-
-
-###  http://data.europa.eu/ePO/ontology#hasShortListTerms
-:hasShortListTerms rdf:type owl:ObjectProperty ;
-                   rdfs:domain :TenderingTerms ;
-                   rdfs:range :TenderShortList .
+###  http://data.europa.eu/ePO/ontology#hasReviewParty
+:hasReviewParty rdf:type owl:ObjectProperty ;
+                rdfs:domain :ProcedureTerms ;
+                rdfs:range org:Organization .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSubmissionLanguage
 :hasSubmissionLanguage rdf:type owl:ObjectProperty ;
-                       rdfs:domain :TenderingTerms ;
+                       rdfs:domain :TenderSubmissionTerms ;
                        rdfs:range :SubmissionLanguage .
+
+
+###  http://data.europa.eu/ePO/ontology#hasSubmissionTerms
+:hasSubmissionTerms rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ProcurementProcedure ;
+                    rdfs:range :TenderSubmissionTerms .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTaxParty
+:hasTaxParty rdf:type owl:ObjectProperty ;
+             rdfs:domain :FinancialTerms ;
+             rdfs:range org:Organization .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasTenderDocument
@@ -280,16 +317,16 @@ ccts:date rdf:type rdfs:Datatype .
                    rdfs:range :TenderDocument .
 
 
-###  http://data.europa.eu/ePO/ontology#hasTenderingCriterion
-:hasTenderingCriterion rdf:type owl:ObjectProperty ;
-                       rdfs:domain :TenderingTerms ;
-                       rdfs:range :TenderingCriterion .
+###  http://data.europa.eu/ePO/ontology#hasTenderEvaluationTerms
+:hasTenderEvaluationTerms rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ProcurementProcedure ;
+                          rdfs:range :TenderEvaluationTerms .
 
 
-###  http://data.europa.eu/ePO/ontology#hasTenderingTerms
-:hasTenderingTerms rdf:type owl:ObjectProperty ;
-                   rdfs:domain :ProcurementProcedure ;
-                   rdfs:range :TenderingTerms .
+###  http://data.europa.eu/ePO/ontology#isJointProcurement
+:isJointProcurement rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ProcuringEntity ;
+                    rdfs:range :ProcuringEntity .
 
 
 ###  http://data.europa.eu/ePO/ontology#isMemberOf
@@ -311,12 +348,6 @@ ccts:date rdf:type rdfs:Datatype .
                    owl:inverseOf :subcontracts ;
                    rdfs:domain :EconomicOperator ;
                    rdfs:range :EconomicOperator .
-
-
-###  http://data.europa.eu/ePO/ontology#jointProcurement
-:jointProcurement rdf:type owl:ObjectProperty ;
-                  rdfs:domain :ProcuringEntity ;
-                  rdfs:range :ProcuringEntity .
 
 
 ###  http://data.europa.eu/ePO/ontology#notifiedThrough
@@ -411,19 +442,13 @@ ccts:date rdf:type rdfs:Datatype .
 :submittedByEO rdf:type owl:ObjectProperty ;
                rdfs:domain :Tender ;
                rdfs:range :EconomicOperator ;
-               owl:propertyDisjointWith :submittedByEOGroup ,
-                                        :submittedByServiceProvider .
+               owl:propertyDisjointWith :submittedByEOGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#submittedByEOGroup
 :submittedByEOGroup rdf:type owl:ObjectProperty ;
                     rdfs:domain :Tender ;
-                    rdfs:range :EconomicOperatorGroup ;
-                    owl:propertyDisjointWith :submittedByServiceProvider .
-
-
-###  http://data.europa.eu/ePO/ontology#submittedByServiceProvider
-:submittedByServiceProvider rdf:type owl:ObjectProperty .
+                    rdfs:range :EconomicOperatorGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#tenderDocumentRefersTo
@@ -443,10 +468,22 @@ ccts:date rdf:type rdfs:Datatype .
                           rdfs:range xsd:string .
 
 
+###  http://data.europa.eu/ePO/ontology#hasAdditionalInformationDeadline
+:hasAdditionalInformationDeadline rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :NotificationTerms ;
+                                  rdfs:range ccts:date .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasAliasName
 :hasAliasName rdf:type owl:DatatypeProperty ;
               rdfs:domain :FinancialAccount ;
               rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasContractNoticePublicationDate
+:hasContractNoticePublicationDate rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :NotificationTerms ;
+                                  rdfs:range ccts:date .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasDescription
@@ -457,13 +494,13 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasEOrdering
 :hasEOrdering rdf:type owl:DatatypeProperty ;
-              rdfs:domain :TenderingTerms ;
+              rdfs:domain :ProcedureTerms ;
               rdfs:range xsd:boolean .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasEPayment
 :hasEPayment rdf:type owl:DatatypeProperty ;
-             rdfs:domain :TenderingTerms ;
+             rdfs:domain :ProcedureTerms ;
              rdfs:range xsd:boolean .
 
 
@@ -487,20 +524,14 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasFinancialConditions
 :hasFinancialConditions rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :TenderingTerms ;
+                        rdfs:domain :FinancialTerms ;
                         rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFollowUpContracts
 :hasFollowUpContracts rdf:type owl:DatatypeProperty ;
-                      rdfs:domain :TenderingTerms ;
+                      rdfs:domain :ContractTerms ;
                       rdfs:range xsd:boolean .
-
-
-###  http://data.europa.eu/ePO/ontology#hasFreeAccess
-:hasFreeAccess rdf:type owl:DatatypeProperty ;
-               rdfs:domain :TenderingTerms ;
-               rdfs:range xsd:boolean .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasGPAUsage
@@ -509,15 +540,21 @@ ccts:date rdf:type rdfs:Datatype .
              rdfs:range xsd:boolean .
 
 
+###  http://data.europa.eu/ePO/ontology#hasGuaranteeRequired
+:hasGuaranteeRequired rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :FinancialTerms ;
+                      rdfs:range xsd:boolean .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasInvitationDispatchDate
 :hasInvitationDispatchDate rdf:type owl:DatatypeProperty ;
-                           rdfs:domain :TenderingTerms ;
+                           rdfs:domain :NotificationTerms ;
                            rdfs:range ccts:date .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasJuryDecisionBinding
 :hasJuryDecisionBinding rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :TenderingTerms ;
+                        rdfs:domain :TenderEvaluationTerms ;
                         rdfs:range xsd:boolean .
 
 
@@ -529,7 +566,7 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasMaximumAllowedLots
 :hasMaximumAllowedLots rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :TenderingTerms ;
+                       rdfs:domain :TenderEvaluationTerms ;
                        rdfs:range xsd:decimal .
 
 
@@ -541,9 +578,20 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasMaximumLotsAwarded
 :hasMaximumLotsAwarded rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf owl:topDataProperty ;
-                       rdfs:domain :TenderingTerms ;
+                       rdfs:domain :TenderEvaluationTerms ;
                        rdfs:range xsd:decimal .
+
+
+###  http://data.europa.eu/ePO/ontology#hasMaximumNumberRenewals
+:hasMaximumNumberRenewals rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :ContractTerms ;
+                          rdfs:range xsd:decimal .
+
+
+###  http://data.europa.eu/ePO/ontology#hasMaximumPercent
+:hasMaximumPercent rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SubcontractTerms ;
+                   rdfs:range xsd:decimal .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMinimumCandidates
@@ -552,11 +600,23 @@ ccts:date rdf:type rdfs:Datatype .
                       rdfs:range xsd:decimal .
 
 
+###  http://data.europa.eu/ePO/ontology#hasMinimumPercent
+:hasMinimumPercent rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :SubcontractTerms ;
+                   rdfs:range xsd:decimal .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasName
 :hasName rdf:type owl:DatatypeProperty ;
          rdfs:domain :FinancialAccount ,
                      :FundsIdentification ;
          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasNonElectronicSubmissionJustification
+:hasNonElectronicSubmissionJustification rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain :Tender ;
+                                         rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPaymentNote
@@ -567,20 +627,14 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasPerformanceConditions
 :hasPerformanceConditions rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :TenderingTerms ;
+                          rdfs:domain :ContractTerms ;
                           rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPerformingStaffQualification
 :hasPerformingStaffQualification rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :TenderingTerms ;
+                                 rdfs:domain :TenderEvaluationTerms ;
                                  rdfs:range xsd:boolean .
-
-
-###  http://data.europa.eu/ePO/ontology#hasProcedureMainFeatures
-:hasProcedureMainFeatures rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :TenderingTerms ;
-                          rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcurementDocuments
@@ -589,28 +643,28 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:range xsd:anyURI .
 
 
-###  http://data.europa.eu/ePO/ontology#hasRecurrencyDescription
-:hasRecurrencyDescription rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :TenderingTerms ;
-                          rdfs:range xsd:string .
+###  http://data.europa.eu/ePO/ontology#hasRate
+:hasRate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :SubcontractTerms ;
+         rdfs:range xsd:decimal .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSecurityClearanceDeadline
 :hasSecurityClearanceDeadline rdf:type owl:DatatypeProperty ;
-                              rdfs:domain :TenderingTerms ;
+                              rdfs:domain :ProcedureTerms ;
                               rdfs:range ccts:date .
 
 
-###  http://data.europa.eu/ePO/ontology#hasSubcontractingPercentage
-:hasSubcontractingPercentage rdf:type owl:DatatypeProperty ;
-                             rdfs:domain :TenderingTerms ;
-                             rdfs:range xsd:decimal .
+###  http://data.europa.eu/ePO/ontology#hasSubcontractDescription
+:hasSubcontractDescription rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :SubcontractTerms ;
+                           rdfs:range xsd:string .
 
 
-###  http://data.europa.eu/ePO/ontology#hasSubcontractingRequirements
-:hasSubcontractingRequirements rdf:type owl:DatatypeProperty ;
-                               rdfs:domain :TenderingTerms ;
-                               rdfs:range xsd:string .
+###  http://data.europa.eu/ePO/ontology#hasSuccessiveReduction
+:hasSuccessiveReduction rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :TenderEvaluationTerms ;
+                        rdfs:range xsd:boolean .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasTendersSubmission
@@ -627,31 +681,19 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasValidityDeadline
 :hasValidityDeadline rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :TenderingTerms ;
+                     rdfs:domain :TenderSubmissionTerms ;
                      rdfs:range ccts:date .
-
-
-###  http://data.europa.eu/ePO/ontology#hasValueCalculationMethod
-:hasValueCalculationMethod rdf:type owl:DatatypeProperty ;
-                           rdfs:domain :TenderingTerms ;
-                           rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasVariants
 :hasVariants rdf:type owl:DatatypeProperty ;
-             rdfs:domain :TenderingTerms ;
-             rdfs:range xsd:boolean .
-
-
-###  http://data.europa.eu/ePO/ontology#isRecurrent
-:isRecurrent rdf:type owl:DatatypeProperty ;
-             rdfs:domain :TenderingTerms ;
+             rdfs:domain :TenderEvaluationTerms ;
              rdfs:range xsd:boolean .
 
 
 ###  http://data.europa.eu/ePO/ontology#reviewDeadlineDescription
 :reviewDeadlineDescription rdf:type owl:DatatypeProperty ;
-                           rdfs:domain :TenderingTerms ;
+                           rdfs:domain :ProcedureTerms ;
                            rdfs:range xsd:string .
 
 
@@ -722,6 +764,10 @@ ccts:date rdf:type rdfs:Datatype .
                 rdfs:subClassOf :Notice .
 
 
+###  http://data.europa.eu/ePO/ontology#ContractTerms
+:ContractTerms rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf ccts:Code .
@@ -755,6 +801,11 @@ ccts:date rdf:type rdfs:Datatype .
                        rdfs:subClassOf rov:RegisteredOrganization .
 
 
+###  http://data.europa.eu/ePO/ontology#EvaluationCriterion
+:EvaluationCriterion rdf:type owl:Class ;
+                     rdfs:subClassOf :Criterion .
+
+
 ###  http://data.europa.eu/ePO/ontology#ExpressionOfInterest
 :ExpressionOfInterest rdf:type owl:Class .
 
@@ -766,6 +817,10 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#FinancialTender
 :FinancialTender rdf:type owl:Class ;
                  rdfs:subClassOf :TenderDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#FinancialTerms
+:FinancialTerms rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#FundsIdentification
@@ -792,9 +847,18 @@ ccts:date rdf:type rdfs:Datatype .
      rdfs:subClassOf :ProcurementProject .
 
 
+###  http://data.europa.eu/ePO/ontology#MainActivityType
+:MainActivityType rdf:type owl:Class ;
+                  rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#Notice
 :Notice rdf:type owl:Class ;
         rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#NotificationTerms
+:NotificationTerms rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#PriorInformationNotice
@@ -805,6 +869,10 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ProcedureChoiceJustificationCode
 :ProcedureChoiceJustificationCode rdf:type owl:Class ;
                                   rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcedureTerms
+:ProcedureTerms rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcedureType
@@ -856,6 +924,10 @@ ccts:date rdf:type rdfs:Datatype .
                  rdfs:subClassOf rov:RegisteredOrganization .
 
 
+###  http://data.europa.eu/ePO/ontology#SubcontractTerms
+:SubcontractTerms rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#SubmissionLanguage
 :SubmissionLanguage rdf:type owl:Class ;
                     rdfs:subClassOf ccts:Code .
@@ -880,17 +952,21 @@ ccts:date rdf:type rdfs:Datatype .
                 rdfs:subClassOf :Document .
 
 
+###  http://data.europa.eu/ePO/ontology#TenderEvaluationTerms
+:TenderEvaluationTerms rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#TenderShortList
 :TenderShortList rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#TenderSubmissionTerms
+:TenderSubmissionTerms rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#TenderingCriterion
 :TenderingCriterion rdf:type owl:Class ;
                     rdfs:subClassOf :Criterion .
-
-
-###  http://data.europa.eu/ePO/ontology#TenderingTerms
-:TenderingTerms rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/org#Organization
