@@ -1129,11 +1129,60 @@ ccts:Identifier rdf:type owl:Class .
     rdfs:label "LOCAL_AUTHORITY" .
 
 
+###  http://data.europa.eu/ePO/ontology#LARGE
+:LARGE rdf:type owl:NamedIndividual ,
+                :EOIndustryClassificationCodeType ;
+       dcterms:title "Non SME, Large Company" ;
+       rdfs:label "LARGE" .
+
+
+###  http://data.europa.eu/ePO/ontology#LE
+:LE rdf:type owl:NamedIndividual ,
+             :EORoleCodeType ;
+    dcterms:title "Lead Entity" ;
+    rdfs:label "LEAD_ENTITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#MEDIUM
+:MEDIUM rdf:type owl:NamedIndividual ,
+                 :EOIndustryClassificationCodeType ;
+        dcterms:title "Medium Enterprise" ;
+        rdfs:label "MEDIUM" .
+
+
+###  http://data.europa.eu/ePO/ontology#MICRO
+:MICRO rdf:type owl:NamedIndividual ,
+                :EOIndustryClassificationCodeType ;
+       dcterms:title "Micro Enterprise" ;
+       rdfs:label "MICRO" .
+
+
+###  http://data.europa.eu/ePO/ontology#OENRON
+:OENRON rdf:type owl:NamedIndividual ,
+                 :EORoleCodeType ;
+        dcterms:title "Other Entity (not relied upon)" ;
+        rdfs:label "OTHER_ENTITY_NOT_RELIED_UPON" .
+
+
+###  http://data.europa.eu/ePO/ontology#OERON
+:OERON rdf:type owl:NamedIndividual ,
+                :EORoleCodeType ;
+       dcterms:title "Other Entity (relied upon)" ;
+       rdfs:label "OTHER_ENTITY_RELIED_UPON" .
+
+
 ###  http://data.europa.eu/ePO/ontology#RA
 :RA rdf:type owl:NamedIndividual ,
              :JurisdictionalCompetenceLevelCode ;
     dcterms:title "Regional Authority" ;
     rdfs:label "REGIONAL_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#SC
+:SC rdf:type owl:NamedIndividual ,
+             :EORoleCodeType ;
+    dcterms:title "Sole Contractor" ;
+    rdfs:label "SOLE_CONTRACTOR" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SCA
@@ -1148,6 +1197,20 @@ ccts:Identifier rdf:type owl:Class .
              :ReservedContractType ;
     dcterms:title "Sheltered Employment" ;
     rdfs:label "SHELTERED_EMPLOYMENT" .
+
+
+###  http://data.europa.eu/ePO/ontology#SMALL
+:SMALL rdf:type owl:NamedIndividual ,
+                :EOIndustryClassificationCodeType ;
+       dcterms:title "Small Enterprise" ;
+       rdfs:label "SMALL" .
+
+
+###  http://data.europa.eu/ePO/ontology#SME
+:SME rdf:type owl:NamedIndividual ,
+              :EOIndustryClassificationCodeType ;
+     dcterms:title "Small or Medium Enterprise" ;
+     rdfs:label "SME" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SP
