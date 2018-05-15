@@ -149,6 +149,18 @@ ccts:date rdf:type rdfs:Datatype .
                     rdfs:range :EOGroupCodeType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasEOIndustryClassificationCodeType
+:hasEOIndustryClassificationCodeType rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :EconomicOperator ;
+                                     rdfs:range :EOIndustryClassificationCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEORoleCodeType
+:hasEORoleCodeType rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EconomicOperator ;
+                   rdfs:range :EORoleCodeType .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasEUFundsIdentifier
 :hasEUFundsIdentifier rdf:type owl:ObjectProperty ;
                       rdfs:domain :FundsIdentification ;
@@ -208,13 +220,13 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasLegalForm
 :hasLegalForm rdf:type owl:ObjectProperty ;
               rdfs:domain :EconomicOperator ;
-              rdfs:range :LegalForm .
+              rdfs:range espd:LegalForm .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLegalFormCode
 :hasLegalFormCode rdf:type owl:ObjectProperty ;
                   rdfs:domain :EconomicOperator ;
-                  rdfs:range :LegalForm .
+                  rdfs:range espd:LegalForm .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMediationBody
@@ -772,6 +784,16 @@ ccts:date rdf:type rdfs:Datatype .
                  rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#EOIndustryClassificationCodeType
+:EOIndustryClassificationCodeType rdf:type owl:Class ;
+                                  rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#EORoleCodeType
+:EORoleCodeType rdf:type owl:Class ;
+                rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#EconomicOperator
 :EconomicOperator rdf:type owl:Class ;
                   rdfs:subClassOf rov:RegisteredOrganization .
@@ -816,11 +838,6 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#InvitationToTender
 :InvitationToTender rdf:type owl:Class ;
                     rdfs:subClassOf :ProcurementDocument .
-
-
-###  http://data.europa.eu/ePO/ontology#LegalForm
-:LegalForm rdf:type owl:Class ;
-           rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Lot
