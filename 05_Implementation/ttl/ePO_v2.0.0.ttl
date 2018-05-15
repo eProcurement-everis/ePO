@@ -57,7 +57,7 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
 :buysOnBehalfOf rdf:type owl:ObjectProperty ;
                 owl:inverseOf :buysThrough ;
-                rdfs:domain :Buyer ;
+                rdfs:domain :ProcuringEntity ;
                 rdfs:range :ProcuringEntity .
 
 
@@ -65,7 +65,7 @@ ccts:date rdf:type rdfs:Datatype .
 :buysThrough rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :ProcuringEntity ;
-             rdfs:range :Buyer .
+             rdfs:range :ProcuringEntity .
 
 
 ###  http://data.europa.eu/ePO/ontology#definesSubcontractTerms
@@ -83,7 +83,7 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
 :hasAccessTool rdf:type owl:ObjectProperty ;
-               rdfs:domain :Buyer ;
+               rdfs:domain :ProcuringEntity ;
                rdfs:range :AccessTool .
 
 
@@ -100,22 +100,22 @@ ccts:date rdf:type rdfs:Datatype .
                 rdfs:range :AccountType .
 
 
-###  http://data.europa.eu/ePO/ontology#hasBuyerCategoryType
-:hasBuyerCategoryType rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Buyer ;
-                      rdfs:range :BuyerCategoryType .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasBuyerProfile
 :hasBuyerProfile rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Buyer ;
+                 rdfs:domain :ProcuringEntity ;
                  rdfs:range :BuyerProfile .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasBuyerRoleType
 :hasBuyerRoleType rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Buyer ;
+                  rdfs:domain :ProcuringEntity ;
                   rdfs:range :BuyerRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasContractingEntityActivityTaxonomy
+:hasContractingEntityActivityTaxonomy rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :ProcuringEntity ;
+                                      rdfs:range :ContractingEntityActivityTaxonomy .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCountryCode
@@ -702,16 +702,6 @@ ccts:date rdf:type rdfs:Datatype .
              rdfs:subClassOf ccts:Code .
 
 
-###  http://data.europa.eu/ePO/ontology#Buyer
-:Buyer rdf:type owl:Class ;
-       rdfs:subClassOf org:Organization .
-
-
-###  http://data.europa.eu/ePO/ontology#BuyerCategoryType
-:BuyerCategoryType rdf:type owl:Class ;
-                   rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#BuyerProfile
 :BuyerProfile rdf:type owl:Class .
 
@@ -753,6 +743,11 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#ContractTerms
 :ContractTerms rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractingEntityActivityTaxonomy
+:ContractingEntityActivityTaxonomy rdf:type owl:Class ;
+                                   rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Country
