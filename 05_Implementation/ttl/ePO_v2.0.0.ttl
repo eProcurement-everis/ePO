@@ -986,15 +986,71 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#CA
 :CA rdf:type owl:NamedIndividual ,
              :ProcuringEntityType ;
-    dcterms:title "Contracting Authority" ;
+    dcterms:title "Contracting Authority with other activities different to the ones of a CE." ;
     rdfs:label "CONTRACTING_AUTHORITY" .
 
 
-###  http://data.europa.eu/ePO/ontology#CE
-:CE rdf:type owl:NamedIndividual ,
-             :ProcuringEntityType ;
-    dcterms:title "Contracting Entity" ;
-    rdfs:label "CONTRACTING_ENTITY" .
+###  http://data.europa.eu/ePO/ontology#CA.DEFENCE
+:CA.DEFENCE rdf:type owl:NamedIndividual ,
+                     :ContractingEntityActivityTaxonomy ;
+            dcterms:title "Defence" ;
+            rdfs:label "CA.DEFENCE" .
+
+
+###  http://data.europa.eu/ePO/ontology#CA.ECONOMIC_AND_FINANCIAL_AFFAIRS
+:CA.ECONOMIC_AND_FINANCIAL_AFFAIRS rdf:type owl:NamedIndividual ,
+                                            :ContractingEntityActivityTaxonomy ;
+                                   dcterms:title "Economic and Financial Affairs" ;
+                                   rdfs:label "CA.ECONOMIC_AND_FINANCIAL_AFFAIRS" .
+
+
+###  http://data.europa.eu/ePO/ontology#CA.EDUCATION
+:CA.EDUCATION rdf:type owl:NamedIndividual ,
+                       :ContractingEntityActivityTaxonomy ;
+              dcterms:title "Education" ;
+              rdfs:label "CA.EDUCATION" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.CA
+:CE.CA rdf:type owl:NamedIndividual ,
+                :ProcuringEntityType ;
+       dcterms:title "Contracting Entity with CE activities" ;
+       rdfs:label "CONTRACTING_AUTHORITY_CE_ACTIVITIES" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.ELECTRICITY
+:CE.ELECTRICITY rdf:type owl:NamedIndividual ,
+                         :ContractingEntityActivityTaxonomy ;
+                dcterms:title "Electricity" ;
+                rdfs:label "CE.ELECTRICITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.ESER
+:CE.ESER rdf:type owl:NamedIndividual ,
+                  :ProcuringEntityType ;
+         dcterms:title "Contracting Entity with special or exclusive rights" ;
+         rdfs:label "CE_SPECIAL_OR_EXCLUSIVE_RIGHTS" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.PORT_RELATED_ACTIVITIES
+:CE.PORT_RELATED_ACTIVITIES rdf:type owl:NamedIndividual ,
+                                     :ContractingEntityActivityTaxonomy ;
+                            dcterms:title "Port related activities" ;
+                            rdfs:label "CE.PORT_RELATED_ACTIVITIES" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.PU
+:CE.PU rdf:type owl:NamedIndividual ,
+                :ProcuringEntityType ;
+       dcterms:title "Public  Undertaking with CE activities" ;
+       rdfs:label "PUBLIC_UNDERTAKING_CE_ACTIVITIES" .
+
+
+###  http://data.europa.eu/ePO/ontology#CE.WATER
+:CE.WATER rdf:type owl:NamedIndividual ,
+                   :ContractingEntityActivityTaxonomy ;
+          dcterms:title "Water" ;
+          rdfs:label "CE.WATER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONSORTIUM
