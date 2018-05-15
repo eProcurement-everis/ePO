@@ -54,6 +54,13 @@ ccts:date rdf:type rdfs:Datatype .
                                 rdfs:range :TechnicalSpecifications .
 
 
+###  http://data.europa.eu/ePO/ontology#belongsToTender
+:belongsToTender rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :hasTenderDocument ;
+                 rdfs:domain :TenderDocument ;
+                 rdfs:range :Tender .
+
+
 ###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
 :buysOnBehalfOf rdf:type owl:ObjectProperty ;
                 owl:inverseOf :buysThrough ;
@@ -304,9 +311,7 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasTenderDocument
 :hasTenderDocument rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :tenderDocumentRefersTo ;
-                   rdfs:domain :ProcurementProcedure ,
-                               :Tender ;
+                   rdfs:domain :Tender ;
                    rdfs:range :TenderDocument .
 
 
@@ -436,12 +441,6 @@ ccts:date rdf:type rdfs:Datatype .
 :submittedByEOGroup rdf:type owl:ObjectProperty ;
                     rdfs:domain :Tender ;
                     rdfs:range :EconomicOperatorGroup .
-
-
-###  http://data.europa.eu/ePO/ontology#tenderDocumentRefersTo
-:tenderDocumentRefersTo rdf:type owl:ObjectProperty ;
-                        rdfs:domain :TenderDocument ;
-                        rdfs:range :ProcurementProcedure .
 
 
 #################################################################
