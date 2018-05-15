@@ -113,12 +113,6 @@ ccts:date rdf:type rdfs:Datatype .
                  rdfs:range :BuyerProfile .
 
 
-###  http://data.europa.eu/ePO/ontology#hasBuyerRoleType
-:hasBuyerRoleType rdf:type owl:ObjectProperty ;
-                  rdfs:domain :ProcuringEntity ;
-                  rdfs:range :BuyerRoleType .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasContractingEntityActivityTaxonomy
 :hasContractingEntityActivityTaxonomy rdf:type owl:ObjectProperty ;
                                       rdfs:domain :ProcuringEntity ;
@@ -215,6 +209,18 @@ ccts:date rdf:type rdfs:Datatype .
 :hasIdentifierProvider rdf:type owl:ObjectProperty ;
                        rdfs:domain :FundsIdentification ;
                        rdfs:range :IdentifierProvider .
+
+
+###  http://data.europa.eu/ePO/ontology#hasJointProcurementEntityRoleType
+:hasJointProcurementEntityRoleType rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :ProcuringEntity ;
+                                   rdfs:range :JointProcurementEntityRoleType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasJurisdictionalCompetenceLevelCode
+:hasJurisdictionalCompetenceLevelCode rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :ProcuringEntity ;
+                                      rdfs:range :JurisdictionalCompetenceLevelCode .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLegalForm
@@ -717,11 +723,6 @@ ccts:date rdf:type rdfs:Datatype .
 :BuyerProfile rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#BuyerRoleType
-:BuyerRoleType rdf:type owl:Class ;
-               rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#CallForCompetition
 :CallForCompetition rdf:type owl:Class ;
                     rdfs:subClassOf :ProcurementDocument .
@@ -838,6 +839,16 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#InvitationToTender
 :InvitationToTender rdf:type owl:Class ;
                     rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#JointProcurementEntityRoleType
+:JointProcurementEntityRoleType rdf:type owl:Class ;
+                                rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#JurisdictionalCompetenceLevelCode
+:JurisdictionalCompetenceLevelCode rdf:type owl:Class ;
+                                   rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Lot
@@ -992,11 +1003,11 @@ ccts:Identifier rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://data.europa.eu/ePO/ontology#BOPE
-:BOPE rdf:type owl:NamedIndividual ,
-               :BuyerRoleType ;
-      dcterms:title "Buyer On Behalf Of Other Procuring Entities" ;
-      rdfs:label "BUYER_ON_BEHALF_OF_OTHER_PROCURING_ENTITIES" .
+###  http://data.europa.eu/ePO/ontology#BGPL
+:BGPL rdf:type owl:NamedIndividual ,
+               :JurisdictionalCompetenceLevelCode ;
+      dcterms:title "Body Governed by Public Law" ;
+      rdfs:label "BODY_GOVERNED_BY_PUBLIC_LAW" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA
@@ -1069,6 +1080,13 @@ ccts:Identifier rdf:type owl:Class .
           rdfs:label "CE.WATER" .
 
 
+###  http://data.europa.eu/ePO/ontology#CGA
+:CGA rdf:type owl:NamedIndividual ,
+              :JurisdictionalCompetenceLevelCode ;
+     dcterms:title "Central Government Authority" ;
+     rdfs:label "CENTRAL_GOVERNMENT_AUTHORITY" .
+
+
 ###  http://data.europa.eu/ePO/ontology#CONSORTIUM
 :CONSORTIUM rdf:type owl:NamedIndividual ,
                      :EOGroupCodeType ;
@@ -1078,21 +1096,21 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CPB
 :CPB rdf:type owl:NamedIndividual ,
-              :BuyerRoleType ;
+              :ProcuringEntityRoleType ;
      dcterms:title "Central Purchasing Body" ;
      rdfs:label "CENTRAL_PURCHASING_BODY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JPL
 :JPL rdf:type owl:NamedIndividual ,
-              :ProcuringEntityRoleType ;
+              :JointProcurementEntityRoleType ;
      dcterms:title "Joint Procurement Lead" ;
      rdfs:label "JOINT_PROCUREMENT_LEAD" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JPM
 :JPM rdf:type owl:NamedIndividual ,
-              :ProcuringEntityRoleType ;
+              :JointProcurementEntityRoleType ;
      dcterms:title "Joint Procurement Member" ;
      rdfs:label "JOINT_PROCUREMENT_MEMBER" .
 
@@ -1104,11 +1122,25 @@ ccts:Identifier rdf:type owl:Class .
     rdfs:label "JOINT_VENTURE" .
 
 
-###  http://data.europa.eu/ePO/ontology#OPP
-:OPP rdf:type owl:NamedIndividual ,
-              :BuyerRoleType ;
-     dcterms:title "Outsourced Procuring Party" ;
-     rdfs:label "OUTSOURCED_PURCHASING_BODY" .
+###  http://data.europa.eu/ePO/ontology#LA
+:LA rdf:type owl:NamedIndividual ,
+             :JurisdictionalCompetenceLevelCode ;
+    dcterms:title "Local Authority" ;
+    rdfs:label "LOCAL_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#RA
+:RA rdf:type owl:NamedIndividual ,
+             :JurisdictionalCompetenceLevelCode ;
+    dcterms:title "Regional Authority" ;
+    rdfs:label "REGIONAL_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#SCA
+:SCA rdf:type owl:NamedIndividual ,
+              :JurisdictionalCompetenceLevelCode ;
+     dcterms:title "Subcentral Government Authority" ;
+     rdfs:label "SUBCENTRAL_GROVERNMENT_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SE
@@ -1116,6 +1148,13 @@ ccts:Identifier rdf:type owl:Class .
              :ReservedContractType ;
     dcterms:title "Sheltered Employment" ;
     rdfs:label "SHELTERED_EMPLOYMENT" .
+
+
+###  http://data.europa.eu/ePO/ontology#SP
+:SP rdf:type owl:NamedIndividual ,
+             :ProcuringEntityRoleType ;
+    dcterms:title "Service Provider" ;
+    rdfs:label "SERVICE_PROVIDER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SW
