@@ -35,13 +35,6 @@ ccts:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://data.europa.eu/ePO/ontology#TechnicalSpecificationAttachedTo
-:TechnicalSpecificationAttachedTo rdf:type owl:ObjectProperty ;
-                                  owl:inverseOf :attachesTechnicalSpecification ;
-                                  rdfs:domain :TechnicalSpecifications ;
-                                  rdfs:range :CallForCompetition .
-
-
 ###  http://data.europa.eu/ePO/ontology#appliesTo
 :appliesTo rdf:type owl:ObjectProperty ;
            rdfs:domain :Tender ;
@@ -50,13 +43,20 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#attachesTechnicalSpecification
 :attachesTechnicalSpecification rdf:type owl:ObjectProperty ;
+                                owl:inverseOf :technicalSpecificationAttachedTo ;
                                 rdfs:domain :CallForCompetition ;
                                 rdfs:range :TechnicalSpecifications .
 
 
+###  http://data.europa.eu/ePO/ontology#attachesTenderDocument
+:attachesTenderDocument rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :belongsToTender ;
+                        rdfs:domain :Tender ;
+                        rdfs:range :TenderDocument .
+
+
 ###  http://data.europa.eu/ePO/ontology#belongsToTender
 :belongsToTender rdf:type owl:ObjectProperty ;
-                 owl:inverseOf :hasTenderDocument ;
                  rdfs:domain :TenderDocument ;
                  rdfs:range :Tender .
 
@@ -327,12 +327,6 @@ ccts:date rdf:type rdfs:Datatype .
              rdfs:range org:Organization .
 
 
-###  http://data.europa.eu/ePO/ontology#hasTenderDocument
-:hasTenderDocument rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Tender ;
-                   rdfs:range :TenderDocument .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasTenderEvaluationTerms
 :hasTenderEvaluationTerms rdf:type owl:ObjectProperty ;
                           rdfs:domain :ProcurementProcedure ;
@@ -398,6 +392,13 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:range :ProcurementDocument .
 
 
+###  http://data.europa.eu/ePO/ontology#receivedTender
+:receivedTender rdf:type owl:ObjectProperty ;
+                owl:inverseOf :submittedTender ;
+                rdfs:domain :ProcurementProcedure ;
+                rdfs:range :Tender .
+
+
 ###  http://data.europa.eu/ePO/ontology#refersTo
 :refersTo rdf:type owl:ObjectProperty ;
           rdfs:domain :Contract ;
@@ -448,6 +449,13 @@ ccts:date rdf:type rdfs:Datatype .
          rdfs:range :Tender .
 
 
+###  http://data.europa.eu/ePO/ontology#submitsTender
+:submitsTender rdf:type owl:ObjectProperty ;
+               owl:inverseOf :tenderSubmittedBy ;
+               rdfs:domain :Tenderer ;
+               rdfs:range :Tender .
+
+
 ###  http://data.europa.eu/ePO/ontology#submittedByEO
 :submittedByEO rdf:type owl:ObjectProperty ;
                rdfs:domain :Tender ;
@@ -459,6 +467,24 @@ ccts:date rdf:type rdfs:Datatype .
 :submittedByEOGroup rdf:type owl:ObjectProperty ;
                     rdfs:domain :Tender ;
                     rdfs:range :EconomicOperatorGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#submittedTender
+:submittedTender rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Tender ;
+                 rdfs:range :ProcurementProcedure .
+
+
+###  http://data.europa.eu/ePO/ontology#technicalSpecificationAttachedTo
+:technicalSpecificationAttachedTo rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :TechnicalSpecifications ;
+                                  rdfs:range :CallForCompetition .
+
+
+###  http://data.europa.eu/ePO/ontology#tenderSubmittedBy
+:tenderSubmittedBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Tender ;
+                   rdfs:range :Tenderer .
 
 
 #################################################################
@@ -928,11 +954,6 @@ ccts:date rdf:type rdfs:Datatype .
                       rdfs:subClassOf ccts:Code .
 
 
-###  http://data.europa.eu/ePO/ontology#ServiceProvider
-:ServiceProvider rdf:type owl:Class ;
-                 rdfs:subClassOf rov:RegisteredOrganization .
-
-
 ###  http://data.europa.eu/ePO/ontology#SubcontractTerms
 :SubcontractTerms rdf:type owl:Class .
 
@@ -971,6 +992,11 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#TenderSubmissionTerms
 :TenderSubmissionTerms rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#Tenderer
+:Tenderer rdf:type owl:Class ;
+          rdfs:subClassOf :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#TenderingCriterion
