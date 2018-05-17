@@ -11,9 +11,9 @@
 @prefix espd: <https://github.com/ESPD/ESPD-EDM/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/lbotapor/ontologies/2018/3/untitled-ontology-12> .
+@base <http://data.europa.eu/ePO/ontology> .
 
-<http://www.semanticweb.org/lbotapor/ontologies/2018/3/untitled-ontology-12> rdf:type owl:Ontology .
+<http://data.europa.eu/ePO/ontology> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
@@ -111,12 +111,6 @@ ccts:date rdf:type rdfs:Datatype .
 :hasBuyerProfile rdf:type owl:ObjectProperty ;
                  rdfs:domain :ProcuringEntity ;
                  rdfs:range :BuyerProfile .
-
-
-###  http://data.europa.eu/ePO/ontology#hasContractingEntityActivityTaxonomy
-:hasContractingEntityActivityTaxonomy rdf:type owl:ObjectProperty ;
-                                      rdfs:domain :ProcuringEntity ;
-                                      rdfs:range :ContractingEntityActivityTaxonomy .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCountryCode
@@ -283,6 +277,12 @@ ccts:date rdf:type rdfs:Datatype .
                              owl:FunctionalProperty ;
                     rdfs:domain :ProcurementProcedure ;
                     rdfs:range :ProcuringEntity .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcuringEntityActivityTaxonomy
+:hasProcuringEntityActivityTaxonomy rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :ProcuringEntity ;
+                                    rdfs:range :ProcuringEntityActivityTaxonomy .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcuringEntityRoleType
@@ -783,11 +783,6 @@ ccts:date rdf:type rdfs:Datatype .
 :ContractTerms rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#ContractingEntityActivityTaxonomy
-:ContractingEntityActivityTaxonomy rdf:type owl:Class ;
-                                   rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf ccts:Code .
@@ -934,6 +929,11 @@ ccts:date rdf:type rdfs:Datatype .
                  rdfs:subClassOf org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#ProcuringEntityActivityTaxonomy
+:ProcuringEntityActivityTaxonomy rdf:type owl:Class ;
+                                 rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType
 :ProcuringEntityRoleType rdf:type owl:Class ;
                          rdfs:subClassOf ccts:Code .
@@ -1045,21 +1045,21 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CA.DEFENCE
 :CA.DEFENCE rdf:type owl:NamedIndividual ,
-                     :ContractingEntityActivityTaxonomy ;
+                     :ProcuringEntityActivityTaxonomy ;
             dcterms:title "Defence" ;
             rdfs:label "CA.DEFENCE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA.ECONOMIC_AND_FINANCIAL_AFFAIRS
 :CA.ECONOMIC_AND_FINANCIAL_AFFAIRS rdf:type owl:NamedIndividual ,
-                                            :ContractingEntityActivityTaxonomy ;
+                                            :ProcuringEntityActivityTaxonomy ;
                                    dcterms:title "Economic and Financial Affairs" ;
                                    rdfs:label "CA.ECONOMIC_AND_FINANCIAL_AFFAIRS" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA.EDUCATION
 :CA.EDUCATION rdf:type owl:NamedIndividual ,
-                       :ContractingEntityActivityTaxonomy ;
+                       :ProcuringEntityActivityTaxonomy ;
               dcterms:title "Education" ;
               rdfs:label "CA.EDUCATION" .
 
@@ -1073,7 +1073,7 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CE.ELECTRICITY
 :CE.ELECTRICITY rdf:type owl:NamedIndividual ,
-                         :ContractingEntityActivityTaxonomy ;
+                         :ProcuringEntityActivityTaxonomy ;
                 dcterms:title "Electricity" ;
                 rdfs:label "CE.ELECTRICITY" .
 
@@ -1087,7 +1087,7 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CE.PORT_RELATED_ACTIVITIES
 :CE.PORT_RELATED_ACTIVITIES rdf:type owl:NamedIndividual ,
-                                     :ContractingEntityActivityTaxonomy ;
+                                     :ProcuringEntityActivityTaxonomy ;
                             dcterms:title "Port related activities" ;
                             rdfs:label "CE.PORT_RELATED_ACTIVITIES" .
 
@@ -1101,7 +1101,7 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CE.WATER
 :CE.WATER rdf:type owl:NamedIndividual ,
-                   :ContractingEntityActivityTaxonomy ;
+                   :ProcuringEntityActivityTaxonomy ;
           dcterms:title "Water" ;
           rdfs:label "CE.WATER" .
 
