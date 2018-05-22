@@ -81,11 +81,11 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:range :SubcontractTerms .
 
 
-###  http://data.europa.eu/ePO/ontology#groupsEconomicOperators
-:groupsEconomicOperators rdf:type owl:ObjectProperty ;
-                         owl:inverseOf :isMemberOf ;
-                         rdfs:domain :EconomicOperatorGroup ;
-                         rdfs:range :EconomicOperator .
+###  http://data.europa.eu/ePO/ontology#groupsAsAn
+:groupsAsAn rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isGroupOf ;
+            rdfs:domain :EconomicOperator ;
+            rdfs:range :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
@@ -116,7 +116,7 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasCountryCode
 :hasCountryCode rdf:type owl:ObjectProperty ;
                 rdfs:domain :FinancialAccount ;
-                rdfs:range :Country .
+                rdfs:range :CountryCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCurrencyCode
@@ -128,13 +128,7 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasDeliveryCountryCode
 :hasDeliveryCountryCode rdf:type owl:ObjectProperty ;
                         rdfs:domain :Tender ;
-                        rdfs:range :Country .
-
-
-###  http://data.europa.eu/ePO/ontology#hasEOGroupCodeType
-:hasEOGroupCodeType rdf:type owl:ObjectProperty ;
-                    rdfs:domain :EconomicOperatorGroup ;
-                    rdfs:range :EOGroupCodeType .
+                        rdfs:range :CountryCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasEOIndustryClassificationCodeType
@@ -158,14 +152,7 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasEconomicOperator
 :hasEconomicOperator rdf:type owl:ObjectProperty ;
                      rdfs:domain :ProcurementProcedure ;
-                     rdfs:range :EconomicOperator ;
-                     owl:propertyDisjointWith :hasEconomicOperatorGroup .
-
-
-###  http://data.europa.eu/ePO/ontology#hasEconomicOperatorGroup
-:hasEconomicOperatorGroup rdf:type owl:ObjectProperty ;
-                          rdfs:domain :ProcurementProcedure ;
-                          rdfs:range :EconomicOperatorGroup .
+                     rdfs:range :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasEnvironmentalParty
@@ -249,8 +236,15 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasPreviousPublication
 :hasPreviousPublication rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :preceeds ;
                         rdfs:domain :InvitationToTender ;
-                        rdfs:range :Notice .
+                        rdfs:range :CallForCompetition .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPriorInformationNoticeCodeType
+:hasPriorInformationNoticeCodeType rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :PriorInformationNotice ;
+                                   rdfs:range :PriorInformationNoticeCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcedureTerms
@@ -333,17 +327,16 @@ ccts:date rdf:type rdfs:Datatype .
                           rdfs:range :TenderEvaluationTerms .
 
 
+###  http://data.europa.eu/ePO/ontology#isGroupOf
+:isGroupOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :EconomicOperator ;
+           rdfs:range :EconomicOperator .
+
+
 ###  http://data.europa.eu/ePO/ontology#isJointProcurement
 :isJointProcurement rdf:type owl:ObjectProperty ;
                     rdfs:domain :ProcuringEntity ;
                     rdfs:range :ProcuringEntity .
-
-
-###  http://data.europa.eu/ePO/ontology#isMemberOf
-:isMemberOf rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain :EconomicOperator ;
-            rdfs:range :EconomicOperatorGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#isReferedIn
@@ -371,6 +364,12 @@ ccts:date rdf:type rdfs:Datatype .
 :notifiesAbout rdf:type owl:ObjectProperty ;
                rdfs:domain :Notice ;
                rdfs:range :CallForCompetition .
+
+
+###  http://data.europa.eu/ePO/ontology#preceeds
+:preceeds rdf:type owl:ObjectProperty ;
+          rdfs:domain :CallForCompetition ;
+          rdfs:range :InvitationToTender .
 
 
 ###  http://data.europa.eu/ePO/ontology#preparedByProcuringEntity
@@ -405,12 +404,6 @@ ccts:date rdf:type rdfs:Datatype .
           rdfs:range :Tender .
 
 
-###  http://data.europa.eu/ePO/ontology#refersToCallForProposal
-:refersToCallForProposal rdf:type owl:ObjectProperty ;
-                         rdfs:domain :InvitationToTender ;
-                         rdfs:range :CallForProposal .
-
-
 ###  http://data.europa.eu/ePO/ontology#refersToInvitation
 :refersToInvitation rdf:type owl:ObjectProperty ;
                     rdfs:domain :ExpressionOfInterest ;
@@ -442,31 +435,11 @@ ccts:date rdf:type rdfs:Datatype .
               rdfs:range :EconomicOperator .
 
 
-###  http://data.europa.eu/ePO/ontology#submits
-:submits rdf:type owl:ObjectProperty ;
-         owl:inverseOf :submittedByEO ;
-         rdfs:domain :EconomicOperator ;
-         rdfs:range :Tender .
-
-
 ###  http://data.europa.eu/ePO/ontology#submitsTender
 :submitsTender rdf:type owl:ObjectProperty ;
                owl:inverseOf :tenderSubmittedBy ;
                rdfs:domain :Tenderer ;
                rdfs:range :Tender .
-
-
-###  http://data.europa.eu/ePO/ontology#submittedByEO
-:submittedByEO rdf:type owl:ObjectProperty ;
-               rdfs:domain :Tender ;
-               rdfs:range :EconomicOperator ;
-               owl:propertyDisjointWith :submittedByEOGroup .
-
-
-###  http://data.europa.eu/ePO/ontology#submittedByEOGroup
-:submittedByEOGroup rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Tender ;
-                    rdfs:range :EconomicOperatorGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#submittedTender
@@ -745,6 +718,11 @@ ccts:date rdf:type rdfs:Datatype .
              rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#AdditionalDocument
+:AdditionalDocument rdf:type owl:Class ;
+                    rdfs:subClassOf :ProcurementDocument .
+
+
 ###  http://data.europa.eu/ePO/ontology#BuyerProfile
 :BuyerProfile rdf:type owl:Class .
 
@@ -754,15 +732,9 @@ ccts:date rdf:type rdfs:Datatype .
                     rdfs:subClassOf :ProcurementDocument .
 
 
-###  http://data.europa.eu/ePO/ontology#CallForProposal
-:CallForProposal rdf:type owl:Class ;
-                 rdfs:subClassOf :CallForCompetition ;
-                 owl:disjointWith :CallForTenders .
-
-
-###  http://data.europa.eu/ePO/ontology#CallForTenders
-:CallForTenders rdf:type owl:Class ;
-                rdfs:subClassOf :CallForCompetition .
+###  http://data.europa.eu/ePO/ontology#ContracConditions
+:ContracConditions rdf:type owl:Class ;
+                   rdfs:subClassOf :ProcurementDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#Contract
@@ -783,9 +755,9 @@ ccts:date rdf:type rdfs:Datatype .
 :ContractTerms rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#Country
-:Country rdf:type owl:Class ;
-         rdfs:subClassOf ccts:Code .
+###  http://data.europa.eu/ePO/ontology#CountryCodeType
+:CountryCodeType rdf:type owl:Class ;
+                 rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Criterion
@@ -795,6 +767,11 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#Currency
 :Currency rdf:type owl:Class ;
           rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#DescriptiveDocument
+:DescriptiveDocument rdf:type owl:Class ;
+                     rdfs:subClassOf :ProcurementDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#Document
@@ -816,14 +793,19 @@ ccts:date rdf:type rdfs:Datatype .
                 rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#ESPDRequest
+:ESPDRequest rdf:type owl:Class ;
+             rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#ESPDResponse
+:ESPDResponse rdf:type owl:Class ;
+              rdfs:subClassOf :TenderDocument .
+
+
 ###  http://data.europa.eu/ePO/ontology#EconomicOperator
 :EconomicOperator rdf:type owl:Class ;
                   rdfs:subClassOf rov:RegisteredOrganization .
-
-
-###  http://data.europa.eu/ePO/ontology#EconomicOperatorGroup
-:EconomicOperatorGroup rdf:type owl:Class ;
-                       rdfs:subClassOf rov:RegisteredOrganization .
 
 
 ###  http://data.europa.eu/ePO/ontology#EvaluationCriterion
@@ -896,6 +878,11 @@ ccts:date rdf:type rdfs:Datatype .
                         rdfs:subClassOf :Notice .
 
 
+###  http://data.europa.eu/ePO/ontology#PriorInformationNoticeCodeType
+:PriorInformationNoticeCodeType rdf:type owl:Class ;
+                                rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcedureChoiceJustificationCode
 :ProcedureChoiceJustificationCode rdf:type owl:Class ;
                                   rdfs:subClassOf ccts:Code .
@@ -942,6 +929,11 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ProcuringEntityType
 :ProcuringEntityType rdf:type owl:Class ;
                      rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#RequestForParticipation
+:RequestForParticipation rdf:type owl:Class ;
+                         rdfs:subClassOf :Document .
 
 
 ###  http://data.europa.eu/ePO/ontology#ReservedContract
@@ -1195,6 +1187,27 @@ ccts:Identifier rdf:type owl:Class .
                 :EORoleCodeType ;
        dcterms:title "Other Entity (relied upon)" ;
        rdfs:label "OTHER_ENTITY_RELIED_UPON" .
+
+
+###  http://data.europa.eu/ePO/ontology#PIN_CALL_COMPETITION
+:PIN_CALL_COMPETITION rdf:type owl:NamedIndividual ,
+                               :PriorInformationNoticeCodeType ;
+                      dcterms:title "Prior Information Notice Call for Competition" ;
+                      rdfs:label "PIN_CALL_COMPETITION" .
+
+
+###  http://data.europa.eu/ePO/ontology#PIN_ONLY
+:PIN_ONLY rdf:type owl:NamedIndividual ,
+                   :PriorInformationNoticeCodeType ;
+          dcterms:title "Prior Information Notice Only" ;
+          rdfs:label "PIN_ONLY" .
+
+
+###  http://data.europa.eu/ePO/ontology#PIN_REDUCING_TIME_LIMITS
+:PIN_REDUCING_TIME_LIMITS rdf:type owl:NamedIndividual ,
+                                   :PriorInformationNoticeCodeType ;
+                          dcterms:title "Prior Information Notice to reduce the time limits" ;
+                          rdfs:label "PIN_REDUCING_TIME_LIMITS" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RA
