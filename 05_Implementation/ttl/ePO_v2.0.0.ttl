@@ -43,10 +43,15 @@ ccts:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://data.europa.eu/ePO/ontology#appliesTo
-:appliesTo rdf:type owl:ObjectProperty ;
-           rdfs:domain :Tender ;
-           rdfs:range :Lot .
+###  http://data.europa.eu/ePO/ontology#appliesToLot
+:appliesToLot rdf:type owl:ObjectProperty ;
+              owl:inverseOf :referredToIn ;
+              rdfs:domain :AwardCriterion ,
+                          :AwardCriterionProperty ,
+                          :SelectionCriterion ,
+                          :SelectionCriterionProperty ,
+                          :Tender ;
+              rdfs:range :Lot .
 
 
 ###  http://data.europa.eu/ePO/ontology#attachesTechnicalSpecification
@@ -67,6 +72,13 @@ ccts:time rdf:type rdfs:Datatype .
 :basesOnEvidenceTemplate rdf:type owl:ObjectProperty ;
                          rdfs:domain :Criterion ;
                          rdfs:range :Evidence .
+
+
+###  http://data.europa.eu/ePO/ontology#belongsToProcurementProcedure
+:belongsToProcurementProcedure rdf:type owl:ObjectProperty ;
+                               owl:inverseOf :isDividedIntoLots ;
+                               rdfs:domain :Lot ;
+                               rdfs:range :ProcurementProcedure .
 
 
 ###  http://data.europa.eu/ePO/ontology#belongsToTender
@@ -95,11 +107,24 @@ ccts:time rdf:type rdfs:Datatype .
                          rdfs:range :SubcontractTerms .
 
 
-###  http://data.europa.eu/ePO/ontology#groupsAsAn
-:groupsAsAn rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isGroupOf ;
-            rdfs:domain :EconomicOperator ;
-            rdfs:range :EconomicOperator .
+###  http://data.europa.eu/ePO/ontology#groupOfLots
+:groupOfLots rdf:type owl:ObjectProperty ;
+             owl:inverseOf :groupsAsALot ;
+             rdfs:domain :Lot ;
+             rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#groupsAsALot
+:groupsAsALot rdf:type owl:ObjectProperty ;
+              rdfs:domain :Lot ;
+              rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#groupsAsAnEO
+:groupsAsAnEO rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isGroupOfEO ;
+              rdfs:domain :EconomicOperator ;
+              rdfs:range :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
@@ -480,10 +505,16 @@ ccts:time rdf:type rdfs:Datatype .
                        rdfs:range ccts:Amount .
 
 
-###  http://data.europa.eu/ePO/ontology#isGroupOf
-:isGroupOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :EconomicOperator ;
-           rdfs:range :EconomicOperator .
+###  http://data.europa.eu/ePO/ontology#isDividedIntoLots
+:isDividedIntoLots rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:range :Lot .
+
+
+###  http://data.europa.eu/ePO/ontology#isGroupOfEO
+:isGroupOfEO rdf:type owl:ObjectProperty ;
+             rdfs:domain :EconomicOperator ;
+             rdfs:range :EconomicOperator .
 
 
 ###  http://data.europa.eu/ePO/ontology#isJointProcurement
@@ -492,11 +523,25 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:range :ProcuringEntity .
 
 
+###  http://data.europa.eu/ePO/ontology#isReferedBy
+:isReferedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :refersToLot ;
+             rdfs:domain :Lot ;
+             rdfs:range :Contract .
+
+
 ###  http://data.europa.eu/ePO/ontology#isReferedIn
 :isReferedIn rdf:type owl:ObjectProperty ;
              owl:inverseOf :refersTo ;
              rdfs:domain :Tender ;
              rdfs:range :Contract .
+
+
+###  http://data.europa.eu/ePO/ontology#isReferedInContract
+:isReferedInContract rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :refersToTender ;
+                     rdfs:domain :Tender ;
+                     rdfs:range :Contract .
 
 
 ###  http://data.europa.eu/ePO/ontology#isSubcontractedBy
@@ -564,6 +609,15 @@ ccts:time rdf:type rdfs:Datatype .
                 rdfs:range :Tender .
 
 
+###  http://data.europa.eu/ePO/ontology#referredToIn
+:referredToIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :AwardCriterion ,
+                          :AwardCriterionProperty ,
+                          :SelectionCriterion ,
+                          :SelectionCriterionProperty ;
+              rdfs:range :Lot .
+
+
 ###  http://data.europa.eu/ePO/ontology#refersTo
 :refersTo rdf:type owl:ObjectProperty ;
           rdfs:domain :Contract ;
@@ -574,6 +628,12 @@ ccts:time rdf:type rdfs:Datatype .
 :refersToInvitation rdf:type owl:ObjectProperty ;
                     rdfs:domain :RequestForParticipation ;
                     rdfs:range :InvitationToTender .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToLot
+:refersToLot rdf:type owl:ObjectProperty ;
+             rdfs:domain :Contract ;
+             rdfs:range :Lot .
 
 
 ###  http://data.europa.eu/ePO/ontology#refersToNotice
@@ -593,6 +653,12 @@ ccts:time rdf:type rdfs:Datatype .
 :refersToProcurementProject rdf:type owl:ObjectProperty ;
                             rdfs:domain :PriorInformationNotice ;
                             rdfs:range :ProcurementProject .
+
+
+###  http://data.europa.eu/ePO/ontology#refersToTender
+:refersToTender rdf:type owl:ObjectProperty ;
+                rdfs:domain :Contract ;
+                rdfs:range :Tender .
 
 
 ###  http://data.europa.eu/ePO/ontology#respondedBy
@@ -666,6 +732,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasContractNoticePublicationDate rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :NotificationTerms ;
                                   rdfs:range ccts:date .
+
+
+###  http://data.europa.eu/ePO/ontology#hasContractTitle
+:hasContractTitle rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Contract ;
+                  rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCriterionDescription
@@ -1049,6 +1121,16 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:subClassOf :ProcurementDocument .
 
 
+###  http://data.europa.eu/ePO/ontology#AwardCriterion
+:AwardCriterion rdf:type owl:Class ;
+                rdfs:subClassOf :Criterion .
+
+
+###  http://data.europa.eu/ePO/ontology#AwardCriterionProperty
+:AwardCriterionProperty rdf:type owl:Class ;
+                        rdfs:subClassOf :CriterionProperty .
+
+
 ###  http://data.europa.eu/ePO/ontology#BuyerProfile
 :BuyerProfile rdf:type owl:Class .
 
@@ -1232,7 +1314,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#Lot
 :Lot rdf:type owl:Class ;
-     rdfs:subClassOf :ProcurementProject .
+     rdfs:subClassOf :ProcurementProject ;
+     owl:disjointWith :ProcurementProcedure .
 
 
 ###  http://data.europa.eu/ePO/ontology#MainActivityType
@@ -1324,6 +1407,16 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ReservedContractType
 :ReservedContractType rdf:type owl:Class ;
                       rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#SelectionCriterion
+:SelectionCriterion rdf:type owl:Class ;
+                    rdfs:subClassOf :Criterion .
+
+
+###  http://data.europa.eu/ePO/ontology#SelectionCriterionProperty
+:SelectionCriterionProperty rdf:type owl:Class ;
+                            rdfs:subClassOf :CriterionProperty .
 
 
 ###  http://data.europa.eu/ePO/ontology#SubcontractTerms
