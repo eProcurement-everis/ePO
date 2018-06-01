@@ -113,6 +113,18 @@ ccts:date rdf:type rdfs:Datatype .
                  rdfs:range :BuyerProfile .
 
 
+###  http://data.europa.eu/ePO/ontology#hasContractModificationCodeType
+:hasContractModificationCodeType rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :ContractModification ;
+                                 rdfs:range :ContractModificationCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasContractValidityPeriod
+:hasContractValidityPeriod rdf:type owl:ObjectProperty ;
+                           rdfs:domain :ContractModification ;
+                           rdfs:range :Period .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasCountryCode
 :hasCountryCode rdf:type owl:ObjectProperty ;
                 rdfs:domain :FinancialAccount ;
@@ -220,6 +232,12 @@ ccts:date rdf:type rdfs:Datatype .
 :hasMediationBody rdf:type owl:ObjectProperty ;
                   rdfs:domain :ProcedureTerms ;
                   rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasModification
+:hasModification rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ContractModificationNotice ;
+                 rdfs:range :ContractModification .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasNotificationTerms
@@ -406,7 +424,7 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#refersToInvitation
 :refersToInvitation rdf:type owl:ObjectProperty ;
-                    rdfs:domain :ExpressionOfInterest ;
+                    rdfs:domain :RequestForParticipation ;
                     rdfs:range :InvitationToTender .
 
 
@@ -609,6 +627,24 @@ ccts:date rdf:type rdfs:Datatype .
                    rdfs:range xsd:decimal .
 
 
+###  http://data.europa.eu/ePO/ontology#hasModificationDescription
+:hasModificationDescription rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :ContractModification ;
+                            rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasModificationJustification
+:hasModificationJustification rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :ContractModification ;
+                              rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasModificationVersionNumber
+:hasModificationVersionNumber rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :ContractModification ;
+                              rdfs:range xsd:decimal .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasName
 :hasName rdf:type owl:DatatypeProperty ;
          rdfs:domain :FinancialAccount ,
@@ -746,6 +782,20 @@ ccts:date rdf:type rdfs:Datatype .
                      rdfs:subClassOf :Notice .
 
 
+###  http://data.europa.eu/ePO/ontology#ContractModification
+:ContractModification rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractModificationCodeType
+:ContractModificationCodeType rdf:type owl:Class ;
+                              rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractModificationNotice
+:ContractModificationNotice rdf:type owl:Class ;
+                            rdfs:subClassOf :Notice .
+
+
 ###  http://data.europa.eu/ePO/ontology#ContractNotice
 :ContractNotice rdf:type owl:Class ;
                 rdfs:subClassOf :Notice .
@@ -813,17 +863,13 @@ ccts:date rdf:type rdfs:Datatype .
                      rdfs:subClassOf :Criterion .
 
 
-###  http://data.europa.eu/ePO/ontology#ExpressionOfInterest
-:ExpressionOfInterest rdf:type owl:Class .
-
-
 ###  http://data.europa.eu/ePO/ontology#FinancialAccount
 :FinancialAccount rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#FinancialTender
-:FinancialTender rdf:type owl:Class ;
-                 rdfs:subClassOf :TenderDocument .
+###  http://data.europa.eu/ePO/ontology#FinancialTenderDocument
+:FinancialTenderDocument rdf:type owl:Class ;
+                         rdfs:subClassOf :TenderDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#FinancialTerms
@@ -871,6 +917,10 @@ ccts:date rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#NotificationTerms
 :NotificationTerms rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#Period
+:Period rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#PriorInformationNotice
@@ -960,9 +1010,9 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:subClassOf :ProcurementDocument .
 
 
-###  http://data.europa.eu/ePO/ontology#TechnicalTender
-:TechnicalTender rdf:type owl:Class ;
-                 rdfs:subClassOf :TenderDocument .
+###  http://data.europa.eu/ePO/ontology#TechnicalTenderDocument
+:TechnicalTenderDocument rdf:type owl:Class ;
+                         rdfs:subClassOf :TenderDocument .
 
 
 ###  http://data.europa.eu/ePO/ontology#Tender
@@ -1105,11 +1155,39 @@ ccts:Identifier rdf:type owl:Class .
      rdfs:label "CENTRAL_GOVERNMENT_AUTHORITY" .
 
 
+###  http://data.europa.eu/ePO/ontology#CHANGE_OF_IPC
+:CHANGE_OF_IPC rdf:type owl:NamedIndividual ,
+                        :ContractModificationCodeType ;
+               dcterms:title "Change of IPC" ;
+               rdfs:label "CHANGE_OF_IPC" .
+
+
 ###  http://data.europa.eu/ePO/ontology#CONSORTIUM
 :CONSORTIUM rdf:type owl:NamedIndividual ,
                      :EOGroupCodeType ;
             dcterms:title "Consortium" ;
             rdfs:label "CONSORTIUM" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONTRACT_DEADLINE_EXTENSION
+:CONTRACT_DEADLINE_EXTENSION rdf:type owl:NamedIndividual ,
+                                      :ContractModificationCodeType ;
+                             dcterms:title "Contract deadline extension" ;
+                             rdfs:label "CONTRACT_DEADLINE_EXTENSION" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONTRACT_RENEWAL
+:CONTRACT_RENEWAL rdf:type owl:NamedIndividual ,
+                           :ContractModificationCodeType ;
+                  dcterms:title "Contract renewal" ;
+                  rdfs:label "CONTRACT_RENEWAL" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONTRACT_SCOPE_CHANGE
+:CONTRACT_SCOPE_CHANGE rdf:type owl:NamedIndividual ,
+                                :ContractModificationCodeType ;
+                       dcterms:title "Contract Scope Change" ;
+                       rdfs:label "CONTRACT_SCOPE_CHANGE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CPB
@@ -1208,6 +1286,13 @@ ccts:Identifier rdf:type owl:Class .
                                    :PriorInformationNoticeCodeType ;
                           dcterms:title "Prior Information Notice to reduce the time limits" ;
                           rdfs:label "PIN_REDUCING_TIME_LIMITS" .
+
+
+###  http://data.europa.eu/ePO/ontology#PRICE_RENEWAL
+:PRICE_RENEWAL rdf:type owl:NamedIndividual ,
+                        :ContractModificationCodeType ;
+               dcterms:title "Price renewal" ;
+               rdfs:label "PRICE_RENEWAL" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RA
