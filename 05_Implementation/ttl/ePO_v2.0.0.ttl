@@ -31,6 +31,14 @@ dcterms:title rdf:type owl:AnnotationProperty .
 ccts:date rdf:type rdfs:Datatype .
 
 
+###  urn:un:unece:uncefact:documentation:2#period
+ccts:period rdf:type rdfs:Datatype .
+
+
+###  urn:un:unece:uncefact:documentation:2#time
+ccts:time rdf:type rdfs:Datatype .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -53,6 +61,12 @@ ccts:date rdf:type rdfs:Datatype .
                         owl:inverseOf :belongsToTender ;
                         rdfs:domain :Tender ;
                         rdfs:range :TenderDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#basesOnEvidenceTemplate
+:basesOnEvidenceTemplate rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Criterion ;
+                         rdfs:range :Evidence .
 
 
 ###  http://data.europa.eu/ePO/ontology#belongsToTender
@@ -129,6 +143,43 @@ ccts:date rdf:type rdfs:Datatype .
 :hasCountryCode rdf:type owl:ObjectProperty ;
                 rdfs:domain :FinancialAccount ;
                 rdfs:range :CountryCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionIdentifier
+:hasCriterionIdentifier rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Criterion ;
+                        rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionProperty
+:hasCriterionProperty rdf:type owl:ObjectProperty ;
+                      rdfs:domain :CriterionPropertyGroup ;
+                      rdfs:range :CriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyGroup
+:hasCriterionPropertyGroup rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Criterion ;
+                           rdfs:range :CriterionPropertyGroup .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyGroupIdentifier
+:hasCriterionPropertyGroupIdentifier rdf:type owl:ObjectProperty ,
+                                              owl:FunctionalProperty ;
+                                     rdfs:domain :CriterionPropertyGroup ;
+                                     rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyIdentifier
+:hasCriterionPropertyIdentifier rdf:type owl:ObjectProperty ;
+                                rdfs:domain :CriterionProperty ;
+                                rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyResponseIdentifier
+:hasCriterionPropertyResponseIdentifier rdf:type owl:ObjectProperty ;
+                                        rdfs:domain :CriterionPropertyResponse ;
+                                        rdfs:range ccts:Identifier .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCurrencyCode
@@ -216,6 +267,12 @@ ccts:date rdf:type rdfs:Datatype .
                                       rdfs:range :JurisdictionalCompetenceLevelCode .
 
 
+###  http://data.europa.eu/ePO/ontology#hasLegalBasis
+:hasLegalBasis rdf:type owl:ObjectProperty ;
+               rdfs:domain :Criterion ;
+               rdfs:range :Legislation .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasLegalForm
 :hasLegalForm rdf:type owl:ObjectProperty ;
               rdfs:domain :EconomicOperator ;
@@ -226,6 +283,12 @@ ccts:date rdf:type rdfs:Datatype .
 :hasLegalFormCode rdf:type owl:ObjectProperty ;
                   rdfs:domain :EconomicOperator ;
                   rdfs:range espd:LegalForm .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationIdentifier
+:hasLegislationIdentifier rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Legislation ;
+                          rdfs:range ccts:Identifier .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMediationBody
@@ -309,16 +372,34 @@ ccts:date rdf:type rdfs:Datatype .
                         rdfs:range :ProcuringEntityType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasPropertyValue
+:hasPropertyValue rdf:type owl:ObjectProperty ;
+                  rdfs:domain :CriterionProperty ;
+                  rdfs:range :Value .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasQualifyingParty
 :hasQualifyingParty rdf:type owl:ObjectProperty ;
                     rdfs:domain :EconomicOperator ;
                     rdfs:range org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#hasResponseValue
+:hasResponseValue rdf:type owl:ObjectProperty ;
+                  rdfs:domain :CriterionPropertyResponse ;
+                  rdfs:range :Value .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasReviewParty
 :hasReviewParty rdf:type owl:ObjectProperty ;
                 rdfs:domain :ProcedureTerms ;
                 rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasSubCriterion
+:hasSubCriterion rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Criterion ;
+                 rdfs:range :Criterion .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSubmissionLanguage
@@ -343,6 +424,36 @@ ccts:date rdf:type rdfs:Datatype .
 :hasTenderEvaluationTerms rdf:type owl:ObjectProperty ;
                           rdfs:domain :ProcurementProcedure ;
                           rdfs:range :TenderEvaluationTerms .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueAmount
+:hasValueAmount rdf:type owl:ObjectProperty ;
+                rdfs:domain :Value ;
+                rdfs:range ccts:Amount .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueCode
+:hasValueCode rdf:type owl:ObjectProperty ;
+              rdfs:domain :Value ;
+              rdfs:range ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueIdentifier
+:hasValueIdentifier rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Value ;
+                    rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueMaximumAmount
+:hasValueMaximumAmount rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Value ;
+                       rdfs:range ccts:Amount .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueMinimumAmount
+:hasValueMinimumAmount rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Value ;
+                       rdfs:range ccts:Amount .
 
 
 ###  http://data.europa.eu/ePO/ontology#isGroupOf
@@ -409,6 +520,19 @@ ccts:date rdf:type rdfs:Datatype .
                          rdfs:range :ProcurementDocument .
 
 
+###  http://data.europa.eu/ePO/ontology#proofsEvidence
+:proofsEvidence rdf:type owl:ObjectProperty ;
+                owl:inverseOf :providesEvidence ;
+                rdfs:domain :Evidence ;
+                rdfs:range :Criterion .
+
+
+###  http://data.europa.eu/ePO/ontology#providesEvidence
+:providesEvidence rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Criterion ;
+                  rdfs:range :Evidence .
+
+
 ###  http://data.europa.eu/ePO/ontology#receivedTender
 :receivedTender rdf:type owl:ObjectProperty ;
                 owl:inverseOf :submittedTender ;
@@ -445,6 +569,19 @@ ccts:date rdf:type rdfs:Datatype .
 :refersToProcurementProject rdf:type owl:ObjectProperty ;
                             rdfs:domain :PriorInformationNotice ;
                             rdfs:range :ProcurementProject .
+
+
+###  http://data.europa.eu/ePO/ontology#respondedBy
+:respondedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :responses ;
+             rdfs:domain :CriterionProperty ;
+             rdfs:range :CriterionPropertyResponse .
+
+
+###  http://data.europa.eu/ePO/ontology#responses
+:responses rdf:type owl:ObjectProperty ;
+           rdfs:domain :CriterionPropertyResponse ;
+           rdfs:range :CriterionProperty .
 
 
 ###  http://data.europa.eu/ePO/ontology#subcontracts
@@ -507,6 +644,55 @@ ccts:date rdf:type rdfs:Datatype .
                                   rdfs:range ccts:date .
 
 
+###  http://data.europa.eu/ePO/ontology#hasCriterionDescription
+:hasCriterionDescription rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Criterion ;
+                         rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionName
+:hasCriterionName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Criterion ;
+                  rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionObjective
+:hasCriterionObjective rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :Criterion ;
+                       rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyDescription
+:hasCriterionPropertyDescription rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :CriterionProperty ;
+                                 rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyGroupDescription
+:hasCriterionPropertyGroupDescription rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain :CriterionPropertyGroup ;
+                                      rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyGroupName
+:hasCriterionPropertyGroupName rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :CriterionPropertyGroup ;
+                               rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyName
+:hasCriterionPropertyName rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :CriterionProperty ;
+                          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionWeight
+:hasCriterionWeight rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Criterion ;
+                    rdfs:range xsd:decimal .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasDescription
 :hasDescription rdf:type owl:DatatypeProperty ;
                 rdfs:domain :ProcurementProcedure ;
@@ -555,6 +741,13 @@ ccts:date rdf:type rdfs:Datatype .
                       rdfs:range xsd:boolean .
 
 
+###  http://data.europa.eu/ePO/ontology#hasFulfilledIndicator
+:hasFulfilledIndicator rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :Criterion ;
+                       rdfs:range xsd:boolean .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasGPAUsage
 :hasGPAUsage rdf:type owl:DatatypeProperty ;
              rdfs:domain :ProcurementProcedure ;
@@ -577,6 +770,37 @@ ccts:date rdf:type rdfs:Datatype .
 :hasJuryDecisionBinding rdf:type owl:DatatypeProperty ;
                         rdfs:domain :TenderEvaluationTerms ;
                         rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationArticle
+:hasLegislationArticle rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Legislation ;
+                       rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationDescription
+:hasLegislationDescription rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Legislation ;
+                           rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationJurisdictionLevel
+:hasLegislationJurisdictionLevel rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :Legislation ;
+                                 rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationTitle
+:hasLegislationTitle rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Legislation ;
+                     rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasLegislationURI
+:hasLegislationURI rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Legislation ;
+                   rdfs:range xsd:anyURI .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLimitationDescription
@@ -724,10 +948,52 @@ ccts:date rdf:type rdfs:Datatype .
                      rdfs:range ccts:date .
 
 
+###  http://data.europa.eu/ePO/ontology#hasValueDate
+:hasValueDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Value ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueIndicator
+:hasValueIndicator rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Value ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValuePeriod
+:hasValuePeriod rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Value ;
+                rdfs:range ccts:period .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueQuantity
+:hasValueQuantity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Value ;
+                  rdfs:range xsd:double .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueTime
+:hasValueTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Value ;
+              rdfs:range ccts:time .
+
+
+###  http://data.europa.eu/ePO/ontology#hasValueURI
+:hasValueURI rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Value ;
+             rdfs:range xsd:anyURI .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasVariants
 :hasVariants rdf:type owl:DatatypeProperty ;
              rdfs:domain :TenderEvaluationTerms ;
              rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasWeightingConsiderationDescription
+:hasWeightingConsiderationDescription rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain :Criterion ;
+                                      rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#reviewDeadlineDescription
@@ -814,6 +1080,18 @@ ccts:date rdf:type rdfs:Datatype .
 :Criterion rdf:type owl:Class .
 
 
+###  http://data.europa.eu/ePO/ontology#CriterionProperty
+:CriterionProperty rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#CriterionPropertyGroup
+:CriterionPropertyGroup rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#CriterionPropertyResponse
+:CriterionPropertyResponse rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#Currency
 :Currency rdf:type owl:Class ;
           rdfs:subClassOf ccts:Code .
@@ -863,6 +1141,10 @@ ccts:date rdf:type rdfs:Datatype .
                      rdfs:subClassOf :Criterion .
 
 
+###  http://data.europa.eu/ePO/ontology#Evidence
+:Evidence rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#FinancialAccount
 :FinancialAccount rdf:type owl:Class .
 
@@ -898,6 +1180,10 @@ ccts:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#JurisdictionalCompetenceLevelCode
 :JurisdictionalCompetenceLevelCode rdf:type owl:Class ;
                                    rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#Legislation
+:Legislation rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#Lot
@@ -1046,6 +1332,10 @@ ccts:date rdf:type rdfs:Datatype .
                     rdfs:subClassOf :Criterion .
 
 
+###  http://data.europa.eu/ePO/ontology#Value
+:Value rdf:type owl:Class .
+
+
 ###  http://www.w3.org/ns/org#Organization
 org:Organization rdf:type owl:Class .
 
@@ -1057,6 +1347,10 @@ rov:RegisteredOrganization rdf:type owl:Class .
 ###  https://github.com/ESPD/ESPD-EDM/LegalForm
 espd:LegalForm rdf:type owl:Class ;
                rdfs:subClassOf ccts:Code .
+
+
+###  urn:un:unece:uncefact:documentation:2#Amount
+ccts:Amount rdf:type owl:Class .
 
 
 ###  urn:un:unece:uncefact:documentation:2#Code
