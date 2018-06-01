@@ -145,6 +145,12 @@ ccts:time rdf:type rdfs:Datatype .
                 rdfs:range :CountryCodeType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasCriterionGroupPropertyCodeType
+:hasCriterionGroupPropertyCodeType rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :CriterionPropertyGroup ;
+                                   rdfs:range :CriterionGroupPropertyCodeType .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasCriterionIdentifier
 :hasCriterionIdentifier rdf:type owl:ObjectProperty ;
                         rdfs:domain :Criterion ;
@@ -155,6 +161,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasCriterionProperty rdf:type owl:ObjectProperty ;
                       rdfs:domain :CriterionPropertyGroup ;
                       rdfs:range :CriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyCodeType
+:hasCriterionPropertyCodeType rdf:type owl:ObjectProperty ;
+                              rdfs:domain :CriterionProperty ;
+                              rdfs:range :CriterionPropertyCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCriterionPropertyGroup
@@ -180,6 +192,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasCriterionPropertyResponseIdentifier rdf:type owl:ObjectProperty ;
                                         rdfs:domain :CriterionPropertyResponse ;
                                         rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionTaxonomy
+:hasCriterionTaxonomy rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Criterion ;
+                      rdfs:range :CriterionTaxonomy .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCurrencyCode
@@ -228,6 +246,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasEvaluationCriterion rdf:type owl:ObjectProperty ;
                         rdfs:domain :TenderEvaluationTerms ;
                         rdfs:range :EvaluationCriterion .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEvaluationMethodCodeType
+:hasEvaluationMethodCodeType rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Criterion ;
+                             rdfs:range :EvaluationMethodCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFinancialAccount
@@ -1080,8 +1104,18 @@ ccts:time rdf:type rdfs:Datatype .
 :Criterion rdf:type owl:Class .
 
 
+###  http://data.europa.eu/ePO/ontology#CriterionGroupPropertyCodeType
+:CriterionGroupPropertyCodeType rdf:type owl:Class ;
+                                rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#CriterionProperty
 :CriterionProperty rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#CriterionPropertyCodeType
+:CriterionPropertyCodeType rdf:type owl:Class ;
+                           rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#CriterionPropertyGroup
@@ -1090,6 +1124,11 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#CriterionPropertyResponse
 :CriterionPropertyResponse rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#CriterionTaxonomy
+:CriterionTaxonomy rdf:type owl:Class ;
+                   rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Currency
@@ -1139,6 +1178,11 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#EvaluationCriterion
 :EvaluationCriterion rdf:type owl:Class ;
                      rdfs:subClassOf :Criterion .
+
+
+###  http://data.europa.eu/ePO/ontology#EvaluationMethodCodeType
+:EvaluationMethodCodeType rdf:type owl:Class ;
+                          rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Evidence
@@ -1400,6 +1444,13 @@ ccts:Identifier rdf:type owl:Class .
               rdfs:label "CA.EDUCATION" .
 
 
+###  http://data.europa.eu/ePO/ontology#CAPTION
+:CAPTION rdf:type owl:NamedIndividual ,
+                  :CriterionPropertyCodeType ;
+         dcterms:title "A text label (no requirement nor answer is expected)." ;
+         rdfs:label "CAPTION" .
+
+
 ###  http://data.europa.eu/ePO/ontology#CE.CA
 :CE.CA rdf:type owl:NamedIndividual ,
                 :ProcuringEntityType ;
@@ -1491,6 +1542,62 @@ ccts:Identifier rdf:type owl:Class .
      rdfs:label "CENTRAL_PURCHASING_BODY" .
 
 
+###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.LOWEST
+:CRITERION.AWARD.LOWEST rdf:type owl:NamedIndividual ,
+                                 :CriterionTaxonomy ;
+                        dcterms:title "Criterion Award Lowest" ;
+                        rdfs:label "CRITERION.AWARD.LOWEST" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.MIXED
+:CRITERION.AWARD.MIXED rdf:type owl:NamedIndividual ,
+                                :CriterionTaxonomy ;
+                       dcterms:title "Criterion Award Mixed" ;
+                       rdfs:label "CRITERION.AWARD.MIXED" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.MOST_ECONOMIC_TENDER
+:CRITERION.AWARD.MOST_ECONOMIC_TENDER rdf:type owl:NamedIndividual ,
+                                               :CriterionTaxonomy ;
+                                      dcterms:title "Criterion award most economic tender" ;
+                                      rdfs:label "CRITERION.AWARD.MOST_ECONOMIC_TENDER" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.OTHER
+:CRITERION.AWARD.OTHER rdf:type owl:NamedIndividual ,
+                                :CriterionTaxonomy ;
+                       dcterms:title "Criterion award other" ;
+                       rdfs:label "CRITERION.AWARD.OTHER" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION
+:CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION rdf:type owl:NamedIndividual ,
+                                                                     :CriterionTaxonomy ;
+                                                            dcterms:title "Criterion exclusion conflict of interest misinterpretation" ;
+                                                            rdfs:label "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL
+:CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL rdf:type owl:NamedIndividual ,
+                                                         :CriterionTaxonomy ;
+                                                dcterms:title "Criterion exclusion misconduct professional" ;
+                                                rdfs:label "CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY
+:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY rdf:type owl:NamedIndividual ,
+                                                                                  :CriterionTaxonomy ;
+                                                                         dcterms:title "Criterion selection economic financial standing turnover general yearly" ;
+                                                                         rdfs:label "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY" .
+
+
+###  http://data.europa.eu/ePO/ontology#CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE
+:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE rdf:type owl:NamedIndividual ,
+                                                                                    :CriterionTaxonomy ;
+                                                                           dcterms:title "Criterion selection economic financial standing turnover specific average" ;
+                                                                           rdfs:label "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE" .
+
+
 ###  http://data.europa.eu/ePO/ontology#JPL
 :JPL rdf:type owl:NamedIndividual ,
               :JointProcurementEntityRoleType ;
@@ -1561,6 +1668,34 @@ ccts:Identifier rdf:type owl:Class .
        rdfs:label "OTHER_ENTITY_RELIED_UPON" .
 
 
+###  http://data.europa.eu/ePO/ontology#ON
+:ON rdf:type owl:NamedIndividual ,
+             :CriterionGroupPropertyCodeType ;
+    dcterms:title "Process the group always" ;
+    rdfs:label "ON" .
+
+
+###  http://data.europa.eu/ePO/ontology#ONFALSE
+:ONFALSE rdf:type owl:NamedIndividual ,
+                  :CriterionGroupPropertyCodeType ;
+         dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'false'." ;
+         rdfs:label "ONFALSE" .
+
+
+###  http://data.europa.eu/ePO/ontology#ONTRUE
+:ONTRUE rdf:type owl:NamedIndividual ,
+                 :CriterionGroupPropertyCodeType ;
+        dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'true'." ;
+        rdfs:label "ONTRUE" .
+
+
+###  http://data.europa.eu/ePO/ontology#PASSFAIL
+:PASSFAIL rdf:type owl:NamedIndividual ,
+                   :EvaluationMethodCodeType ;
+          dcterms:title "Pass or Fail" ;
+          rdfs:label "PASSFAIL" .
+
+
 ###  http://data.europa.eu/ePO/ontology#PIN_CALL_COMPETITION
 :PIN_CALL_COMPETITION rdf:type owl:NamedIndividual ,
                                :PriorInformationNoticeCodeType ;
@@ -1589,11 +1724,24 @@ ccts:Identifier rdf:type owl:Class .
                rdfs:label "PRICE_RENEWAL" .
 
 
+###  http://data.europa.eu/ePO/ontology#QUESTION
+:QUESTION rdf:type owl:NamedIndividual ,
+                   :CriterionPropertyCodeType ;
+          dcterms:title "A question that requires an answer (a specific datum) from the EO." ;
+          rdfs:label "QUESTION" .
+
+
 ###  http://data.europa.eu/ePO/ontology#RA
 :RA rdf:type owl:NamedIndividual ,
              :JurisdictionalCompetenceLevelCode ;
     dcterms:title "Regional Authority" ;
     rdfs:label "REGIONAL_AUTHORITY" .
+
+
+###  http://data.europa.eu/ePO/ontology#REQUIREMENT
+:REQUIREMENT rdf:type owl:NamedIndividual ;
+             dcterms:title "Requirement, remark, rule, restriction or additional information to which the EO needs to conform or comply with." ;
+             rdfs:label "REQUIREMENT" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SC
@@ -1650,6 +1798,13 @@ ccts:Identifier rdf:type owl:Class .
                       :EOGroupCodeType ;
              dcterms:title "Undertaking" ;
              rdfs:label "UNDERTAKING" .
+
+
+###  http://data.europa.eu/ePO/ontology#WEIGHTED
+:WEIGHTED rdf:type owl:NamedIndividual ,
+                   :EvaluationMethodCodeType ;
+          dcterms:title "The criterion is weighted" ;
+          rdfs:label "WEIGHTED" .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
