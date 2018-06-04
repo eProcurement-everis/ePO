@@ -127,6 +127,12 @@ ccts:time rdf:type rdfs:Datatype .
               rdfs:range :EconomicOperator .
 
 
+###  http://data.europa.eu/ePO/ontology#hasAcceleratedProcedureCodeType
+:hasAcceleratedProcedureCodeType rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :ProcurementProcedure ;
+                                 rdfs:range :AcceleratedProcedureJustificationCodeType .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
 :hasAccessTool rdf:type owl:ObjectProperty ;
                rdfs:domain :ProcuringEntity ;
@@ -709,6 +715,12 @@ ccts:time rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
+###  http://data.europa.eu/ePO/ontology#hasAcceleratedProcedureFurtherJustification
+:hasAcceleratedProcedureFurtherJustification rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain :ProcurementProcedure ;
+                                             rdfs:range xsd:string .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasAdditionalInformation
 :hasAdditionalInformation rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf owl:topDataProperty ;
@@ -726,6 +738,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasAliasName rdf:type owl:DatatypeProperty ;
               rdfs:domain :FinancialAccount ;
               rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAwardDateScheduled
+:hasAwardDateScheduled rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :ProcurementProcedure ;
+                       rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractNoticePublicationDate
@@ -996,6 +1014,18 @@ ccts:time rdf:type rdfs:Datatype .
                                  rdfs:range xsd:boolean .
 
 
+###  http://data.europa.eu/ePO/ontology#hasProcedureChoiceJustification
+:hasProcedureChoiceJustification rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :ProcurementProcedure ;
+                                 rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcedureMainFeatures
+:hasProcedureMainFeatures rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :ProcurementProcedure ;
+                          rdfs:range xsd:string .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasProcurementDocuments
 :hasProcurementDocuments rdf:type owl:DatatypeProperty ;
                          rdfs:domain :AccessTool ;
@@ -1006,6 +1036,18 @@ ccts:time rdf:type rdfs:Datatype .
 :hasRate rdf:type owl:DatatypeProperty ;
          rdfs:domain :SubcontractTerms ;
          rdfs:range xsd:decimal .
+
+
+###  http://data.europa.eu/ePO/ontology#hasRecurrencyDescription
+:hasRecurrencyDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :ProcurementProcedure ;
+                          rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasRecurrentIndicator
+:hasRecurrentIndicator rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :ProcurementProcedure ;
+                       rdfs:range xsd:boolean .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSecurityClearanceDeadline
@@ -1101,6 +1143,11 @@ ccts:time rdf:type rdfs:Datatype .
 #################################################################
 #    Classes
 #################################################################
+
+###  http://data.europa.eu/ePO/ontology#AcceleratedProcedureJustificationCodeType
+:AcceleratedProcedureJustificationCodeType rdf:type owl:Class ;
+                                           rdfs:subClassOf ccts:Code .
+
 
 ###  http://data.europa.eu/ePO/ontology#AccessTool
 :AccessTool rdf:type owl:Class .
@@ -1803,6 +1850,14 @@ ccts:Identifier rdf:type owl:Class .
           rdfs:label "PIN_ONLY" .
 
 
+###  http://data.europa.eu/ePO/ontology#PIN_REDUCE_TIME_LIMIT
+:PIN_REDUCE_TIME_LIMIT rdf:type owl:NamedIndividual ,
+                                :AcceleratedProcedureJustificationCodeType ;
+                       dcterms:title "Prior Information Notice to reduce time limits." ;
+                       rdfs:comment "" ;
+                       rdfs:label "PIN_REDUCE_TIME_LIMIT" .
+
+
 ###  http://data.europa.eu/ePO/ontology#PIN_REDUCING_TIME_LIMITS
 :PIN_REDUCING_TIME_LIMITS rdf:type owl:NamedIndividual ,
                                    :PriorInformationNoticeCodeType ;
@@ -1877,6 +1932,13 @@ ccts:Identifier rdf:type owl:Class .
              :ProcuringEntityRoleType ;
     dcterms:title "Service Provider" ;
     rdfs:label "SERVICE_PROVIDER" .
+
+
+###  http://data.europa.eu/ePO/ontology#STATE_OF_URGENCY
+:STATE_OF_URGENCY rdf:type owl:NamedIndividual ,
+                           :AcceleratedProcedureJustificationCodeType ;
+                  dcterms:title "State of Urgency." ;
+                  rdfs:label "STATE_OF_URGENCY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SW
