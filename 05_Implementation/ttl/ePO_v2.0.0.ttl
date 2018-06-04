@@ -597,6 +597,20 @@ ccts:time rdf:type rdfs:Datatype .
                 rdfs:range org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#hasSelectionCriterionProperty
+:hasSelectionCriterionProperty rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :hasCriterionProperty ;
+                               rdfs:domain :SelectionCriterionPropertyGroup ;
+                               rdfs:range :SelectionCriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#hasSelectionCriterionPropertyGroup
+:hasSelectionCriterionPropertyGroup rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :hasPropertyGroup ;
+                                    rdfs:domain :SelectionCriterion ;
+                                    rdfs:range :SelectionCriterionPropertyGroup .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasSubCriterion
 :hasSubCriterion rdf:type owl:ObjectProperty ;
                  rdfs:domain :Criterion ;
@@ -1827,6 +1841,11 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#SelectionCriterionProperty
 :SelectionCriterionProperty rdf:type owl:Class ;
                             rdfs:subClassOf :CriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#SelectionCriterionPropertyGroup
+:SelectionCriterionPropertyGroup rdf:type owl:Class ;
+                                 rdfs:subClassOf :CriterionPropertyGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#SubcontractTerms
