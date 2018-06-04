@@ -194,6 +194,20 @@ ccts:time rdf:type rdfs:Datatype .
                 rdfs:range :AccountType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasAwardCriterionProperty
+:hasAwardCriterionProperty rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :hasCriterionProperty ;
+                           rdfs:domain :AwardCriterionPropertyGroup ;
+                           rdfs:range :AwardCriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#hasAwardCriterionPropertyGroup
+:hasAwardCriterionPropertyGroup rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :hasPropertyGroup ;
+                                rdfs:domain :AwardCriterion ;
+                                rdfs:range :AwardCriterionPropertyGroup .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasAwardResult
 :hasAwardResult rdf:type owl:ObjectProperty ;
                 rdfs:domain :EvaluationResult ;
@@ -295,6 +309,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasCriterionPropertyResponseIdentifier rdf:type owl:ObjectProperty ;
                                         rdfs:domain :CriterionPropertyResponse ;
                                         rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCriterionPropertySubgroup
+:hasCriterionPropertySubgroup rdf:type owl:ObjectProperty ;
+                              rdfs:domain :CriterionPropertyGroup ;
+                              rdfs:range :CriterionPropertyGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCriterionTaxonomy
@@ -539,6 +559,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasProcuringEntityType rdf:type owl:ObjectProperty ;
                         rdfs:domain :ProcuringEntity ;
                         rdfs:range :ProcuringEntityType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPropertyGroup
+:hasPropertyGroup rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Criterion ;
+                  rdfs:range :CriterionPropertyGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPropertyValue
@@ -1467,6 +1493,11 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#AwardCriterionProperty
 :AwardCriterionProperty rdf:type owl:Class ;
                         rdfs:subClassOf :CriterionProperty .
+
+
+###  http://data.europa.eu/ePO/ontology#AwardCriterionPropertyGroup
+:AwardCriterionPropertyGroup rdf:type owl:Class ;
+                             rdfs:subClassOf :CriterionPropertyGroup .
 
 
 ###  http://data.europa.eu/ePO/ontology#AwardResult
