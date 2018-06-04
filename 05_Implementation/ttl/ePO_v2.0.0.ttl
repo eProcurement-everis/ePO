@@ -9,6 +9,7 @@
 @prefix ccev: <https://joinup.ec.europa.eu/node/157823/> .
 @prefix ccts: <urn:un:unece:uncefact:documentation:2#> .
 @prefix espd: <https://github.com/ESPD/ESPD-EDM/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://data.europa.eu/ePO/ontology> .
@@ -158,10 +159,22 @@ ccts:time rdf:type rdfs:Datatype .
                  rdfs:range :BuyerProfile .
 
 
+###  http://data.europa.eu/ePO/ontology#hasContractEstimatedDuration
+:hasContractEstimatedDuration rdf:type owl:ObjectProperty ;
+                              rdfs:domain :Purpose ;
+                              rdfs:range :Period .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasContractModificationCodeType
 :hasContractModificationCodeType rdf:type owl:ObjectProperty ;
                                  rdfs:domain :ContractModification ;
                                  rdfs:range :ContractModificationCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasContractNatureCodeType
+:hasContractNatureCodeType rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Purpose ;
+                           rdfs:range :ContractNatureCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractValidityPeriod
@@ -237,12 +250,6 @@ ccts:time rdf:type rdfs:Datatype .
                  rdfs:range :Currency .
 
 
-###  http://data.europa.eu/ePO/ontology#hasDeliveryCountryCode
-:hasDeliveryCountryCode rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Tender ;
-                        rdfs:range :CountryCodeType .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasEOIndustryClassificationCodeType
 :hasEOIndustryClassificationCodeType rdf:type owl:ObjectProperty ;
                                      rdfs:domain :EconomicOperator ;
@@ -261,16 +268,16 @@ ccts:time rdf:type rdfs:Datatype .
                       rdfs:range ccts:Identifier .
 
 
-###  http://data.europa.eu/ePO/ontology#hasEconomicOperator
-:hasEconomicOperator rdf:type owl:ObjectProperty ;
-                     rdfs:domain :ProcurementProcedure ;
-                     rdfs:range :EconomicOperator .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasEnvironmentalParty
 :hasEnvironmentalParty rdf:type owl:ObjectProperty ;
                        rdfs:domain :ProcurementProcedure ;
                        rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEstimatedProcurementValue
+:hasEstimatedProcurementValue rdf:type owl:ObjectProperty ;
+                              rdfs:domain :ProcurementProject ;
+                              rdfs:range :ProcurementValue .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasEvaluationCriterion
@@ -298,6 +305,12 @@ ccts:time rdf:type rdfs:Datatype .
                    rdfs:range :FinancialTerms .
 
 
+###  http://data.europa.eu/ePO/ontology#hasFundsIdentification
+:hasFundsIdentification rdf:type owl:ObjectProperty ;
+                        rdfs:domain :ProcurementProject ;
+                        rdfs:range :FundsIdentification .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasIdentifier
 :hasIdentifier rdf:type owl:ObjectProperty ;
                rdfs:domain :FinancialAccount ;
@@ -319,7 +332,7 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasJurisdictionalCompetenceLevelCode
 :hasJurisdictionalCompetenceLevelCode rdf:type owl:ObjectProperty ;
                                       rdfs:domain :ProcuringEntity ;
-                                      rdfs:range :JurisdictionalCompetenceLevelCode .
+                                      rdfs:range :JurisdictionalCompetenceLevelCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasLegalBasis
@@ -346,10 +359,22 @@ ccts:time rdf:type rdfs:Datatype .
                           rdfs:range ccts:Identifier .
 
 
+###  http://data.europa.eu/ePO/ontology#hasMaximumAmount
+:hasMaximumAmount rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcurementValue ;
+                  rdfs:range ccts:Amount .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasMediationBody
 :hasMediationBody rdf:type owl:ObjectProperty ;
                   rdfs:domain :ProcedureTerms ;
                   rdfs:range org:Organization .
+
+
+###  http://data.europa.eu/ePO/ontology#hasMinimumAmount
+:hasMinimumAmount rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcurementValue ;
+                  rdfs:range ccts:Amount .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasModification
@@ -362,6 +387,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasNotificationTerms rdf:type owl:ObjectProperty ;
                       rdfs:domain :ProcurementProcedure ;
                       rdfs:range :NotificationTerms .
+
+
+###  http://data.europa.eu/ePO/ontology#hasOverallAmount
+:hasOverallAmount rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcurementValue ;
+                  rdfs:range ccts:Amount .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPreselectedTenderers
@@ -399,7 +430,13 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasProcurementProcedureType
 :hasProcurementProcedureType rdf:type owl:ObjectProperty ;
                              rdfs:domain :ProcurementProcedure ;
-                             rdfs:range :ProcedureType .
+                             rdfs:range :ProcurementProcedureCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcurementProjectIdentifier
+:hasProcurementProjectIdentifier rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :ProcurementProject ;
+                                 rdfs:range ccts:Identifier .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasProcuringEntity
@@ -433,6 +470,12 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:range :Value .
 
 
+###  http://data.europa.eu/ePO/ontology#hasPurpose
+:hasPurpose rdf:type owl:ObjectProperty ;
+            rdfs:domain :ProcurementProject ;
+            rdfs:range :Purpose .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasQualifyingParty
 :hasQualifyingParty rdf:type owl:ObjectProperty ;
                     rdfs:domain :EconomicOperator ;
@@ -460,7 +503,7 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasSubmissionLanguage
 :hasSubmissionLanguage rdf:type owl:ObjectProperty ;
                        rdfs:domain :TenderSubmissionTerms ;
-                       rdfs:range :SubmissionLanguage .
+                       rdfs:range :LanguageCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSubmissionTerms
@@ -475,10 +518,22 @@ ccts:time rdf:type rdfs:Datatype .
              rdfs:range org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#hasTechniqueIdentifier
+:hasTechniqueIdentifier rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Technique ;
+                        rdfs:range ccts:Identifier .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasTenderEvaluationTerms
 :hasTenderEvaluationTerms rdf:type owl:ObjectProperty ;
                           rdfs:domain :ProcurementProcedure ;
                           rdfs:range :TenderEvaluationTerms .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTotalAmount
+:hasTotalAmount rdf:type owl:ObjectProperty ;
+                rdfs:domain :ProcurementValue ;
+                rdfs:range ccts:Amount .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasValueAmount
@@ -555,6 +610,12 @@ ccts:time rdf:type rdfs:Datatype .
                    owl:inverseOf :subcontracts ;
                    rdfs:domain :EconomicOperator ;
                    rdfs:range :EconomicOperator .
+
+
+###  http://data.europa.eu/ePO/ontology#isUnderProcurementRegimeCodeType
+:isUnderProcurementRegimeCodeType rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :ProcurementProcedure ;
+                                  rdfs:range :ProcurementRegimeCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#notifiedThrough
@@ -711,6 +772,12 @@ ccts:time rdf:type rdfs:Datatype .
                    rdfs:range :Tenderer .
 
 
+###  http://data.europa.eu/ePO/ontology#usesTechnique
+:usesTechnique rdf:type owl:ObjectProperty ;
+               rdfs:domain :ProcurementProject ;
+               rdfs:range :Technique .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -744,6 +811,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasAwardDateScheduled rdf:type owl:DatatypeProperty ;
                        rdfs:domain :ProcurementProcedure ;
                        rdfs:range xsd:dateTime .
+
+
+###  http://data.europa.eu/ePO/ontology#hasCalculationMethod
+:hasCalculationMethod rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ProcurementValue ;
+                      rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractNoticePublicationDate
@@ -1032,6 +1105,42 @@ ccts:time rdf:type rdfs:Datatype .
                          rdfs:range xsd:anyURI .
 
 
+###  http://data.europa.eu/ePO/ontology#hasProcurementProjectDescription
+:hasProcurementProjectDescription rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :ProcurementProject ;
+                                  rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasProcurementProjectTitle
+:hasProcurementProjectTitle rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :ProcurementProject ;
+                            rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPurposeOptions
+:hasPurposeOptions rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Purpose ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPurposeOptionsDescription
+:hasPurposeOptionsDescription rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Purpose ;
+                              rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPurposeSubjectMatter
+:hasPurposeSubjectMatter rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Purpose ;
+                         rdfs:range xsd:string .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPurposeTotalMagnitudeQuantity
+:hasPurposeTotalMagnitudeQuantity rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Purpose ;
+                                  rdfs:range xsd:double .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasRate
 :hasRate rdf:type owl:DatatypeProperty ;
          rdfs:domain :SubcontractTerms ;
@@ -1066,6 +1175,18 @@ ccts:time rdf:type rdfs:Datatype .
 :hasSuccessiveReduction rdf:type owl:DatatypeProperty ;
                         rdfs:domain :TenderEvaluationTerms ;
                         rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTaxIncludedIndicator
+:hasTaxIncludedIndicator rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :ProcurementValue ;
+                         rdfs:range xsd:boolean .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTechniqueAdditionalInformation
+:hasTechniqueAdditionalInformation rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain :Technique ;
+                                   rdfs:range xsd:string .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasTendersSubmission
@@ -1178,8 +1299,17 @@ ccts:time rdf:type rdfs:Datatype .
                         rdfs:subClassOf :CriterionProperty .
 
 
+###  http://data.europa.eu/ePO/ontology#AwardResult
+:AwardResult rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#BuyerProfile
 :BuyerProfile rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#CPVCodeType
+:CPVCodeType rdf:type owl:Class ;
+             rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#CallForCompetition
@@ -1213,6 +1343,11 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ContractModificationNotice
 :ContractModificationNotice rdf:type owl:Class ;
                             rdfs:subClassOf :Notice .
+
+
+###  http://data.europa.eu/ePO/ontology#ContractNatureCodeType
+:ContractNatureCodeType rdf:type owl:Class ;
+                        rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#ContractNotice
@@ -1304,6 +1439,11 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:subClassOf rov:RegisteredOrganization .
 
 
+###  http://data.europa.eu/ePO/ontology#EvaluationBoard
+:EvaluationBoard rdf:type owl:Class ;
+                 rdfs:subClassOf foaf:Group .
+
+
 ###  http://data.europa.eu/ePO/ontology#EvaluationCriterion
 :EvaluationCriterion rdf:type owl:Class ;
                      rdfs:subClassOf :Criterion .
@@ -1314,8 +1454,17 @@ ccts:time rdf:type rdfs:Datatype .
                           rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#EvaluationResult
+:EvaluationResult rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#Evidence
 :Evidence rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ExclusionGrounds
+:ExclusionGrounds rdf:type owl:Class ;
+                  rdfs:subClassOf :Criterion .
 
 
 ###  http://data.europa.eu/ePO/ontology#FinancialAccount
@@ -1350,9 +1499,14 @@ ccts:time rdf:type rdfs:Datatype .
                                 rdfs:subClassOf ccts:Code .
 
 
-###  http://data.europa.eu/ePO/ontology#JurisdictionalCompetenceLevelCode
-:JurisdictionalCompetenceLevelCode rdf:type owl:Class ;
-                                   rdfs:subClassOf ccts:Code .
+###  http://data.europa.eu/ePO/ontology#JurisdictionalCompetenceLevelCodeType
+:JurisdictionalCompetenceLevelCodeType rdf:type owl:Class ;
+                                       rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#LanguageCodeType
+:LanguageCodeType rdf:type owl:Class ;
+                  rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Legislation
@@ -1363,11 +1517,6 @@ ccts:time rdf:type rdfs:Datatype .
 :Lot rdf:type owl:Class ;
      rdfs:subClassOf :ProcurementProject ;
      owl:disjointWith :ProcurementProcedure .
-
-
-###  http://data.europa.eu/ePO/ontology#MainActivityType
-:MainActivityType rdf:type owl:Class ;
-                  rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Notice
@@ -1402,11 +1551,6 @@ ccts:time rdf:type rdfs:Datatype .
 :ProcedureTerms rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#ProcedureType
-:ProcedureType rdf:type owl:Class ;
-               rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#ProcurementDocument
 :ProcurementDocument rdf:type owl:Class ;
                      rdfs:subClassOf :Document .
@@ -1417,8 +1561,22 @@ ccts:time rdf:type rdfs:Datatype .
                       rdfs:subClassOf :ProcurementProject .
 
 
+###  http://data.europa.eu/ePO/ontology#ProcurementProcedureCodeType
+:ProcurementProcedureCodeType rdf:type owl:Class ;
+                              rdfs:subClassOf ccts:Code .
+
+
 ###  http://data.europa.eu/ePO/ontology#ProcurementProject
 :ProcurementProject rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementRegimeCodeType
+:ProcurementRegimeCodeType rdf:type owl:Class ;
+                           rdfs:subClassOf ccts:Code .
+
+
+###  http://data.europa.eu/ePO/ontology#ProcurementValue
+:ProcurementValue rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcuringEntity
@@ -1441,6 +1599,10 @@ ccts:time rdf:type rdfs:Datatype .
                      rdfs:subClassOf ccts:Code .
 
 
+###  http://data.europa.eu/ePO/ontology#Purpose
+:Purpose rdf:type owl:Class .
+
+
 ###  http://data.europa.eu/ePO/ontology#RequestForParticipation
 :RequestForParticipation rdf:type owl:Class ;
                          rdfs:subClassOf :Document .
@@ -1449,11 +1611,6 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#ReservedContract
 :ReservedContract rdf:type owl:Class ;
                   rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#ReservedContractType
-:ReservedContractType rdf:type owl:Class ;
-                      rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#SelectionCriterion
@@ -1470,11 +1627,6 @@ ccts:time rdf:type rdfs:Datatype .
 :SubcontractTerms rdf:type owl:Class .
 
 
-###  http://data.europa.eu/ePO/ontology#SubmissionLanguage
-:SubmissionLanguage rdf:type owl:Class ;
-                    rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#TechnicalSpecifications
 :TechnicalSpecifications rdf:type owl:Class ;
                          rdfs:subClassOf :ProcurementDocument .
@@ -1483,6 +1635,10 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#TechnicalTenderDocument
 :TechnicalTenderDocument rdf:type owl:Class ;
                          rdfs:subClassOf :TenderDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#Technique
+:Technique rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#Tender
@@ -1520,12 +1676,25 @@ ccts:time rdf:type rdfs:Datatype .
 :Value rdf:type owl:Class .
 
 
+###  http://data.europa.eu/ePO/ontology#Winner
+:Winner rdf:type owl:Class ;
+        rdfs:subClassOf :Tenderer .
+
+
 ###  http://www.w3.org/ns/org#Organization
 org:Organization rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/regorg#RegisteredOrganization
 rov:RegisteredOrganization rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+foaf:Group rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
 
 
 ###  https://github.com/ESPD/ESPD-EDM/LegalForm
@@ -1549,9 +1718,30 @@ ccts:Identifier rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://data.europa.eu/ePO/ontology#AMI
+:AMI rdf:type owl:NamedIndividual ,
+              :ProcurementProcedureCodeType ;
+     dcterms:title "Call for expressions of interest" ;
+     rdfs:label "AMI" .
+
+
+###  http://data.europa.eu/ePO/ontology#AWARD
+:AWARD rdf:type owl:NamedIndividual ,
+                :ProcurementProcedureCodeType ;
+       dcterms:title "Contract awards" ;
+       rdfs:label "AWARD" .
+
+
+###  http://data.europa.eu/ePO/ontology#AWARD_DIRECT
+:AWARD_DIRECT rdf:type owl:NamedIndividual ,
+                       :ProcurementProcedureCodeType ;
+              dcterms:title "Direct award" ;
+              rdfs:label "AWARD_DIRECT" .
+
+
 ###  http://data.europa.eu/ePO/ontology#BGPL
 :BGPL rdf:type owl:NamedIndividual ,
-               :JurisdictionalCompetenceLevelCode ;
+               :JurisdictionalCompetenceLevelCodeType ;
       dcterms:title "Body Governed by Public Law" ;
       rdfs:label "BODY_GOVERNED_BY_PUBLIC_LAW" .
 
@@ -1559,7 +1749,7 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#CA
 :CA rdf:type owl:NamedIndividual ,
              :ProcuringEntityType ;
-    dcterms:title "Contracting Authority with other activities different to the ones of a CE." ;
+    dcterms:title "Contracting Authority with other activities different to the ones of a CE" ;
     rdfs:label "CONTRACTING_AUTHORITY" .
 
 
@@ -1587,7 +1777,7 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#CAPTION
 :CAPTION rdf:type owl:NamedIndividual ,
                   :CriterionPropertyCodeType ;
-         dcterms:title "A text label (no requirement nor answer is expected)." ;
+         dcterms:title "A text label (no requirement nor answer is expected)" ;
          rdfs:label "CAPTION" .
 
 
@@ -1635,7 +1825,7 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#CGA
 :CGA rdf:type owl:NamedIndividual ,
-              :JurisdictionalCompetenceLevelCode ;
+              :JurisdictionalCompetenceLevelCodeType ;
      dcterms:title "Central Government Authority" ;
      rdfs:label "CENTRAL_GOVERNMENT_AUTHORITY" .
 
@@ -1647,11 +1837,53 @@ ccts:Identifier rdf:type owl:Class .
                rdfs:label "CHANGE_OF_IPC" .
 
 
+###  http://data.europa.eu/ePO/ontology#COMBINED
+:COMBINED rdf:type owl:NamedIndividual ,
+                   :ContractNatureCodeType ;
+          dcterms:title "Combined" ;
+          rdfs:label "COMBINED" .
+
+
+###  http://data.europa.eu/ePO/ontology#COMP_DIALOGUE
+:COMP_DIALOGUE rdf:type owl:NamedIndividual ,
+                        :ProcurementProcedureCodeType ;
+               dcterms:title "Competitive dialogue" ;
+               rdfs:label "COMP_DIALOGUE" .
+
+
+###  http://data.europa.eu/ePO/ontology#COMP_NEGOTIATION
+:COMP_NEGOTIATION rdf:type owl:NamedIndividual ,
+                           :ProcurementProcedureCodeType ;
+                  dcterms:title "Competitive procedure with negotiation" ;
+                  rdfs:label "COMP_NEGOTIATION" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONCESSION
+:CONCESSION rdf:type owl:NamedIndividual ,
+                     :ProcurementProcedureCodeType ;
+            dcterms:title "Concession award procedure" ;
+            rdfs:label "CONCESSION" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONCESSION_WO_PUB
+:CONCESSION_WO_PUB rdf:type owl:NamedIndividual ,
+                            :ProcurementProcedureCodeType ;
+                   dcterms:title "Concession award without prior concession notice" ;
+                   rdfs:label "CONCESSION_WO_PUB" .
+
+
 ###  http://data.europa.eu/ePO/ontology#CONSORTIUM
 :CONSORTIUM rdf:type owl:NamedIndividual ,
                      :EOGroupCodeType ;
             dcterms:title "Consortium" ;
             rdfs:label "CONSORTIUM" .
+
+
+###  http://data.europa.eu/ePO/ontology#CONTESTS_RESULT
+:CONTESTS_RESULT rdf:type owl:NamedIndividual ,
+                          :ProcurementProcedureCodeType ;
+                 dcterms:title "Results of design contests" ;
+                 rdfs:label "CONTESTS_RESULT" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONTRACT_DEADLINE_EXTENSION
@@ -1673,6 +1905,20 @@ ccts:Identifier rdf:type owl:Class .
                                 :ContractModificationCodeType ;
                        dcterms:title "Contract Scope Change" ;
                        rdfs:label "CONTRACT_SCOPE_CHANGE" .
+
+
+###  http://data.europa.eu/ePO/ontology#CON_PUBLIC_WORKS
+:CON_PUBLIC_WORKS rdf:type owl:NamedIndividual ,
+                           :ContractNatureCodeType ;
+                  dcterms:title "Public Works Concession" ;
+                  rdfs:label "CON_PUBLIC_WORKS" .
+
+
+###  http://data.europa.eu/ePO/ontology#CON_SERVICE
+:CON_SERVICE rdf:type owl:NamedIndividual ,
+                      :ContractNatureCodeType ;
+             dcterms:title "Service Concession" ;
+             rdfs:label "CON_SERVICE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CPB
@@ -1738,6 +1984,28 @@ ccts:Identifier rdf:type owl:Class .
                                                                            rdfs:label "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE" .
 
 
+###  http://data.europa.eu/ePO/ontology#DESIGN_CONTEST
+:DESIGN_CONTEST rdf:type owl:NamedIndividual ,
+                         :ProcurementProcedureCodeType ,
+                         :ProcurementRegimeCodeType ;
+                dcterms:title "Design contest" ;
+                rdfs:label "DESIGN_CONTEST" .
+
+
+###  http://data.europa.eu/ePO/ontology#INFO
+:INFO rdf:type owl:NamedIndividual ,
+               :ProcurementProcedureCodeType ;
+      dcterms:title "General information" ;
+      rdfs:label "INFO" .
+
+
+###  http://data.europa.eu/ePO/ontology#INNOVATION
+:INNOVATION rdf:type owl:NamedIndividual ,
+                     :ProcurementProcedureCodeType ;
+            dcterms:title "Innovation partnership" ;
+            rdfs:label "INNOVATION" .
+
+
 ###  http://data.europa.eu/ePO/ontology#JPL
 :JPL rdf:type owl:NamedIndividual ,
               :JointProcurementEntityRoleType ;
@@ -1761,7 +2029,7 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#LA
 :LA rdf:type owl:NamedIndividual ,
-             :JurisdictionalCompetenceLevelCode ;
+             :JurisdictionalCompetenceLevelCodeType ;
     dcterms:title "Local Authority" ;
     rdfs:label "LOCAL_AUTHORITY" .
 
@@ -1780,6 +2048,13 @@ ccts:Identifier rdf:type owl:Class .
     rdfs:label "LEAD_ENTITY" .
 
 
+###  http://data.europa.eu/ePO/ontology#LOV
+:LOV rdf:type owl:NamedIndividual ,
+              :ProcurementProcedureCodeType ;
+     dcterms:title "Negotiated Procedure for low value contracts" ;
+     rdfs:label "LOV" .
+
+
 ###  http://data.europa.eu/ePO/ontology#MEDIUM
 :MEDIUM rdf:type owl:NamedIndividual ,
                  :EOIndustryClassificationCodeType ;
@@ -1792,6 +2067,34 @@ ccts:Identifier rdf:type owl:Class .
                 :EOIndustryClassificationCodeType ;
        dcterms:title "Micro Enterprise" ;
        rdfs:label "MICRO" .
+
+
+###  http://data.europa.eu/ePO/ontology#NEGOTIATED
+:NEGOTIATED rdf:type owl:NamedIndividual ,
+                     :ProcurementProcedureCodeType ;
+            dcterms:title "Negotiated procedure" ;
+            rdfs:label "NEGOTIATED" .
+
+
+###  http://data.europa.eu/ePO/ontology#NEGOTIATED_ACCELERATED
+:NEGOTIATED_ACCELERATED rdf:type owl:NamedIndividual ,
+                                 :ProcurementProcedureCodeType ;
+                        dcterms:title "Accelerated negotiated procedure" ;
+                        rdfs:label "NEGOTIATED_ACCELERATED" .
+
+
+###  http://data.europa.eu/ePO/ontology#NEGOTIATED_WO_CALL
+:NEGOTIATED_WO_CALL rdf:type owl:NamedIndividual ,
+                             :ProcurementProcedureCodeType ;
+                    dcterms:title "Negotiated without a prior call for competition" ;
+                    rdfs:label "NEGOTIATED_WO_CALL" .
+
+
+###  http://data.europa.eu/ePO/ontology#NOT_SPECIFIED
+:NOT_SPECIFIED rdf:type owl:NamedIndividual ,
+                        :ProcurementProcedureCodeType ;
+               dcterms:title "Not specified" ;
+               rdfs:label "NOT_SPECIFIED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OENRON
@@ -1818,15 +2121,37 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#ONFALSE
 :ONFALSE rdf:type owl:NamedIndividual ,
                   :CriterionGroupPropertyCodeType ;
-         dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'false'." ;
+         dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'false'" ;
          rdfs:label "ONFALSE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#ONTRUE
 :ONTRUE rdf:type owl:NamedIndividual ,
                  :CriterionGroupPropertyCodeType ;
-        dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'true'." ;
+        dcterms:title "Process the group if the previous question was and INDICATOR answered with the value 'true'" ;
         rdfs:label "ONTRUE" .
+
+
+###  http://data.europa.eu/ePO/ontology#OPEN
+:OPEN rdf:type owl:NamedIndividual ,
+               :ProcurementProcedureCodeType ;
+      dcterms:title "Open procurement procedure" ;
+      rdfs:label "OPEN" .
+
+
+###  http://data.europa.eu/ePO/ontology#OPEN_RECUR
+:OPEN_RECUR rdf:type owl:NamedIndividual ,
+                     :ProcurementProcedureCodeType ;
+            dcterms:title "Open procedure with recurring quantities" ;
+            rdfs:label "OPEN_RECUR" .
+
+
+###  http://data.europa.eu/ePO/ontology#OTHER
+:OTHER rdf:type owl:NamedIndividual ,
+                :ContractNatureCodeType ,
+                :ProcurementProcedureCodeType ;
+       dcterms:title "Other" ;
+       rdfs:label "OTHER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#PASSFAIL
@@ -1853,7 +2178,7 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#PIN_REDUCE_TIME_LIMIT
 :PIN_REDUCE_TIME_LIMIT rdf:type owl:NamedIndividual ,
                                 :AcceleratedProcedureJustificationCodeType ;
-                       dcterms:title "Prior Information Notice to reduce time limits." ;
+                       dcterms:title "Prior Information Notice to reduce time limits" ;
                        rdfs:comment "" ;
                        rdfs:label "PIN_REDUCE_TIME_LIMIT" .
 
@@ -1872,24 +2197,45 @@ ccts:Identifier rdf:type owl:Class .
                rdfs:label "PRICE_RENEWAL" .
 
 
+###  http://data.europa.eu/ePO/ontology#QUAL
+:QUAL rdf:type owl:NamedIndividual ,
+               :ProcurementProcedureCodeType ;
+      dcterms:title "Qualification system" ;
+      rdfs:label "QUAL" .
+
+
 ###  http://data.europa.eu/ePO/ontology#QUESTION
 :QUESTION rdf:type owl:NamedIndividual ,
                    :CriterionPropertyCodeType ;
-          dcterms:title "A question that requires an answer (a specific datum) from the EO." ;
+          dcterms:title "A question that requires an answer (a specific datum) from the EO" ;
           rdfs:label "QUESTION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RA
 :RA rdf:type owl:NamedIndividual ,
-             :JurisdictionalCompetenceLevelCode ;
+             :JurisdictionalCompetenceLevelCodeType ;
     dcterms:title "Regional Authority" ;
     rdfs:label "REGIONAL_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#REQUIREMENT
 :REQUIREMENT rdf:type owl:NamedIndividual ;
-             dcterms:title "Requirement, remark, rule, restriction or additional information to which the EO needs to conform or comply with." ;
+             dcterms:title "Requirement, remark, rule, restriction or additional information to which the EO needs to conform or comply with" ;
              rdfs:label "REQUIREMENT" .
+
+
+###  http://data.europa.eu/ePO/ontology#RESTRICTED
+:RESTRICTED rdf:type owl:NamedIndividual ,
+                     :ProcurementProcedureCodeType ;
+            dcterms:title "Restricted procurement procedure" ;
+            rdfs:label "RESTRICTED" .
+
+
+###  http://data.europa.eu/ePO/ontology#RESTRICTED_ACCELERATED
+:RESTRICTED_ACCELERATED rdf:type owl:NamedIndividual ,
+                                 :ProcurementProcedureCodeType ;
+                        dcterms:title "Accelerated restricted procedure" ;
+                        rdfs:label "RESTRICTED_ACCELERATED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SC
@@ -1901,16 +2247,16 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#SCA
 :SCA rdf:type owl:NamedIndividual ,
-              :JurisdictionalCompetenceLevelCode ;
+              :JurisdictionalCompetenceLevelCodeType ;
      dcterms:title "Subcentral Government Authority" ;
      rdfs:label "SUBCENTRAL_GROVERNMENT_AUTHORITY" .
 
 
-###  http://data.europa.eu/ePO/ontology#SE
-:SE rdf:type owl:NamedIndividual ,
-             :ReservedContractType ;
-    dcterms:title "Sheltered Employment" ;
-    rdfs:label "SHELTERED_EMPLOYMENT" .
+###  http://data.europa.eu/ePO/ontology#SERVICES
+:SERVICES rdf:type owl:NamedIndividual ,
+                   :ContractNatureCodeType ;
+          dcterms:title "Services" ;
+          rdfs:label "SERVICES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SMALL
@@ -1927,6 +2273,13 @@ ccts:Identifier rdf:type owl:Class .
      rdfs:label "SME" .
 
 
+###  http://data.europa.eu/ePO/ontology#SOCIAL_SPECIFIC_SERVICES
+:SOCIAL_SPECIFIC_SERVICES rdf:type owl:NamedIndividual ,
+                                   :ProcurementRegimeCodeType ;
+                          dcterms:title "Social an other specific services" ;
+                          rdfs:label "SOCIAL_SPECIFIC_SERVICES" .
+
+
 ###  http://data.europa.eu/ePO/ontology#SP
 :SP rdf:type owl:NamedIndividual ,
              :ProcuringEntityRoleType ;
@@ -1937,15 +2290,15 @@ ccts:Identifier rdf:type owl:Class .
 ###  http://data.europa.eu/ePO/ontology#STATE_OF_URGENCY
 :STATE_OF_URGENCY rdf:type owl:NamedIndividual ,
                            :AcceleratedProcedureJustificationCodeType ;
-                  dcterms:title "State of Urgency." ;
+                  dcterms:title "State of Urgency" ;
                   rdfs:label "STATE_OF_URGENCY" .
 
 
-###  http://data.europa.eu/ePO/ontology#SW
-:SW rdf:type owl:NamedIndividual ,
-             :ReservedContractType ;
-    dcterms:title "Sheltered Workshops" ;
-    rdfs:label "SHELTERED_WORKSHOPS" .
+###  http://data.europa.eu/ePO/ontology#SUPPLIES
+:SUPPLIES rdf:type owl:NamedIndividual ,
+                   :ContractNatureCodeType ;
+          dcterms:title "Supplies" ;
+          rdfs:label "SUPPLIES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#UNDERTAKING
@@ -1955,11 +2308,60 @@ ccts:Identifier rdf:type owl:Class .
              rdfs:label "UNDERTAKING" .
 
 
+###  http://data.europa.eu/ePO/ontology#VDL
+:VDL rdf:type owl:NamedIndividual ,
+              :ProcurementProcedureCodeType ;
+     dcterms:title "Vendor's list" ;
+     rdfs:label "VDL" .
+
+
 ###  http://data.europa.eu/ePO/ontology#WEIGHTED
 :WEIGHTED rdf:type owl:NamedIndividual ,
                    :EvaluationMethodCodeType ;
           dcterms:title "The criterion is weighted" ;
           rdfs:label "WEIGHTED" .
+
+
+###  http://data.europa.eu/ePO/ontology#WORKS
+:WORKS rdf:type owl:NamedIndividual ,
+                :ContractNatureCodeType ;
+       dcterms:title "Works" ;
+       rdfs:label "WORKS" .
+
+
+###  http://data.europa.eu/ePO/ontology#03000000-1
+: rdf:type owl:NamedIndividual ,
+           :CPVCodeType ;
+  dcterms:title "Agricultural, farming, fishing, forestry and related products" ;
+  rdfs:label "03000000-1" .
+
+
+###  http://data.europa.eu/ePO/ontology#03100000-2
+: rdf:type owl:NamedIndividual ,
+           :CPVCodeType ;
+  dcterms:title "Agricultural and horticultural products" ;
+  rdfs:label "03100000-2" .
+
+
+###  http://data.europa.eu/ePO/ontology#03110000-5
+: rdf:type owl:NamedIndividual ,
+           :CPVCodeType ;
+  dcterms:title "Crops, products of market gardening and horticulture" ;
+  rdfs:label "03110000-5" .
+
+
+###  http://data.europa.eu/ePO/ontology#03111000-2
+: rdf:type owl:NamedIndividual ,
+           :CPVCodeType ;
+  dcterms:title "Seeds" ;
+  rdfs:label "03111000-2" .
+
+
+###  http://data.europa.eu/ePO/ontology#03111100-3
+: rdf:type owl:NamedIndividual ,
+           :CPVCodeType ;
+  dcterms:title "Soya beans" ;
+  rdfs:label "03111100-3" .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
