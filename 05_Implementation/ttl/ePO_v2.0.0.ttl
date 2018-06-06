@@ -90,7 +90,7 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#belongsToProcurementProcedure
 :belongsToProcurementProcedure rdf:type owl:ObjectProperty ;
-                               owl:inverseOf :isDividedIntoLots ;
+                               owl:inverseOf :includesLot ;
                                rdfs:domain :Lot ;
                                rdfs:range :ProcurementProcedure .
 
@@ -250,6 +250,12 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:range :Purpose .
 
 
+###  http://data.europa.eu/ePO/ontology#hasContractTerms
+:hasContractTerms rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ProcurementProcedure ;
+                  rdfs:range :ContractTerms .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasContractValidityPeriod
 :hasContractValidityPeriod rdf:type owl:ObjectProperty ;
                            rdfs:domain :ContractModification ;
@@ -327,6 +333,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasCurrencyCode rdf:type owl:ObjectProperty ;
                  rdfs:domain :FinancialAccount ;
                  rdfs:range :Currency .
+
+
+###  http://data.europa.eu/ePO/ontology#hasDeliveryCountry
+:hasDeliveryCountry rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ContractTerms ;
+                    rdfs:range :CountryCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasEOIndustryClassificationCodeType
@@ -585,6 +597,12 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:range org:Organization .
 
 
+###  http://data.europa.eu/ePO/ontology#hasReservedContract
+:hasReservedContract rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ContractTerms ;
+                     rdfs:range :ReservedContractCodeType .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasResponseValue
 :hasResponseValue rdf:type owl:ObjectProperty ;
                   rdfs:domain :CriterionPropertyResponse ;
@@ -689,10 +707,10 @@ ccts:time rdf:type rdfs:Datatype .
            rdfs:range :Winner .
 
 
-###  http://data.europa.eu/ePO/ontology#isDividedIntoLots
-:isDividedIntoLots rdf:type owl:ObjectProperty ;
-                   rdfs:domain :ProcurementProcedure ;
-                   rdfs:range :Lot .
+###  http://data.europa.eu/ePO/ontology#includesLot
+:includesLot rdf:type owl:ObjectProperty ;
+             rdfs:domain :ProcurementProcedure ;
+             rdfs:range :Lot .
 
 
 ###  http://data.europa.eu/ePO/ontology#isEvaluatedBy
@@ -746,13 +764,6 @@ ccts:time rdf:type rdfs:Datatype .
                    owl:inverseOf :subcontracts ;
                    rdfs:domain :EconomicOperator ;
                    rdfs:range :EconomicOperator .
-
-
-###  http://data.europa.eu/ePO/ontology#isUnderProcurementRegimeCodeType
-:isUnderProcurementRegimeCodeType rdf:type owl:ObjectProperty ;
-                                  rdfs:domain :AwardResult ,
-                                              :ProcurementProcedure ;
-                                  rdfs:range :ProcurementRegimeCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#meetsExclusionGrounds
@@ -938,6 +949,13 @@ ccts:time rdf:type rdfs:Datatype .
 :tenderSubmittedBy rdf:type owl:ObjectProperty ;
                    rdfs:domain :Tender ;
                    rdfs:range :Tenderer .
+
+
+###  http://data.europa.eu/ePO/ontology#underProcurementRegime
+:underProcurementRegime rdf:type owl:ObjectProperty ;
+                        rdfs:domain :AwardResult ,
+                                    :ProcurementProcedure ;
+                        rdfs:range :ProcurementRegimeCodeType .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesTechnique
@@ -1828,9 +1846,9 @@ ccts:time rdf:type rdfs:Datatype .
                          rdfs:subClassOf :Document .
 
 
-###  http://data.europa.eu/ePO/ontology#ReservedContract
-:ReservedContract rdf:type owl:Class ;
-                  rdfs:subClassOf ccts:Code .
+###  http://data.europa.eu/ePO/ontology#ReservedContractCodeType
+:ReservedContractCodeType rdf:type owl:Class ;
+                          rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#SelectionCriterion
@@ -1890,11 +1908,6 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#Tenderer
 :Tenderer rdf:type owl:Class ;
           rdfs:subClassOf :EconomicOperator .
-
-
-###  http://data.europa.eu/ePO/ontology#TenderingCriterion
-:TenderingCriterion rdf:type owl:Class ;
-                    rdfs:subClassOf :Criterion .
 
 
 ###  http://data.europa.eu/ePO/ontology#Value
