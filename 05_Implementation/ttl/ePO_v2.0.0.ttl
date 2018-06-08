@@ -396,13 +396,6 @@ ccts:time rdf:type rdfs:Datatype .
                      rdfs:range :FinancialAccount .
 
 
-###  http://data.europa.eu/ePO/ontology#hasFinancialTerms
-:hasFinancialTerms rdf:type owl:ObjectProperty ,
-                            owl:FunctionalProperty ;
-                   rdfs:domain :ProcurementProcedure ;
-                   rdfs:range :FinancialTerms .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasFundsIdentification
 :hasFundsIdentification rdf:type owl:ObjectProperty ;
                         rdfs:domain :ProcurementProject ;
@@ -463,10 +456,10 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:range ccts:Amount .
 
 
-###  http://data.europa.eu/ePO/ontology#hasMediationBody
-:hasMediationBody rdf:type owl:ObjectProperty ;
-                  rdfs:domain :ProcedureTerms ;
-                  rdfs:range org:Organization .
+###  http://data.europa.eu/ePO/ontology#hasMediationParty
+:hasMediationParty rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ProcurementProcedure ;
+                   rdfs:range org:Organization .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMember
@@ -648,16 +641,16 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:range :TenderSubmissionTerms .
 
 
-###  http://data.europa.eu/ePO/ontology#hasTaxParty
-:hasTaxParty rdf:type owl:ObjectProperty ;
-             rdfs:domain :FinancialTerms ;
-             rdfs:range org:Organization .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasTechniqueIdentifier
 :hasTechniqueIdentifier rdf:type owl:ObjectProperty ;
                         rdfs:domain :Technique ;
                         rdfs:range ccts:Identifier .
+
+
+###  http://data.europa.eu/ePO/ontology#hasTenderDeliveryAddress
+:hasTenderDeliveryAddress rdf:type owl:ObjectProperty ;
+                          rdfs:domain :TenderSubmissionTerms ;
+                          rdfs:range :Address .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasTenderEvaluationTerms
@@ -1117,7 +1110,7 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasFinancialConditions
 :hasFinancialConditions rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :FinancialTerms ;
+                        rdfs:domain :SelectionCriterion ;
                         rdfs:range xsd:string .
 
 
@@ -1472,6 +1465,12 @@ ccts:time rdf:type rdfs:Datatype .
                rdfs:range xsd:decimal .
 
 
+###  http://data.europa.eu/ePO/ontology#haseDeliveryEndPoint
+:haseDeliveryEndPoint rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :TenderSubmissionTerms ;
+                      rdfs:range xsd:boolean .
+
+
 ###  http://data.europa.eu/ePO/ontology#isAbnormallyLow
 :isAbnormallyLow rdf:type owl:DatatypeProperty ;
                  rdfs:domain :EvaluationResult ;
@@ -1516,6 +1515,10 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#AdditionalDocument
 :AdditionalDocument rdf:type owl:Class ;
                     rdfs:subClassOf :ProcurementDocument .
+
+
+###  http://data.europa.eu/ePO/ontology#Address
+:Address rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#AwardCriterion
@@ -1713,10 +1716,6 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#FinancialTenderDocument
 :FinancialTenderDocument rdf:type owl:Class ;
                          rdfs:subClassOf :TenderDocument .
-
-
-###  http://data.europa.eu/ePO/ontology#FinancialTerms
-:FinancialTerms rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#FundsIdentification
