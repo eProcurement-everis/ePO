@@ -1,0 +1,3603 @@
+
+= eProcurement Ontology (ePO) Glossary
+	
+The following list of e-Procurement concepts have been identified through an analysis of the e-Notification and e-Access phases and also taking into account the labels in the *e-Forms*, to be used soon by all tenderers in the EU.
+*e-Forms* are one of the actions in the Single Market Strategy, where the European Commission has committed to "facilitate the collection, consolidation, management and analysis of procurement data, supporting Member States’ efforts towards better governance in public procurement".
+
+In the GitHub section link:https://github.com/eProcurement-everis/ePO/wiki/Glossary-Management[Glossary Management] you will find instructions of how to contribute to the enrichment and improvement of the ePO Glossary.
+
+This page was automatically generated using as the source a spreadsheet containing the 
+link:https://github.com/eProcurement-everis/ePO/blob/master/02_IR_DED/eProcurement_glossary_and%20DED.ods[*Foundational e-Forms, the ePO Glossary and the Data Element Dictionary (DED)*], 
+which takes its definitions from the ePO Glossary (click on the link to download this spreadsheet).
+
+The transfomation is based on two XSL-T stylesheets. The resources used to generate the page can be downloaded from the folder "02_IR_DED/xslt", in the ePO Github source repository. Any suggestion to improve its layout and behaviour will be appreciated.
+	
+   
+[.text-center]
+== A
+'''
+
+[.text-left]
+=== Abnormally low tenders
+
+There are one or several bids with unexpected cheap prices.
+ (An indicator to specify whether the tenders are abnormally low or not).
+
+*Alternative definitions*:
+
+
+* Tenders that appear abnormally low in relation to the works, supplies or services might be based on technically, economically or legally unsound assumptions or practices. Where the tenderer cannot provide a sufficient explanation, the contracting authority should be entitled to reject the tender.(Source: DIRECTIVE 2014/24/EU).
+
+* Contracting authorities shall require economic operators to explain the price or costs proposed in the tender where tenders appear to be abnormally low in relation to the works, supplies or services(Source: DIRECTIVE 2014/24/EU).
+
+* Text describing the exclusion criterion for abnormally low tenders.(Source: UBL).
+
+* Text describing the exclusion criterion for abnormally low tenders.(Source: ESPD).
+
+
+*Used in*:| e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Accelerated Procedure
+
+A process where the time limit for receipt of tenders can be reduced due to a state of urgency.
+ (Based on DIRECTIVE 2009/81/EC and DIRECTIVE 2014/24/EUIt applies to open procedures, restricted procedures or competitive procedures with negotiation.).
+
+*Alternative definitions*:
+
+
+* Where a state of urgency duly substantiated by the contracting authority renders impracticable the time limit laid down in the second subparagraph of paragraph 1, it may fix a time limit which shall be not less than 15 days from the date on which the contract notice was sent.(Source: DIRECTIVE 2014/24/EU).
+
+* Restricted procedures and negotiated procedures with publication of a contract notice, where urgency renders impracticable the minimum time-limits(Source: DIRECTIVE 2009/81/EC).
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Accelerated Procedure Justification
+
+Explanation why the choice of an accelerated procedure is lawful.
+
+
+*Alternative definitions*:
+
+
+* Justification of usage of a accelerated procedure(Source: OP internal working).
+
+* (...) a state of urgency duly substantiated by the contracting authority(Source: DIRECTIVE 2014/24/EU).
+
+
+
+
+   
+[.text-left]
+=== Acces Tool
+
+The website where access to devices is possible.
+ (Based on eForms consultation).
+
+*Alternative definition*:
+
+
+* Electronic communication requires the use of tools and devices that are not generally available. Access to these tools and devices is possible at: [website](Source: eForms consultation).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Added Category Buyer In Framework Agreement
+
+Any additonal categories of purchasing agents participating in the framework agreement.
+ (Based on eForms consultation).
+
+*Alternative definition*:
+
+
+* Any additonal categories of buyers participating in the framework agreement and not mentioned in the buyer section of this notice:(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Additional Information
+
+Any other relevant data not covered elsewhere.
+
+
+*Alternative definitions*:
+
+
+* Any other relevant information not specified elsewhere(Source: OP internal working).
+
+* Other relevant information not covered above.(Source: eForms consultation).
+
+* Further details regarding this item (e.g., the URL of a relevant web page).(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Award Criterion
+
+It describes a rule or a condition from the buyer that will be taken into account for the selection of the most economically advantageous tender, and which will be the basis for a comparative assessment of the quality of tenders.
+ (Based on DIRECTIVE 2014/24/EU.An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.).
+
+*Alternative definitions*:
+
+
+* A concept to define a criterion from the contracting party that will be taken into account when awarding a contract. An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.(Source: OP internal working).
+
+* Contract award criteria are the basis for a comparative assessment of the quality of tenders.(Source: DIRECTIVE 2014/24/EU).
+
+* Without prejudice to national laws, regulations or administrative provisions concerning the price of certain supplies or the remuneration of certain services, contracting authorities shall base the award of public contracts on the most economically advantageous tender.(Source: DIRECTIVE 2014/24/EU).
+
+* Objective criteria which comply with the principle of equal treatment, non-discrimination and transparency and which ensure that tenders are assessed in conditions of effective competition so as to identify an overall economic advantage for the contracting authority or the contracting entity.(Source: DIRECTIVE 2014/23/EU).
+
+* Criteria for the procurement, using the award criteria code list, which describes the basis on which contract awards will be made(Source: OCDS ontology).
+
+* Defines a criterion for awarding this tender.(Source: UBL).
+
+* A class to define a criterion from the contracting party that will be taken into account when awarding a contract. An awarding criterion can be objective, when it can be evaluated following a formula, or subjective, when human analysis is required.(Source: UBL).
+
+* A class to define the terms for awarding a contract.(Source: ESPD).
+
+* Class describing criterioa that depend on a value judgement.(Source: PPROC Ontology).
+
+* Class used to describe criteria that depend on a subjetive opinion.(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Award Criterion Type
+
+The category of the criterion whether it be concerned with the quality of the offer or the financial offer
+
+
+*Alternative definitions*:
+
+
+* A code used to define this awarding criterion.(Source: OP internal working).
+
+* A quality criterion is any non-price non-cost criterion.Please note that the European Commission maintains a detailed technical list of examples of green award criteria.This list is available in most EU languages at http://ec.europa.eu/environment/gpp/eu_gpp_criteria_en.htm.(Source: eForms consultation).
+
+* Cost refers to any monetary value, except price, that the buyer wants to take into account, e.g. running costs,switching costs, disposal costs.(Source: eForms consultation).
+
+* Price refers to the acquisition price.(Source: eForms consultation).
+
+
+
+
+   
+[.text-left]
+=== Award Date Scheduled
+
+Estimated time of the decision on the winner of the contract.
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Awarded Contract
+
+The decision on the winner of the procurement procedure has been taken.
+ (An indicator to specify whether a contract is awarded or not).
+
+*Alternative definitions*:
+
+
+* Points to the body agreement where a tender has been awarded.(Source: PPROC Ontology).
+
+* Property for awarded tender submitted by a bidder.(Source: PPROC Ontology).
+
+* A class to describe the awarding of a tender in a tendering process.(Source: UBL).
+
+* The awarded tendered project associated with this tender result.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== Awarded To Group
+
+The winner of the contract is Consortium, a Joint Venture or another type of group
+ ("Awarded To Group Indicator": an indicator to specify whether the procurement procedure is awarded to group EO (Economic Operator) or not).).
+
+*Alternative definition*:
+
+
+* awarded to group EO(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== Awarded To SME
+
+The winner of the contract is a SME (small or medium enterprise).
+ (An indicator to specify whether the procurement procedure is awarded to a SME or not)).
+
+*Alternative definition*:
+
+
+* awarded to SME winner(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+[.text-center]
+== B
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Bargain Purchase Value
+
+The financial worth of a bargain purchase, taking advantage of a particularly advantageous opportunity available for a very short time at a price considerably lower than market prices.
+ (Based on the DIRECTIVE 2014/25/EU).
+
+*Alternative definitions*:
+
+
+* Price paid for bargain purchases(Source: OP internal working).
+
+* (...) for bargain purchases, where it is possible to procure supplies by taking advantage of a particularly advantageous opportunity available for a very short time at a price considerably lower than normal market prices;(Source: DIRECTIVE 2014/25/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Buyer
+
+The buyer is the entity whose budget will be used to purchase the goods. This may be different from the procuring entity who may be specified in the tender data.
+ (Voted WG 21/9/2017.http://standard.open-contracting.org/latest/en/schema/reference/#award).
+
+*Alternative definitions*:
+
+
+* The entity managing the procurement. This may be different from the buyer who pays for, or uses, the items being procured.(Source: OCDS ontology).
+
+* Body related to the contract(Source: PPROC Ontology).
+
+* Any authority of a State. A public authority is a type of public body, i.e. is a public body of a State apparatus, either at central and local level.(Source: LOTED Ontology).
+
+* The contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).(Source: e-Sens).
+
+* An entity which pursues one of the activities referred to in Annex II and award a concession for the pursuit of one of those activities, and which are one of the following: (a) State, regional or local authorities, bodies governed by public law or associations formed by one or more such authorities or one or more such bodies governed by public law; (b) public undertakings as defined in paragraph 4 of this Article; (c) entities other than those referred to in points (a) and (b) of this paragraph, but which operate on the basis of special or exclusive rights, granted for the exercise of one of the activities referred to in Annex II.(Source: DIRECTIVE 2014/23/EU).
+
+* Entities which: (a) are contracting authorities or public undertakings and which pursue one of the activities referred to in Articles 8 to 14; (b) when they are not contracting authorities or public undertakings, have as one of their activities any of the activities referred to in Articles 8 to 14, or any combination thereof and operate on the basis of special or exclusive rights granted by a competent authority of a Member State.(Source: DIRECTIVE 2014/25/EU).
+
+* A class representing the contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU)(Source: ESPD).
+
+* A contracting authority providing centralised purchasing activities and, possibly, ancillary purchasing activities.(Source: DIRECTIVE 2014/24/EU).
+
+* A role played by an entity operating in ordinary sectors in the context of any procurement competitive process.(Source: LOTED Ontology).
+
+* State, regional or local authorities, bodies governed by public law or associations formed by one or more such authorities or one or more such bodies governed by public law.(Source: DIRECTIVE 2014/24/EU).
+
+* The contracting authority specifies the business entity which issues the contract.(Source: OCDS ontology).
+
+* The coordinates and identifiers relating to the organisation(s) that are procuring works, supplies and services.(Source: Ontology proposal).
+
+* A concept to describe the buyer with the information about the contacting point and the address of this buyer(Source: OP internal working).
+
+* a party that acquires, or agrees to acquire, ownership (in case of goods), or benefit or usage (in case of services), in exchange for money or other consideration under a contract of sale(Source: Financial Industry Business Ontology).
+
+* It represents the organization. One organization maycomprise several sub-organizations and any organization may have one or moreorganizational units.(Source: ISA CORE VOCABULARIES).
+
+* Each of the parties (organizations or other participants) referenced in a release must be included in the parties section.(Source: OCDS ontology).
+
+* A class representing the contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Buyer Party
+
+The coordinates and identifiers relating to the organisation(s) that are procuring works, supplies and services.
+
+
+*Alternative definitions*:
+
+
+* A concept to describe the buyer with the information about the contacting point and the address of this buyer(Source: OP internal working).
+
+* a party that acquires, or agrees to acquire, ownership (in case of goods), or benefit or usage (in case of services), in exchange for money or other consideration under a contract of sale(Source: Financial Industry Business Ontology).
+
+* It represents the organization. One organization maycomprise several sub-organizations and any organization may have one or moreorganizational units.(Source: ISA CORE VOCABULARIES).
+
+* Each of the parties (organizations or other participants) referenced in a release must be included in the parties section.(Source: OCDS ontology).
+
+* A class representing the contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).(Source: UBL).
+
+
+
+
+   
+[.text-left]
+=== Buyer Profile
+
+Website address where the buyer publishes information regarding procurement processes, such as procurement notices, contract award notices, prior information notices, etc.
+
+
+*Alternative definitions*:
+
+
+* Internet address of the ‘buyer profile’ (URL).(Source: DIRECTIVE 2014/24/EU).
+
+* The buyer profile is typically located on a web site where the contracting party publishes its procurement opportunities(Source: UBL).
+
+* Address of the buyer profile: (URL)(Source: eForms consultation).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Buyer Role
+
+It identifies the function of the buyer in this procurement process.
+ (Based on the OP internal working.Possible roles of the buyer: sole contractor; central purchasing body; capacity of the buyer to buy for others, on behalf of others or jointly with others, etc.).
+
+*Alternative definitions*:
+
+
+* Capacity of the buyer to buy for others/on behal of others together with others.(Source: OP internal working).
+
+* The buyer is a central purchasing body: ◯ yes ◯ no(Source: eForms consultation).
+
+* The buyer is a central purchasing body or acts on behalf of another or participates in a joint procurement or as no speciifed role.(Source: eForms consultation).
+
+* If the buyer is acquiring goods or services intended for other buyers, no other buyers need to be specified in the notice. (2014/24/EU Art. 2(1) 14a and Art. 37(1) first subparagraph.)• If the buyer is awarding public contracts intended for other buyers, these buyers must be indicated in thissection.• If the buyer is concluding a framework agreement or a dynamic purchasing system intended for other buyers,these buyers must be clearly indicated in this section or in the techniques section (...).In case of dynamic purchasing systems, other buyers can join the system later (...).This box should not be ticked if the procurement is not intended for other buyers.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== C
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Calculation Method Value
+
+The technique used for determining the estimated cost of the concession.
+
+
+*Alternative definitions*:
+
+
+* In accordance with the calculation method set out in the GPA, the determination of such values shall be based on the average daily values of those currencies corresponding to the applicable threshold expressed in euro over the 24 months terminating on 31 August preceding the revision with effect from 1 January.(Source: DIRECTIVE 2014/23/EU).
+
+* Method used for calculating the estimated value ofthe concession(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Call For Tenders
+
+A document that specifies the object of the procurement and any procurement criteria, the publication of which is the initiating step of a competitive tendering process in which economic operators are invited to submit bids
+ (Definition based on the OP internal working.).
+
+*Alternative definitions*:
+
+
+* A Document that specifies the object of the procurement and any procurement criteria, the publication of which is the initiating step of a competitive tendering process in which qualified suppliers or contractors are invited to submit sealed bids for construction or for supply of specific and clearly defined goods or services during a specified timeframe.(Source: OP internal working).
+
+* A document used by a contracting party to define a procurement project to buy goods, services, or works during a specified period.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Candidate
+
+An economic operator that has sought an invitation or has been invited to take part in a two-phased procurement procedure
+ (Definition based on eForms consultation and on DIRECTIVE 2014/24/EUCandidate is a specialisation of economic operator).
+
+*Alternative definitions*:
+
+
+* In two-stage procedures, buyers have the option to restrict the number of participants in the second phase of the procedure.(Source: eForms consultation).
+
+* An economic operator that has sought an invitation or has been invited to take part in a restricted procedure, in a competitive procedure with negotiation, in a negotiated procedure without prior publication, in a competitive dialogue or in an innovation partnership.(Source: DIRECTIVE 2014/24/EU).
+
+* Any natural or legal person acting in the market as economic operator (i.e. a BusinessEntity) which has sought an invitation to take part in a restricted or negotiated procedure or in a competitive dialogue(Source: LOTED Ontology).
+
+
+*Used in*:| e-Access | e-Submission | e-Awarding |
+
+   
+[.text-left]
+=== Candidates Limit Criteria
+
+The objective and non-discriminatory criteria or rules that will be applied to limit the number of candidates meeting the selection criteria.
+ (Based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* In two-stage procedures, buyers have the option to restrict the number of participants in the second phase of the procedure. When they do this, they use selection criteria to select the limited number of participants who will be invited to submit a tender, or they introduce new criteria.This field can be used for instance to refer to the selection criteria mentioned in the next section and add the appropriate thresholds (e.g. "for selection criterion X, companies with five highest scores will be selected") or, if legally admissible in the particular circumstances, new selection criterion can be added in this section, together with a relevant threshold.(Source: eForms consultation).
+
+* Text describing the criteria used to restrict the number of candiDates.(Source: OP internal working).
+
+* Text describing the criteria used to restrict the number of candidates.(Source: UBL).
+
+* 1. In restricted procedures, competitive procedures with negotiation, competitive dialogue procedures and innovation partnerships, contracting authorities may limit the number of candidates meeting the selection criteria that they will invite to tender or to conduct a dialogue, provided the minimum number, in accordance with paragraph 2, of qualified candidates is available.2. The contracting authorities shall indicate, in the contract notice or in the invitation to confirm interest, the objective and non-discriminatory criteria or rules they intend to apply (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Central Purchasing Body
+
+A buyer which, on a permanent basis, acquires supplies or services, awards contracts, concludes framework agreements or establishes dynamic purchasing systems intended for other buyers (see 2014/24/EU, Art 2(1) (14-16) ).
+
+
+*Alternative definitions*:
+
+
+* A buyer providing centralised purchasing activities and, possibly, ancillary purchasing activities.(Source: Ontology proposal).
+
+* Contracting authority providing centralised purchasing activities and, possibly, ancillary purchasing activities.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Change
+
+Modification to a notice. The contract modification notice should inform about the nature and extent of all the modifications.
+
+
+*Alternative definition*:
+
+
+* Contracts and framework agreements may be modified without a new procurement procedure in accordance with this Directive in any of the following cases (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Change Description Code
+
+A categorization of the reason for the change in the current notice related to the original notice.
+ (Based on the OP internal working).
+
+*Alternative definition*:
+
+
+* A description of the changes in the current notice related to the original notice(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Combination Lots
+
+Description on how to bind lots when submitting a tender.
+ (Based on UBL "GroupingLots".).
+
+*Alternative definitions*:
+
+
+* Where contracts are divided into lots, contracting authorities should, for instance in order to preserve competition or to ensure reliability of supply, be allowed to limit the number of lots for which an economic operator may tender; they should also be allowed to limit the number of lots that may be awarded to any one tenderer.(...) Where the possibility to apply such a method has been clearly indicated beforehand, it should therefore be possible for contracting authorities to conduct a comparative assessment of the tenders in order to establish whether the tenders submitted by a particular tenderer for a specific combination of lots would, taken as whole, fulfil the award criteria laid down in accordance with this Directive with regard to those lots better than the tenders for the individual lots concerned seen in isolation. If so, the contracting authority should be allowed to award a contract combining the lots in question to the tenderer concerned. It should be clarified that contracting authorities should conduct such a comparative assessment by first determining which tenders best fulfil the award criteria laid down for each individual lot and then comparing it with the tenders submitted by a particular tenderer for a specific combination of lots, taken as a whole.(Source: DIRECTIVE 2014/24/EU).
+
+* The contracting authority reserves the right to award contracts combining the following lots or groups of lots(Source: eForms consultation).
+
+* List of specific ways to tender to the lots of the procurement project.(Source: UBL).
+
+* A class defining how to treat different lots in a single procurement.(Source: UBL).
+
+* Description on how to combine lots when submitting a tender.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Common Procurement Vocabulary (CPV)
+
+Common Procurement Vocabulary, which is a classification system for public procurement aimed at standardising the references used by buyers to describe procurement contracts.
+ (Based on the definition provided by DG GROWTH).
+
+*Alternative definitions*:
+
+
+* A concept to describe the classification of a commodity.(Source: OP internal working).
+
+* the main classification category for the deliverable requested.(Source: OP internal working).
+
+* The Common Procurement Vocabulary (CPV) code (...) gives an overall characterisation of the purchases.(Source: DG GROWTH).
+
+* Any references to nomenclatures in the context of public procurement shall be made using the Common Procurement Vocabulary (CPV) as adopted by Regulation (EC) No 2195/2002(Source: DIRECTIVE 2014/24/EU).
+
+* The common procurement vocabulary (CPV) establishes a single classification system for public procurement aimed at standardising the references used by contracting authorities and entities to describe procurement contracts.(Source: DG GROWTH).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Community Country Origin
+
+The country of origin of the product or service belongs to the European Economic Community
+ (Based on eForms consultation.countryOrigin Com Indicator: an indicator to specify whether a community country is the origin or not. - Based ont the OP internal working).).
+
+*Alternative definitions*:
+
+
+* Country code in community origin or not(Source: OP internal working).
+
+* Country of origin of the product or service: [countrycode](Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Concession Description Value
+
+Specification of the objective method used to calculate the estimated financial worth of the concession.
+ (Based on the DIRECTIVE 2014/23/EU).
+
+*Alternative definitions*:
+
+
+* Concession document’ means any document produced or referred to by the contracting authority or contracting entity to describe or determine elements of the concession or the procedure, including the concession notice, the technical and functional requirements, proposed conditions of concession, formats for the presentation of documents by candidates and tenderers, information on generally applicable obligations and any additional documents.(Source: DIRECTIVE 2014/23/EU).
+
+* The estimated value of the concession shall be calculated using an objective method specified in the concession documents. When calculating the estimated value of the concession, contracting authorities and contracting entities shall, where applicable, take into account in particular:(a) the value of any form of option and any extension of the duration of the concession;(b) revenue from the payment of fees and fines by the users of the works or services other than those collected on behalf of the contracting authority or contracting entity;(c) payments or any financial advantage in any form whatsoever made by the contracting authority or contracting entity or any other public authority to the concessionaire, including compensation for compliance with a public service obligation and public investment subsidies;(d) the value of grants or any other financial advantages, in any form, from third parties for the performance of the concession;(e) revenue from sales of any assets which are part of the concession;(f) the value of all the supplies and services that are made available to the concessionaire by the contracting authorities or contracting entities, provided that they are necessary for executing the works or providing the services;(g) any prizes or payments to candidates or tenderers.(Source: DIRECTIVE 2014/23/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Contact
+
+The person or service who can be contacted.
+ (Removed).
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Contract
+
+A voluntary, deliberate, and legally binding agreement between two or more competent parties.
+
+
+*Alternative definition*:
+
+
+* Contract for pecuniary interest concluded in writing between one or more economic operators and one or more contracting authorities and having as their object the execution of works, the supply of products or the provision of services.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Contract Award Notice
+
+A document published by a buyer to announce the awarding of a contract.
+ (Based on UBLSpecialisation of notice).
+
+*Alternative definitions*:
+
+
+* A document that announces the selection of a Tender that was submitted in response to a Call For Tender.(Source: OP internal working).
+
+* (...) contracting authorities shall send a contract award notice on the results of the procurement procedure(Source: DIRECTIVE 2014/24/EU).
+
+* A document published by a Contracting Party to announce the awarding of a procurement project.(Source: UBL).
+
+* The document through which is communicated the outcome of the tender, i.e. the name of the successful tenderer.(Source: LOTED Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Contract Conclusion Date
+
+Time of completion of the agreement.
+
+
+*Alternative definition*:
+
+
+* Date conclusion of the contract(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Request | e-Ordering |
+
+   
+[.text-left]
+=== Contract Identifier
+
+The code that identifies the agreement
+
+
+*Alternative definitions*:
+
+
+* Identifier of the contract(Source: OP internal working).
+
+* An identifier for this contract.
+
+
+*Used in*:| e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Contract Nature
+
+The main object of the contract.
+ (BT-23 RemovedBased on eForms consultation.The Nature Type can be either a product that is supplied, a service that is provided or a work that is executed).
+
+*Alternative definitions*:
+
+
+* A code signifying the type of procurement project (e.g., goods, works, services).(Source: OP internal working).
+
+* In case of mixed contracts, e.g. contracts for both supplies and services, the type of contract to be selected is the one which corresponds to the main subject of the contract (e.g. on the basis of the highest estimated value). For more information, see 2014/24/EU Art. 3.(Source: eForms consultation).
+
+* Contracts which have as their subject two or more types of procurement (works, services or supplies) shall be awarded in accordance with the provisions applicable to the type of procurement that characterises the main subject of the contract in question.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Contract Publication Date
+
+Estimated time for the advertisement of a contract notice related to a prior information notice.
+ (Based on the OP internal working.).
+
+*Alternative definition*:
+
+
+* estimated date for the publication of a contract notice related to this prior information notice(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Contract URI
+
+The Uniform Resource Identifier (URI) of the agreement.
+
+
+*Alternative definition*:
+
+
+* contract available online at : [URL](Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Country
+
+A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions".
+
+
+*Alternative definitions*:
+
+
+* Country code(Source: OP internal working).
+
+* The country of delivery or performance of the contract.(Source: Ontology proposal).
+
+
+
+
+   
+[.text-left]
+=== Criterion
+
+A class to associate a condition that has to be fulfilled. In e-Procurement, a criterion describes a fact that is used by the contracting body to evaluate and compare tenders by economic operators and which will be used in the award decision
+
+
+*Alternative definition*:
+
+
+* The Criterion class represents the rule or principle used to judge, evaluate or assess something.(Source: ISA CORE VOCABULARIES).
+
+
+
+
+   
+[.text-left]
+=== Criterion Weight
+
+A number defining the comparative weighting assigned to this awarding criterion, to enable formulaic evaluation.
+
+
+*Alternative definitions*:
+
+
+* The contracting authority shall specify, in the procurement documents, the relative weighting which it gives to each of the criteria chosen to determine the most economically advantageous tender, except where this is identified on the basis of price alone.Those weightings may be expressed by providing for a range with an appropriate maximum spread.(Source: DIRECTIVE 2014/24/EU).
+
+* A weighting to provide for automatic scoring of the criterion.(Source: UBL).
+
+* A number defining the comparative weighting assigned to this awarding criterion, to enable formulaic evaluation.(Source: ESPD).
+
+
+
+
+[.text-center]
+== D
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Deadline And Description Review
+
+Precise information on deadline(s) for review procedures
+
+
+*Alternative definitions*:
+
+
+* Name and address of the body responsible for review and, where appropriate, mediation procedures. Precise information concerning deadlines for review procedures, or if need be, the name, address, telephone number, fax number and email address of the service from which this information may be obtained.(Source: DIRECTIVE 2014/24/EU).
+
+* Text describing the terms of an appeal.(Source: OP internal working).
+
+
+
+
+   
+[.text-left]
+=== Decision Binding Contracting
+
+Indication whether the jury 's decision is binding on the contracting authority
+
+
+*Alternative definitions*:
+
+
+* Indicates if the decision is binding on the buyer (true) or not (false).(Source: UBL).
+
+* An economic operator shall be excluded from participation in a procurement procedure where the contracting authority is aware that the economic operator is in breach of its obligations relating to the payment of taxes or social security contributions and where this has been established by a judicial or administrative decision having final and binding effect in accordance with the legal provisions of the country in which it is established or with those of the Member State of the contracting authority.(Source: DIRECTIVE 2014/24/EU).
+
+* Indication whether the jury’s decision is binding on the contracting authority.(Source: DIRECTIVE 2014/24/EU).
+
+
+
+
+   
+[.text-left]
+=== Dispatch Date
+
+Time of transmission of the notice by the buyer.
+ (Based on DIRECTIVE 2014/25/EU).
+
+*Alternative definitions*:
+
+
+* Estimated date of dispatch of invitations to tender or to participate to selected candidates(Source: eForms consultation).
+
+* Date of dispatch of this notice: (dd/mm/yyyy)(Source: eForms consultation).
+
+* Date of dispatch(Source: OP internal working).
+
+* Date of dispatch of the notice.(Source: DIRECTIVE 2014/24/EU).
+
+* Date of dispatch of the notice by the contracting entity.(Source: DIRECTIVE 2014/25/EU).
+
+* Date of transmission of the notice by the contracting entity.(Source: DIRECTIVE 2014/25/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Duration Or Date Start Date End
+
+Interval between the award of the contract or closing of the framework agreement and its ending, including options and renewals. This duration may be expressed using two dates (start date and end date).
+ (Based on eForms consultation and the OP internal working.).
+
+*Alternative definitions*:
+
+
+* Duration since the award of the contract or closing of the framework agreement. In case of qualification systems, the duration indicates for how long the qualification system is open. This should include options and renewals.(Source: eForms consultation).
+
+* For contracts and framework agreements, please give their duration since their signature. For dynamic purchasing systems and qualification systems, please give the duration since the publication of the notice.(Source: eForms consultation).
+
+* Duration since the award of the contract or closing of the framework agreement. Duration of this period.(Source: OP internal working).
+
+* The period during which this framework agreement applies.(Source: UBL).
+
+* The period during which this contract is valid.(Source: UBL).
+
+* Time-frame for delivery or provision of supplies, works or services and, as far as possible, duration of the contract. (a) In the case of a framework agreement, indication of the planned duration of the framework agreement, stating, where appropriate, the reasons for any duration exceeding four years; as far as possible, indication of value or order of magnitude and frequency of contracts to be awarded, number and, where appropriate, proposed maximum number of economic operators to participate. (b) In the case of a dynamic purchasing system, indication of the planned duration of that system; as far as possible, indication of value or order of magnitude and frequency of contracts to be awarded.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Request | e-Ordering |
+
+   
+[.text-left]
+=== Dynamic Purchasing System (DPS)
+
+Estimated limit time of a Dynamic Purchasing System (DPS), which is a completely electronic process for making commonly used purchases.
+
+
+*Alternative definition*:
+
+
+* For commonly used purchases the characteristics of which, as generally available on the market, meet the requirements of the contracting authorities, contracting authorities may use a dynamic purchasing system. The dynamic purchasing system shall be operated as a completely electronic process, and shall be open throughout the period of validity of the purchasing system to any economic operator that satisfies the selection criteria. (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== E
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== e-Auction
+
+A repetitive electronic process, which occurs after an initial full evaluation of the tenders, enabling them to be ranked using automatic evaluation methods, preceeding the award of a public contract.
+ (BT-121Based on DIRECTIVE 2014/24/EUIt applies to open or restricted procedures or competitive procedures with negotiation.).
+
+*Alternative definitions*:
+
+
+* The terms to be fulfilled by tenderers if an auction is to be executed before the awarding of a tender.(Source: OP internal working).
+
+* A repetitive electronic process, which occurs after an initial full evaluation of the tenders, enabling them to be ranked using automatic evaluation methods.(Source: DIRECTIVE 2014/24/EU).
+
+* A class to describe the terms to be fulfilled by tenderers if an auction is to be executed before the awarding of a tender.(Source: UBL).
+
+* Class that specifies the existence of an electronic auction of one or more of the award criterions.(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification | e-Submission | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== e-Auction Description
+
+Specification of the terms governing the repetitive electronic process, which occurs after an initial full evaluation of the tenders, enabling them to be ranked using automatic evaluation methods, preceeding the award of a public contract.
+ (Based on UBL and on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Text for tenderers describing terms governing the auction.(Source: OP internal working).
+
+* Where contracting authorities have decided to hold an electronic auction, the procurement documents shall include at least the following details: (a) the features, the values for which will be the subject of electronic auction, provided that such features are quantifiable and can be expressed in figures or percentages; (b) any limits on the values which may be submitted, as they result from the specifications relating to the subject of the contract; (c) the information which will be made available to tenderers in the course of the electronic auction and, where appropriate, when it will be made available to them; (d) the relevant information concerning the electronic auction process;(e) the conditions under which the tenderers will be able to bid and, in particular, the minimum differences which will, where appropriate, be required when bidding; (f) the relevant information concerning the electronic equipment used and the arrangements and technical specifications for connection.(Source: DIRECTIVE 2014/24/EU).
+
+* Text for tenderers describing terms governing the auction.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== e-Auction Indicator
+
+A repetitive electronic process, which occurs after an initial full evaluation of the tenders, enabling them to be ranked using automatic evaluation methods, preceeding the award of a public contract.
+ (The same as C-011Based on DIRECTIVE 2014/24/EUIt applies to open or restricted procedures or competitive procedures with negotiation.).
+
+*Alternative definitions*:
+
+
+* Indicates whether an electronic auction will be used before the awarding of a contract (true) or not (false).(Source: OP internal working).
+
+* Contracting authorities which decide to hold an electronic auction shall state that fact in the contract notice or in the invitation to confirm interest.(Source: DIRECTIVE 2014/24/EU).
+
+* Indicates whether an electronic auction will be used before the awarding of a contract (true) or not (false).(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== e-Auction URI
+
+The Uniform Resource Identifier (URI) of the electronic device used for the repetitive electronic process, which occurs after an initial full evaluation of the tenders, enabling them to be ranked using automatic evaluation methods, preceeding the award of a public contract.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* The Uniform Resource Identifier (URI) of the electronic device used for the auction.(Source: OP internal working).
+
+* the relevant information concerning the electronic equipment used and the arrangements and technical specifications for connection(Source: DIRECTIVE 2014/24/EU).
+
+* The Uniform Resource Identifier (URI) of the electronic device used for the auction.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Economic And Financial Standing
+
+Financial evaluation criteria required for an economic operator in a tendering process.
+ (Based on UBL and ESPD).
+
+*Alternative definitions*:
+
+
+* A financial evaluation criterion required for an economic operator in a tendering process.(Source: OP internal working).
+
+* Brief description of selection criteria related to economic and financial standing. This should include a list of all such criteria, minimum requirements, and indicate required information (e.g. self-declaration, documentation).(Source: eForms consultation).
+
+* Selection criteria may relate to:(a) suitability to pursue the professional activity;(b) economic and financial standing;(c) technical and professional ability.(Source: DIRECTIVE 2014/24/EU).
+
+* With regard to economic and financial standing, contracting authorities may impose requirements ensuring that economic operators possess the necessary economic and financial capacity to perform the contract. For that purpose, contracting authorities may require, in particular, that economic operators have a certain minimum yearly turnover, including a certain minimum turnover in the area covered by the contract. In addition, contracting authorities may require that economic operators provide information on their annual accounts showing the ratios, for instance, between assets and liabilities. They may also require an appropriate level of professional risk indemnity insurance.(Source: DIRECTIVE 2014/24/EU).
+
+* A financial evaluation criterion required for an economic operator in a tendering process.(Source: ESPD).
+
+* A financial evaluation criterion required for an economic operator in a tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+   
+[.text-left]
+=== Economic And Financial Standing
+
+A financial evaluation criterion required for an economic operator in a tendering process.
+
+
+*Alternative definitions*:
+
+
+* Brief description of selection criteria related to economic and financial standing. This should include a list of all such criteria, minimum requirements, and indicate required information (e.g. self-declaration, documentation).(Source: eForms consultation).
+
+* Selection criteria may relate to:(a) suitability to pursue the professional activity;(b) economic and financial standing;(c) technical and professional ability.(Source: DIRECTIVE 2014/24/EU).
+
+* With regard to economic and financial standing, contracting authorities may impose requirements ensuring that economic operators possess the necessary economic and financial capacity to perform the contract. For that purpose, contracting authorities may require, in particular, that economic operators have a certain minimum yearly turnover, including a certain minimum turnover in the area covered by the contract. In addition, contracting authorities may require that economic operators provide information on their annual accounts showing the ratios, for instance, between assets and liabilities. They may also require an appropriate level of professional risk indemnity insurance.(Source: DIRECTIVE 2014/24/EU).
+
+* A financial evaluation criterion required for an economic operator in a tendering process.(Source: ESPD).
+
+* A financial evaluation criterion required for an economic operator in a tendering process.(Source: UBL).
+
+
+
+
+   
+[.text-left]
+=== Economic Operator
+
+The term economic operator refers to the supplier/bidder
+
+
+*Alternative definitions*:
+
+
+* “Economic operator” is the role played by any natural or legal person that offers in the market some gr:Offering.(Source: OP internal working).
+
+* Any entity engaged in an economic activity, irrespective of its legal form. This includes, in particular, self-employed persons and family businesses engaged in craft or other activities, and partnerships or associations regularly engaged in an economic activity(Source: Commission Recommendation 2003/361/EC).
+
+
+
+
+   
+[.text-left]
+=== Economic Operator Short List
+
+The highest number of tenderers on the short list.
+ (BT-51).
+
+*Alternative definitions*:
+
+
+* Preselection of a short list of economic operators for consideration as possible candidates in a tendering process(Source: Ontology proposal).
+
+* A concept to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.(Source: OP internal working).
+
+* A class to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Economic Operator Short List
+
+Preselection of a short list of economic operators for consideration as possible candidates in a tendering process
+ (Based on the OP internal working).
+
+*Alternative definitions*:
+
+
+* A concept to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.(Source: OP internal working).
+
+* A class to provide information about the preselection of a short list of economic operators for consideration as possible candidates in a tendering process.(Source: UBL).
+
+
+
+
+   
+[.text-left]
+=== e-Delivery Gateway
+
+An identifier of the electronic address to be used.
+ (Based on the OP internal working.New Business Term proposed by eSens, adapted so it is homogeneous to the other BT (it replaces "Electronic Address Identifier")).
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Electronic Catalogue
+
+A way of presenting and organizing the information that is common to all the participating bidders and lends itself to electronic treatment. Buyers should be able to require electronic catalogues in all available procedures where the use of electronic means of communication is required.
+ (Based on the OP internal working and on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Electronic catalogues are a format for the presentation and organisation of information in a manner that is common to all the participating bidders and which lends itself to electronic treatment. An example could be tenders presented in the form of a spreadsheet.(Source: DIRECTIVE 2014/24/EU).
+
+* An Indicator to specify whether an electronic catalogue will be used during the post award phase.(Source: OP internal working).
+
+* Where the use of electronic means of communication is required, contracting authorities may require tenders to be presented in the format of an electronic catalogue or to include an electronic catalogue.Member States may render the use of electronic catalogues mandatory in connection with certain types of procurement.Tenders presented in the form of an electronic catalogue may be accompanied by other documents, completing the tender.(Source: DIRECTIVE 2014/24/EU).
+
+* A document that describes items, prices, and price validity.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Electronic Catalogue Indicator
+
+An indicator to specify whether an electronic catalogue will be used during the post award phase.
+
+
+*Alternative definitions*:
+
+
+* An indicator to specify whether an electronic catalogue will be used during the post award phase.(Source: OP internal working).
+
+* Tenders must be presented in the form of electronic catalogues or include an electronic catalogue(Source: eForms consultation).
+
+* Where the presentation of tenders in the form of electronic catalogues is accepted or required, contracting authorities shall: (a) state so in the contract notice or in the invitation to confirm interest where a prior information notice is used as a means of calling for competition; (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Electronic means
+
+The amount of bids electronically submitted by tenderers
+
+
+*Alternative definitions*:
+
+
+* Electronic means of information and communication can greatly simplify the publication of contracts and increase the efficiency and transparency of procurement processes. They should become the standard means of communication and information exchange in procurement procedures (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Contracting authorities should, except in certain specific situations, use electronic means of communication which are non-discriminatory, generally available and interoperable with the ICT products in general use and which do not restrict economic operators’ access to the procurement procedure (...)(Source: DIRECTIVE 2014/24/EU).
+
+* ‘electronic means’ means electronic equipment for the processing (including digital compression) and storage of data which is transmitted, conveyed and received by wire, by radio, by optical means or by other electromagnetic means(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Electronic Ordering
+
+Electronic means are used for requesting and purchasing in the post-award process.
+
+
+*Alternative definition*:
+
+
+* An indicator on whether electronic ordering shall be used in the post award process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Ordering |
+
+   
+[.text-left]
+=== Electronic Payment
+
+Electronic means are used for paying the winner of the contract in the post-award process.
+
+
+*Alternative definition*:
+
+
+* An indicator on whether electronic payment shall be used in the post award process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Payment |
+
+   
+[.text-left]
+=== Electronic Submission
+
+Transmission of tenders is possible by electronic means of communication.
+ (Definition based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Submission of tenders available by internet.(Source: OP internal working).
+
+* Tenders or requests to participate must be submitted electronically via: (URL)(Source: eForms consultation).
+
+* Member States shall ensure that all communication and information exchange under this Directive, in particular electronic submission, are performed using electronic means of communication in accordance with the requirements of this Article.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Email
+
+Comunication channel for contacting the responsible person or service of the organisation
+
+
+*Alternative definition*:
+
+
+* To specify the electronic mail address for communication with the object the vCard represents.(Source: vCard Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Employment Party
+
+The organisation that provides information on the meeting of obligations in the field of labour law by the economic operator.
+ (Definition based on ESPD).
+
+*Alternative definition*:
+
+
+* Breaching of obligations in the fields of labour lawHas the economic operator, to its knowledge, breached its obligations in the field of labour law? As referred to for the purposes of this procurement in national law, in the relevant notice or the procurement documents or in Article 18(2) of DIRECTIVE 2014/24/EU(Source: ESPD).
+
+
+
+
+   
+[.text-left]
+=== Employment Party Address URL General
+
+The internet site from which information can be obtained concerning the general regulatory framework for employment protection and working conditions applicable in the place where the contract is to be performed.
+ (Based on DIRECTIVE 2009/81/EC).
+
+*Alternative definitions*:
+
+
+* A contracting authority/entity may state in the contract documents, or be obliged by a Member State so to state, the body or bodies from which a candidate or tenderer may obtain the appropriate information on the obligations relating to taxes, to environmental protection, to the employment protection provisions and to the working conditions which are in force in the Member State, region, locality or third country in which the works are to be carried out or services are to be provided and which shall be applicable to the works carried out on site or to the services provided during the performance of the contract.(Source: DIRECTIVE 2009/81/EC).
+
+* The name, address, fax number and e-mail address of the contracting authority/entity and, if different, of the service from which additional information may be obtained and, in the case of services and works contracts, of the departments, e.g. the relevant governmental Internet site, from which information can be obtained concerning the general regulatory framework for taxes, environmental protection, employment protection and working conditions applicable in the place where the contract is to be performed(Source: DIRECTIVE 2009/81/EC).
+
+* Relevant governmental Internet sites where information about the employment protection and working conditions can be obtained(Source: OP internal working).
+
+
+
+
+   
+[.text-left]
+=== Environmental Party
+
+The organisation that provides information on the meeting of obligations in the field of environmental law by the economic operator.
+ (Definition based on ESPD).
+
+*Alternative definition*:
+
+
+* Breaching of obligations in the field of environmental law.Has the economic operator, to its knowledge, breached its obligations in the field of environmental law? As referred to for the purposes of this procurement in national law, in the relevant notice or the procurement documents or in Article 18(2) of DIRECTIVE 2014/24/EU(Source: ESPD).
+
+
+*Used in*:| e-Evaluation |
+
+   
+[.text-left]
+=== Environmental Party Address URL General
+
+A contracting authority/entity may state in the contract documents, or be obliged by a Member State so to state, the body or bodies from which a candidate or tenderer may obtain the appropriate information on the obligations relating to taxes, to environmental protection, to the employment protection provisions and to the working conditions which are in force in the Member State, region, locality or third country in which the works are to be carried out or services are to be provided and which shall be applicable to the works carried out on site or to the services provided during the performance of the contract.
+ (Article 24).
+
+*Alternative definitions*:
+
+
+* The name, address, fax number and e-mail address of the contracting authority/entity and, if different, of the service from which additional information may be obtained and, in the case of services and works contracts, of the departments, e.g. the relevant governmental Internet site, from which information can be obtained concerning the general regulatory framework for taxes, environmental protection, employment protection and working conditions applicable in the place where the contract is to be performed(Source: DIRECTIVE 2009/81/EC).
+
+* Relevant governmental Internet sites where information about the environmental protection legislation can be obtained(Source: OP internal working).
+
+
+
+
+   
+[.text-left]
+=== EPPI
+
+European Public Procurement Procedure Identifier, that is, an identifier that is specific to a procurement procedure that can be reused throughout the procurement chain.
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Estimated Magnitude
+
+The expected value which can be stated as a monetary value or a measure.
+ (Based on the OP internal working).
+
+*Alternative definitions*:
+
+
+* The estimated order of magnitude of contract that can be stated as a monetary value or a Measure(Source: OP internal working).
+
+* The estimated overall quantity for this procurement project.(Source: UBL).
+
+* The calculation of the estimated value of a procurement shall be based on the total amount payable, net of VAT, as estimated by the contracting authority, including any form of option and any renewals of the contracts as explicitly set out in the procurement documents(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Estimated Total Magnitude
+
+The expected global value which can be stated as a monetary value or a measure.
+
+
+*Alternative definitions*:
+
+
+* The Estimated total order of magnitude of contract that can be stated as a monetary value or a Measure(Source: OP internal working).
+
+* Estimated total order of magnitude of contract(s); where the contract is divided into lots, this information shall beprovided for each lot.(Source: DIRECTIVE 2014/24/EU).
+
+* The estimated overall quantity for this procurement project.(Source: UBL).
+
+* The estimated overall monetary amount of a contract.(Source: ESPD).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Estimated Value
+
+The total amount payable, net of VAT, as estimated by the buyer, including any form of option and any renewals of the contracts.
+ (Definition based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* The calculation of the estimated value of a procurement shall be based on the total amount payable, net of VAT, as estimated by the contracting authority, including any form of option and any renewals of the contracts as explicitly set out in the procurement documents(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== EU Funds Indicator
+
+Funds that come from European Structural and Investment Funds.
+ (Definition based on eForms consultation and https://europa.eu/european-union/about-eu/funding-grants_en).
+
+*Alternative definitions*:
+
+
+* An indication that a program that funds the tendering process (e.g., "National", "European") is available.(Source: OP internal working).
+
+* Money comes from "European Investment and Structural Funds"(Source: eForms consultation).
+
+* Information whether the contract is related to a project and /or programme financed by Union funds.(Source: DIRECTIVE 2014/24/EU).
+
+* The program that funds the tendering process (e.g., EU 6th Framework Program) expressed as text.(Source: ESPD).
+
+* The program that funds the tendering process (e.g., "National", "European"), expressed as a code.(Source: UBL).
+
+* The program that funds the tendering process (e.g., "National", "European"), expressed as a code.(Source: ESPD).
+
+* The program that funds the tendering process (e.g., EU 6th Framework Program) expressed as text.(Source: ESPD).
+
+* The EU provides funding for a broad range of projects and programmes covering areas such as: regional and urban development; employment and social inclusion; agriculture and rural development; maritime and fisheries policies; research and innovation; humanitarian aid.(Source: European Union).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== EU Funds Indicator
+
+The program that funds the tendering process (e.g., EU 6th Framework Program) expressed as text.
+
+
+*Alternative definitions*:
+
+
+* The program that funds the tendering process (e.g., "National", "European"), expressed as a code.(Source: UBL).
+
+* The program that funds the tendering process (e.g., "National", "European"), expressed as a code.(Source: ESPD).
+
+* The program that funds the tendering process (e.g., EU 6th Framework Program) expressed as text.(Source: ESPD).
+
+* The EU provides funding for a broad range of projects and programmes covering areas such as: regional and urban development; employment and social inclusion; agriculture and rural development; maritime and fisheries policies; research and innovation; humanitarian aid.(Source: European Union).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Evaluation Criterion
+
+A principle or rule to be applied in the assessment of tenders.
+
+
+*Used in*:| e-Notification | e-Access | e-Evaluation |
+
+   
+[.text-left]
+=== Exclusion criterion
+
+Text describing the personal situation of the economic operators in this tendering process and/or the exclusion criteria.
+
+
+*Alternative definitions*:
+
+
+* An exclusion criterion is a criterion that must be absent to satistify the objective(Source: SIO).
+
+* An exclusion criterion (rule) is_a *eligibility criterion* which defines and states a condition which, if met, makes an entity unsuitable for a given task or participation in a given process.(Source: Ontobee).
+
+
+*Used in*:| e-Notification | e-Access | e-Evaluation |
+
+   
+[.text-left]
+=== Exclusion Tenders Abnormally Low
+
+There are one or several bids with unexpected cheap prices.
+ (An indicator to specify whether the tenders are abnormally low or not).).
+
+*Alternative definitions*:
+
+
+* Tenders were abnormally low(Source: OP internal working).
+
+* Text describing the exclusion criterion for abnormally low tenders.(Source: UBL).
+
+* Tenders were excluded on the ground that they were abnormally low(Source: eForms consultation).
+
+
+*Used in*:| e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Expected Number Of Participants
+
+Amount of economic operators envisaged to participate.
+
+
+*Alternative definition*:
+
+
+* <Minimum number: [ ] and maximum number: [ ] of candidates to be invited for the second phase of the procedure>(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Extension Duree Justification
+
+In the case of a framework agreement, the reasons for any duration exceeding four years.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* In the case of a framework agreement, indication of the planned duration of the framework agreement, stating, where appropriate, the reasons for any duration exceeding four years; (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== F
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== FaxNumber
+
+Comunication channel for contacting the responsible person or service of the organisation
+ (Removed).
+
+*Alternative definition*:
+
+
+* The fax number.
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Follow Up Contract
+
+A service contract following the contest will be awarded to the winner or one of the winners of the contest.
+ (Based on UBL).
+
+*Alternative definition*:
+
+
+* Indicates if any service contract following the contest will be awarded to the winner or one of the winners of the contest (true) or not (false).(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Framework Agreement Type Code
+
+A concept to distinguish the different types of framework agreement, which are: Framework agreement without reopening of competition; Framework agreement with reopening of competition; or Framework agreement partly without reopening and partly with reopening of competition.
+ (In the case of a framework agreement, a code to identify the type of framework agreement, which are: Framework agreement without reopening of competition; Framework agreement with reopening of competition; or Framework agreement partly without reopening and partly with reopening of competition.).
+
+*Alternative definitions*:
+
+
+* (…) following the terms and conditions of the framework agreement, without reopening competition, where it sets out all the terms governing the provision of the works, services and supplies concerned and the objective conditions for determining which of the economic operators, party to the framework agreement, shall perform them; the latter conditions shall be indicated in the procurement documents for the framework agreement;(Source: DIRECTIVE 2014/24/EU).
+
+* (…) where not all the terms governing the provision of the works, services and supplies are laid down in the framework agreement, through reopening competition amongst the economic operators parties to the framework agreement.(Source: DIRECTIVE 2014/24/EU).
+
+* (...) where the framework agreement sets out all the terms governing the provision of the works, services and supplies concerned, partly without reopening of competition in accordance with point (a) and partly with reopening of competition amongst the economic operators parties to the framework agreement in accordance with point (c), where this possibility has been stipulated by the contracting authorities in the procurement documents for the framework agreement. The choice of whether specific works, supplies or services shall be acquired following a reopening of competition or directly on the terms set out in the framework agreement shall be made pursuant to objective criteria, which shall be set out in the procurement documents for the framework agreement. These procurement documents shall also specify which terms may be subject to reopening of competition.(Source: DIRECTIVE 2014/24/EU).
+
+* Contracting authorities may conclude framework agreements, provided that they apply the procedures provided for in this Directive.A framework agreement means an agreement between one or more contracting authorities and one or more economic operators, the purpose of which is to establish the terms governing contracts to be awarded during a given period, in particular with regard to price and, where appropriate, the quantity envisaged.(Source: DIRECTIVE 2014/24/EU).
+
+* 3. Where a framework agreement is concluded with a single economic operator, contracts based on that agreement shall be awarded within the limits of the terms laid down in the framework agreement. (…)4. Where a framework agreement is concluded with more than one economic operator, that framework agreement shall be performed in one of the following ways:(a) following the terms and conditions of the framework agreement, without reopening competition, where it sets out all the terms governing the provision of the works, services and supplies concerned and the objective conditions for determining which of the economic operators, party to the framework agreement, shall perform them; the latter conditions shall be indicated in the procurement documents for the framework agreement;(b) where the framework agreement sets out all the terms governing the provision of the works, services and supplies concerned, partly without reopening of competition in accordance with point (a) and partly with reopening of competition amongst the economic operators parties to the framework agreement in accordance with point (c), where this possibility has been stipulated by the contracting authorities in the procurement documents for the framework agreement. The choice of whether specific works, supplies or services shall be acquired following a reopening of competition or directly on the terms set out in the framework agreement shall be made pursuant to objective criteria, which shall be set out in the procurement documents for the framework agreement. These procurement documents shall also specify which terms may be subject to reopening of competition. (…)(c) where not all the terms governing the provision of the works, services and supplies are laid down in the framework agreement, through reopening competition amongst the economic operators parties to the framework agreement. (…)(Source: DIRECTIVE 2014/24/EU).
+
+* A concept to describe a tendering framework agreement.(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Framework Duration
+
+The period of validity of the terms governing the contracts to be awarded whithin an agreement between one or more contracting authorities and one or more economic operators.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* A framework agreement means an agreement between one or more contracting authorities and one or more economic operators, the purpose of which is to establish the terms governing contracts to be awarded during a given period, in particular with regard to price and, where appropriate, the quantity envisaged.(Source: DIRECTIVE 2014/24/EU).
+
+* In the case of a framework agreement, indication of the planned duration of the framework agreement, stating, where appropriate, the reasons for any duration exceeding four years; (...)(Source: DIRECTIVE 2014/24/EU).
+
+* The period during which this framework agreement applies.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Framework Max Value All Lots
+
+Highest possible price of the framework agreement for all of its parts (excluding VAT)
+
+
+*Alternative definition*:
+
+
+* Maximum value of the framework agreement for all lots (excluding VAT)(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Framework Max Value Group Lots
+
+The highest amount of a set of parts of a framework agreement.
+
+
+*Alternative definition*:
+
+
+* Maximum value of a group of lots in the framework agreement:(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Free Acces
+
+Non-payment required for unrestricted and full availability of tendering documents.
+
+
+*Alternative definitions*:
+
+
+* An indicator to specify if the procurement documents are available for unrestricted and full direct access, free of charge(Source: OP internal working).
+
+* The procurement documents are available for unrestricted and full direct access, free of charge. Access to the procurement documents is restricted. Further information can be obtained.(Source: eForms consultation).
+
+* specify if the url address giving is for the direct access to the procurement documents or to the information of how the procurement documents can be accessed.(Source: OP internal working).
+
+* Contracting authorities shall by electronic means offer unrestricted and full direct access free of charge to the procurement documents from the date of publication of a notice in accordance with Article 51 or the date on which an invitation to confirm interest was sent. The text of the notice or the invitation to confirm interest shall specify the internet address at which the procurement documents are accessible.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Further Party
+
+The coordinates and identifiers relating to the organisation(s) where addititonal information can be obtained about this tendering process.
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== G
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== GPA Usage
+
+The procurement procedure is covered by the Government Procurement Agreement (GPA), which has the aim to establish a multilateral framework of balanced rights and obligations relating to public contracts with a view to achieving the liberalisation and expansion of world trade.
+ (Based on DIRECTIVE 2014/24/EUAn indicator to specify if the procurement is covered by the Government Procurement Agreement (GPA)).
+
+*Alternative definitions*:
+
+
+* Information about the Government Procurement Agreement (GPA)The procurement is covered by the Government Procurement Agreement(Source: eForms consultation).
+
+* Council Decision 94/800/EC ( 1 ) approved in particular the World Trade Organisation Agreement on Government Procurement (the ‘GPA’). The aim of the GPA is to establish a multilateral framework of balanced rights and obligations relating to public contracts with a view to achieving the liberalisation and expansion of world trade. For contracts covered by Annexes 1, 2, 4 and 5 and the General Notes to the European Union’s Appendix I to the GPA, as well as by other relevant international agreements by which the Union is bound, contracting authorities should fulfil the obligations under those agreements by applying this Directive to economic operators of third countries that are signatories to the agreements.(Source: DIRECTIVE 2014/24/EU).
+
+* The GPA is a plurilateral agreement within the framework of the WTO, meaning that not all WTO members are parties to the Agreement. (...) The fundamental aim of the GPA is to mutually open government procurement markets among its parties. As a result of several rounds of negotiations, the GPA parties have opened procurement activities worth an estimated US$ 1.7 trillion annually to international competition (i.e. to suppliers from GPA parties offering goods, services or construction services).(Source: World Trade Organization).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Guarantee Required
+
+The bond formal assurance that certain conditions will be fulfilled by the winner of a contract.
+
+
+*Alternative definitions*:
+
+
+* Deposits and guarantees required:(Source: eForms consultation).
+
+* A class to describe the bond guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.(Source: UBL).
+
+* A financial guarantee of a tenderer or bid submitter's actual entry into a contract in the event that it is the successful bidder.(Source: UBL).
+
+* A formal assurance (typically in writing) that certain conditions will be fulfilled, especially that a product will be repaired or replaced if not of a specified quality(Source: Oxford Dictionaries).
+
+* Class describing the additional obligations the contract needs (e.g. guarantees or advertisement costs)(Source: PPROC Ontology).
+
+* The range of this property must be a percentage (i.e. float between 0.0 and 100.0)(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+[.text-center]
+== I
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Internal Reference Number
+
+Buyer's internal reference number used for the procurement procedure. This is the referece number used before a procurement publication number is given (e.g. coming from the buyer's document management system). It is used internally to identify the files related to the procurement procedure.
+
+
+*Alternative definition*:
+
+
+* A reference to a contract document.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Internet Address
+
+The website URL of the organisation.
+
+
+*Alternative definition*:
+
+
+* Main internet address(URL) of this contact.(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Invitations Dispatch Date
+
+Estimated time of transmission of invitation to submit tenders.
+ (Based on eForms consultation.).
+
+*Alternative definitions*:
+
+
+* Estimated date of dispatch of invitation to confirm interest: [date](Source: eForms consultation).
+
+* The period during which invitations to tender must be completed and delivered.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== J
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Jury Member Name
+
+Designation of the component of the tribunal
+
+
+*Alternative definition*:
+
+
+* The jury shall be composed exclusively of natural persons who are independent of participants in the contest. Where a particular professional qualification is required from participants in a contest, at least a third of the members of the jury shall have that qualification or an equivalent qualification.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Justification
+
+An explanation for the selection of this tendering process.
+ (Based on UBL).
+
+*Alternative definition*:
+
+
+* A class to describe a justification for the choice of tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Justification Code
+
+A categorization of the explanation for the selection of this tendering process.
+ (Based on UBL.The definition of Justification is already provided in BT-135).
+
+*Alternative definition*:
+
+
+* The reason why the contracting authority has followed a particular tendering procedure for the awarding of a contract, expressed as a code.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== L
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Language
+
+Idioms in which tenders or requests to participate may be submitted.
+
+
+*Alternative definition*:
+
+
+* One of the default languages specified for the tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Latest Security Clearance Date
+
+The end date until which the candidates can obtain the necessary level of security clearance, which determines whether an individual, taking into account his loyalty, trustworthiness and reliability, may be authorised to access classified information.
+ (Based on UBL and on Council Decision 2013/488/EU).
+
+*Alternative definitions*:
+
+
+* The end date until which the candidates can obtain the necessary level of security clearance.(Source: UBL).
+
+* Personnel security clearance procedures shall be designed to determine whether an individual, taking into account his loyalty, trustworthiness and reliability, may be authorised to access EUCI.(Source: Council Decision 2013/488/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Legal Basis
+
+The provision which confers competence to adopt the act in question.
+
+
+*Alternative definitions*:
+
+
+* the legal basis of the act, namely the provision which confers competence to adopt the act in question;(Source: Joint Practical Guide).
+
+* Legal basis for the procurement procedure.Directive 2014/23/EU "Concession directive"Directive 2014/24/EU "General procurement directive”.Directive 2014/25/EU "Sectoral procurement directiveDirective 2009/81/EC "Defence procurement directive".Regulation 966/2012 "EU financial regulation, with the exception of external actions".National procurement law: This option should be chosen when the procurement procedure falls under national procurement law, but not under any of the procurement directives. This is the case, for example, for below-threshold procurement.(Source: eForms consultation).
+
+* Directives or legal bases related to this document.(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Legal Form
+
+Status to be taken by the group of economic operators to whom the contract is to be awarded.
+ (Based on DIRECTIVE 2014/25/EU).
+
+*Alternative definitions*:
+
+
+* Where appropriate, the legal form to be taken by the grouping of economic operators to whom the contract isawarded(Source: DIRECTIVE 2014/25/EU).
+
+* The legal status requested for potential tenderers, expressed as a code.(Source: UBL).
+
+* The legal status requested for potential tenderers, expressed as text(Source: UBL).
+
+* The legal status requested for potential tenderers, expressed as a code.(Source: ESPD).
+
+* The legal status requested for potential tenderers, expressed as text(Source: ESPD).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Location
+
+The name of the locality (city, town or village) of the organisation's physical address.
+ (Based on vCard ontology.).
+
+*Alternative definitions*:
+
+
+* A spatial region or named place.(Source: DC vocabulary).
+
+* An object representing a named geographical place(Source: vCard Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Location Description
+
+Place of delivery or performance of the contract.
+ (Removed).
+
+*Alternative definitions*:
+
+
+* Text describing this location.(Source: OP internal working).
+
+* (…) the main location of works in case of works, or the main place of delivery or performance in case of supplies and services.(Source: eForms consultation).
+
+* an identifiable geographic place.(Source: ISO 19112).
+
+* Locations can be described in three principal ways: by using a place name, a geometry or anaddress.(Source: ISA CORE VOCABULARIES).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Lot
+
+One of the parts of a procurement project that is being subdivided to allow the buyer to award different lots to different economic operators under different contracts.
+ (BG-5Based on ESPD.).
+
+*Alternative definitions*:
+
+
+* A concept to describe one of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.(Source: OP internal working).
+
+* Contracting authorities may decide to award a contract in the form of separate lots and may determine the size and subject-matter of such lots.(Source: DIRECTIVE 2014/24/EU).
+
+* A tender process may be divided into lots, where bidders can bid on one or more lots(Source: OCDS ontology).
+
+* Class describing contracts that are an actual lot of another contract.(Source: PPROC Ontology).
+
+* A class to describe one of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.(Source: UBL).
+
+* One of the parts of a procurement project that is being subdivided to allow the contracting party to award different lots to different economic operators under different contracts.(Source: ESPD).
+
+
+*Used in*:| e-Notification | e-Submission | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Lot Identifier Reference
+
+The internet site from which information can be obtained concerning the general regulatory framework for employment protection and working conditions applicable in the place where the contract is to be performed.
+ (Based on DIRECTIVE 2009/81/EC).
+
+*Alternative definitions*:
+
+
+* The name, address, fax number and e-mail address of the contracting authority/entity and, if different, of the service from which additional information may be obtained and, in the case of services and works contracts, of the departments, e.g. the relevant governmental Internet site, from which information can be obtained concerning the general regulatory framework for taxes, environmental protection, employment protection and working conditions applicable in the place where the contract is to be performed.(Source: DIRECTIVE 2009/81/EC).
+
+* A class for defining a lot identifier (the identifier of a set of item instances that would be used in case of a recall of that item).(Source: UBL).
+
+* An identifier for the lot.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== M
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Main Activity
+
+The nature of the principal type of business of the buyer.
+ (For example: General public services, Defence, Public order and safety, Economic affairs, Environmental protection, Housing and community amenities, Health, Recreation, culture and religion, Education, Social protection.).
+
+*Alternative definitions*:
+
+
+* The nature of the type of business of the organization.(Source: OP internal working).
+
+* Main activity of the buyer.(Source: eForms consultation).
+
+* Main general activity: General public services, Defence, Public order and safety, Economic affairs, Environmental protection, Housing and community amenities, Health, Recreation, culture and religion, Education, Social protection(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Main Features Award
+
+Principal characteristics of the award procedure to be applied.
+ (Based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* Brief description of the main features of the award procedure to be applied.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Main Financial Conditions
+
+Main terms concerning financing and payment and/or references to the provisions in which those are contained
+ (Based on eForms consultation).
+
+*Alternative definitions*:
+
+
+* Main financing conditions and payment arrangements and/or reference to the relevant provisions governing them.(Source: eForms consultation).
+
+* Main terms concerning financing and payment and/or references to the provisions in which those are contained(Source: DIRECTIVE 2014/25/EU).
+
+* Class defining the actual economic conditions of the contract (e.g. budget or the formula that describes the revision of its price).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Max Lots Allowed
+
+Highest number of lots to which a Tenderer may submit an offer.
+
+
+*Alternative definitions*:
+
+
+* The maximum number of lots to which a tenderer can submit an offer to.(Source: UBL).
+
+* Contracting authorities shall indicate, in the contract notice or in the invitation to confirm interest, whether tenders may be submitted for one, for several or for all of the lots.(Source: DIRECTIVE 2014/24/EU).
+
+* Where the contract is to be subdivided into lots, indication of the possibility of tendering for one, for several or forall of the lots;(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Max Lots Awarded
+
+Highest number of lots that may be awarded to one tenderer.
+
+
+*Alternative definitions*:
+
+
+* The maximum number of lots that can be awarded to a single tenderer.(Source: UBL).
+
+* Contracting authorities may, even where tenders may be submitted for several or all lots, limit the number of lots that may be awarded to one tenderer, provided that the maximum number of lots per tenderer is stated in the contract notice or in the invitation to confirm interest.(Source: DIRECTIVE 2014/24/EU).
+
+* (...) indication of any possible limitation of the number of lots that may be awarded to any one tenderer(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== Max Number Participants
+
+Maximum amount of economic operators to participate.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* In the case of a framework agreement, indication of the planned duration of the framework agreement, stating, where appropriate, the reasons for any duration exceeding four years; as far as possible, indication of value or order of magnitude and frequency of contracts to be awarded, number and, where appropriate, proposed maximum number of economic operators to participate.(Source: DIRECTIVE 2014/24/EU).
+
+* The number of economic operators expected to be on the short list.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Max Total Value Framework
+
+The highest amount which can be spent within a framework agreement over its whole duration.
+
+
+*Alternative definitions*:
+
+
+* Maximum total value of the framework agreement for the contract/lot(Source: OP internal working).
+
+* for framework agreements or dynamic purchasing systems – estimated total maximum value for the entire duration of this lot(Source: eForms consultation).
+
+* With regard to framework agreements and dynamic purchasing systems, the value to be taken into consideration shall be the maximum estimated value net of VAT of all the contracts envisaged for the total term of the framework agreement or the dynamic purchasing system.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Maximum Number Of Candidates
+
+The highest number of tenderers on the short list.
+
+
+*Alternative definitions*:
+
+
+* The maximum number of economic operators on the short list.(Source: OP internal working).
+
+* The contracting authorities shall indicate, in the contract notice or in the invitation to confirm interest, the objective and non-discriminatory criteria or rules they intend to apply, the minimum number of candidates they intend to invite and, where appropriate, the maximum number. (...)(Source: DIRECTIVE 2014/24/EU).
+
+* In the case of a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership, where recourse is made to the option of reducing the number of candidates to be invited to submit tenders, to negotiate or to engage in dialogue: minimum and, where appropriate, proposed maximum number of candidates and objective criteria to be used to choose the candidates in question.(Source: DIRECTIVE 2014/24/EU).
+
+* The maximum number of economic operators on the short list.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Mediation Body
+
+The information about the person or organisation that has been appointed to mediate any appeal.
+
+
+*Alternative definition*:
+
+
+* The party that has been appointed to mediate any appeal.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Micro, Small And Medium-Sized Enterprise (SME)
+
+The category of micro, small and medium-sized enterprises (SMEs) is made up of enterprises which employ fewer than 250 persons and which have an annual turnover not exceeding EUR 50 million, and/or an annual balance sheet total not exceeding EUR 43 million.
+ (Article 2.1.).
+
+*Alternative definitions*:
+
+
+* SMEs are defined in the Commission Recommendation (2003/361/EC) as having less than 250 persons employed and an annual turnover of up to EUR 50 million or a balance sheet total of no more than EUR 43 million.(Source: eForms consultation).
+
+* ‘SME’ shall be understood as defined in Commission Recommendation 2003/361/EC(Source: DIRECTIVE 2014/24/EU).
+
+* Small and medium-sized enterprises (SMEs) are defined in the EU recommendation 2003/361.The main factors determining whether an enterprise is an SME are: (1) staff headcount; (2) either turnover or balance sheet total.(Source: DG GROWTH).
+
+* An indicator that this economic operator is an SME (true) or not (false).(Source: ESPD).
+
+
+*Used in*:| e-Notification | e-Access | e-Submission | e-Evaluation | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Minimum Number Of Candidates
+
+The lowest number of tenderers on the short list.
+
+
+*Alternative definitions*:
+
+
+* The minimum number of economic operators on the short list.(Source: OP internal working).
+
+* The contracting authorities shall indicate, in the contract notice or in the invitation to confirm interest, the objective and non-discriminatory criteria or rules they intend to apply, the minimum number of candidates they intend to invite and, where appropriate, the maximum number. (...)(Source: DIRECTIVE 2014/24/EU).
+
+* In the case of a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership, where recourse is made to the option of reducing the number of candidates to be invited to submit tenders, to negotiate or to engage in dialogue: minimum and, where appropriate, proposed maximum number of candidates and objective criteria to be used to choose the candidates in question.(Source: DIRECTIVE 2014/24/EU).
+
+* The minimum number of economic operators on the short list.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Modification
+
+Adjustment of the contract during its term (price revision clauses, additional works, services or supplies, etc.)
+ (Definition based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Contracts and framework agreements may be modified without a new procurement procedure in accordance with this Directive (...)(Source: DIRECTIVE 2014/24/EU).
+
+* A classification of the motive for the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* The description of the circumstances which have rendered necessary the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* The specification of the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* During the execution of a contract it could happen that the contract should be modified, to describe these kind of situations we use this class.(Source: PPROC Ontology).
+
+* Class describing the conditions for which a contract can be modified (e.g. maximum percentage of its price or budget).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Modification
+
+A classification of the motive for the adjustment of the contract during its term.
+ (The deffinition of "Reason For Modification" is already provided in BT-201).
+
+*Alternative definitions*:
+
+
+* The description of the circumstances which have rendered necessary the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* The specification of the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* During the execution of a contract it could happen that the contract should be modified, to describe these kind of situations we use this class.(Source: PPROC Ontology).
+
+* Class describing the conditions for which a contract can be modified (e.g. maximum percentage of its price or budget).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Modification
+
+The description of the circumstances which have rendered necessary the adjustment of the contract during its term.
+
+
+*Alternative definitions*:
+
+
+* The specification of the adjustment of the contract during its term.(Source: Ontology proposal).
+
+* During the execution of a contract it could happen that the contract should be modified, to describe these kind of situations we use this class.(Source: PPROC Ontology).
+
+* Class describing the conditions for which a contract can be modified (e.g. maximum percentage of its price or budget).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Modification
+
+The specification of the adjustment of the contract during its term.
+
+
+*Alternative definitions*:
+
+
+* During the execution of a contract it could happen that the contract should be modified, to describe these kind of situations we use this class.(Source: PPROC Ontology).
+
+* Class describing the conditions for which a contract can be modified (e.g. maximum percentage of its price or budget).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== N
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Name
+
+The official name of the organisation.
+
+
+*Alternative definitions*:
+
+
+* A name for this party.(Source: UBL).
+
+* The legal name of the business(Source: ISA CORE VOCABULARIES).
+
+* A word or set of words by which a person or thing is known, addressed, or referred to.(Source: Oxford Dictionaries).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== National Law URI
+
+The Uniform Resource Identifier (URI) of the applicable national legislation referred to in the notice.
+ (Based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* (…) The allocation of responsibilities and the applicable national law shall be referred to in the procurement documents for jointly awarded public contracts.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== No Award Reason
+
+Justification why the contract has and will not have a winner.
+
+
+*Alternative definition*:
+
+
+* Information on non award(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== No Further Negociation Indicator
+
+An examination of the appropriateness of the level of thresholds of the GPA is not required.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* In accordance with Article XXII(7) thereof, the GPA shall be the subject of further negotiations three years after its entry into force and periodically thereafter. In that context, the appropriateness of the level of thresholds should be examined, bearing in mind the impact of inflation in view of a long period without changes of the thresholds in the GPA; in the event that the level of thresholds should change as a consequence, the Commission should, where appropriate, adopt a proposal for a legal act amending the thresholds set out in this Directive.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Number Award
+
+Amount of contracts for which a winner has been selected.
+
+
+*Alternative definition*:
+
+
+* Number of contracts awarded(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Number Requests Received
+
+The amount of applications to participate from economic operators.
+
+
+*Alternative definition*:
+
+
+* Number of requests to particiapte received: [](Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Number Tenders Other EU
+
+The amount of bids received by the buyer from economic operators from other EU countries.
+
+
+*Alternative definitions*:
+
+
+* Number of tenders received from other EU Member States, Iceland, Liechtenstein or Norway : [ ] #1# ### Number of projects received from other EU Member States, Iceland, Liechtenstein or Norway: [ ] #2#(Source: eForms consultation).
+
+* Nb tender from other EU(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Number Tenders Received
+
+The amount of bids submitted by tenders.
+
+
+*Alternative definitions*:
+
+
+* Number of tender received(Source: OP internal working).
+
+* The total number of tenders received in this tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Number Tenders Received EMEANS
+
+The amount of bids electronically submitted by tenderers
+
+
+*Alternative definitions*:
+
+
+* Nb tender received by EMEANS(Source: OP internal working).
+
+* Number of tenders received by electronic means: [ ] #1# ### Number of projects received by electronic means: [ ] #2#(Source: eForms consultation).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Number Tenders SME
+
+The amount of bids received by by the buyer from SMEs (small and medium-sized enterprises).
+
+
+*Alternative definitions*:
+
+
+* Nb tender received by SME(Source: OP internal working).
+
+* Number of tenders received from small or medium enterprises: [ ] #1# ### Number of projects received from small or medium enterprises: #2# [ ](Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Number Year Month
+
+The number of the month when the contract has been awarded.
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== NUTS Code
+
+The common classification of territorial units for statistics
+ (BT-34 RemovedBased on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* A territorial division of a country, such as a county or state, expressed as a code, expressed as a code.(Source: OP internal working).
+
+* Nomenclature of territorial units.(Source: eForms consultation).
+
+* A common classification of territorial units for statistics(Source: DIRECTIVE 2014/24/EU).
+
+* Hierarchical list of the Nomenclature of territorial units for statistics - NUTS and the Statistical regions of Europe(Source: European Environment Agency).
+
+* The NUTS classification (Nomenclature of territorial units for statistics) is a hierarchical system for dividing up the economic territory of the EU for the purpose of: (1) The collection, development and harmonisation of European regional statistics; (2) Socio-economic analyses of the regions; (3) Framing of EU regional policies.(Source: EUROSTAT).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== O
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Open Conditions Date
+
+Time for the opening of tenders.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* date, time and place for the opening of tenders,(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Open Conditions Description
+
+Specifications for the opening of tenders
+ (Based on DIRECTIVE 2014/24/EUPersons authorised to be present at such opening, etc.).
+
+*Alternative definition*:
+
+
+* (a) time frame during which the tenderer must maintain its tender,(b) date, time and place for the opening of tenders,(c) persons authorised to be present at such opening.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Open Conditions Place
+
+Site for the opening of tenders.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* date, time and place for the opening of tenders,(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Options
+
+The possibility to make adjustment of the contract during its term (price revision clauses, changes in the duration of the contract, additional works, services or supplies, etc.), which must be specified and described by the buyer
+
+
+*Alternative definitions*:
+
+
+* A Indicator about the existing of the options(Source: OP internal working).
+
+* A concept to define the options related to the procurement project(Source: OP internal working).
+
+* (a) where the modifications, irrespective of their monetary value, have been provided for in the initial procurement documents in clear, precise and unequivocal review clauses, which may include price revision clauses, or options. Such clauses shall state the scope and nature of possible modifications or options as well as the conditions under which they may be used. They shall not provide for modifications or options that would alter the overall nature of the contract or the framework agreement; (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Description of the procurement: nature and extent of works, nature and quantity or value of supplies, nature and extent of services. Where the contract is divided into lots, this information shall be provided for each lot. Where appropriate, description of any options.(Source: DIRECTIVE 2014/24/EU).
+
+* A description for the possible options that can be carried out during the execution of the contract.(Source: UBL).
+
+* A description for the possible options that can be carried out during the execution of the contract.(Source: ESPD).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Organisation Identifier
+
+The code that identifies the organisation in a unique way.
+
+
+*Alternative definitions*:
+
+
+* A national identifier of this contact.(Source: OP internal working).
+
+* Identification number (where provided for in national legislation)(Source: DIRECTIVE 2014/24/EU).
+
+* National registration number if applicable(Source: eForms consultation).
+
+* The legal status of a business is conferred on it by an authority within a given jurisdiction. The Legal Identifier is therefore a fundamental relationship between a legal entity and the authority with which it is registered. (...) In many countries, the business register's identifier is the relevant data point. The tax number often fulfils this function in Spain.(Source: ISA CORE VOCABULARIES).
+
+* Gives an identifier, such as a company registration number, that can be used to used to uniquely identify the organization(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Outsourced Procedure Indicator
+
+A process which has been subcontracted to another organisation.
+ (An indicator to specify if the management of this procurement procedure has been outsourced to another organisation.).
+
+*Alternative definition*:
+
+
+* Whether the management of this procurement procedure has been outsourced to another organisation, e.g. a consultancy specialising in public procurement, a law firm, a competence center within the public administration.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== P
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Participant Pay
+
+Details of payments to be made to all participants, if any.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Payments to be made to all participants, if any.(Source: DIRECTIVE 2014/24/EU).
+
+* Details of payments to all participants.(Source: UBL).
+
+* Details of payments to all participants.(Source: ESPD).
+
+
+*Used in*:| e-Notification | e-Payment |
+
+   
+[.text-left]
+=== Participants Name
+
+Designation of the member already selected, if any.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* names of the participants already selected, if any,(Source: DIRECTIVE 2014/24/EU).
+
+* A participant can already be selected at the time of the publication of the design contest notice for example because the information about the participation of a world renown architect is intended to be used in promoting the design contest amongst other potential participants.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Participation Deadline
+
+Time limit for receipt of requests to take part in this procurement procedure.
+ (Based on eForms consultation).
+
+*Alternative definitions*:
+
+
+* Time limits for receipt of expressions of interest or tenders(Source: OP internal working).
+
+* Time limit for receipt of expressions of interest: [date-time](Source: eForms consultation).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Performance Conditions
+
+The particular conditions related to the contract (e.g. intermediary deliverables, compensation for damages, intellectual property rights).
+ (Based on eForms consultation).
+
+*Alternative definitions*:
+
+
+* This field should contain the particular conditions related to the contract (e.g. intermediary deliverables,compensation for damages, intellectual property rights).(Source: eForms consultation).
+
+* Conditions for participation, including: (a) where appropriate, indication whether the public contract is restricted to sheltered workshops, or whether its execution is restricted to the framework of protected job programmes, (b) where appropriate, indication whether the provision of the service is reserved by law, regulation or administrative provision to a particular profession; reference to the relevant law, regulation or administrative provision, (c) a list and brief description of criteria regarding the personal situation of economic operators that may lead to their exclusion and of selection criteria; minimum level(s) of standards possibly required; indication of required information (self-declarations, documentation).(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Performance Staff Qualification
+
+The professional capacity required to the staff that will perform the contract.
+
+
+*Alternative definition*:
+
+
+* The economic operator must indicate the names and professional qualifications of the staff assigned to performing the contract(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Personal Situation Exclusion Criterion
+
+Text describing the personal situation of the economic operators in this tendering process and/or the exclusion criteria.
+
+
+*Alternative definitions*:
+
+
+* Text describing the personal situation of the economic operators in this tendering process.(Source: UBL).
+
+* a list and brief description of criteria regarding the personal situation of economic operators that may lead to their exclusion and of selection criteria (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Any candidate or tenderer which has been the subject of a conviction by final judgment of which the contracting authority/entity is aware, for one or more of the reasons listed below, shall be excluded from participation in a contract (...)(Source: DIRECTIVE 2009/81/EC).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Phone
+
+Comunication channel for contacting the responsible person or service of the organisation
+
+
+*Alternative definition*:
+
+
+* Used for telephone type codes.(Source: vCard Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Postal Code
+
+The post code of the organisation's physical address.
+
+
+*Alternative definition*:
+
+
+* The post code (a.k.a postal code, zip code etc.). Post codes are common elements in manycountries' postal address systems(Source: ISA CORE VOCABULARIES).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Preliminary Market Consultation
+
+Before launching a procurement procedure, buyers may conduct a previous examination with a view to preparing the procurement and informing economic operators of their procurement plans and requirements.
+ (Based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* Before launching a procurement procedure, contracting authorities may conduct market consultations with a view to preparing the procurement and informing economic operators of their procurement plans and requirements.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Prize Awarded
+
+What is given as a reward to the winner of a procurement process.
+ (BT-43).
+
+*Alternative definitions*:
+
+
+* The number and value of what is given as a reward to the winner of a procurement process.(Source: Ontology proposal).
+
+* Prize(s) will be awarded: ◯ yes ◯ no (excluding VAT)(Source: eForms consultation).
+
+* Number and value of the prizes to be awarded.(Source: UBL).
+
+* Number and value of any prizes.(Source: DIRECTIVE 2014/24/EU).
+
+* A thing given as a reward to the winner of a competition or in recognition of an outstanding achievement.(Source: Oxford Dictionaries).
+
+
+*Used in*:| e-Notification | e-Awarding | e-Payment |
+
+   
+[.text-left]
+=== Prize Awarded
+
+The number and value of what is given as a reward to the winner of a procurement process.
+ (BT-44).
+
+*Alternative definitions*:
+
+
+* Prize(s) will be awarded: ◯ yes ◯ no (excluding VAT)(Source: eForms consultation).
+
+* Number and value of the prizes to be awarded.(Source: UBL).
+
+* Number and value of any prizes.(Source: DIRECTIVE 2014/24/EU).
+
+* A thing given as a reward to the winner of a competition or in recognition of an outstanding achievement.(Source: Oxford Dictionaries).
+
+
+*Used in*:| e-Notification | e-Awarding | e-Payment |
+
+   
+[.text-left]
+=== Prize Value
+
+The amount of the reward to the winner of the contract
+
+
+*Alternative definition*:
+
+
+* Prize(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Awarding | e-Payment |
+
+   
+[.text-left]
+=== Procedure Type
+
+It specifies the sort of procurement procedure, which will regulate the conditions and deadlines that apply to the process
+ (For example: Open procedure, Restricted procedure, Competitive procedure with negotiation, Competitive dialogue, Innovation Partnership, Negotiated procedure, or a procedure not based on the EU directives (e.g. for social services, concessions, below-threshold procurement).).
+
+*Alternative definitions*:
+
+
+* The procedure names below refer to the procedures as defined in the EU procurement directives. For example, "Open" stands for "Open according to 2014/24/EU Art. 27." If a procedure is not based on the EU directives (e.g. for social services, concessions, below-threshold procurement), then "◯ <Specific procedure based on national legislation>" should be marked and further information about how the procedure works provided.(Source: eForms consultation).
+
+* When awarding public contracts, contracting authorities shall apply the national procedures adjusted to be in conformity with this Directive (...)(Source: DIRECTIVE 2014/24/EU).
+
+* A code signifying the type of this tendering procedure.(Source: UBL).
+
+* The type of the procurement administrative procedure according to the EU Directives.(Source: ESPD).
+
+* Class that specifies the procedure of a contract (e.g. type of procedure or its urgency).(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Procurement Description
+
+Specification of the procurement: nature and extent of works, nature and quantity or value of supplies, nature and extent of services.
+
+
+*Alternative definitions*:
+
+
+* Text describing this procurement project.(Source: OP internal working).
+
+* Brief description of the procurement: nature and extent of works, nature and quantity or value of supplies, nature and extent of services.(Source: DIRECTIVE 2014/24/EU).
+
+* Text describing this procurement project.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Procurement Document URL
+
+Internet address for access to procurement documents.
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Procurement Law
+
+The procurement law to apply in cross-border joint procurement, when buyers come from different Members States.
+ (Based on the DIRECTIVE 2014/24/EU and the OP internal working.).
+
+*Alternative definitions*:
+
+
+* (...)Therefore new rules on cross-border joint procurement should be established in order to facilitate cooperation between contracting authorities and enhancing the benefits of the internal market by creating cross-border business opportunities for suppliers and service providers. Those rules should determine the conditions for cross-border utilisation of central purchasing bodies and designate the applicable public procurement legislation, including the applicable legislation on remedies, in cases of cross-border joint procedures, complementing the conflict of law rules of Regulation (EC) No 593/2008 of the European Parliament and the Council ( 1 ). In addition, contracting authorities from different Member States should be able to set up joint entities established under national or Union law (...)(Source: DIRECTIVE 2014/24/EU).
+
+* the procurement law to apply when buyers come from different countries(Source: OP internal working).
+
+* Information about the law that defines the regulatory domain.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Profession
+
+A paid occupation, especially one that involves prolonged training and a formal qualification
+
+
+*Alternative definition*:
+
+
+* Participation is reserved for a particular profession(Source: eForms consultation).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+   
+[.text-left]
+=== Publication Date
+
+Time(s) of previous advertisements in the Official Journal of the European Union relevant to the contract(s) advertised in this notice.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Date(s) and reference(s) of previous publications in the Official Journal of the European Union relevant to the contract(s) advertised in this notice.(Source: DIRECTIVE 2014/24/EU).
+
+* Date of the Previous publication concerning this procedure(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== Q
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Quantity And Unit
+
+The size of the procurement (the number of units required and the type of unit the good, service, or work comes in).
+ (Based on eForms consultation.).
+
+*Alternative definitions*:
+
+
+* The number of units required.This field is voluntary. Together with "unit" and "CPV', this field is intended for easier estimation of unit prices.(Source: eForms consultation).
+
+* Description of the unit which the good, service, or work comes in, for example hours or kilograms. Where CPVcode is a supply which does not need a further unit (e.g. cars), then no unit needs to be given and quantity is taken to be a count, e.g. the "number of cars". The codelist of units is based on UN/CEFACT Recommendation 20.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== R
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Reason For Non-Electronic Submission
+
+Basis for phyiscal submission of tenders.
+
+
+*Alternative definitions*:
+
+
+* Reason for accepting/not requesting non-electronic submission.(Source: OP internal working).
+
+* A code to specify the reason for non-electronic submission: Tools, devices, or file formats not generally available; Intellectual property right issues; Buyer would need specialized office equipment; Submission of a physical model; Protection of particularly sensitive information.(Source: eForms consultation).
+
+* Electronic communication requires the use of tools and devices that are not generally available. Unrestricted and full direct access to these toolsand devices is possible, free of charge, at: (URL)(Source: eForms consultation).
+
+* (...) contracting authorities shall not be obliged to require electronic means of communication in the submission process in the following situations:(a) due to the specialised nature of the procurement, the use of electronic means of communication would require specific tools, devices or file formats that are not generally available or supported by generally available applications; (b) the applications supporting file formats that are suitable for the description of the tenders use file formats that cannot be handled by any other open or generally available applications or are under a proprietary licensing scheme and cannot be made available for downloading or remote use by the contracting authority; (c) the use of electronic means of communication would require specialised office equipment that is not generally available to contracting authorities; (d) the procurement documents require the submission of physical or scale models which cannot be transmitted using electronic means.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Receiver Party
+
+The organisation that receives the tender (the buyer or his representative)
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Recurrent Estimated Timing
+
+The description of the envisaged timing for further notices to be published.
+
+
+*Alternative definition*:
+
+
+* The description of the estimated timing for further notices to be published.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Recurrent Indicator
+
+A procurement procedure, or a qualification system, for which another procurement procedure or qualification system for the same contract matter is likely to be launched, or established, in the foreseeable future.
+
+
+*Alternative definitions*:
+
+
+* Information about recurrenceThis is a recurrent procurement ◯ yes ◯ noEstimated timing for further notices to be published(Source: eForms consultation).
+
+* Indicates whether the procurement is recurring (true) or not (false).(Source: OP internal working).
+
+* Indicates whether the procurement is recurring (true) or not (false).(Source: UBL).
+
+* In the case of recurrent procurement, estimated timing for further notices to be published(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Reduction Recourse Indicator
+
+In two-phased procedures, the buyer may limit the number of candidates meeting the selection criteria that they will invite to tender or to conduct a dialogue.
+ (Based on the DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* An indicator that the number of candidates participating in this process has been reduced (true) or not (false).(Source: OP internal working).
+
+* Information about reduction of the number of solutions or tenders during negotiation or dialogueRecourse to staged procedure to gradually reduce the number of solutions to be discussed or tenders to be negotiated(Source: eForms consultation).
+
+* In restricted procedures, competitive procedures with negotiation, competitive dialogue procedures and innovation partnerships, contracting authorities may limit the number of candidates meeting the selection criteria that they will invite to tender or to conduct a dialogue (...)(Source: DIRECTIVE 2014/24/EU).
+
+* An indicator that the number of candidates participating in this process has been reduced (true) or not (false).(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Reference Publication
+
+Mention of previous advertisements in the Official Journal of the European Union relevant to the contract(s) advertised in this notice.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Reference to the previous publication concerning this procedure(Source: OP internal working).
+
+* Date(s) and reference(s) of previous publications in the Official Journal of the European Union relevant to the contract(s) advertised in this notice.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Renewal
+
+The maximum number of contract extensions foreseen for this contract.
+ (BT-58).
+
+*Alternative definitions*:
+
+
+* Specifications of the period allowed for each contract extension, such as the amount and period.(Source: Ontology proposal).
+
+* A concept to describe the renewal of a commercial arrangement, such as a contract or licence fee.(Source: OP internal working).
+
+* The period allowed for each contract extension.(Source: ESPD).
+
+* A class to describe the renewal of a commercial arrangement, such as a contract or licence fee.(Source: UBL).
+
+* The monetary amount of this renewal.(Source: UBL).
+
+* The period for which the arrangement is now valid.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Renewal
+
+Specifications of the period allowed for each contract extension, such as the amount and period.
+ (BT-57Based on the ESPD).
+
+*Alternative definitions*:
+
+
+* A concept to describe the renewal of a commercial arrangement, such as a contract or licence fee.(Source: OP internal working).
+
+* The period allowed for each contract extension.(Source: ESPD).
+
+* A class to describe the renewal of a commercial arrangement, such as a contract or licence fee.(Source: UBL).
+
+* The monetary amount of this renewal.(Source: UBL).
+
+* The period for which the arrangement is now valid.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Renewal
+
+The period allowed for each contract extension.
+ (BT-56).
+
+*Alternative definitions*:
+
+
+* A class to describe the renewal of a commercial arrangement, such as a contract or licence fee.(Source: UBL).
+
+* The monetary amount of this renewal.(Source: UBL).
+
+* The period for which the arrangement is now valid.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Access |
+
+   
+[.text-left]
+=== Request Information Deadline
+
+Time limit for submitting questions.
+
+
+*Alternative definitions*:
+
+
+* Deadline for obtention of additional information about procurement(Source: OP internal working).
+
+* Additional information can be requested before: [date-time](Source: eForms consultation).
+
+* Provided that it has been requested in good time, the contracting authorities shall supply to all tenderers taking part in the procurement procedure additional information relating to the specifications and any supporting documents not later than six days before the time limit fixed for the receipt of tenders. In the event of an accelerated procedure as referred to in Article 27(3) and Article 28(6), that period shall be four days.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Reserved Contract
+
+Public procurement procedures which are restrained to sheltered workshops and economic operators whose main aim is the social and professional integration of disabled or disadvantaged persons or may provide for such contracts to be performed in the context of sheltered employment programmes, provided that at least 30 % of the employees of those workshops, economic operators or programmes are disabled or disadvantaged workers.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Member States may reserve the right to participate in public procurement procedures to sheltered workshops and economic operators whose main aim is the social and professional integration of disabled or disadvantaged persons or may provide for such contracts to be performed in the context of sheltered employment programmes, provided that at least 30 % of the employees of those workshops, economic operators or programmes are disabled or disadvantaged workers.(Source: DIRECTIVE 2014/24/EU).
+
+* As far as already known, conditions for participation, including: (...) (b) where appropriate, indication whether the provision of the service is reserved by law, regulation or administrative provision to a particular profession, (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Information about reserved contractsThe contract is reserved to sheltered workshops and economic operators aiming at the social and professional integration of disabled ordisadvantaged personsThe execution of the contract is restricted to the framework of sheltered employment programmes(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Result
+
+The awarding of a tender in a tendering process.
+ (Based on UBL.).
+
+*Alternative definition*:
+
+
+* A class to describe the awarding of a tender in a tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Awarding |
+
+   
+[.text-left]
+=== Revenue Value
+
+The incomes from payment of fees.
+
+
+*Alternative definition*:
+
+
+* Revenue from payment for fees(Source: OP internal working).
+
+
+*Used in*:| e-Payment |
+
+   
+[.text-left]
+=== Review Information Party
+
+A party that is responsible for review and, where appropriate, mediation procedures.
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definition*:
+
+
+* The information about the contacting person or organisation presenting the information for an appeal.(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Review Information Party
+
+The information about the contacting person or organisation presenting the information for an appeal.
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Rules Criteria
+
+A requirement to be met by a tenderer.
+
+
+*Used in*:| e-Notification | e-Evaluation | e-Awarding |
+
+[.text-center]
+== S
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Social Specific Services Indicator
+
+This notice concerns only social or other specific services, as laid down in the current legislation.
+ (Removed).
+
+*Alternative definitions*:
+
+
+* An indicator to specify if this notice only concerns social or other specific services.(Source: eForms consultation).
+
+* Contracting authorities intending to award a public contract for the services referred to in Article 74 shall make known their intention by any of the following means:(a) by means of a contract notice (...); or(b) by means of a prior information notice (...).(Source: DIRECTIVE 2014/24/EU).
+
+* In the context of this Directive, Social Specific Services are: Health, social and related services; Administrative social, educational, healthcare and cultural services; Compulsory social security services; Benefit services; Other community, social and personal services including services furnished by trade unions, political organisations, youth associations and other membership organisation services; Religious services; Hotel and restaurant services; Legal services, to the extent not excluded pursuant to point (d) of Article 10; Other administrative services and government services; Provision of services to the community; Prison related services, public security and rescue services to the extent not excluded pursuant to point (h) of Article 10; Investigation and security services; International services; Postal services; Miscellaneous services.(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Strategic Procurement
+
+Impact of the procurement (social, environnemental , innovative,...)
+
+
+*Alternative definitions*:
+
+
+* In order to fully exploit the potential of public procurement to achieve the objectives of the Europe 2020 strategy for smart, sustainable and inclusive growth, environmental, social and innovation procurement will also have to play its part (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Research and innovation, including eco-innovation and social innovation, are among the main drivers of future growth and have been put at the centre of the Europe 2020 strategy for smart, sustainable and inclusive growth. Public authorities should make the best strategic use of public procurement to spur innovation (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Street Address
+
+The name of the street, road, avenue, etc., of the organisation's physical address.
+
+
+*Alternative definition*:
+
+
+* The street address associated with the address of the object(Source: vCard Ontology).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Street Number
+
+The number of the building of the organisation's physical address.
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Subcontract
+
+A concept to decribe the main information regarding the share of parts of the contract to third parties
+
+
+*Alternative definition*:
+
+
+* A class to describe subcontract terms for a tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Subcontracting Code
+
+It indicates the part or parts of the contract the successful tenderer intends to subcontract beyond the required percentage
+ (Based on Standard forms for public procurement).
+
+*Alternative definitions*:
+
+
+* A code specifying the conditions for subcontracting.(Source: UBL).
+
+* The successful tenderer is obliged to specify which part or parts of the contract it intends to subcontract beyond the required percentage and to indicate the subcontractors already identified. (if applicable)(Source: Contract notice for contracts in the field of defence and security).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Subcontracting Part
+
+A third party that is responsible for developing any share of the contract requested by the winner.
+ (BT-65Based on DIRECTIVE 2014/24/EUArticle 71.2).
+
+*Alternative definitions*:
+
+
+* The share of the contract that the successful tenderer subcontracts to third parties.(Source: Ontology proposal).
+
+* An indicator to specify whether the tenderer intends to subcontract a part of the contract to third parties or not(Source: Ontology proposal).
+
+* The estimated amount of the share of the contract to third parties (excluding VAT) .(Source: Ontology proposal).
+
+* Specification of the characteristics of the share of the contract to third parties(Source: Ontology proposal).
+
+* In the procurement documents, the contracting authority may ask or may be required by a Member State to ask the tenderer to indicate in its tender any share of the contract it may intend to subcontract to third parties and any proposed subcontractors(Source: DIRECTIVE 2014/24/EU).
+
+* Class that defines the execution conditions of the contract (e.g. special execution conditions or subcontracting percentage amounts).(Source: PPROC Ontology).
+
+* The range of this property must be a percentage (i.e. float between 0.0 and 100.0)(Source: PPROC Ontology).
+
+* The range of this property must be a percentage (i.e. float between 0.0 and 100.0)(Source: PPROC Ontology).
+
+* The maximum percentage allowed to be subcontracted.(Source: UBL).
+
+* The minimum percentage allowed to be subcontracted.(Source: UBL).
+
+* The maximum percentage allowed to be subcontracted.(Source: ESPD).
+
+* The minimum percentage allowed to be subcontracted.(Source: ESPD).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Suitability
+
+Reference to the relevant law, regulation or administrative provision when the provision of the service is reserved to a particular profession
+ (Based on DIRECTIVE 2014/24/EU).
+
+*Alternative definitions*:
+
+
+* Brief description of selection criteria related to the suitability to pursue the professional activity. This should include a list of all such criteria, indicate required information (e.g. self-declaration, documentation), and, if applicable, obligations to enroll in professional or trade registers.(Source: eForms consultation).
+
+* Selection criteria may relate to:(a) suitability to pursue the professional activity;(b) economic and financial standing;(c) technical and professional ability.(Source: DIRECTIVE 2014/24/EU).
+
+* With regard to suitability to pursue the professional activity, contracting authorities may require economic operators to be enrolled in one of the professional or trade registers kept in their Member State of establishment, as described in Annex XI, or to comply with any other request set out in that Annex.(Source: DIRECTIVE 2014/24/EU).
+
+* Conditions for participation, including:(...)where appropriate, indication whether the provision of the service is reserved by law, regulation or administrative provision to a particular profession; reference to the relevant law, regulation or administrative provision, (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Supplier
+
+The suppliers awarded this award. If different suppliers have been awarded different items of values, these should be split into separate award blocks.
+
+
+*Used in*:| e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+[.text-center]
+== T
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Tax Party
+
+The organisation that provides information on the payment of taxes by the economic operator.
+ (Definition based on ESPD).
+
+*Alternative definition*:
+
+
+* Payment of taxes.Has the economic operator breached its obligations relating to the payment of taxes, both in the country in which it is established and in Member State of the contracting authority or contracting entity if other than the country of establishment?(Source: ESPD).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+   
+[.text-left]
+=== Tax Party Address URL General
+
+The internet site from which information can be obtained concerning the general regulatory framework for taxes applicable in the place where the contract is to be performed.
+ (Based on DIRECTIVE 2009/81/EC).
+
+*Alternative definitions*:
+
+
+* A contracting authority/entity may state in the contract documents, or be obliged by a Member State so to state, the body or bodies from which a candidate or tenderer may obtain the appropriate information on the obligations relating to taxes, to environmental protection, to the employment protection provisions and to the working conditions which are in force in the Member State, region, locality or third country in which the works are to be carried out or services are to be provided and which shall be applicable to the works carried out on site or to the services provided during the performance of the contract.(Source: DIRECTIVE 2009/81/EC).
+
+* The name, address, fax number and e-mail address of the contracting authority/entity and, if different, of the service from which additional information may be obtained and, in the case of services and works contracts, of the departments, e.g. the relevant governmental Internet site, from which information can be obtained concerning the general regulatory framework for taxes, environmental protection, employment protection and working conditions applicable in the place where the contract is to be performed(Source: DIRECTIVE 2009/81/EC).
+
+* Relevant governmental Internet sites where information about the tax legislation can be obtained(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+   
+[.text-left]
+=== Technical And Professional Ability
+
+Technical evaluation criteria required for an economic operator in a tendering process.
+ (Based on UBL and ESP).
+
+*Alternative definitions*:
+
+
+* A technical evaluation criterion required for an economic operator in a tendering process.(Source: OP internal working).
+
+* Brief description of selection criteria related to technical and professional ability. This should include a list of all such criteria, minimum requirements, and indicate required information (e.g. self-declaration, documentation).(Source: eForms consultation).
+
+* Selection criteria may relate to:(a) suitability to pursue the professional activity;(b) economic and financial standing;(c) technical and professional ability.(Source: DIRECTIVE 2014/24/EU).
+
+* With regard to technical and professional ability, contracting authorities may impose requirements ensuring that economic operators possess the necessary human and technical resources and experience to perform the contract to an appropriate quality standard.Contracting authorities may require, in particular, that economic operators have a sufficient level of experience demonstrated by suitable references from contracts performed in the past.(Source: DIRECTIVE 2014/24/EU).
+
+* A technical evaluation criterion required for an economic operator in a tendering process.(Source: Based on ESPD).
+
+* A technical evaluation criterion required for an economic operator in a tendering process.(Source: UBL).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+   
+[.text-left]
+=== Technical Evaluation Criterion
+
+A technical evaluation criterion required for an economic operator in a tendering process.
+
+
+*Alternative definition*:
+
+
+* A technical evaluation criterion required for an economic operator in a tendering process.(Source: UBL).
+
+
+
+
+   
+[.text-left]
+=== Tender Submission
+
+Internet address for sending bids by electronic means.
+
+
+*Alternative definition*:
+
+
+* Internet address for submission of tenders(Source: OP internal working).
+
+
+*Used in*:| e-Notification | e-Submission |
+
+   
+[.text-left]
+=== Tender Validity Deadline
+
+The period during which tenders submitted for this tendering process must remain valid.
+
+
+*Alternative definition*:
+
+
+* Time frame during which the tenderer must maintain its tender.(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Tender Variants Awarded
+
+The winning tenderer has submited multiple additional proposals in response to a given set of requirements specified by the buyer in the procurement documents.
+ (An indicator to specify whether the tenders have submited a variant or not).
+
+*Alternative definition*:
+
+
+* Tenders has submited a variant(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Tenderer
+
+An economic operator that has submitted a tender.
+ (Article 2.1.Specialisation of Economic Operator).
+
+*Alternative definitions*:
+
+
+* Any natural or legal person which plays the role of economic operator in the market and has submitted a tender bid for a public contract(Source: LOTED Ontology).
+
+* All parties who submit a bid on a tender.(Source: OCDS ontology).
+
+
+*Used in*:| e-Submission | e-Evaluation | e-Awarding |
+
+   
+[.text-left]
+=== Title
+
+The name of the procurement procedure.
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Total Value
+
+Information on the global cost of the contract which is the entire cost which can be spent through the contract or the framework agreement over its whole duration, in all lots..
+ (Based on eForms consultation).
+
+*Alternative definitions*:
+
+
+* Information on value of contract(Source: OP internal working).
+
+* The maximum value which can be spent through the framework agreement over its whole duration, in all lots.(Source: eForms consultation).
+
+* Information on value of contract(Source: OP internal working).
+
+* For all procurement procedures, including for framework agreements and dynamic purchasing systems, the estimated value should be the maximum value, i.e. inculding options and renewals.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Type Of Buyer
+
+It specifies different characteristics of the purchasing agent with independence of its role.
+ (For example, the type of buyer can define the jurisdictional level of the buyer (Central government authority; Regional government authority; Local government authority; Body governed by public law; Buyer awarding a contract subsidized by a contracting authority; Public undertaking; Buyer operating on the basis of a special or exclusive right; International organisation; or Other).).
+
+*Alternative definitions*:
+
+
+* The type of buyer that is independent of its role.(Source: OP internal working).
+
+* Central authorities are authorities listed in 2014/24/EU, Annex I. For more information, see 2014/24/EU Art. 2(2).(Source: eForms consultation).
+
+* Regional authorities include all authorities of the administrative units listed non-exhaustively in NUTS 1 and 2, as referred to in Regulation (EC) No 1059/2003 of the European Parliament and of the Council.For more information, see 2014/25/EU Art. 3(2) or 2014/23/EU Art. 6(2)(Source: eForms consultation).
+
+* Local authorities includes all authorities of the administrative units falling under NUTS 3 and smaller administrative units, as referred to in Regulation (EC) No 1059/2003.For more information, see 2014/25/EU Art. 3(3) or 2014/23/EU Art. 6(3)(Source: eForms consultation).
+
+* Bodies governed by public law is a broad category covering a diverse type of buyers such as schools, hospitals, and publicly owned companies serving in the general interest.For more information, see 2014/24/EU Art. 2(4).(Source: eForms consultation).
+
+* The buyer is not a contracting authority himself, but is awarding a contract subsidized by a contracting authority.For more information, see 2014/24/EU Art. 13.(Source: eForms consultation).
+
+* Public undertakings, except bodies governed by public law. ‘Public undertaking’ means any undertaking over which the contracting authorities may exercise directly or indirectly a dominant influence by virtue of their ownership of it, their financial participation therein, or the rules which govern it.For more information, see 2014/25/EU Art. 4(2) (=2014/23/EU Art. 7(4)).(Source: eForms consultation).
+
+* Buyers operating on the basis of a special or exclusive right, except those which are bodies governed by public law.For more information, see 2014/25/EU Art. 4 (3), 2014/23/EU Art. 5(10-11).(Source: eForms consultation).
+
+* EU institutions, as well as any other international organisations.(Source: eForms consultation).
+
+
+*Used in*:| e-Notification |
+
+   
+[.text-left]
+=== Type Of Contract
+
+The nature of the contract, which corresponds to the main subject of the contract.
+ (OP internal working / eForms consultation).
+
+*Alternative definitions*:
+
+
+* Type of contract(Source: eForms consultation).
+
+* A Code signifying the type of contracting system (e.g., framework agreement, dynamic purchasing system).(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== U
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Usage ESPD Code
+
+The conditions and criteria for participation are specified in the European Single Procurement Document (ESPD), which is a self-declaration of the businesses' financial status, abilities and suitability for a public procurement procedure.
+ (Based on the OP internal working and ESPD.).
+
+*Alternative definitions*:
+
+
+* The European Single Procurement Document (ESPD) is a self-declaration form used in public procurement procedures by public buyers and businesses in the EU. Before the introduction of the ESPD, companies were required to submit various documents to prove that they fulfil the exclusion and selection criteria of a tender, for example have paid taxes and have not been convicted of criminal activity. Now, companies are able to meet these obligations with a single ESPD self-declaration form.(Source: ESPD).
+
+* The conditions and criteria for participation are specified in ESPD or/and in other documents.(Source: OP internal working).
+
+* At the time of submission of requests to participate or of tenders, contracting authorities shall accept the European Single Procurement Document (ESPD), consisting of an updated selfdeclaration as preliminary evidence in replacement of certificates issued by public authorities or third parties confirming that the relevant economic operator fulfils the following conditions (...)(Source: DIRECTIVE 2014/24/EU).
+
+
+*Used in*:| e-Notification | e-Evaluation |
+
+[.text-center]
+== V
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Variants Indicator
+
+Multiple additional proposals from the tenderer in response to a given set of requirements specified by the buyer in the procurement documents.
+
+
+*Alternative definitions*:
+
+
+* An Indicator that variants are allowed (true) or not allowed (false).(Source: OP internal working).
+
+* Contracting authorities may authorise or require tenderers to submit variants. They shall indicate in the contract notice or, where a prior information notice is used as a means of calling for competition, in the invitation to confirm interest whether or not they authorise or require variants. Variants shall not be authorised without such indication. Variants shall be linked to the subject-matter of the contract. (...)(Source: DIRECTIVE 2014/24/EU).
+
+* Variants will be accepted: ◯ yes ◯ no(Source: eForms consultation).
+
+* An indicator that variants are allowed and unconstrained in number (true) or not allowed (false).(Source: UBL).
+
+* Property to describe the allowed variantes when submitting a variant of a contract.(Source: PPROC Ontology).
+
+
+*Used in*:| e-Notification |
+
+[.text-center]
+== W
+'''
+
+
+[.text-left]
+	
+   
+[.text-left]
+=== Winner
+
+The tenderer to which the contract has been awarded
+
+
+*Used in*:| e-Notification | e-Awarding | e-Request | e-Ordering | e-Fulfilment | e-Invoicing | e-Payment |
+
+   
+[.text-left]
+=== Winner Rank
+
+The position of the tenderer to which the contract has been awarded, that is, whether the tenderer ended up first, second, third, etc.
+ (Based on the OP internal working and eForms consultation.).
+
+*Alternative definitions*:
+
+
+* Whether the winner ended up first, second, third, etc. This is important for correctly publishing the value of the prize, which was given previously in the design contest section.(Source: eForms consultation).
+
+* Winner's position(Source: OP internal working).
+
+
+*Used in*:| e-Notification |
+
