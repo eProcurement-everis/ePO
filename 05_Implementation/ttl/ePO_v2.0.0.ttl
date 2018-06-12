@@ -144,6 +144,14 @@ ccts:time rdf:type rdfs:Datatype .
                  rdfs:range :Tender .
 
 
+###  http://data.europa.eu/ePO/ontology#evaluationBelongsToProcedure
+:evaluationBelongsToProcedure rdf:type owl:ObjectProperty ;
+                              owl:inverseOf :hasEvaluationResult ;
+                              rdf:type owl:FunctionalProperty ;
+                              rdfs:domain :EvaluationResult ;
+                              rdfs:range :ProcurementProcedure .
+
+
 ###  http://data.europa.eu/ePO/ontology#groupOfLots
 :groupOfLots rdf:type owl:ObjectProperty ;
              owl:inverseOf :groupsAsALot ;
@@ -392,6 +400,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasEvaluationMethodCodeType rdf:type owl:ObjectProperty ;
                              rdfs:domain :Criterion ;
                              rdfs:range :EvaluationMethodCodeType .
+
+
+###  http://data.europa.eu/ePO/ontology#hasEvaluationResult
+:hasEvaluationResult rdf:type owl:ObjectProperty ;
+                     rdfs:domain :ProcurementProcedure ;
+                     rdfs:range :EvaluationResult .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFinancialAccount
