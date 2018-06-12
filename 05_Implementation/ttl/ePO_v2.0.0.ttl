@@ -104,13 +104,15 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#buysOnBehalfOf
 :buysOnBehalfOf rdf:type owl:ObjectProperty ;
                 owl:inverseOf :buysThrough ;
+                rdf:type owl:ReflexiveProperty ;
                 rdfs:domain :ProcuringEntity ;
                 rdfs:range :ProcuringEntity .
 
 
 ###  http://data.europa.eu/ePO/ontology#buysThrough
 :buysThrough rdf:type owl:ObjectProperty ,
-                      owl:FunctionalProperty ;
+                      owl:FunctionalProperty ,
+                      owl:ReflexiveProperty ;
              rdfs:domain :ProcuringEntity ;
              rdfs:range :ProcuringEntity .
 
@@ -155,12 +157,14 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#groupOfLots
 :groupOfLots rdf:type owl:ObjectProperty ;
              owl:inverseOf :groupsAsALot ;
+             rdf:type owl:ReflexiveProperty ;
              rdfs:domain :Lot ;
              rdfs:range :Lot .
 
 
 ###  http://data.europa.eu/ePO/ontology#groupsAsALot
-:groupsAsALot rdf:type owl:ObjectProperty ;
+:groupsAsALot rdf:type owl:ObjectProperty ,
+                       owl:ReflexiveProperty ;
               rdfs:domain :Lot ;
               rdfs:range :Lot .
 
@@ -168,6 +172,7 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#groupsAsAnEO
 :groupsAsAnEO rdf:type owl:ObjectProperty ;
               owl:inverseOf :isGroupOfEO ;
+              rdf:type owl:ReflexiveProperty ;
               rdfs:domain :EconomicOperator ;
               rdfs:range :EconomicOperator .
 
@@ -623,6 +628,12 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:range :CriterionPropertyGroup .
 
 
+###  http://data.europa.eu/ePO/ontology#hasPropertySubgroup
+:hasPropertySubgroup rdf:type owl:ObjectProperty ;
+                     rdfs:domain :CriterionPropertyGroup ;
+                     rdfs:range :CriterionPropertyGroup .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasPropertyValue
 :hasPropertyValue rdf:type owl:ObjectProperty ;
                   rdfs:domain :CriterionProperty ;
@@ -675,7 +686,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSubCriterion
-:hasSubCriterion rdf:type owl:ObjectProperty ;
+:hasSubCriterion rdf:type owl:ObjectProperty ,
+                          owl:ReflexiveProperty ;
                  rdfs:domain :Criterion ;
                  rdfs:range :Criterion .
 
@@ -773,7 +785,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#isJointProcurement
-:isJointProcurement rdf:type owl:ObjectProperty ;
+:isJointProcurement rdf:type owl:ObjectProperty ,
+                             owl:ReflexiveProperty ;
                     rdfs:domain :ProcuringEntity ;
                     rdfs:range :ProcuringEntity .
 
@@ -809,6 +822,7 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#isSubcontractedBy
 :isSubcontractedBy rdf:type owl:ObjectProperty ;
                    owl:inverseOf :subcontracts ;
+                   rdf:type owl:ReflexiveProperty ;
                    rdfs:domain :EconomicOperator ;
                    rdfs:range :EconomicOperator .
 
@@ -965,7 +979,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#subcontracts
-:subcontracts rdf:type owl:ObjectProperty ;
+:subcontracts rdf:type owl:ObjectProperty ,
+                       owl:ReflexiveProperty ;
               rdfs:domain :EconomicOperator ;
               rdfs:range :EconomicOperator .
 
