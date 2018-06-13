@@ -1052,7 +1052,7 @@ ccts:time rdf:type rdfs:Datatype .
 :hasAdditionalInformationDeadline rdf:type owl:DatatypeProperty ,
                                            owl:FunctionalProperty ;
                                   rdfs:domain :NotificationTerms ;
-                                  rdfs:range ccts:date .
+                                  rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAliasName
@@ -1065,14 +1065,14 @@ ccts:time rdf:type rdfs:Datatype .
 :hasAwardDateScheduled rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain :ProcurementProcedure ;
-                       rdfs:range ccts:date .
+                       rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAwardResultDateOfConclusion
 :hasAwardResultDateOfConclusion rdf:type owl:DatatypeProperty ,
                                          owl:FunctionalProperty ;
                                 rdfs:domain :AwardResult ;
-                                rdfs:range ccts:date .
+                                rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAwardedContractQuantity
@@ -1091,7 +1091,7 @@ ccts:time rdf:type rdfs:Datatype .
 :hasContractNoticePublicationDate rdf:type owl:DatatypeProperty ,
                                            owl:FunctionalProperty ;
                                   rdfs:domain :NotificationTerms ;
-                                  rdfs:range ccts:date .
+                                  rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractTitle
@@ -1232,7 +1232,7 @@ ccts:time rdf:type rdfs:Datatype .
 :hasInvitationDispatchDate rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:domain :NotificationTerms ;
-                           rdfs:range ccts:date .
+                           rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasJuryDecisionBinding
@@ -1468,7 +1468,7 @@ ccts:time rdf:type rdfs:Datatype .
 :hasSecurityClearanceDeadline rdf:type owl:DatatypeProperty ,
                                        owl:FunctionalProperty ;
                               rdfs:domain :ProcedureTerms ;
-                              rdfs:range ccts:date .
+                              rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasSubcontractDescription
@@ -1514,14 +1514,14 @@ ccts:time rdf:type rdfs:Datatype .
 :hasValidityDeadline rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :TenderSubmissionTerms ;
-                     rdfs:range ccts:date .
+                     rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasValueDate
 :hasValueDate rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :Value ;
-              rdfs:range ccts:date .
+              rdfs:range xsd:dateTime .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasValueIndicator
