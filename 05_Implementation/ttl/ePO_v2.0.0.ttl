@@ -779,7 +779,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#isGroupOfEO
-:isGroupOfEO rdf:type owl:ObjectProperty ;
+:isGroupOfEO rdf:type owl:ObjectProperty ,
+                      owl:ReflexiveProperty ;
              rdfs:domain :EconomicOperator ;
              rdfs:range :EconomicOperator .
 
