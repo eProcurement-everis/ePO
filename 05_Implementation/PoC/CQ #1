@@ -1,0 +1,22 @@
+######### QUERY #1 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: As Procuring Entity, I want to know what Procurement Procedures have not been awarded so I can improve future Procurement Procedures.
+
+### Competency Question: Yearly (2017) number of procurement procedures not awarded.
+
+#################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?Number ?YEAR ?o ?ProcurementProcedure ?EvaluationResult ?now
+where { 
+    ?o a :ProcurementProcedure ;
+     :hasAwardDateScheduled ?YEAR .
+   		 FILTER
+    (year(?YEAR) > year(now())-10).
+}
+
+#################################################
