@@ -359,6 +359,12 @@ ccts:time rdf:type rdfs:Datatype .
                     rdfs:range :CountryCodeType .
 
 
+###  http://data.europa.eu/ePO/ontology#hasDynamicPurchaseSystem
+:hasDynamicPurchaseSystem rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ProcurementProcedure ;
+                          rdfs:range :DynamicPurchaseSystem .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasEOIndustryClassificationCodeType
 :hasEOIndustryClassificationCodeType rdf:type owl:ObjectProperty ;
                                      rdfs:domain :EconomicOperator ;
@@ -706,7 +712,6 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasTechniqueIdentifier
 :hasTechniqueIdentifier rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Technique ;
                         rdfs:range ccts:Identifier .
 
 
@@ -763,6 +768,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasWinner rdf:type owl:ObjectProperty ;
            rdfs:domain :AwardResult ;
            rdfs:range :Winner .
+
+
+###  http://data.europa.eu/ePO/ontology#haseAuction
+:haseAuction rdf:type owl:ObjectProperty ;
+             rdfs:domain :ProcurementProcedure ;
+             rdfs:range :e-Auction .
 
 
 ###  http://data.europa.eu/ePO/ontology#includesLot
@@ -1028,8 +1039,7 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#usesTechnique
 :usesTechnique rdf:type owl:ObjectProperty ;
-               rdfs:domain :ProcurementProject ;
-               rdfs:range :Technique .
+               rdfs:domain :ProcurementProject .
 
 
 #################################################################
@@ -1493,7 +1503,6 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasTechniqueAdditionalInformation
 :hasTechniqueAdditionalInformation rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain :Technique ;
                                    rdfs:range xsd:string .
 
 
@@ -1574,6 +1583,12 @@ ccts:time rdf:type rdfs:Datatype .
 :hasWinnerRank rdf:type owl:DatatypeProperty ;
                rdfs:domain :Winner ;
                rdfs:range xsd:decimal .
+
+
+###  http://data.europa.eu/ePO/ontology#haseAuctionURI
+:haseAuctionURI rdf:type owl:DatatypeProperty ;
+                rdfs:domain :e-Auction ;
+                rdfs:range xsd:anyURI .
 
 
 ###  http://data.europa.eu/ePO/ontology#haseDeliveryEndPoint
@@ -1757,6 +1772,10 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#Document
 :Document rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/ontology#DynamicPurchaseSystem
+:DynamicPurchaseSystem rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#EOGroupCodeType
@@ -2002,10 +2021,6 @@ ccts:time rdf:type rdfs:Datatype .
                          rdfs:subClassOf :TenderDocument .
 
 
-###  http://data.europa.eu/ePO/ontology#Technique
-:Technique rdf:type owl:Class .
-
-
 ###  http://data.europa.eu/ePO/ontology#Tender
 :Tender rdf:type owl:Class .
 
@@ -2039,6 +2054,10 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#Winner
 :Winner rdf:type owl:Class ;
         rdfs:subClassOf :Tenderer .
+
+
+###  http://data.europa.eu/ePO/ontology#e-Auction
+:e-Auction rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/org#Organization
