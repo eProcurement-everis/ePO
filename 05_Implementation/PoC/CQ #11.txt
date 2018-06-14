@@ -1,0 +1,16 @@
+11.	For a given period of time, the total quantity of contracts awarded, the total amount awarded, the number of SMEs awarded for that period, the total amount awarded to the SMEs;
+ No total amount awarded as this information is not available in TED XML.
+
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select (COUNT(DISTINCT(?contract)) AS ?number_contracts) (COUNT(DISTINCT(?winner)) AS ?number_winner_sme) where { 
+	?winner :hasEOIndustryClassificationCodeType :SME .
+    ?contract :refersToSignatoryParty ?winner;
+              :refersToAwardResult ?awardResult.
+    ?awardResult :hasAwardResultDateOfConclusion ?period.
+     FILTER
+   		 (?period >= "2016-01-01"^^xsd:dateTime &&
+        ?period <= "2018-03-28"^^xsd:dateTime).
+} 

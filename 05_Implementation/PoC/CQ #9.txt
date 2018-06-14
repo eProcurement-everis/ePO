@@ -1,0 +1,12 @@
+9.	For a given CPV, the number of contracts awarded for that CPV and the total amount awarded;
+ No total amount awarded as this information is not available in TED XML.
+
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+
+SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where { 
+	?contract :refersToLot ?lot.
+    ?lot :hasPurpose ?purpose.
+    ?purpose :hasCVPCode :45100000.
+    ?contract a :Contract.
+} group by ?cpv
