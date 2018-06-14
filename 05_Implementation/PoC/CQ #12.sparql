@@ -1,6 +1,10 @@
-12.	For a given period of time, number of framework agreements awarded, indicating the Procuring Entity (and types, e.g. Contracting Authority, Contracting Entity, Undertaking) and the Economic Operator(s);
-	Which are these Economic Operators? The winner of the contract?
-	This query indicates the framework agreements, not the number; otherwise it is not possible to show the procuring entitites and the types.
+########## Competency Question # 12 ##########
+
+### Competency Question #Q12: For a given period of time, number of framework agreements awarded, indicating the Procuring Entity (and types, e.g. Contracting Authority, Contracting Entity, Undertaking) and the Economic Operator(s);
+### 	Which are these Economic Operators? The winner of the contract?
+### 	This query indicates the framework agreements, not the number; otherwise it is not possible to show the procuring entitites and the types.
+
+################################################
 
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>

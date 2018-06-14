@@ -1,0 +1,15 @@
+########## Competency Question # 09 ##########
+
+### Competency Question #Q9: For a given CPV, the number of contracts awarded for that CPV and the total amount awarded;
+
+################################################
+
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+
+SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where { 
+	?contract :refersToLot ?lot.
+    ?lot :hasPurpose ?purpose.
+    ?purpose :hasCPVCode ?cpv.
+    ?contract a :Contract.
+} group by ?cpv
