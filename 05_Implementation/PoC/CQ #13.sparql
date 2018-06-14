@@ -1,0 +1,19 @@
+########## Competency Question # 13 ##########
+
+### Competency Question #Q13: For a given period of time, total quantity of procurement procedures published on TED, the percentage of contracts awarded for that period and total awarded amount for this percentage
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+
+select (COUNT(DISTINCT(?procurement_procedure_all)) AS ?number_procurement_procedure) (COUNT(DISTINCT(?procurement_procedure_evaluated)) AS ?number_procurement_procedure_evaluated) (COUNT(DISTINCT(?contract)) AS ?number_contract) where { 
+    ?procurement_procedure_all a :ProcurementProcedure.
+	?procurement_procedure_evaluated :hasEvaluationResult ?evaluation_result.
+	?procurement_procedure_awarded :hasEvaluationResult ?evaluation_result_awarded.
+    ?evaluation_result_awarded :hasAwardResult ?award_result.
+    ?award_result :isReferredByAContract ?contract;
+                  :hasAwardResultDateOfConclusion ?period.
+     FILTER
+   		 (?period >= "2016-01-01"^^xsd:dateTime &&
+        ?period <= "2018-03-28"^^xsd:dateTime).
+}
