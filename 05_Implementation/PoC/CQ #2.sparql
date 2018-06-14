@@ -12,15 +12,27 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select (count(DISTINCT ?o) / (count (?o)) * 100 as ?Percentage_Proc_Procedures_Divided_Lots)
-where { 
-	?o a :ProcurementProcedure ;
-    	:includeLot ?Lot ;
-     	:hasAwardDateScheduled ?YEAR .
-    
-     FILTER
-   		 (?YEAR >= "2010-01-01"^^xsd:dateTime && ?YEAR <= "2018-12-31"^^xsd:dateTime)
-    
-}
+select  (((COUNT(?all_pproc)*100)/COUNT(?divided_pproc)) AS ?total_bad)
+where{
+    { select ?divided_pproc (count(?divided_lot) as ?divided_count) where { 
+            ?divided_pproc :includesLot ?divided_lot .
+            ?divided_pproc a :ProcurementProcedure;
+                           :hasAwardDateScheduled ?divided_YEAR .
+            ?divided_lot a :Lot.
+     	FILTER
+            (?divided_YEAR >= "2010-01-01"^^xsd:dateTime && ?divided_YEAR <= "2018-12-31"^^xsd:dateTime)
+	} group by ?divided_pproc having (?divided_count>1)}
+    union
+    {
+        select ?all_pproc (count(?all_lot) as ?all_count) where { 
+            ?all_pproc :includesLot ?all_lot .
+            ?all_pproc a :ProcurementProcedure;
+                           :hasAwardDateScheduled ?all_YEAR .
+            ?all_lot a :Lot.
+     	FILTER
+            (?all_YEAR >= "2010-01-01"^^xsd:dateTime && ?all_YEAR <= "2018-12-31"^^xsd:dateTime)
+        }group by ?all_pproc
+    }
+} 
 
 #################################################
