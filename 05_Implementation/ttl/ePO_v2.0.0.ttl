@@ -1032,8 +1032,7 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#underProcurementRegime
 :underProcurementRegime rdf:type owl:ObjectProperty ;
-                        rdfs:domain :AwardResult ,
-                                    :ProcurementProcedure ;
+                        rdfs:domain :ProcurementProcedure ;
                         rdfs:range :ProcurementRegimeCodeType .
 
 
@@ -2380,7 +2379,6 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#DESIGN_CONTEST
 :DESIGN_CONTEST rdf:type owl:NamedIndividual ,
-                         :ProcurementProcedureCodeType ,
                          :ProcurementRegimeCodeType ;
                 dcterms:title "Design contest" ;
                 rdfs:label "DESIGN_CONTEST" .
