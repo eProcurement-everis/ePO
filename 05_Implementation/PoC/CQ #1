@@ -11,12 +11,13 @@
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select ?Number ?YEAR ?o ?ProcurementProcedure ?EvaluationResult ?now
+select DISTINCT(count(?o) as ?Number) ?YEAR ?o
 where { 
     ?o a :ProcurementProcedure ;
      :hasAwardDateScheduled ?YEAR .
    		 FILTER
     (year(?YEAR) > year(now())-10).
 }
+GROUP BY ?o ?YEAR
 
 #################################################

@@ -12,15 +12,17 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select ?o ?ProcurementProcedure ?Lot ?YEAR ?total ?percent ?value ?today 
+select (count(?Lot) / (count (*)) * 100 as ?Number) ?o
 where { 
 	?o a :ProcurementProcedure;
     	:includeLot ?Lot ;
      	:hasAwardDateScheduled ?YEAR .
      
     FILTER
-   		 (?YEAR >= "2016-01-01"^^xsd:dateTime &&
+   		 (?YEAR >= "2015-01-01"^^xsd:dateTime &&
         ?YEAR <= "2018-12-31"^^xsd:dateTime).
+
 } 
+GROUP BY ?o 
 
 #################################################
