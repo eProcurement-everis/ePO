@@ -1,0 +1,17 @@
+12.	For a given period of time, number of framework agreements awarded, indicating the Procuring Entity (and types, e.g. Contracting Authority, Contracting Entity, Undertaking) and the Economic Operator(s);
+	Which are these Economic Operators? The winner of the contract?
+	This query indicates the framework agreements, not the number; otherwise it is not possible to show the procuring entitites and the types.
+
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?framework_agreement ?procuring_entity ?procuring_entity_type where { 
+	?contract :hasFrameworkContract ?framework_agreement;
+           :refersToAwardResult ?awardResult;
+           :refersToSignatoryPartyProcuringEntity ?procuring_entity.
+    ?procuring_entity :hasProcuringEntityType ?procuring_entity_type.
+    ?awardResult :hasAwardResultDateOfConclusion ?period.
+     FILTER
+   		 (?period >= "2016-01-01"^^xsd:dateTime &&
+        ?period <= "2018-03-28"^^xsd:dateTime).
+}
