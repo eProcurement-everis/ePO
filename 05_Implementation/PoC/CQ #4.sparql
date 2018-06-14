@@ -1,0 +1,28 @@
+######### QUERY #4 METADATA #####################
+
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: As a Contracting Authority, I want to know the percentage of contracts awarded segmented by procurement procedure, so I can prepare the annual report.
+
+### Competency Question: 4.	For a given period of time, indicate the percentages of type of procedures for the awarded procedures. (Technique has been removed from the model).
+
+#################################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select (count(DISTINCT ?pt) / (count (?pt)) * 100 as ?Percentage) ?ProcurementProcedureCodeType
+where { 
+     ?ap a ?AwardResult ;
+     :hasAwardResultDateOfConclusion ?YEAR .
+
+	?pt a :ProcurementProcedure ;
+		  :hasProcurementProcedureType ?ProcurementProcedureCodeType .
+    
+     FILTER
+   		 (?YEAR >= "2010-01-01"^^xsd:dateTime &&
+        ?YEAR <= "2018-12-31"^^xsd:dateTime).
+       
+} group by ?ProcurementProcedureCodeType ?percentage
+
+#################################################
