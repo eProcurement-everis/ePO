@@ -1,23 +1,15 @@
-########## Competency Question # XXX ##########
+########## Competency Question CQ#7.1 ##########
 
 ### Use Case #1: Transparency and Monitoring
 ### Use Case #4: Analyzing eProcurement procedures
 
-### Competency Question #Q7.1: List all the winners, the size of the company, and the date of award;
+### Competency Question description: List all the winners, the size of the company, and the date of award;
 
 ################################################
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX rov: <http://www.w3.org/ns/regorg#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-select ?Winner_Name ?Winner_Size_label ?Awarded_Date where { 
-	?Award_Result :hasWinner ?Winner ;
-              :hasAwardResultDateOfConclusion ?Awarded_Date .
-    ?Winner :hasEOIndustryClassificationCodeType ?WinnerSize ;
-            rov:legalName  ?Winner_Name .
-    ?WinnerSize rdfs:label ?Winner_Size_label .
-}
 
 select ?Winner_Name ?Winner_Size_label ?Awarded_Date where { 
 	?Award_Result :hasWinner ?Winner ;
