@@ -1,0 +1,39 @@
+######### QUERY #3 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: ........................................
+
+### Competency Question: For a given period of time, percentage of procurement procedures awarded divided into Lots, average of Lots and average of contracts.
+
+#################################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select (count(DISTINCT ?t) / (count (?t)) * 100 as ?Percentage) ?average_Contract ?average_Lot
+where {
+        ?t a :ProcurementProcedure ;
+    	:includeLot ?Lot . 
+    {
+        select (AVG (?NumberL) as ?average_Lot)
+		where {
+			select (count(?Lot) as ?NumberL)
+      		where {?a :includeLot ?Lot .  } group by ?a
+			  } 
+    }
+    {
+        select (AVG (?NumberL) as ?average_Contract)
+		where {
+			select (count(?Contract) as ?NumberL) ?o
+      		where { ?o a :ProcurementProcedure ;
+                   :hasEvaluationResult ?EvaluationResult .
+    				?EvaluationResult :hasAwardResult ?AwardResult .
+    				?AwardResult :isReferredByAContract ?Contract .
+           		  } group by ?o
+  			  }
+    }
+} group by ?average_Contract ?average_Lot
+
+#################################################
