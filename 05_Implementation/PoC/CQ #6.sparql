@@ -1,0 +1,36 @@
+########## Competency Question CQ#6 ##########
+
+### Use Case #1: Transparency and Monitoring
+### Use Case #4: Analyzing eProcurement procedures
+
+### Competency Question description: For a given period of time, percentage of contracts awarded segmented by contract nature (percentage of works, percentage of services, percentage of supplies, etc.); 
+### Status: Pending of finalisation due to incompleteness of data in the KB and modification of the Conceptual Data Model. See JIRA ticket https://steps.everis.com/jiraproy/browse/EPRONT-85
+
+################################################
+
+########## Competency Question CQ#6.1 ##########
+
+### Use Case #1: Transparency and Monitoring
+### Use Case #4: Analyzing eProcurement procedures
+
+### Competency Question description: List all the contracts awarded and their nature. 
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select distinct ?NatureType ?Percent where { 
+	
+    {select distinct (count(?Contract) as ?Total_Contracts) where{?Contract rdf:type :Contract}}
+    {select distinct ?NatureType (count(?NatureType) as ?Total_Natures) where{
+            ?Contract :refersToSignatoryPartyProcuringEntity ?ContractProcuringEntity .
+            ?ProcurementProcedure :hasProcuringEntity ?ProcedureProcuringEntity .
+            
+        	FILTER (?ContractProcuringEntity != ?ProcedureProcuringEntity). 
+            
+            ?ProcurementProcedure :hasPurpose ?Purpose .
+            ?Purpose :hasContractNatureCodeType ?NatureType
+        } group by ?NatureType ?Contract
+    }
+    BIND (concat(str(round(?Total_Natures * 100 / ?Total_Contracts)), '%') AS ?Percent)
+}  

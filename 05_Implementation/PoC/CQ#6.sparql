@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://34.247.217.15:7200/sparql -->
+<html ng-controller="mainCtrl" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    
+    <title>SPARQL Query &amp; Update | GraphDB Workbench</title>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app" src="./CQ#6_files/app.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/core/services" src="./CQ#6_files/services.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/repositories/app" src="./CQ#6_files/app.js(1).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/export/app" src="./CQ#6_files/app.js(2).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/import/app" src="./CQ#6_files/app.js(3).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/security/app" src="./CQ#6_files/app.js(4).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/app" src="./CQ#6_files/app.js(5).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/app" src="./CQ#6_files/app.js(6).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/namespaces/app" src="./CQ#6_files/app.js(7).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/explore/app" src="./CQ#6_files/app.js(8).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/stats/app" src="./CQ#6_files/app.js(9).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/resources/app" src="./CQ#6_files/app.js(10).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/queries/app" src="./CQ#6_files/app.js(11).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/externalsync/app" src="./CQ#6_files/app.js(12).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/controllers" src="./CQ#6_files/controllers.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/autocomplete/app" src="./CQ#6_files/app.js(13).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/ontorefine/app" src="./CQ#6_files/app.js(14).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/rdfrank/app" src="./CQ#6_files/app.js(15).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/angularCancelOnNavigateModule" src="./CQ#6_files/angularCancelOnNavigateModule.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/core/directives" src="./CQ#6_files/directives.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/core/controllers" src="./CQ#6_files/controllers.js(1).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/repositories/controllers" src="./CQ#6_files/controllers.js(2).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/repositories/directives" src="./CQ#6_files/directives.js(1).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/repositories/services" src="./CQ#6_files/services.js(1).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/settings/app" src="./CQ#6_files/app.js(16).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ng-file-upload.min" src="./CQ#6_files/ng-file-upload.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ng-file-upload-shim.min" src="./CQ#6_files/ng-file-upload-shim.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/jquery/2.1.4/jquery.min" src="./CQ#6_files/jquery.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angularjs/1.3.8/angular-animate.min" src="./CQ#6_files/angular-animate.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angularjs/1.3.8/angular-cookies.min" src="./CQ#6_files/angular-cookies.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angularjs/1.3.8/angular-route" src="./CQ#6_files/angular-route.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angular-local-storage/0.1.5/angular-local-storage.min" src="./CQ#6_files/angular-local-storage.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angular-sanitize/1.3.11/angular-sanitize.min" src="./CQ#6_files/angular-sanitize.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angular-toastr/0.5.2/angular-toastr" src="./CQ#6_files/angular-toastr.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/lodash/4.0.0/lodash" src="./CQ#6_files/lodash.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/../../webjars/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min" src="./CQ#6_files/ui-bootstrap-tpls.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/core/lib/angular-bowser" src="./CQ#6_files/angular-bowser.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="forest-core" src="./CQ#6_files/forest-core.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="autofill-event" src="./CQ#6_files/autofill-event.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/export/controllers" src="./CQ#6_files/controllers.js(3).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/export/directives" src="./CQ#6_files/directives.js(2).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="FileSaver" src="./CQ#6_files/FileSaver.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/modules" src="./CQ#6_files/modules.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/services/sparql.service" src="./CQ#6_files/sparql.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/directives/sparql-tab.directive" src="./CQ#6_files/sparql-tab.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/controllers/query-editor.controller" src="./CQ#6_files/query-editor.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/security/services" src="./CQ#6_files/services.js(2).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/sparql/directives/query-editor.directive" src="./CQ#6_files/query-editor.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="webjars/angular-xeditable/0.1.8/js/xeditable.min" src="./CQ#6_files/xeditable.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/security/controllers" src="./CQ#6_files/controllers.js(4).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/security/directives" src="./CQ#6_files/directives.js(3).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/import/controllers" src="./CQ#6_files/controllers.js(5).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/import/directives" src="./CQ#6_files/directives.js(4).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/explore/services" src="./CQ#6_files/services.js(3).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/explore/controllers" src="./CQ#6_files/controllers.js(6).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/explore/directives" src="./CQ#6_files/directives.js(5).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/angucomplete-alt-onto.min" src="./CQ#6_files/angucomplete-alt-onto.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/namespaces/controllers" src="./CQ#6_files/controllers.js(7).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/namespaces/directives" src="./CQ#6_files/directives.js(6).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="webjars/angular-ui-scroll/1.3.2/dist/ui-scroll" src="./CQ#6_files/ui-scroll.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="webjars/angular-ui-scroll/1.3.2/dist/ui-scroll-jqlite" src="./CQ#6_files/ui-scroll-jqlite.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="d3-ONTO-chord-patch" src="./CQ#6_files/d3-ONTO-chord-patch.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="d3-tip" src="./CQ#6_files/d3-tip.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/angular-pageslide-directive" src="./CQ#6_files/angular-pageslide-directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/rzslider" src="./CQ#6_files/rzslider.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/angucomplete-alt" src="./CQ#6_files/angucomplete-alt.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/ng-tags-input.min" src="./CQ#6_files/ng-tags-input.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/d3-utils" src="./CQ#6_files/d3-utils.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/circle-packing" src="./CQ#6_files/circle-packing.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/svg-export" src="./CQ#6_files/svg-export.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/modules" src="./CQ#6_files/modules.js(1).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/services/graph-data.service" src="./CQ#6_files/graph-data.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/services/ui-scroll.service" src="./CQ#6_files/ui-scroll.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/services/rdfs-label-comment.service" src="./CQ#6_files/rdfs-label-comment.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/services/saved-graphs.service" src="./CQ#6_files/saved-graphs.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/services/graph-config.service" src="./CQ#6_files/graph-config.service.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/controllers/rdf-class-hierarchy.controller" src="./CQ#6_files/rdf-class-hierarchy.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/controllers/domain-range-graph.controller" src="./CQ#6_files/domain-range-graph.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/controllers/dependencies-chord.controller" src="./CQ#6_files/dependencies-chord.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/controllers/graphs-visualizations.controller" src="./CQ#6_files/graphs-visualizations.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/controllers/graphs-config.controller" src="./CQ#6_files/graphs-config.controller.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/rdf-class-hierarchy.directive" src="./CQ#6_files/rdf-class-hierarchy.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/domain-range-graph.directive" src="./CQ#6_files/domain-range-graph.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/system-repo-warning.directive" src="./CQ#6_files/system-repo-warning.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/rdfs-comment-label.directive" src="./CQ#6_files/rdfs-comment-label.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/dependencies-chord.directive" src="./CQ#6_files/dependencies-chord.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/list-items-search-filter.directive" src="./CQ#6_files/list-items-search-filter.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/graphexplore/directives/search-icon-input.directive" src="./CQ#6_files/search-icon-input.directive.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/resources/controllers" src="./CQ#6_files/controllers.js(8).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/resources/directives" src="./CQ#6_files/directives.js(7).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nvd3/angular-nvd3" src="./CQ#6_files/angular-nvd3.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/queries/controllers" src="./CQ#6_files/controllers.js(9).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/queries/directives" src="./CQ#6_files/directives.js(8).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/externalsync/controllers" src="./CQ#6_files/controllers.js(10).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/externalsync/directives" src="./CQ#6_files/directives.js(9).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yasqe.bundled.min" src="./CQ#6_files/yasqe.bundled.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yasr.bundled" src="./CQ#6_files/yasr.bundled.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/settings/services" src="./CQ#6_files/services.js(4).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/settings/controllers" src="./CQ#6_files/controllers.js(11).descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap/bootstrap.min" src="./CQ#6_files/bootstrap.min.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nvd3/nv.d3" src="./CQ#6_files/nv.d3.js.descarga"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="angular/core/lib/stringify" src="./CQ#6_files/stringify.js.descarga"></script><!--<base href="/" target="_blank">--><base href="." target="_blank">
+    <meta content="width=device-width" name="viewport">
+    <link rel="icon" href="http://34.247.217.15:7200/v/8.5.0/img/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="http://34.247.217.15:7200/v/8.5.0/img/icon.png">
+
+    <!--<link href="v/8.5.0/css/bootstrap.css" rel="stylesheet">-->
+    <link href="./CQ#6_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./CQ#6_files/bootstrap-graphdb-theme.css" rel="stylesheet">
+
+    <link href="./CQ#6_files/angular-toastr.css" rel="stylesheet">
+
+    <link href="./CQ#6_files/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CQ#6_files/angular-toastr.css">
+
+     <link href="./CQ#6_files/animate.css" rel="stylesheet">
+
+    <link href="./CQ#6_files/workbench-custom.css" rel="stylesheet">
+    <link href="./CQ#6_files/forest-core.css" rel="stylesheet">
+    <link href="./CQ#6_files/owlim-workbench.css" rel="stylesheet">
+
+    <script type="text/javascript" src="./CQ#6_files/jquery.min.js(1).descarga"></script>
+    <script type="text/javascript" src="./CQ#6_files/angular.js.descarga"></script>
+    <script type="text/ecmascript" xlink:href="smil.user.js"></script>
+    <script type="text/javascript" src="./CQ#6_files/d3.js.descarga"></script>
+
+<style type="text/css">  .JColResizer{table-layout:fixed;} .JColResizer td, .JColResizer th{overflow:hidden;padding-left:0!important; padding-right:0!important;}  .JCLRgrips{ height:0px; position:relative;} .JCLRgrip{margin-left:-5px; position:absolute; z-index:5; } .JCLRgrip .JColResizer{position:absolute;background-color:red;filter:alpha(opacity=1);opacity:0;width:10px;height:100%;top:0px} .JCLRLastGrip{position:absolute; width:1px; } .JCLRgripDrag{ border-left:1px dotted black;	}</style></head>
+
+<body style="" class="">
+
+<div class="status-bar" ng-hide="isSecurityEnabled() &amp;&amp; !isUserLoggedIn() &amp;&amp; !isFreeAccessEnabled()" style="">
+    <div class="btn-group btn-group-lg" role="group" aria-label="Button group with nested dropdown">
+        <!-- ngIf: !license.valid && showLicense -->
+        <!-- ngIf: queryCount > 0 || numberOfActiveImports > 0 -->
+        <div id="repositorySelectDropdown" class="btn-group" role="group" ng-show="!embedded">
+            <button id="btnReposGroup" type="button" class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a dropdown-toggle="">
+                    <!-- ngIf: getActiveRepository() --><span ng-mouseover="setPopoverRepo(getActiveRepositoryObject())" popover-popup-delay="1000" popover-trigger="mouseenter" popover-placement="left-bottom" popover-template="popoverTemplate" popover-title="Repository epo" ng-if="getActiveRepository()" class="ng-binding ng-scope">
+						<i ng-class="&#39;icon-repo-&#39; + getActiveRepositoryObject().type" class="icon-repo-free"></i>
+                        epo
+                    </span><!-- end ngIf: getActiveRepository() -->
+                    <!-- ngIf: !getActiveRepository() && getReadableRepositories().length -->
+                    <!-- ngIf: !getActiveRepository() && !getReadableRepositories().length -->
+                </a>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <!-- ngRepeat: repository in getReadableRepositories() | orderBy: ['type === \'system\'', 'id'] --><!-- ngIf: repository.id !== getActiveRepository() --><!-- end ngRepeat: repository in getReadableRepositories() | orderBy: ['type === \'system\'', 'id'] --><!-- ngIf: repository.id !== getActiveRepository() --><li ng-repeat="repository in getReadableRepositories() | orderBy: [&#39;type === \&#39;system\&#39;&#39;, &#39;id&#39;]" ng-if="repository.id !== getActiveRepository()" ng-mouseover="setPopoverRepo(repository)" popover-popup-delay="500" popover-trigger="mouseenter" popover-placement="left" popover-template="popoverTemplate" popover-title="Repository SYSTEM" class="ng-scope">
+                    <a class="dropdown-item" ng-click="setRepository(repository.id)">
+                        <span class="multiline-text ng-binding">
+                            <i ng-class="&#39;icon-repo-&#39; + repository.type" class="icon-repo-system"></i>
+						    SYSTEM <br>
+						    <small ng-show="!isLoadingLocation() &amp;&amp; hasActiveLocation() &amp;&amp; (!isSecurityEnabled() || isUserLoggedIn())" class="ng-binding">Local</small>
+					    </span>
+                    </a>
+                </li><!-- end ngIf: repository.id !== getActiveRepository() --><!-- end ngRepeat: repository in getReadableRepositories() | orderBy: ['type === \'system\'', 'id'] -->
+            </ul>
+        </div>
+        <!-- ngIf: isSecurityEnabled() && isUserLoggedIn() -->
+        <div class="btn-group ng-hide" ng-show="isSecurityEnabled() &amp;&amp; !isUserLoggedIn() &amp;&amp; !isCurrentPath(&#39;login&#39;)" style="">
+            <a class="btn btn-lg btn-secondary" href="http://34.247.217.15:7200/login" ng-href="./login">
+                <span class="icon-arrow-right text-primary"></span> Login
+            </a>
+        </div>
+    </div>
+</div>
+
+<ul class="main-menu" ng-show="!embedded">
+    <li class="brand">
+        <span class="toggle-menu" title="Collapse menu" ng-click="toggleNavigation()"><i class="icon-caret-left"></i></span>
+        <a class="menu-element-root" ng-href="./" href="http://34.247.217.15:7200/" ng-click="selected = -1">
+            <img class="big-logo" src="./CQ#6_files/graphdb-logo.svg" alt="GraphDB logo" width="181" height="45">
+            <img class="small-logo" src="./CQ#6_files/graphdb-logo-sq.svg" alt="GraphDB logo" ng-href="./" href="./" width="58" height="58">
+            <span class="product-version ng-binding" title="GraphDB Free">Free</span>
+        </a>
+    </li>
+    <!-- ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length --><div class="menu-element-root ng-scope" ng-if="item.children.length" ng-click="select($index, $event, clicked);">
+            <span ng-class="item.icon" class="menu-item-icon icon-import"></span>
+            <span class="menu-item ng-binding">Import</span>
+        </div><!-- end ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length --><ul ng-if="item.children.length" class="sub-menu ng-scope align-bottom">
+            <li class="submenu-title ng-binding">Import</li>
+            <!-- ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="import" class="ng-binding" href="http://34.247.217.15:7200/import">RDF <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="ontorefine" class="ng-binding" href="http://34.247.217.15:7200/ontorefine">Tabular (OntoRefine) <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children -->
+        </ul><!-- end ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length --><div class="menu-element-root ng-scope" ng-if="item.children.length" ng-click="select($index, $event, clicked);">
+            <span ng-class="item.icon" class="menu-item-icon icon-data"></span>
+            <span class="menu-item ng-binding">Explore</span>
+        </div><!-- end ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length --><ul ng-if="item.children.length" class="sub-menu ng-scope align-bottom">
+            <li class="submenu-title ng-binding">Explore</li>
+            <!-- ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="graphs" class="ng-binding" href="http://34.247.217.15:7200/graphs">Graphs overview <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="hierarchy" class="ng-binding" href="http://34.247.217.15:7200/hierarchy">Class hierarchy <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="relationships" class="ng-binding" href="http://34.247.217.15:7200/relationships">Class relationships <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="graphs-visualizations" class="ng-binding" href="http://34.247.217.15:7200/graphs-visualizations">Visual graph <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children -->
+        </ul><!-- end ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope open clicked" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length --><a class="menu-element-root ng-scope active" ng-href="sparql" ng-if="!item.children.length" ng-click="select($index, $event, clicked)" href="http://34.247.217.15:7200/sparql">
+            <span ng-class="item.icon" class="menu-item-icon icon-sparql"></span>
+            <!-- ngIf: !checkMenu() --><span class="menu-item ng-binding ng-scope" ng-if="!checkMenu()">SPARQL</span><!-- end ngIf: !checkMenu() -->
+        </a><!-- end ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length --><div class="menu-element-root ng-scope" ng-if="item.children.length" ng-click="select($index, $event, clicked);">
+            <span ng-class="item.icon" class="menu-item-icon icon-monitoring"></span>
+            <span class="menu-item ng-binding">Monitor</span>
+        </div><!-- end ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length --><ul ng-if="item.children.length" class="sub-menu ng-scope align-bottom">
+            <li class="submenu-title ng-binding">Monitor</li>
+            <!-- ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="monitor/queries" class="ng-binding" href="http://34.247.217.15:7200/monitor/queries">Queries and Updates <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="monitor/resources" class="ng-binding" href="http://34.247.217.15:7200/monitor/resources">Resources <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children -->
+        </ul><!-- end ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length --><div class="menu-element-root ng-scope" ng-if="item.children.length" ng-click="select($index, $event, clicked);">
+            <span ng-class="item.icon" class="menu-item-icon icon-settings"></span>
+            <span class="menu-item ng-binding">Setup</span>
+        </div><!-- end ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length --><ul ng-if="item.children.length" class="sub-menu ng-scope align-bottom">
+            <li class="submenu-title ng-binding">Setup</li>
+            <!-- ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="repository" class="ng-binding" href="http://34.247.217.15:7200/repository">Repositories <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="users" class="ng-binding" href="http://34.247.217.15:7200/users">Users and Access <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="settings" class="ng-binding" href="http://34.247.217.15:7200/settings">My Settings <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="connectors" class="ng-binding" href="http://34.247.217.15:7200/connectors">Connectors <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="namespaces" class="ng-binding" href="http://34.247.217.15:7200/namespaces">Namespaces <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="autocomplete" class="ng-binding" href="http://34.247.217.15:7200/autocomplete">Autocomplete <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="rdfrank" class="ng-binding" href="http://34.247.217.15:7200/rdfrank">RDF Rank <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children -->
+        </ul><!-- end ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu --><!-- ngIf: hasRole(item.role) --><li ng-repeat="item in menu" ng-if="hasRole(item.role)" ng-class="{open: $index === selected, clicked: clicked &amp;&amp; $index === selected}" class="menu-element ng-scope" ng-click="checkSubMenuPosition($index)">
+        <!-- ngIf: item.children.length --><div class="menu-element-root ng-scope" ng-if="item.children.length" ng-click="select($index, $event, clicked);">
+            <span ng-class="item.icon" class="menu-item-icon icon-help"></span>
+            <span class="menu-item ng-binding">Help</span>
+        </div><!-- end ngIf: item.children.length -->
+        <!-- ngIf: !item.children.length -->
+        <!-- ngIf: item.children.length --><ul ng-if="item.children.length" class="sub-menu ng-scope align-bottom">
+            <li class="submenu-title ng-binding">Help</li>
+            <!-- ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="webapi" class="ng-binding" href="http://34.247.217.15:7200/webapi">REST API <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="http://graphdb.ontotext.com/documentation/enterprise/" class="ng-binding" href="http://graphdb.ontotext.com/documentation/enterprise/">Documentation <!-- ngIf: submenu.icon --><span ng-if="submenu.icon" title="Open external page" ng-class="submenu.icon" class="text-muted ng-scope icon-external"></span><!-- end ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="http://graphdb.ontotext.com/devhub/" class="ng-binding" href="http://graphdb.ontotext.com/devhub/">Developer Hub <!-- ngIf: submenu.icon --><span ng-if="submenu.icon" title="Open external page" ng-class="submenu.icon" class="text-muted ng-scope icon-external"></span><!-- end ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="http://graphdb.ontotext.com/support/" class="ng-binding" href="http://graphdb.ontotext.com/support/">Support <!-- ngIf: submenu.icon --><span ng-if="submenu.icon" title="Open external page" ng-class="submenu.icon" class="text-muted ng-scope icon-external"></span><!-- end ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children --><!-- ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><li ng-repeat="submenu in item.children" ng-class="{ active: isCurrentPath(submenu.href) }" ng-if="checkForWrite(submenu.role, getActiveLocation(), getActiveRepository())" class="ng-scope">
+                <a ng-href="sysinfo" class="ng-binding" href="http://34.247.217.15:7200/sysinfo">System information <!-- ngIf: submenu.icon --></a>
+            </li><!-- end ngIf: checkForWrite(submenu.role, getActiveLocation(), getActiveRepository()) --><!-- end ngRepeat: submenu in item.children -->
+        </ul><!-- end ngIf: item.children.length -->
+    </li><!-- end ngIf: hasRole(item.role) --><!-- end ngRepeat: item in menu -->
+</ul>
+<div>
+    <!-- ngIf: !hasPermission() -->
+
+        <!-- ngView:  --><div class="container-fluid main-container ng-scope" ng-show="hasPermission()" ng-view="" role="main" ng-class="checkMenu() ? &#39;expanded&#39;:&#39;&#39;"><link href="./CQ#6_files/xeditable.css" rel="stylesheet" class="ng-scope">
+
+<link href="./CQ#6_files/yasqe.min.css" rel="stylesheet" class="ng-scope">
+
+<link href="./CQ#6_files/yasr.css" rel="stylesheet" type="text/css" class="ng-scope">
+<link href="./CQ#6_files/yasr.custom.css" rel="stylesheet" type="text/css" class="ng-scope">
+
+<link href="./CQ#6_files/forest-new-sparql.css" rel="stylesheet" class="ng-scope">
+<div id="wb-sparql" class="ng-scope">
+
+    <div ng-show="getActiveRepositoryNoError()" class="pull-right mt-1">
+        <div id="hideEditor" class="btn-group btn-group-sm" ng-click="showHideEditor()">
+            <button class="btn btn-secondary btn-sm ng-pristine ng-untouched ng-valid" ng-model="viewMode" btn-radio="&#39;yasr&#39;" uncheckable="">
+                Editor only
+            </button>
+            <button class="btn btn-secondary btn-sm ng-pristine ng-untouched ng-valid active" ng-model="viewMode" btn-radio="&#39;none&#39;" uncheckable="">
+                Editor and results
+            </button>
+            <button class="btn btn-secondary btn-sm ng-pristine ng-untouched ng-valid" ng-model="viewMode" btn-radio="&#39;editor&#39;" uncheckable="">
+                Results only
+            </button>
+
+            <button class="btn btn-link btn-sm p-0 ml-1" ng-click="changeViewMode(currentQuery.id)" tooltip="Switch to vertical view" tooltip-placement="left">
+                <span class="icon-columns icon-lg m-0 icon-rotate-90" ng-class="orientationViewMode ? &#39;icon-rotate-90&#39; : &#39;icon-rotate-270&#39;"></span>
+            </button>
+        </div>
+    </div>
+
+     <h1 class="ng-binding">
+        SPARQL Query &amp; Update
+        <span class="btn btn-link" popover-template="&#39;v/8.5.0/js/angular/templates/titlePopoverTemplate.html&#39;" popover-trigger="mouseenter" popover-placement="bottom-right" popover-append-to-body="true"><span class="icon-info"></span></span>
+    </h1>
+
+    <div core-errors=""><div class="mb-2 row ng-hide" ng-hide="getActiveRepository() &amp;&amp; (!isWriteRequired || canWriteActiveRepo())">
+    <div role="alert">
+        <div class="mb-1 mt-1 ml-1 mr-1">
+            <div class="card">
+                <div class="alert alert-warning lead">
+                    <div ng-hide="getActiveRepository()" class="ng-hide">Some functionality is not available because you are not connected to any repository.</div>
+                    <div ng-show="getActiveRepository() &amp;&amp; isWriteRequired &amp;&amp; !canWriteActiveRepo()" class="ng-hide">Some functionality is not available because you have no write permission to repository <b class="ng-binding">epo</b>.</div>
+                    <small>
+                        <span ng-show="getAccessibleRepositories().length">
+                            Click one of the repositories below to connect to it<span ng-show="canManageRepositories()"> or create a new repository</span>.
+                        </span>
+
+                        <span ng-hide="getAccessibleRepositories().length" class="ng-hide">
+                            There are no accessible <span ng-show="isWriteRequired" class="ng-hide">writable </span>repositories<span ng-show="canManageRepositories()">. You can create a new repository</span>.
+                        </span>
+                    </small>
+                </div>
+
+                <ul class="list-group limit-height clearfix two-columns repos" ng-mouseleave="hidePopoverForRepo($event)">
+                    <!-- ngRepeat: repository in getAccessibleRepositories() | orderBy: ['type === \'system\'', 'id'] --><li ng-repeat="repository in getAccessibleRepositories() | orderBy: [&#39;type === \&#39;system\&#39;&#39;, &#39;id&#39;]" class="list-group-item list-group-item-action ng-scope" ng-mouseenter="showPopoverForRepo($event, repository)" ngx-mouseleave="setPopoverForRepo($event, repository, false)">
+                        <div class="lead ellipsis-block" ng-click="setRepository(repository.id)">
+                            <span class="popover-anchor" popover-popup-delay="500" popover-trigger="show" popover-placement="bottom-right" popover-template="popoverTemplate" popover-title="Repository epo">
+                            <i class="icon-lg icon-repo-free" ng-class="&#39;icon-repo-&#39; + repository.type"></i>
+                            <strong class="ng-binding">epo</strong></span><small ng-show="repository.title"><span class="small ng-binding"> · epo</span></small>
+                        </div>
+                    </li><!-- end ngRepeat: repository in getAccessibleRepositories() | orderBy: ['type === \'system\'', 'id'] --><li ng-repeat="repository in getAccessibleRepositories() | orderBy: [&#39;type === \&#39;system\&#39;&#39;, &#39;id&#39;]" class="list-group-item list-group-item-action ng-scope" ng-mouseenter="showPopoverForRepo($event, repository)" ngx-mouseleave="setPopoverForRepo($event, repository, false)">
+                        <div class="lead ellipsis-block" ng-click="setRepository(repository.id)">
+                            <span class="popover-anchor" popover-popup-delay="500" popover-trigger="show" popover-placement="left-bottom" popover-template="popoverTemplate" popover-title="Repository SYSTEM">
+                            <i class="icon-lg icon-repo-system" ng-class="&#39;icon-repo-&#39; + repository.type"></i>
+                            <strong class="ng-binding">SYSTEM</strong></span><small ng-show="repository.title"><span class="small ng-binding"> · System configuration repository</span></small>
+                        </div>
+                    </li><!-- end ngRepeat: repository in getAccessibleRepositories() | orderBy: ['type === \'system\'', 'id'] -->
+                </ul>
+
+                <!-- ngIf: canManageRepositories() --><div class="pull-right ng-scope" ng-if="canManageRepositories()">
+                    <button class="btn btn-link px-0" ng-click="goToAddRepo()">
+                        <span class="icon-plus"></span> Create new repository
+                    </button>
+                </div><!-- end ngIf: canManageRepositories() -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+    <div class="alert alert-danger ng-hide" ng-show="repositoryError &amp;&amp; getActiveRepository()">
+        <p>The currently selected repository cannot be used for queries due to an error:</p>
+        <p class="ng-binding"></p>
+    </div>
+    <query-editor ng-show="getActiveRepositoryNoError()" ng-keyup="saveQueryToLocal(currentQuery)" nocount="false"><div id="sparql-content">
+    <div ng-hide="viewMode == &#39;editor&#39;" ng-class="orientationViewMode ? &#39;row&#39; : viewMode == &#39;yasr&#39; ? &#39;col-xs-12&#39; : &#39;col-xs-6&#39;" ng-style="noPadding" class="row">
+        <div class="col-xs-12 mb-1" ng-style="noPadding">
+
+            <ul class="nav nav-tabs">
+                <!-- ngRepeat: tab in tabs --><li ng-hide="notabs" role="presentation" ng-repeat="tab in tabs" ng-click="focusQueryEditor()" class="nav-item sparql-tab ng-scope">
+                    <a class="nav-link ng-scope editable" role="tab" data-toggle="tab" blur="submit" editable-text="tab.name" e-form="editCurrentlySelectedOnly" ng-click="editCurrentTab()" data-id="1" aria-expanded="false" title=""><span class="ng-binding">CQ#6.1</span><button type="button" ng-click="deleteTab($event)" class="btn btn-link btn-sm secondary" title="Delete tab"><i class="icon-close"></i></button></a>
+                </li><!-- end ngRepeat: tab in tabs --><li ng-hide="notabs" role="presentation" ng-repeat="tab in tabs" ng-click="focusQueryEditor()" class="nav-item sparql-tab ng-scope active">
+                    <a class="nav-link ng-scope editable" role="tab" data-toggle="tab" blur="submit" editable-text="tab.name" e-form="editCurrentlySelectedOnly" ng-click="editCurrentTab()" data-id="3" aria-expanded="true"><span class="ng-binding">CQ#6</span><button type="button" ng-click="deleteTab($event)" class="btn btn-link btn-sm secondary" title="Delete tab"><i class="icon-close"></i></button></a>
+                </li><!-- end ngRepeat: tab in tabs -->
+                <li ng-hide="notabs" role="presentation" ng-click="focusQueryEditor()" class="nav-item">
+                    <span id="wb-sparql-addNewTab" ng-click="addNewTab()" class="nav-link">
+                    	<button class="btn btn-link btn-sm secondary"><span class="icon-plus"></span></button>
+                    </span>
+                </li>
+            </ul>
+
+            <script type="text/ng-template" id="sampleQueriesPopoverTemplate.html">
+                <ul id="wb-sparql-queryInSampleQueries" class="list-unstyled">
+                    <li ng-repeat="query in sampleQueries" class="hovered-parent">
+                        <a href ng-click="querySelected(query)">{{query.name}}</a>
+                        &nbsp;
+                        <span class="actions-bar hovered-item">
+							<button class="btn btn-link btn-sm"
+                                    ng-show="hasRole('ROLE_REAL_USER')"
+                                    tooltip="Edit query" tooltip-trigger="mouseenter"
+                                    ng-click="editQuery(query)">
+								<span class="icon-edit"></span>
+							</button>
+							<button class="btn btn-link btn-sm"
+                                    ng-show="hasRole('ROLE_REAL_USER')"
+                                    tooltip="Delete query" tooltip-trigger="mouseenter"
+                                    ng-click="deleteQuery(query.name)">
+								<span class="icon-trash"></span>
+							</button>
+							<button class="btn btn-link btn-sm"
+                                    tooltip="Get URL to query" tooltip-trigger="mouseenter"
+                                    ng-click="copyToClipboardQuery(query.name)">
+								<span class="icon-link"></span>
+							</button>
+						</span>
+                    </li>
+                </ul>
+            </script>
+
+            <!--
+                        <div class="collapse width pull-right well" id="sampleQueriesCollapse">
+                            <div class="list-group-item-heading">Select saved query from the list</div>
+                            <ul id="wb-sparql-queryInSampleQueries" class="queries list-unstyled">
+                                <li ng-repeat="query in sampleQueries">
+
+                                    <a href="#" ng-click="querySelected(query.body)"><i class="fa fa-1x fa-caret-right"></i>{{query.name}}</a>
+                                    <span>
+                                        <i ng-show="canWriteActiveRepo()" tooltip="Edit query" tooltip-trigger="mouseenter" href="#" class="fa fa-pencil-square-o fa-1x editSampleQuery" ng-click="editQuery(query)"></i>
+                                        <i ng-show="canWriteActiveRepo()" tooltip="Delete query" tooltip-trigger="mouseenter" href="#" class="fa fa-trash-o fa-1x deleteSampleQuery" ng-click="deleteQuery(query.name)"></i>
+                                        <i tooltip="Get URL to query" tooltip-trigger="mouseenter" href="#" class="fa fa-link fa-1x" ng-click="copyToClipboardQuery(query.name)"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+            -->
+
+            <div id="queryEditor">
+                <div class="yasqe"><textarea ng-model="query" id="query" rows="16" cols="100" class="ng-pristine ng-untouched ng-valid" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 185.104px; left: 569.879px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px; display: block;"><div style="min-width: 1px; height: 638px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: -19px; border-right-width: 11px; min-height: 638px; padding-right: 19px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 568.889px; top: 490px; height: 23.3333px;">&nbsp;</div></div><div class="CodeMirror-code" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">########## Competency Question CQ#6.1 ##########</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">### Use Case #1: Transparency and Monitoring</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">### Use Case #4: Analyzing eProcurement procedures</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">### Competency Question description: List all the contracts awarded and their nature. </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">################################################</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">10</div><div class="CodeMirror-gutter-elt" style="left: 4px; width: 32px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">PREFIX</span><span class="cm-ws"> </span><span class="cm-string-2">:</span><span class="cm-ws"> </span><span class="cm-variable-3">&lt;http://data.europa.eu/ePO/ontology#&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">11</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">PREFIX</span><span class="cm-ws"> </span><span class="cm-string-2">rdf:</span><span class="cm-ws"> </span><span class="cm-variable-3">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">12</div><div class="CodeMirror-gutter-elt" style="left: 4px; width: 32px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">select</span><span class="cm-ws"> </span><span class="cm-keyword">distinct</span><span class="cm-ws"> </span><span class="cm-atom">?NatureType</span><span class="cm-ws"> </span><span class="cm-atom">?Percent</span><span class="cm-ws"> </span><span class="cm-keyword">where</span><span class="cm-ws"> </span><span class="cm-punc">{</span><span class="cm-ws"> </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">13</div></div><pre class=" CodeMirror-line "><span class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-ws"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">14</div><div class="CodeMirror-gutter-elt" style="left: 4px; width: 32px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp;</span><span class="cm-punc">{</span><span class="cm-keyword">select</span><span class="cm-ws"> </span><span class="cm-keyword">distinct</span><span class="cm-ws"> </span><span class="cm-punc">(</span><span class="cm-keyword">count</span><span class="cm-punc">(</span><span class="cm-atom">?Contract</span><span class="cm-punc">)</span><span class="cm-ws"> </span><span class="cm-keyword">as</span><span class="cm-ws"> </span><span class="cm-atom">?Total_Contracts</span><span class="cm-punc">)</span><span class="cm-ws"> </span><span class="cm-keyword">where</span><span class="cm-punc">{</span><span class="cm-atom">?Contract</span><span class="cm-ws"> </span><span class="cm-string-2">rdf:type</span><span class="cm-ws"> </span><span class="cm-string-2">:Contract</span><span class="cm-punc">}}</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">15</div><div class="CodeMirror-gutter-elt" style="left: 4px; width: 32px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp;</span><span class="cm-punc">{</span><span class="cm-keyword">select</span><span class="cm-ws"> </span><span class="cm-keyword">distinct</span><span class="cm-ws"> </span><span class="cm-atom">?NatureType</span><span class="cm-ws"> </span><span class="cm-punc">(</span><span class="cm-keyword">count</span><span class="cm-punc">(</span><span class="cm-atom">?NatureType</span><span class="cm-punc">)</span><span class="cm-ws"> </span><span class="cm-keyword">as</span><span class="cm-ws"> </span><span class="cm-atom">?Total_Natures</span><span class="cm-punc">)</span><span class="cm-ws"> </span><span class="cm-keyword">where</span><span class="cm-punc">{</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">16</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-atom">?Contract</span><span class="cm-ws"> </span><span class="cm-string-2">:refersToSignatoryPartyProcuringEntity</span><span class="cm-ws"> </span><span class="cm-atom">?ContractProcuringEntity</span><span class="cm-ws"> </span><span class="cm-punc">.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">17</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-atom">?ProcurementProcedure</span><span class="cm-ws"> </span><span class="cm-string-2">:hasProcuringEntity</span><span class="cm-ws"> </span><span class="cm-atom">?ProcedureProcuringEntity</span><span class="cm-ws"> </span><span class="cm-punc">.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">18</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">19</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp;  <span class="cm-tab" role="presentation" cm-text="	">    </span></span><span class="cm-keyword">FILTER</span><span class="cm-ws"> </span><span class="cm-punc">(</span><span class="cm-atom">?ContractProcuringEntity</span><span class="cm-ws"> </span><span class="cm-punc">!=</span><span class="cm-ws"> </span><span class="cm-atom">?ProcedureProcuringEntity</span><span class="cm-punc">).</span><span class="cm-ws"> </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">20</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">21</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-atom">?ProcurementProcedure</span><span class="cm-ws"> </span><span class="cm-string-2">:hasPurpose</span><span class="cm-ws"> </span><span class="cm-atom">?Purpose</span><span class="cm-ws"> </span><span class="cm-punc">.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">22</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-atom">?Purpose</span><span class="cm-ws"> </span><span class="cm-string-2">:hasContractNatureCodeType</span><span class="cm-ws"> </span><span class="cm-atom">?NatureType</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">23</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="cm-punc">}</span><span class="cm-ws"> </span><span class="cm-keyword">group</span><span class="cm-ws"> </span><span class="cm-keyword">by</span><span class="cm-ws"> </span><span class="cm-atom">?NatureType</span><span class="cm-ws"> </span><span class="cm-atom">?Contract</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">24</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp;</span><span class="cm-punc">}</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">25</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-ws"> &nbsp; &nbsp;</span><span class="cm-keyword">BIND</span><span class="cm-ws"> </span><span class="cm-punc">(</span><span class="cm-keyword">concat</span><span class="cm-punc">(</span><span class="cm-keyword">str</span><span class="cm-punc">(</span><span class="cm-keyword">round</span><span class="cm-punc">(</span><span class="cm-atom">?Total_Natures</span><span class="cm-ws"> </span><span class="cm-punc">*</span><span class="cm-ws"> </span><span class="cm-number">100</span><span class="cm-ws"> </span><span class="cm-punc">/</span><span class="cm-ws"> </span><span class="cm-atom">?Total_Contracts</span><span class="cm-punc">)),</span><span class="cm-ws"> </span><span class="cm-string">'%'</span><span class="cm-punc">)</span><span class="cm-ws"> </span><span class="cm-keyword">AS</span><span class="cm-ws"> </span><span class="cm-atom">?Percent</span><span class="cm-punc">)</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">26</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-punc">}</span><span class="cm-ws"> &nbsp;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 4px; width: 21px;">27</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 11px; width: 1px; border-bottom: 0px solid transparent; top: 638px;"></div><div class="CodeMirror-gutters" style="height: 649px;"><div class="CodeMirror-gutter gutterErrorBar"></div><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div><div class="completionNotification" style="display: none; right: 16px;">Press Alt+Enter to autocomplete</div><div class="completionNotification" style="display: none; right: 16px;">Press Alt+Enter to autocomplete</div><div class="completionNotification" style="display: none; right: 20px;">Press Alt+Enter to autocomplete</div></div></div>
+
+                <div id="yasqe_buttons_mocked" style="display: none"></div>
+                <div id="yasqe_buttons" ng-hide="notoolbar">
+                    <div id="buttons">
+                        <button class="btn btn-link" id="wb-sparql-saveQuery" ng-show="!notoolbarSaved &amp;&amp; hasRole(&#39;ROLE_REAL_USER&#39;)" ng-click="saveTab(currentQuery.id); saveQuery(currentQuery);" data-container="#queryEditor" tooltip="Create saved query" tooltip-append-to-body="true" tooltip-trigger="mouseenter">
+                            <i class="icon-save icon-2-5x"></i>
+                        </button>
+                        <!-- Popover with focus trigger on Safari 7+ needs an <a> with tabindex -->
+                        <a tabindex="0" class="btn btn-link" id="wb-sparql-toggleSampleQueries" ng-hide="notoolbarSaved" ng-click="toggleSampleQueries()" data-container="#queryEditor" tooltip="Show saved queries" tooltip-append-to-body="true" tooltip-trigger="mouseenter" popover-template="&#39;sampleQueriesPopoverTemplate.html&#39;" popover-title="Select saved query from the list" popover-trigger="focus" popover-placement="left" popover-append-to-body="true">
+                            <!-- This popover has to be on the both elements (<a> and inner <span>) so it can be shown in all browsers (Chrome, IE11, Edge, Firefox) -->
+                            <span class="icon-folder icon-2-5x" popover-template="&#39;sampleQueriesPopoverTemplate.html&#39;" popover-title="Select saved query from the list" popover-trigger="focus" popover-placement="left" popover-append-to-body="true"></span>
+                        </a>
+                        <button class="btn btn-link" id="wb-sparql-copyToClipboardQuery" ng-hide="notoolbarCopy" ng-click="copyToClipboardQuery()" tooltip="Get URL to current query" tooltip-append-to-body="true">
+                            <span class="icon-link icon-2-5x"></span>
+                        </button>
+                        <button class="btn btn-link" id="inference" ng-hide="notoolbarInference" ng-click="currentQuery.inference = !currentQuery.inference" tooltip="Include inferred data in results: ON" tooltip-append-to-body="true">
+                            <span class="icon-2-5x icon-inferred-on" ng-class="{&#39;icon-inferred-on&#39;:currentQuery.inference, &#39;icon-inferred-off&#39;:!currentQuery.inference}"></span>
+                        </button>
+                        <button class="btn btn-link" id="sameAs" ng-hide="notoolbarSameAs" ng-click="currentQuery.sameAs = !currentQuery.sameAs" tooltip="Expand results over owl:sameAs: ON" tooltip-append-to-body="true">
+                            <span class="icon-2-5x icon-sameas-on" ng-class="{&#39;icon-sameas-on&#39;:currentQuery.sameAs, &#39;icon-sameas-off&#39;:!currentQuery.sameAs}"></span>
+                        </button>
+                    </div>
+                </div>
+                <div id="runButton" ng-hide="norun">
+                    <button id="wb-sparql-runQuery" class="btn btn-primary ng-binding" ng-disabled="queryIsRunning" ng-click="runQuery(false, $event.shiftKey)">
+                        Run
+                    </button>
+                </div>
+                <!--
+                <div id="checkboxes">
+                -->
+                <!-- TODO: Disable this for now, because it is causing bigger bugs/problems https://jira.ontotext.com/browse/OWLIM-2081
+                <input id="sameAs" ng-model="currentQuery.sameAs" data-label="disable sameAs" name="equivalent" value="http://www.ontotext.com/disable-sameAs" type="checkbox"/> -->
+                <!--
+                    <label>
+                        <input id="inference" ng-model="currentQuery.inference" type="checkbox" value="true" />
+                        Include inferred
+                    </label>
+                </div>
+                -->
+            </div>
+            <!--<div id="separator" ng-if="!orientationViewMode" ng-mousedown="onDragStart($event)" draggable="true" ondragend="angular.element(this).scope().onDragEnd(event)"></div>-->
+        </div>
+
+    </div>
+
+    <div class="clearfix mb-2 col-xs-12 col-lg-12" ng-hide="viewMode === &#39;yasr&#39;" id="yasr" ng-class="orientationViewMode ? &#39;col-xs-12 col-lg-12&#39; : viewMode == &#39;editor&#39; ? &#39;col-xs-12 vertical&#39; : &#39;col-xs-6 vertical&#39;" style="padding: 0px;">
+        <ul class="nav navbar-right pagination ng-isolate-scope ng-valid ng-hide" ng-show="currentTabConfig.queryType != &#39;UPDATE&#39; &amp;&amp; !queryIsRunning &amp;&amp; currentTabConfig.allResultsCount &gt; currentTabConfig.pageSize" total-items="currentTabConfig.allResultsCount" items-per-page="currentTabConfig.pageSize" ng-model="currentTabConfig.page" ng-change="changePagination()" direction-links="false" boundary-l="" max-size="5" rotate="true" style="">
+  <!-- ngIf: boundaryLinks -->
+  <!-- ngIf: directionLinks -->
+  <!-- ngRepeat: page in pages track by $index --><li ng-repeat="page in pages track by $index" ng-class="{active: page.active}" class="ng-scope active"><a href="http://34.247.217.15:7200/" ng-click="selectPage(page.number, $event)" class="ng-binding">1</a></li><!-- end ngRepeat: page in pages track by $index -->
+  <!-- ngIf: directionLinks -->
+  <!-- ngIf: boundaryLinks -->
+</ul>
+
+        <div class="yasr" id="yasr-inner">
+            <div ng-hide="nostatus || currentTabConfig.queryType || queryIsRunning" class="alert alert-info no-icon ng-hide" style="">No results from previous run.
+                Click Run or press Ctrl/Cmd-Enter to execute the current query or update.
+            </div>
+            <!--ng-show="!queryIsRunning">-->
+            <div class="yasr_header mb-1 clearfix" ng-show="currentTabConfig.queryType &amp;&amp; currentTabConfig.queryType != &#39;UPDATE&#39; &amp;&amp; currentTabConfig.queryType != &#39;ERROR&#39; &amp;&amp; currentTabConfig.queryType != &#39;ASK&#39; &amp;&amp; !queryIsRunning" style="display: block;">
+                 <div class="resultsVisualButton btn-group pull-right">
+                    <button class="btn btn-primary btn-sm ng-hide" ng-show="!queryIsRunning &amp;&amp; currentTabConfig.queryType &amp;&amp; (currentTabConfig.queryType == &#39;CONSTRUCT&#39; || currentTabConfig.queryType == &#39;DESCRIBE&#39;)" ng-click="goToVisual()">
+                        Visual
+                    </button>
+                 </div>
+            <ul class="yasr_btnGroup nav nav-tabs"><li class="nav-item active"><a class="nav-link select_table">Table</a></li><li class="nav-item"><a class="nav-link select_rawResponse">Raw Response</a></li><li class="nav-item"><a class="nav-link select_pivot">Pivot Table</a></li><li class="nav-item"><a class="nav-link select_gchart">Google Chart</a></li></ul><button class="btn btn-primary btn-sm yasr_downloadIcon pull-right" style="display: none;" title="Download as CSV">Save</button><div class="saveAsDropDown btn-group pull-right"><button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" type="button">Download as &nbsp;</button><ul class="dropdown-menu" role="menu"><li><a class="format dropdown-item" data-accepts="application/sparql-results+json" href="http://34.247.217.15:7200/#">JSON</a></li><li><a class="format dropdown-item" data-accepts="application/sparql-results+xml" href="http://34.247.217.15:7200/#">XML</a></li><li><a class="format dropdown-item" data-accepts="text/csv" href="http://34.247.217.15:7200/#">CSV</a></li><li><a class="format dropdown-item " data-accepts="text/tab-separated-values" href="http://34.247.217.15:7200/#">TSV</a></li><li><a class="format dropdown-item" data-accepts="application/x-binary-rdf-results-table" href="http://34.247.217.15:7200/#">Binary RDF Results</a></li></ul></div></div>
+            <h6 class="alert alert-danger no-icon additional ng-binding ng-hide" ng-show="!queryIsRunning &amp;&amp; !nostatus &amp;&amp; currentTabConfig.errorMessage">Error: </h6>
+            <h6 class="alert alert-warning no-icon additional ng-binding ng-hide" ng-show="!queryIsRunning &amp;&amp; !nostatus &amp;&amp; currentTabConfig.warningMessage">Warning: </h6>
+            <div class="alert alert-info no-icon" ng-show="!nostatus &amp;&amp; currentTabConfig.queryType &amp;&amp; currentTabConfig.queryType != &#39;UPDATE&#39; &amp;&amp; currentTabConfig.queryType != &#39;ERROR&#39; &amp;&amp; !queryIsRunning" style="">
+                <div class="text-xs-right">
+                    <span class="icon-warning icon-lg ng-hide" ng-show="getStaleWarningMessage()" tooltip="" tooltip-trigger="mouseenter" tooltip-append-to-body="true" style=""></span>
+                    <span ng-show="currentTabConfig.queryType != &#39;ASK&#39;" class="ng-binding">
+                        Showing results from 1 to 2 of 2.
+                    </span>
+                    <span ng-show="currentTabConfig.timeTook" class="ng-binding" style="">
+                        Query took 0.1s, minutes ago.
+                    </span>
+                </div>
+            </div>
+            <div class="alert alert-info no-icon results-info update-info ng-binding ng-hide" ng-show="!nostatus &amp;&amp; currentTabConfig.queryType == &#39;UPDATE&#39; &amp;&amp; !queryIsRunning">
+                
+                <span ng-show="currentTabConfig.timeTook" class="ng-binding" style="">
+                    Update took 0.1s, minutes ago.
+                </span>
+            </div>
+            <div class="alert alert-danger no-icon results-info update-info ng-hide" ng-show="currentTabConfig.queryType == &#39;ERROR&#39;" style="">
+                <div>
+                    <div class="pull-right ng-binding" ng-show="currentTabConfig.timeTook" style="">
+                        Operation took 0.1s, minutes ago.
+                    </div>
+                    <h6>Error<span ng-show="yasr.results.getException().status &gt; 0" class="ng-binding ng-hide" style=""> : </span></h6>
+                </div>
+
+                <div class="plaintext ng-binding"></div>
+            </div>
+            <div class="yasr_results" ng-show="currentTabConfig.queryType &amp;&amp; currentTabConfig.queryType != &#39;UPDATE&#39; &amp;&amp; currentTabConfig.queryType != &#39;ERROR&#39; &amp;&amp; !queryIsRunning" style=""><div id="DataTables_Table_66_wrapper" class="dataTables_wrapper no-footer"><div id="DataTables_Table_66_filter" class="dataTables_filter"><label><input type="search" class="form-control" placeholder="Filter query results" aria-controls="DataTables_Table_66"></label></div><div class="JCLRgrips" style="width: 1192.02px;"><div class="JCLRgrip" style="left: 33px; height: 119px;"><div class="JColResizer" style="cursor:e-resize"></div></div><div class="JCLRgrip" style="left: 691.222px; height: 119px;"><div class="JColResizer" style="cursor:e-resize"></div></div><div class="JCLRLastGrip" style="left: 1194px; height: 119px;"></div></div><table cellpadding="0" cellspacing="0" border="0" class="resultsTable table stripe hover table-bordered fixedCellWidth dataTable no-footer JColResizer" id="DataTables_Table_66" role="grid"><thead style=""><tr role="row"><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 32px;"></th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_66" rowspan="1" colspan="1" aria-label="NatureType: activate to sort column ascending"><span>NatureType</span><div class="sortIcons"><a class="fa fa-sort"></a></div></th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_66" rowspan="1" colspan="1" aria-label="Percent: activate to sort column ascending"><span>Percent</span><div class="sortIcons"><a class="fa fa-sort"></a></div></th></tr></thead><tbody><tr role="row" class="odd"><td>1</td><td><div class="uri-cell"><a title="http://data.europa.eu/ePO/ontology#WORKS" class="uri" href="http://34.247.217.15:7200/resource?uri=http%3A%2F%2Fdata.europa.eu%2FePO%2Fontology%23WORKS">:WORKS</a> <a class="fa fa-link share-result" data-clipboard-text="http://data.europa.eu/ePO/ontology#WORKS" title="Copy to Clipboard" href="http://34.247.217.15:7200/#"></a></div></td><td><div><p class="nonUri" style="border: none; background-color: transparent; padding: 0; margin: 0">62%</p></div></td></tr><tr role="row" class="even"><td>2</td><td><div class="uri-cell"><a title="http://data.europa.eu/ePO/ontology#WORKS" class="uri" href="http://34.247.217.15:7200/resource?uri=http%3A%2F%2Fdata.europa.eu%2FePO%2Fontology%23WORKS">:WORKS</a> <a class="fa fa-link share-result" data-clipboard-text="http://data.europa.eu/ePO/ontology#WORKS" title="Copy to Clipboard" href="http://34.247.217.15:7200/#"></a></div></td><td><div><p class="nonUri" style="border: none; background-color: transparent; padding: 0; margin: 0">59%</p></div></td></tr></tbody></table></div></div>
+        </div>
+
+        <!-- ngIf: queryIsRunning -->
+    </div>
+
+    <keyboard-shortcuts template-url="v/8.5.0/res/sparql/keyboard-shortcuts.html"><!-- ngInclude: undefined --><ng-include src="getTemplateUrl()" class="ng-scope">
+
+<div class="ng-scope">
+    <!-- massively taken from https://github.com/chieffancypants/angular-hotkeys -->
+    <button id="keyboardShortcuts" ng-click="toggleCheatSheet()" type="button" class="btn btn-sm btn-secondary">keyboard shortcuts</button>
+    <div class="hotkeys-container fade" ng-class="{in: shortcutsVisible}">
+        <div class="hotkeys">
+           	<div class="close" ng-click="toggleCheatSheet()"></div>
+            <h3 class="text-xs-center">Keyboard shortcuts</h3>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Space|Alt-Enter</kbd>
+                        </td>
+                        <td class="hotkeys-text">Trigger Autocompletion</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-D</kbd>
+                        </td>
+                        <td class="hotkeys-text">Delete current/selected line(s)</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-/</kbd>
+                        </td>
+                        <td class="hotkeys-text">Comment or uncomment current/selected line(s)</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Alt-Down</kbd>
+                        </td>
+                        <td class="hotkeys-text">Copy line down</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Alt-Up</kbd>
+                        </td>
+                        <td class="hotkeys-text">Copy line up</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Shift-F</kbd>
+                        </td>
+                        <td class="hotkeys-text">Auto-format/indent selected lines</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-]</kbd>
+                        </td>
+                        <td class="hotkeys-text">Indent current/selected line(s) more</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-[</kbd>
+                        </td>
+                        <td class="hotkeys-text">Indent current/selected line(s) less</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Enter</kbd>
+                        </td>
+                        <td class="hotkeys-text">Execute query or update</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>Shift-[Ctrl|Cmd]-Enter</kbd>
+                        </td>
+                        <td class="hotkeys-text">Execute explain plan for query</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Alt-T</kbd>
+                        </td>
+                        <td class="hotkeys-text">Create a new unnamed tab</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-S</kbd>
+                        </td>
+                        <td class="hotkeys-text">Create a saved query from the current state</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Alt-Right</kbd>
+                        </td>
+                        <td class="hotkeys-text">Switch to next tab</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>[Ctrl|Cmd]-Alt-Left</kbd>
+                        </td>
+                        <td class="hotkeys-text">Switch to previous tab</td>
+                    </tr>
+                    <tr>
+                        <td class="hotkeys-keys">
+                            <kbd>Shift-Left-Mouse</kbd>
+                        </td>
+                        <td class="hotkeys-text">Click at close tab icon closes all the tabs except the clicked one</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+        </div>
+    </div>
+</div></ng-include></keyboard-shortcuts>
+
+</div></query-editor>
+    <form id="wb-download" method="POST" action="http://34.247.217.15:7200/" target="_self" class="ng-pristine ng-valid">
+        <input id="wb-download-query" name="query" type="hidden">
+        <input id="wb-download-infer" name="infer" type="hidden">
+        <input id="wb-download-accept" name="Accept" type="hidden">
+        <input id="wb-auth-token" name="authToken" type="hidden">
+    </form>
+</div></div>
+
+    <footer ng-show="showFooter" class="footer ng-hide" style="">
+        <div class="container-fluid main-container">
+            <p class="ng-binding">
+                <a href="http://graphdb.ontotext.com/" target="_blank">GraphDB</a> 8.5.0 • <a href="http://rdf4j.org/" target="_blank">RDF4J</a>
+                2.2.4 • Connectors 7.2.0 • © 2002–2018 <a href="http://ontotext.com/" target="_blank">Ontotext AD</a>. All
+                rights reserved.
+            </p>
+        </div>
+    </footer>
+</div>
+<div class="show-ng-cloak ot-splash" style="display: none;">
+    <object data="./CQ#6_files/graphdb-splash.svg"></object>
+    <div>GraphDB Workbench is loading...</div>
+</div>
+<script src="./CQ#6_files/require.min.js.descarga" data-main="v/8.5.0/js/angular/app.js"></script>
+<script src="./CQ#6_files/loading-hint.js.descarga"></script>
+
+
+
+<script type="text/javascript" src="./CQ#6_files/jsapi"></script></body></html>
