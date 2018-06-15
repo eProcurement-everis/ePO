@@ -1,0 +1,32 @@
+########## Competency Question CQ#8 ##########
+
+### Use Case #1: Transparency and Monitoring
+### Use Case #4: Analyzing eProcurement procedures
+
+### Competency Question description: Detect how many Procuring Entities use different IDs and from which countries they are.
+
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+select ?ProcuringEntityNames ?ProcuringEntityCount ?IDs ?Countries where{
+    {select (count(?ProcuringEntityName) as ?ProcuringEntityCount) 
+        (group_concat(distinct ?ProcuringEntityName;separator="; ") as ?ProcuringEntityNames)
+        (group_concat(distinct ?ProcuringEntityID;separator="; ") as ?IDs)
+        (group_concat(distinct ?Country;separator="; ") as ?Countries)
+    where{
+    
+    ?ProcuringEntity rdf:type :ProcuringEntity ;
+                     org:identifier ?ProcuringEntityID ;
+                     skos:prefLabel ?ProcuringEntityName ;
+                     org:hasSite ?site .
+    ?site vcard:hasAddress ?address .
+    ?address vcard:country-name ?Country .
+        } group by ?ProcuringEntityName order by ?ProcuringEntityName }
+    filter (?ProcuringEntityCount > 1)  
+} 

@@ -1,0 +1,30 @@
+########## Competency Question CQ#8.2 ##########
+
+### Use Case #1: Transparency and Monitoring
+### Use Case #4: Analyzing eProcurement procedures
+
+### Competency Question description: List the ProcuringEntity that have been stored in the Data Graph more than once.
+### Note: based only on the name
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+select * where{
+	{select (count(?ProcuringEntityName) as ?ProcuringEntityCount) ?ProcuringEntityName 
+
+    where{
+    
+    ?ProcuringEntity rdf:type :ProcuringEntity ;
+                     org:identifier ?ProcuringEntityID ;
+                     skos:prefLabel ?ProcuringEntityName ;
+                     org:hasSite ?site .
+    ?site vcard:hasAddress ?address .
+    ?address vcard:country-name ?ProcuringEntityCountry .
+        } group by ?ProcuringEntityName order by ?ProcuringEntityName }
+    filter (?ProcuringEntityCount > 1)  
+} 
