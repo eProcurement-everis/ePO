@@ -1,0 +1,26 @@
+######### QUERY #5.1 METADATA #####################
+
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: As a Contracting Authority, I want to know the percentage of contracts awarded segmented by contract nature, so I can prepare the annual report.
+
+### Competency Question: For a given period of time, list of contracts awarded and, per each contract, the nature of the contract (Works, services, supplies, etc.) and the types of awarding criteria used.
+
+#################################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select distinct ?contract ?ContractNatureCodeType ?AwardCriterion 
+where { 
+	?contract a :Contract ;
+         :refersToLot ?Lot ;
+     	 :hasContractPurpose ?Purpose .
+   	?Purpose :hasContractNatureCodeType ?ContractNatureCodeType.
+    ?Lot :referredToIn ?AwardCriterion.
+        
+}
+ORDER BY ?contract  
+
+#################################################
