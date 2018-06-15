@@ -3,7 +3,7 @@
 ### USE CASE #1: Transparency and monitoring
 ### USE CASE #4: Analyzing eProcurement procedures
 
-### User Story: ........................................
+### User Story: .
 
 ### Competency Question: For a given period of time, percentage of procurement procedures awarded divided into Lots, average of Lots and average of contracts.
 
@@ -12,28 +12,38 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select (count(DISTINCT ?t) / (count (?t)) * 100 as ?Percentage) ?average_Contract ?average_Lot
+select (count(DISTINCT ?t)* 10 /  (?divided_L)  as ?Procurement_procedure_not_divided_lots) ?average_Contract ?average_Lot
 where {
         ?t a :ProcurementProcedure ;
-    	:includeLot ?Lot . 
+                :includesLot ?Lot . 
     {
         select (AVG (?NumberL) as ?average_Lot)
-		where {
-			select (count(?Lot) as ?NumberL)
-      		where {?a :includeLot ?Lot .  } group by ?a
-			  } 
+                               where {
+                                               select (count(?Lot) as ?NumberL)
+                               where {?a :includesLot ?Lot .  } 
+            group by ?a
+                                                 } 
+    }
+    {
+        select (count (?pp_divided_lots) as ?divided_L)
+                               where {
+                                               select ?pp_divided_lots (count(?Lot) as ?NumberDL)
+                               where {?pp_divided_lots :includesLot ?Lot .  } 
+            group by ?pp_divided_lots having (?NumberDL>1)
+                                                 } 
     }
     {
         select (AVG (?NumberL) as ?average_Contract)
-		where {
-			select (count(?Contract) as ?NumberL) ?o
-      		where { ?o a :ProcurementProcedure ;
+                               where {
+                                               select (count(?Contract) as ?NumberL) ?o
+                               where { ?o a :ProcurementProcedure ;
                    :hasEvaluationResult ?EvaluationResult .
-    				?EvaluationResult :hasAwardResult ?AwardResult .
-    				?AwardResult :isReferredByAContract ?Contract .
-           		  } group by ?o
-  			  }
+                                                               ?EvaluationResult :hasAwardResult ?AwardResult .
+                                                               ?AwardResult :isReferredByAContract ?Contract .
+                                 } group by ?o
+                                                 }
     }
-} group by ?average_Contract ?average_Lot
+    
+} group by ?average_Contract ?average_Lot ?divided_L
 
 #################################################

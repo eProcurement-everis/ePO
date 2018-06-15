@@ -12,7 +12,7 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select  (((COUNT(?all_pproc)*100)/COUNT(?divided_pproc)) AS ?total_bad)
+select  (((COUNT(?all_pproc)*100)/COUNT(?divided_pproc)) AS ?Percent_Proc_Procedure)
 where{
     { select ?divided_pproc (count(?divided_lot) as ?divided_count) where { 
             ?divided_pproc :includesLot ?divided_lot .
