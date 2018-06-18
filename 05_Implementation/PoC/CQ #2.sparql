@@ -12,12 +12,15 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select  (((COUNT(?all_pproc)*100)/COUNT(?divided_pproc)) AS ?Percent_Proc_Procedure)
+select  (concat(str(round((COUNT(?divided_pproc)*100)/COUNT(?all_pproc))), '%') AS ?Procurement_procedure_divided_into_lots)
 where{
     { select ?divided_pproc (count(?divided_lot) as ?divided_count) where { 
-            ?divided_pproc :includesLot ?divided_lot .
             ?divided_pproc a :ProcurementProcedure;
-                           :hasAwardDateScheduled ?divided_YEAR .
+                           :includesLot ?divided_lot;
+                           :hasEvaluationResult ?evaluation_result.
+            ?evaluation_result :hasAwardResult ?award_result.
+            ?award_result a :AwardResult;
+                :hasAwardResultDateOfConclusion ?divided_YEAR.
             ?divided_lot a :Lot.
      	FILTER
             (?divided_YEAR >= "2010-01-01"^^xsd:dateTime && ?divided_YEAR <= "2018-12-31"^^xsd:dateTime)
@@ -27,12 +30,16 @@ where{
         select ?all_pproc (count(?all_lot) as ?all_count) where { 
             ?all_pproc :includesLot ?all_lot .
             ?all_pproc a :ProcurementProcedure;
-                           :hasAwardDateScheduled ?all_YEAR .
+                       :includesLot ?all_lot;
+                       :hasEvaluationResult ?all_evaluation_result.
+            ?all_evaluation_result :hasAwardResult ?all_award_result.
+            ?all_award_result  a :AwardResult;
+                               :hasAwardResultDateOfConclusion ?all_YEAR.
             ?all_lot a :Lot.
      	FILTER
             (?all_YEAR >= "2010-01-01"^^xsd:dateTime && ?all_YEAR <= "2018-12-31"^^xsd:dateTime)
         }group by ?all_pproc
     }
-} 
+}
 
 #################################################

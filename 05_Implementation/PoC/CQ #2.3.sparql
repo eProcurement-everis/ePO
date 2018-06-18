@@ -1,0 +1,19 @@
+######### QUERY #2.3 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### Competency Question: List of procurement procedures that includes more than one lot and are awarded.
+
+#################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?procurement_procedure (count(?divided_lot) as ?number_of_lots) where { 
+            ?procurement_procedure a :ProcurementProcedure;
+                           :includesLot ?divided_lot;
+                           :hasEvaluationResult ?evaluation_result.
+            ?evaluation_result :hasAwardResult ?award_result.
+            ?award_result a :AwardResult.
+            ?divided_lot a :Lot.
+	} group by ?procurement_procedure having (?number_of_lots>1)

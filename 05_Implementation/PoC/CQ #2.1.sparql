@@ -1,0 +1,15 @@
+######### QUERY #2.1 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### Competency Question: List of procurement procedures awarded.
+
+#################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+select ?procurement_procedures ?award_result where { 
+	?procurement_procedures a :ProcurementProcedure;
+                :hasEvaluationResult ?evaluation_result.
+    ?evaluation_result :hasAwardResult ?award_result
+} 
