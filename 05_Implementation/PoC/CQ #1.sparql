@@ -10,14 +10,16 @@
 #################################################
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select DISTINCT(count(?o) as ?Number_Proc_Procedures) ?Year
-where { 
-    ?o a :ProcurementProcedure ;
-     :hasAwardDateScheduled ?date .
-   		 FILTER
-    (year(?date) > year(now())-10).
+
+select (count(distinct ?procurement_procedure) as ?number_procurement_procedures) where { 
+	?procurement_procedure a :ProcurementProcedure;
+                        :includesLot ?Lots.
+    optional{ 
+        ?procurement_procedure :hasProcurementProjectTitle ?procurement_procedure_title.
+    }
+    filter not exists{
+        ?contract a :Contract;
+                  :refersToLot ?Lots.}
 }
-GROUP BY ?o (year(?date) as ?Year)
 
 #################################################

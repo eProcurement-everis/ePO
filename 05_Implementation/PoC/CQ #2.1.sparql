@@ -7,9 +7,12 @@
 
 #################################################
 
-PREFIX : <http://data.europa.eu/ePO/ontology#>
-select ?procurement_procedures ?award_result where { 
-	?procurement_procedures a :ProcurementProcedure;
-                :hasEvaluationResult ?evaluation_result.
-    ?evaluation_result :hasAwardResult ?award_result
-} 
+select distinct ?procurement_procedure ?procurement_procedure_title ?contract where { 
+	?procurement_procedure a :ProcurementProcedure;
+                        :includesLot ?Lots.
+    ?contract a :Contract;
+              :refersToLot ?Lots.
+    optional{ ?procurement_procedure :hasProcurementProjectTitle ?procurement_procedure_title.}
+}
+
+#################################################

@@ -5,25 +5,13 @@
 
 ### User Story: As Procuring Entity, I want to know what Procurement Procedures have not been awarded so I can improve future Procurement Procedures.
 
-### Competency Question: List of procurement procedures announces but not awarded, yet.
+### Competency Question: Number of procurement procedures notified on TED.
 
 #################################################
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
-select ?procurement_procedures_not_awarded where{
-{
-        select (count(?procurement_procedures) as ?all_proc_proc) where { 
-            ?procurement_procedures a :ProcurementProcedure.
-        }
+select (count(?procurement_procedures) as ?all_proc_proc) where {
+    ?procurement_procedures a :ProcurementProcedure.
 }
-{
-        select (count(?procurement_procedures) as ?proc_proc) (count(?award_result) as ?proc_proc_awarded) where { 
-            ?procurement_procedures a :ProcurementProcedure;
-                                    :hasEvaluationResult ?evaluation_result.
-            ?evaluation_result :hasAwardResult ?award_result
-        }
-}
-    bind((?all_proc_proc - ?proc_proc) as ?procurement_procedures_not_awarded)
-} 
 
 #################################################

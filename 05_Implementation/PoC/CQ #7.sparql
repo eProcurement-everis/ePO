@@ -17,7 +17,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 select (count(?Award_Date) as ?NUMBER_OF_AWARDED_SME) where { 
 	?Award_Result :hasWinner ?Winner ;
               :hasAwardResultDateOfConclusion ?Award_Date .
-    ?Winner :hasEOIndustryClassificationCodeType :SME .
+    ?Winner :usesEOIndustryClassificationType :SME .
  
     FILTER (?Award_Date > "2015-01-01"^^xsd:dateTime && ?Award_Date < "2018-12-31"^^xsd:dateTime)	
 }
