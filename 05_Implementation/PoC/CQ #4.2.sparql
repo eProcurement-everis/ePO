@@ -1,0 +1,25 @@
+######### QUERY #4.2 METADATA #####################
+
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: As a Contracting Authority, I want to know the percentage of contracts awarded segmented by procurement procedure, so I can prepare the annual report.
+
+### Competency Question: 4.	List of type of procedure awarded, the number of procurement procedures.
+
+#################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?awarded_ProcurementProcedureType (count(distinct ?awarded_pp) as ?number_awarded_procurement_procedures)
+where {
+    ?awarded_pp a :ProcurementProcedure ;
+                :includesLot ?lots.
+    optional{ ?awarded_pp :hasProcurementProcedureType ?awarded_ProcurementProcedureType.}
+    ?contract a :Contract;
+              :refersToLot ?lots;
+              :refersToAwardResult ?award_result.
+} group by ?awarded_ProcurementProcedureType
+
+#################################################

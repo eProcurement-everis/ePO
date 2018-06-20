@@ -1,28 +1,25 @@
-######### QUERY #5 METADATA #####################
+######### QUERY #5.1 METADATA #####################
 
 ### USE CASE #4: Analyzing eProcurement procedures
 
 ### User Story: As a Contracting Authority, I want to know the percentage of contracts awarded segmented by contract nature, so I can prepare the annual report.
 
-### Competency Question: For a given period of time, list of contracts awarded and, per each contract, the nature of the contract (Works, services, supplies, etc.) and the types of awarding criteria used.
+### Competency Question: List of nature types and the number of procurement procedures.
 
 #################################################
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select distinct ?awarded_pp ?ContractNatureCodeType ?award_criterion
+select ?ContractNatureType (count(distinct ?awarded_pp) as ?number_awarded_procurement_procedures) 
 where {
     ?awarded_pp a :ProcurementProcedure ;
                 :includesLot ?lots.
     ?contract a :Contract;
               :refersToLot ?lots;
      	 :hasContractPurpose ?Purpose .
-    ?lots :referredToIn ?AwardCriterion.
-    ?AwardCriterion :usesCriterionTaxonomy ?award_criterion.
-   	?Purpose :hasContractNatureCodeType ?ContractNatureCodeType.
-}  group by ?awarded_pp ?ContractNatureCodeType ?award_criterion
+   	?Purpose :hasContractNatureCodeType ?ContractNatureType.
+}  group by ?ContractNatureType
 
 #################################################

@@ -9,18 +9,44 @@
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-select distinct ?NatureType ?Percent where { 
-	
-    {select distinct (count(?Contract) as ?Total_Contracts) where{?Contract rdf:type :Contract}}
-    {select distinct ?NatureType (count(?NatureType) as ?Total_Natures) where{
-            ?Contract :refersToSignatoryPartyProcuringEntity ?ContractProcuringEntity .
-            ?ProcurementProcedure :hasProcuringEntity ?ProcedureProcuringEntity .
-            
-        	FILTER (?ContractProcuringEntity != ?ProcedureProcuringEntity). 
-            
-            ?ProcurementProcedure :hasPurpose ?Purpose .
-            ?Purpose :hasContractNatureCodeType ?NatureType
-        } group by ?NatureType ?Contract
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?ContractNatureCodeType((?cn_type* 100 / ?all_awarded_pp)  as ?Percentage) 
+where {
+    {
+        select (count(DISTINCT ?awarded_pp)as ?all_awarded_pp) 
+        where {
+            ?awarded_pp a :ProcurementProcedure ;
+                        :includesLot ?awarded_lots.
+            ?awarded_contract a :Contract;
+              :refersToLot ?awarded_lots;
+        	  :hasContractPurpose ?awarded_Purpose;
+              :refersToAwardResult ?awarded_ap.
+            ?awarded_ap a :AwardResult ;
+                        :hasAwardResultDateOfConclusion ?awarded_YEAR .
+            ?awarded_Purpose :hasContractNatureCodeType ?ContractNatureCodeType.
+            FILTER
+            (?awarded_YEAR >= "2010-01-01"^^xsd:dateTime &&
+                ?awarded_YEAR <= "2018-12-31"^^xsd:dateTime).
+        } 
     }
-    BIND (concat(str(round(?Total_Natures * 100 / ?Total_Contracts)), '%') AS ?Percent)
-}  
+    {
+        select ((count (DISTINCT ?pp)) as ?cn_type) ?ContractNatureCodeType
+        where {  
+            ?pp a :ProcurementProcedure ;
+                :includesLot ?lots.
+            ?contract a :Contract;
+              :refersToLot ?lots;
+              :hasContractPurpose ?purpose;
+              :refersToAwardResult ?ap.
+            ?ap a :AwardResult ;
+                :hasAwardResultDateOfConclusion ?YEAR .
+            ?purpose :hasContractNatureCodeType ?ContractNatureCodeType.
+            FILTER
+            (?YEAR >= "2010-01-01"^^xsd:dateTime &&
+                ?YEAR <= "2018-12-31"^^xsd:dateTime).
+        } group by ?ContractNatureCodeType
+    }
+}
+
+################################################

@@ -1,0 +1,27 @@
+######### QUERY #3.2 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: .
+
+### Competency Question: Average of lots for procurement procedures awarded.
+
+#################################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ((AVG (?number_of_lots)) as ?average_Lot)
+where {
+    {
+        select ?procurement_procedure (count(?Lots) as ?number_of_lots)  where {
+        ?procurement_procedure a :ProcurementProcedure;
+                        :includesLot ?Lots.
+        ?contract a :Contract;
+              :refersToLot ?Lots.
+        } group by ?procurement_procedure
+    }
+}
+
+#################################################

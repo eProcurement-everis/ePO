@@ -1,0 +1,22 @@
+######### QUERY #1.3 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: As Procuring Entity, I want to know what Procurement Procedures have not been awarded so I can improve future Procurement Procedures.
+
+### Competency Question: List of procurement procedures announces but not awarded, yet.
+
+#################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+
+select distinct ?procurement_procedure ?procurement_procedure_title ?contract where { 
+	?procurement_procedure a :ProcurementProcedure;
+                        :includesLot ?Lots.
+    optional{ ?procurement_procedure :hasProcurementProjectTitle ?procurement_procedure_title.}
+    filter not exists{?contract a :Contract;
+                       :refersToLot ?Lots.}
+}
+
+#################################################

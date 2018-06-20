@@ -12,15 +12,17 @@ PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select ((?pp_type* 100 / ?all_awarded_pp)  as ?Percentage) ?ProcurementProcedureCodeType
+select ?ProcurementProcedureType((?pp_type* 100 / ?all_awarded_pp)  as ?Percentage) 
 where { 
-    {
+    {   
         select (count(DISTINCT ?awarded_pp)as ?all_awarded_pp) 
         where {
             ?awarded_pp a :ProcurementProcedure ;
-                        :hasProcurementProcedureType ?awarded_ProcurementProcedureCodeType ;
-                        :hasEvaluationResult ?awarded_evaluation_result.
-            ?awarded_evaluation_result :hasAwardResult ?awarded_ap.
+                        :includesLot ?awarded_lots.
+            optional{ ?awarded_pp :hasProcurementProcedureType ?awarded_ProcurementProcedureCodeType.}
+            ?awarded_contract a :Contract;
+              :refersToLot ?awarded_lots;
+              :refersToAwardResult ?awarded_ap.
             ?awarded_ap a :AwardResult ;
                         :hasAwardResultDateOfConclusion ?awarded_YEAR .
             FILTER
@@ -29,18 +31,20 @@ where {
         } 
     }
     {
-        select ((count (DISTINCT ?pt)) as ?pp_type) ?ProcurementProcedureCodeType
+        select ((count (DISTINCT ?pp)) as ?pp_type) ?ProcurementProcedureType
         where {  
-            ?pt a :ProcurementProcedure ;
-                :hasProcurementProcedureType ?ProcurementProcedureCodeType ;
-                :hasEvaluationResult ?evaluation_result.
-            ?evaluation_result :hasAwardResult ?ap.
+            ?pp a :ProcurementProcedure ;
+                :includesLot ?lots.
+            optional{ ?pp :hasProcurementProcedureType ?ProcurementProcedureType.}
+            ?contract a :Contract;
+              :refersToLot ?lots;
+              :refersToAwardResult ?ap.
             ?ap a :AwardResult ;
                 :hasAwardResultDateOfConclusion ?YEAR .
             FILTER
             (?YEAR >= "2010-01-01"^^xsd:dateTime &&
                 ?YEAR <= "2018-12-31"^^xsd:dateTime).
-        } group by ?ProcurementProcedureCodeType
+        } group by ?ProcurementProcedureType
     }
 }
 

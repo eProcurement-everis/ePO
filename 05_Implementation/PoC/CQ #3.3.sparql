@@ -1,0 +1,22 @@
+######### QUERY #3.3 METADATA #####################
+
+### USE CASE #1: Transparency and monitoring
+### USE CASE #4: Analyzing eProcurement procedures
+
+### User Story: .
+
+### Competency Question: List of procurement procedures and number of contracts for each one.
+
+#################################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+
+select ?procurement_procedure (count(?contract) as ?number_of_contracts)  where {
+        ?procurement_procedure a :ProcurementProcedure;
+                        :includesLot ?Lots.
+        ?contract a :Contract;
+              :refersToLot ?Lots.
+} group by ?procurement_procedure
+
+#################################################

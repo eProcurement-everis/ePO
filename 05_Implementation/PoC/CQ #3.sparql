@@ -12,38 +12,35 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-select (count(DISTINCT ?t)* 10 /  (?divided_L)  as ?Procurement_procedure_not_divided_lots) ?average_Contract ?average_Lot
-where {
-        ?t a :ProcurementProcedure ;
-                :includesLot ?Lot . 
+select  (concat(str(((COUNT(?divided_pproc)*100)/COUNT(?all_pproc))), '%') AS ?Procurement_procedure_divided_into_lots) ((AVG (?all_count)) as ?average_Lot)
+where{
+    { select ?divided_pproc (count(?divided_lot) as ?divided_count) where { 
+            ?divided_pproc a :ProcurementProcedure;
+                           :includesLot ?divided_lot.
+            ?contract a :Contract;
+                     :refersToLot ?divided_lot;
+                     :refersToAwardResult ?award_result.
+            ?award_result a :AwardResult;
+                :hasAwardResultDateOfConclusion ?divided_YEAR.
+            ?divided_lot a :Lot.
+     	FILTER
+            (?divided_YEAR >= "2010-01-01"^^xsd:dateTime && ?divided_YEAR <= "2018-12-31"^^xsd:dateTime)
+	} group by ?divided_pproc having (?divided_count>1)}
+    union
     {
-        select (AVG (?NumberL) as ?average_Lot)
-                               where {
-                                               select (count(?Lot) as ?NumberL)
-                               where {?a :includesLot ?Lot .  } 
-            group by ?a
-                                                 } 
+        select ?all_pproc (count(?all_lot) as ?all_count) where { 
+            ?all_pproc :includesLot ?all_lot .
+            ?all_pproc a :ProcurementProcedure;
+                       :includesLot ?all_lot.
+            ?all_contract a :Contract;
+                          :refersToLot ?all_lot;
+                          :refersToAwardResult ?all_award_result.
+            ?all_award_result  a :AwardResult;
+                               :hasAwardResultDateOfConclusion ?all_YEAR.
+            ?all_lot a :Lot.
+     	FILTER
+            (?all_YEAR >= "2010-01-01"^^xsd:dateTime && ?all_YEAR <= "2018-12-31"^^xsd:dateTime)
+        }group by ?all_pproc
     }
-    {
-        select (count (?pp_divided_lots) as ?divided_L)
-                               where {
-                                               select ?pp_divided_lots (count(?Lot) as ?NumberDL)
-                               where {?pp_divided_lots :includesLot ?Lot .  } 
-            group by ?pp_divided_lots having (?NumberDL>1)
-                                                 } 
-    }
-    {
-        select (AVG (?NumberL) as ?average_Contract)
-                               where {
-                                               select (count(?Contract) as ?NumberL) ?o
-                               where { ?o a :ProcurementProcedure ;
-                   :hasEvaluationResult ?EvaluationResult .
-                                                               ?EvaluationResult :hasAwardResult ?AwardResult .
-                                                               ?AwardResult :isReferredByAContract ?Contract .
-                                 } group by ?o
-                                                 }
-    }
-    
-} group by ?average_Contract ?average_Lot ?divided_L
-
+}
 #################################################
