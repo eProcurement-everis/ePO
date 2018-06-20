@@ -1,0 +1,20 @@
+########## Competency Question # 12.2 ##########
+
+### Competency Question #Q12: List of framework agreements awarded and the name of one the procuring entity.
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+select distinct ?framework_agreement ?procurement_procedure_title ?procuring_entity_name where { 
+    ?procurement_procedures a :ProcurementProcedure;
+                            :hasProcurementProjectTitle ?procurement_procedure_title;
+                            :hasProcuringEntity ?procuring_entity;
+                            :includesLot ?lots.
+	?contract :hasFrameworkContract ?framework_agreement;
+           :refersToLot ?lots.
+    ?procuring_entity skos:prefLabel ?procuring_entity_name.
+    
+} group by ?framework_agreement ?procuring_entity_name ?procurement_procedure_title

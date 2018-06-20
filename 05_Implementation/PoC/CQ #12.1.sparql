@@ -1,0 +1,16 @@
+########## Competency Question # 12.1 ##########
+
+### Competency Question #Q12: List of framework agreements awarded
+
+################################################
+
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select distinct ?framework_agreement ?procurement_procedures ?procurement_procedure_title where { 
+    ?procurement_procedures a :ProcurementProcedure;
+                            :hasProcurementProjectTitle ?procurement_procedure_title;
+                            :includesLot ?lots.
+	?contract :hasFrameworkContract ?framework_agreement;
+           :refersToLot ?lots.
+} group by ?procurement_procedures ?framework_agreement ?procurement_procedure_title order by ?procurement_procedure_title

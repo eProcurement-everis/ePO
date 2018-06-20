@@ -12,4 +12,4 @@ SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
     ?lot :hasPurpose ?purpose.
     ?purpose :hasCPVCode ?cpv.
     ?contract a :Contract.
-} group by ?cpv order by ?cpv
+} group by ?cpv order by desc(?number_contracts)

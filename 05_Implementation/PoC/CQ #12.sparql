@@ -6,16 +6,19 @@
 
 ################################################
 
-
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 select ?framework_agreement ?procuring_entity ?procuring_entity_type where { 
+    ?procurement_procedures a :ProcurementProcedure;
+                            :hasProcuringEntity ?procuring_entity;
+                            :includesLot ?lots.
 	?contract :hasFrameworkContract ?framework_agreement;
-           :refersToAwardResult ?awardResult;
-           :refersToSignatoryPartyProcuringEntity ?procuring_entity.
+           :refersToLot ?lots;
+           :refersToAwardResult ?awardResult.
     ?procuring_entity :hasProcuringEntityType ?procuring_entity_type.
     ?awardResult :hasAwardResultDateOfConclusion ?period.
      FILTER
    		 (?period >= "2016-01-01"^^xsd:dateTime &&
-        ?period <= "2018-03-28"^^xsd:dateTime).
-}
+        ?period <= "2018-06-28"^^xsd:dateTime).
+} group by ?framework_agreement ?procuring_entity ?procuring_entity_type
