@@ -212,7 +212,6 @@
                 rdfs:range xsd:normalizedString ;
                 rdfs:comment "The quantity unit code list."@en .
 
-
 ###  http://www.unece.org/cefact#unitCodeListVersionID
 :unitCodeListVersionID rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
