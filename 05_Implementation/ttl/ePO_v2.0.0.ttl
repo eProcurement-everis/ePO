@@ -15,10 +15,22 @@
 @base <http://data.europa.eu/ePO/ontology> .
 
 <http://data.europa.eu/ePO/ontology> rdf:type owl:Ontology ;
-                                      rdfs:label "eProcurement ontology"@en ;
+                                      owl:versionIRI <http://data.europa.eu/ePO/ontology/2.0.0> ;
+                                      dcterms:creator [ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                                                                          foaf:name "The Publications Office of the European Union"@en ,
+                                                                                                    "Unit C2"@en
+                                                                                        ]
+                                                      ] ;
+                                      rdfs:label "eProcurement Ontology (ePO)"@en ;
+                                      dcterms:creator [ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                                                                          foaf:name "Enric Staromiejski" ,
+                                                                                                    "Laia Bota" ,
+                                                                                                    "Maria Font"
+                                                                                        ]
+                                                      ] ;
                                       owl:versionInfo "2.0.0" ;
                                       dcterms:created "2018-06-25T00:00:00"^^xsd:dateTime ;
-                                      dcterms:title "eProcurement ontology"@en .
+                                      dcterms:title "eProcurement Ontology (ePO)"@en .
 
 #################################################################
 #    Annotation properties
@@ -28,8 +40,24 @@
 dcterms:created rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+<http://schema.org/affiliation> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -169,7 +197,8 @@ ccts:time rdf:type rdfs:Datatype .
                  owl:inverseOf :isEvaluatedBy ;
                  rdf:type owl:InverseFunctionalProperty ;
                  rdfs:domain :EvaluationBoard ;
-                 rdfs:range :EvaluationResult .
+                 rdfs:range :EvaluationResult ;
+                 rdfs:label "Evaluated award result"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#evaluatesTender
@@ -254,9 +283,9 @@ ccts:time rdf:type rdfs:Datatype .
 
 ###  http://data.europa.eu/ePO/ontology#hasAwardResult
 :hasAwardResult rdf:type owl:ObjectProperty ;
-                rdfs:domain :EvaluationResult ,
-                            :SubcontractTerms ;
-                rdfs:range :AwardResult .
+                rdfs:domain :EvaluationResult ;
+                rdfs:range :AwardResult ;
+                rdfs:label "has award result"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasBuyerProfile
@@ -274,14 +303,16 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasConcessionRevenueAmount
 :hasConcessionRevenueAmount rdf:type owl:ObjectProperty ;
                             rdfs:domain :AwardResult ;
-                            rdfs:range ccts:Amount .
+                            rdfs:range ccts:Amount ;
+                            rdfs:label "has concession revenue amount"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractEstimatedDuration
 :hasContractEstimatedDuration rdf:type owl:ObjectProperty ,
                                        owl:FunctionalProperty ;
                               rdfs:domain :Purpose ;
-                              rdfs:range :Period .
+                              rdfs:range :Period ;
+                              rdfs:label "has contract estimated duration"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractModificationType
@@ -427,13 +458,15 @@ ccts:time rdf:type rdfs:Datatype .
 :hasFrameworkAgreementDuration rdf:type owl:ObjectProperty ,
                                         owl:FunctionalProperty ;
                                rdfs:domain :FrameworkAgreement ;
-                               rdfs:range :Period .
+                               rdfs:range :Period ;
+                               rdfs:label "has framework agreement duration"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFrameworkAgreementType
 :hasFrameworkAgreementType rdf:type owl:ObjectProperty ;
                            rdfs:domain :FrameworkAgreement ;
-                           rdfs:range :FrameworkAgreementTypeCode .
+                           rdfs:range :FrameworkAgreementType ;
+                           rdfs:label "has framework agreement type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFrameworkContract
@@ -499,13 +532,15 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasMaximumTotalValue
 :hasMaximumTotalValue rdf:type owl:ObjectProperty ;
                       rdfs:domain :FrameworkAgreement ;
-                      rdfs:range ccts:Amount .
+                      rdfs:range ccts:Amount ;
+                      rdfs:label "has maxmimum total value"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMaximumValueAllLots
 :hasMaximumValueAllLots rdf:type owl:ObjectProperty ;
                         rdfs:domain :FrameworkAgreement ;
-                        rdfs:range ccts:Amount .
+                        rdfs:range ccts:Amount ;
+                        rdfs:label "has maximum value all lots"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMediationParty
@@ -545,6 +580,13 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:domain :ProcurementValue ;
                   rdfs:range ccts:Amount ;
                   rdfs:label "has overall amount"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#hasPlacePerformance
+:hasPlacePerformance rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Purpose ;
+                     rdfs:range :NUTS ;
+                     rdfs:label "has place of performance"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPreviousPublication
@@ -747,7 +789,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasWinner
 :hasWinner rdf:type owl:ObjectProperty ;
            rdfs:domain :AwardResult ;
-           rdfs:range :Winner .
+           rdfs:range :Winner ;
+           rdfs:label "has winner"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#haseAuction
@@ -766,7 +809,8 @@ ccts:time rdf:type rdfs:Datatype .
 :isEvaluatedBy rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :EvaluationResult ;
-               rdfs:range :EvaluationBoard .
+               rdfs:range :EvaluationBoard ;
+               rdfs:label "Is evaluated by"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#isGroupOfEO
@@ -788,7 +832,8 @@ ccts:time rdf:type rdfs:Datatype .
 :isNotifiedInContractAwardNotice rdf:type owl:ObjectProperty ;
                                  owl:inverseOf :notifiesAwardResult ;
                                  rdfs:domain :AwardResult ;
-                                 rdfs:range :ContractAwardNotice .
+                                 rdfs:range :ContractAwardNotice ;
+                                 rdfs:label "Is notified in contract award notice"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#isReferedBy
@@ -853,7 +898,8 @@ ccts:time rdf:type rdfs:Datatype .
 :notifiesAwardResult rdf:type owl:ObjectProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :ContractAwardNotice ;
-                     rdfs:range :AwardResult .
+                     rdfs:range :AwardResult ;
+                     rdfs:label "Notifies award result"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#participatesInProcurementProcedure
@@ -1008,6 +1054,21 @@ ccts:time rdf:type rdfs:Datatype .
                   rdfs:range :CriterionProperty ;
                   rdfs:comment "Criterion property datum responds criterion property"@en ;
                   rdfs:label "responds question"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#subcontractTermsRefersTo
+:subcontractTermsRefersTo rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :subcontractedPart ;
+                          rdfs:domain :SubcontractTerms ;
+                          rdfs:range :AwardResult ;
+                          rdfs:label "Subcontract terms refers to"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#subcontractedPart
+:subcontractedPart rdf:type owl:ObjectProperty ;
+                   rdfs:domain :SubcontractTerms ;
+                   rdfs:range :AwardResult ;
+                   rdfs:label "Subcontracted part"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#subcontracts
@@ -1180,13 +1241,15 @@ ccts:time rdf:type rdfs:Datatype .
 :hasAwardResultDateOfConclusion rdf:type owl:DatatypeProperty ,
                                          owl:FunctionalProperty ;
                                 rdfs:domain :AwardResult ;
-                                rdfs:range xsd:dateTime .
+                                rdfs:range xsd:dateTime ;
+                                rdfs:label "has award result date of conclusion"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasAwardedContractQuantity
 :hasAwardedContractQuantity rdf:type owl:DatatypeProperty ;
                             rdfs:domain :AwardResult ;
-                            rdfs:range xsd:decimal .
+                            rdfs:range xsd:decimal ;
+                            rdfs:label "has awarded contract quantity"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCalculationMethod
@@ -1324,7 +1387,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasExtensionJustification
 :hasExtensionJustification rdf:type owl:DatatypeProperty ;
                            rdfs:domain :FrameworkAgreement ;
-                           rdfs:range xsd:string .
+                           rdfs:range xsd:string ;
+                           rdfs:label "has extension justification"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasFollowUpContracts
@@ -1438,7 +1502,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasMaximumNumberParticipants
 :hasMaximumNumberParticipants rdf:type owl:DatatypeProperty ;
                               rdfs:domain :FrameworkAgreement ;
-                              rdfs:range xsd:decimal .
+                              rdfs:range xsd:decimal ;
+                              rdfs:label "has maximum number participants"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMaximumNumberRenewals
@@ -1497,7 +1562,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasNoResultReason
 :hasNoResultReason rdf:type owl:DatatypeProperty ;
                    rdfs:domain :EvaluationResult ;
-                   rdfs:range xsd:string .
+                   rdfs:range xsd:string ;
+                   rdfs:label "has no result reason"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasNonEUReceivedTenders
@@ -1517,7 +1583,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasNumberAwardedContract
 :hasNumberAwardedContract rdf:type owl:DatatypeProperty ;
                           rdfs:domain :EvaluationResult ;
-                          rdfs:range xsd:decimal .
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "has number awarded contract"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPaymentNote
@@ -1578,25 +1645,29 @@ ccts:time rdf:type rdfs:Datatype .
 :hasPurposeOptions rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain :Purpose ;
-                   rdfs:range xsd:boolean .
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "has purpose options"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPurposeOptionsDescription
 :hasPurposeOptionsDescription rdf:type owl:DatatypeProperty ;
                               rdfs:domain :Purpose ;
-                              rdfs:range xsd:string .
+                              rdfs:range xsd:string ;
+                              rdfs:label "has purpose options description"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPurposeSubjectMatter
 :hasPurposeSubjectMatter rdf:type owl:DatatypeProperty ;
                          rdfs:domain :Purpose ;
-                         rdfs:range xsd:string .
+                         rdfs:range xsd:string ;
+                         rdfs:label "has purpose subject matter"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasPurposeTotalMagnitudeQuantity
 :hasPurposeTotalMagnitudeQuantity rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :Purpose ;
-                                  rdfs:range xsd:double .
+                                  rdfs:range xsd:double ;
+                                  rdfs:label "has purpose total magnitude"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasRate
@@ -1745,7 +1816,8 @@ ccts:time rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasWinnerRank
 :hasWinnerRank rdf:type owl:DatatypeProperty ;
                rdfs:domain :Winner ;
-               rdfs:range xsd:decimal .
+               rdfs:range xsd:decimal ;
+               rdfs:label "has winner rank"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#haseAuctionURI
@@ -1765,13 +1837,15 @@ ccts:time rdf:type rdfs:Datatype .
 :isAbnormallyLow rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain :EvaluationResult ;
-                 rdfs:range xsd:boolean .
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "Is abnormally low"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#isAbnormallyLowJustification
 :isAbnormallyLowJustification rdf:type owl:DatatypeProperty ;
                               rdfs:domain :EvaluationResult ;
-                              rdfs:range xsd:string .
+                              rdfs:range xsd:string ;
+                              rdfs:label "Is abnormally low justification"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#reviewDeadlineDescription
@@ -1835,7 +1909,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#AwardResult
-:AwardResult rdf:type owl:Class .
+:AwardResult rdf:type owl:Class ;
+             rdfs:label "Award result"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#BuyerProfile
@@ -2032,7 +2107,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#EvaluationResult
-:EvaluationResult rdf:type owl:Class .
+:EvaluationResult rdf:type owl:Class ;
+                  rdfs:label "Evaluation result"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#Evidence
@@ -2057,12 +2133,13 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#FrameworkAgreement
-:FrameworkAgreement rdf:type owl:Class .
+:FrameworkAgreement rdf:type owl:Class ;
+                    rdfs:label "Framework agreement"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#FrameworkAgreementTypeCode
-:FrameworkAgreementTypeCode rdf:type owl:Class ;
-                            rdfs:subClassOf ccts:Code .
+###  http://data.europa.eu/ePO/ontology#FrameworkAgreementType
+:FrameworkAgreementType rdf:type owl:Class ;
+                        rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#FundsIdentification
@@ -2105,6 +2182,12 @@ ccts:time rdf:type rdfs:Datatype .
 :Lot rdf:type owl:Class ;
      rdfs:subClassOf :ProcurementProject ;
      owl:disjointWith :ProcurementProcedure .
+
+
+###  http://data.europa.eu/ePO/ontology#NUTS
+:NUTS rdf:type owl:Class ;
+      rdfs:subClassOf ccts:Code ;
+      rdfs:label "Nomenclature of Territorial Units for Statistics"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#Notice
@@ -2200,7 +2283,8 @@ ccts:time rdf:type rdfs:Datatype .
 
 
 ###  http://data.europa.eu/ePO/ontology#Purpose
-:Purpose rdf:type owl:Class .
+:Purpose rdf:type owl:Class ;
+         rdfs:label "Purpose"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#RequestForParticipation
@@ -2326,7 +2410,7 @@ ccts:Code rdf:type owl:Class ;
                                 :EORoleType
                                 :EvaluationBoardCodeType
                                 :EvaluationMethodType
-                                :FrameworkAgreementTypeCode
+                                :FrameworkAgreementType
                                 :IdentifierProvider
                                 :JointProcurementEntityRoleType
                                 :JurisdictionalCompetenceLevelCodeType
@@ -2816,16 +2900,16 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#PARTLY_WITHOUT_REOPENING_COMPETITION
 :PARTLY_WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                               :FrameworkAgreementTypeCode ;
-                                      dcterms:title "Framework agreement partly without reopening" ;
-                                      rdfs:label "PARTLY_WITHOUT_REOPENING_COMPETITION" .
+                                               :FrameworkAgreementType ;
+                                      rdfs:label "Framework agreement partly without reopening"@en ,
+                                                 "PARTLY_WITHOUT_REOPENING_COMPETITION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#PARTLY_WITH_REOPENING_COMPETITION
 :PARTLY_WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                            :FrameworkAgreementTypeCode ;
-                                   dcterms:title "Framework agreement partly with reopening" ;
-                                   rdfs:label "PARTLY_WITH_REOPENING_COMPETITION" .
+                                            :FrameworkAgreementType ;
+                                   rdfs:label "Framework agreement partly with reopening"@en ,
+                                              "PARTLY_WITH_REOPENING_COMPETITION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#PASSFAIL
@@ -3003,16 +3087,16 @@ ccts:Identifier rdf:type owl:Class .
 
 ###  http://data.europa.eu/ePO/ontology#WITHOUT_REOPENING_COMPETITION
 :WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                        :FrameworkAgreementTypeCode ;
-                               dcterms:title "Framework agreement without reopening of competition" ;
-                               rdfs:label "WITHOUT_REOPENING_COMPETITION" .
+                                        :FrameworkAgreementType ;
+                               rdfs:label "Framework agreement without reopening of competition"@en ,
+                                          "WITHOUT_REOPENING_COMPETITION" .
 
 
-###  http://data.europa.eu/ePO/ontology#WIT_REOPENING_COMPETITION
-:WIT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                    :FrameworkAgreementTypeCode ;
-                           dcterms:title "Framework agreement with reopening of competition" ;
-                           rdfs:label "WIT_REOPENING_COMPETITION" .
+###  http://data.europa.eu/ePO/ontology#WITH_REOPENING_COMPETITION
+:WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
+                                     :FrameworkAgreementType ;
+                            rdfs:label "Framework agreement with reopening of competition"@en ,
+                                       "WITH_REOPENING_COMPETITION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#WORKS
@@ -3022,17 +3106,30 @@ ccts:Identifier rdf:type owl:Class .
        rdfs:label "WORKS" .
 
 
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                    foaf:name "Enric Staromiejski" ,
+                                              "Laia Bota" ,
+                                              "Maria Font"
+                                  ]
+] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
 #################################################################
 #    General axioms
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :ContractAwardNotice
-                :ContractModificationNotice
-                :ContractNotice
-                :PriorInformationNotice
-              )
-] .
+   owl:members ( :ContractAwardNotice
+                 :ContractModificationNotice
+                 :ContractNotice
+                 :PriorInformationNotice
+               )
+ ] .
 
 
 [ rdf:type owl:AllDisjointProperties ;
