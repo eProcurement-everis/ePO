@@ -4,6 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rov: <http://www.w3.org/ns/regorg#> .
+@prefix ubl: <http://docs.oasis-open.org/ubl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ccev: <https://joinup.ec.europa.eu/node/157823/> .
@@ -13,26 +14,27 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix epo-rd: <http://data.europa.eu/ePO/referencedata#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://data.europa.eu/ePO/ontology> .
 
 <http://data.europa.eu/ePO/ontology> rdf:type owl:Ontology ;
                                       owl:versionIRI <http://data.europa.eu/ePO/ontology/2.0.0> ;
-                                      rdfs:label "eProcurement Ontology (ePO)"@en ;
-                                      owl:versionInfo "2.0.0" ;
-                                      dcterms:created "2018-06-25T00:00:00"^^xsd:dateTime ;
                                       dcterms:creator [ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
                                                                                           foaf:name "The Publications Office of the European Union"@en ,
                                                                                                     "Unit C2"@en
                                                                                         ]
                                                       ] ;
-                                      dcterms:title "eProcurement Ontology (ePO)"@en ;
+                                      rdfs:label "eProcurement Ontology (ePO)"@en ;
+                                      owl:versionInfo "2.0.0" ;
+                                      dcterms:created "2018-06-25T00:00:00"^^xsd:dateTime ;
                                       dcterms:creator [ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
                                                                                           foaf:name "Enric Staromiejski" ,
                                                                                                     "Laia Bota" ,
                                                                                                     "Maria Font"
                                                                                         ]
-                                                      ] .
+                                                      ] ;
+                                      dcterms:title "eProcurement Ontology (ePO)"@en .
 
 #################################################################
 #    Annotation properties
@@ -246,14 +248,6 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:label "Groups as an economic operator"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#hasAcceleratedProcedureType
-:hasAcceleratedProcedureType rdf:type owl:ObjectProperty ;
-                             rdfs:domain :ProcurementProcedure ;
-                             rdfs:range :AcceleratedProcedureJustificationType ;
-                             rdfs:comment "A procurement procedure where the time limit for receipt of tenders can be reduced due to a state of urgency." ;
-                             rdfs:label "Uses accelerated procedure type" .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasAccessTool
 :hasAccessTool rdf:type owl:ObjectProperty ;
                rdfs:domain :ProcurementProcedure ;
@@ -304,7 +298,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasCPVType
 :hasCPVType rdf:type owl:ObjectProperty ;
             rdfs:domain :Purpose ;
-            rdfs:range :CPVCodeType ;
+            rdfs:range epo-rd:CPVType ;
             rdfs:label "has CPV type"@en .
 
 
@@ -319,15 +313,8 @@ xsd:date rdf:type rdfs:Datatype .
 :hasContractEstimatedDuration rdf:type owl:ObjectProperty ,
                                        owl:FunctionalProperty ;
                               rdfs:domain :Purpose ;
-                              rdfs:range :Period ;
+                              rdfs:range ubl:Period ;
                               rdfs:label "has contract estimated duration"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#hasContractModificationType
-:hasContractModificationType rdf:type owl:ObjectProperty ;
-                             rdfs:domain :ContractModification ;
-                             rdfs:range :ContractModificationType ;
-                             rdfs:label "Uses contract modification type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasContractPurpose
@@ -347,15 +334,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasContractValidityPeriod
 :hasContractValidityPeriod rdf:type owl:ObjectProperty ;
                            rdfs:domain :ContractModification ;
-                           rdfs:range :Period ;
+                           rdfs:range ubl:Period ;
                            rdfs:label "Contract validity period"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#hasCriterionGroupPropertyType
-:hasCriterionGroupPropertyType rdf:type owl:ObjectProperty ;
-                               rdfs:domain :CriterionPropertyGroup ;
-                               rdfs:range :CriterionGroupPropertyType ;
-                               rdfs:label "has criterion group property type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasCriterionIdentifier
@@ -406,7 +386,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasDeliveryCountry
 :hasDeliveryCountry rdf:type owl:ObjectProperty ;
                     rdfs:domain :ContractTerms ;
-                    rdfs:range :CountryType ;
+                    rdfs:range euvoc:Country ;
                     rdfs:label "has delivery country"@en .
 
 
@@ -477,7 +457,7 @@ xsd:date rdf:type rdfs:Datatype .
 :hasFrameworkAgreementDuration rdf:type owl:ObjectProperty ,
                                         owl:FunctionalProperty ;
                                rdfs:domain :FrameworkAgreement ;
-                               rdfs:range :Period ;
+                               rdfs:range ubl:Period ;
                                rdfs:label "has framework agreement duration"@en .
 
 
@@ -503,20 +483,6 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "has financial account identifier"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#hasJointProcurementEntityRoleType
-:hasJointProcurementEntityRoleType rdf:type owl:ObjectProperty ;
-                                   rdfs:domain :ProcuringEntity ;
-                                   rdfs:range :JointProcurementEntityRoleType ;
-                                   rdfs:label "has joint procurement entity role type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#hasJurisdictionalCompetenceLevelType
-:hasJurisdictionalCompetenceLevelType rdf:type owl:ObjectProperty ;
-                                      rdfs:domain :ProcuringEntity ;
-                                      rdfs:range :JurisdictionalCompetenceLevelCodeType ;
-                                      rdfs:label "has jurisdictional competence level type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasLegalBasis
 :hasLegalBasis rdf:type owl:ObjectProperty ;
                rdfs:domain :Criterion ,
@@ -525,18 +491,18 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "has legal basis"@en .
 
 
+###  http://data.europa.eu/ePO/ontology#hasLegalIdentifier
+:hasLegalIdentifier rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Legislation ;
+                    rdfs:range epo-rd:LegalBasisIdentifier ;
+                    rdfs:label "has legal identifier"@en .
+
+
 ###  http://data.europa.eu/ePO/ontology#hasLotMaxNumber
 :hasLotMaxNumber rdf:type owl:ObjectProperty ;
                  rdfs:domain :TenderSubmissionTerms ;
                  rdfs:range ccts:Quantity ;
                  rdfs:label "has lot max number"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#hasMainActivityTaxonomy
-:hasMainActivityTaxonomy rdf:type owl:ObjectProperty ;
-                         rdfs:domain :ProcuringEntity ;
-                         rdfs:range :ProcuringEntityActivityTaxonomy ;
-                         rdfs:label "has main activity taxonomy"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#hasMaximumAmount
@@ -584,7 +550,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasNegotiatedProcedureJustificationType
 :hasNegotiatedProcedureJustificationType rdf:type owl:ObjectProperty ;
                                          rdfs:domain :ContractAwardNotice ;
-                                         rdfs:range :NegotiatedProcedureJustificationType ;
+                                         rdfs:range epo-rd:NegotiatedProcedureJustificationType ;
                                          rdfs:label "has negotiated procedure justification type"@en .
 
 
@@ -598,7 +564,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasPlacePerformance
 :hasPlacePerformance rdf:type owl:ObjectProperty ;
                      rdfs:domain :Purpose ;
-                     rdfs:range :NUTS ;
+                     rdfs:range epo-rd:NUTS ;
                      rdfs:label "has place of performance"@en .
 
 
@@ -625,13 +591,6 @@ xsd:date rdf:type rdfs:Datatype .
                         rdfs:label "has procurement document"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#hasProcurementProcedureType
-:hasProcurementProcedureType rdf:type owl:ObjectProperty ;
-                             rdfs:domain :ProcurementProcedure ;
-                             rdfs:range :ProcurementProcedureCodeType ;
-                             rdfs:label "has procurement procedure type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasProcurementProjectIdentifier
 :hasProcurementProjectIdentifier rdf:type owl:ObjectProperty ;
                                  rdfs:domain :ProcurementProject ;
@@ -655,20 +614,6 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:label "has procuring entity"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#hasProcuringEntityRoleType
-:hasProcuringEntityRoleType rdf:type owl:ObjectProperty ;
-                            rdfs:domain :ProcuringEntity ;
-                            rdfs:range :ProcuringEntityRoleType ;
-                            rdfs:label "has procuring entity role type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#hasProcuringEntityType
-:hasProcuringEntityType rdf:type owl:ObjectProperty ;
-                        rdfs:domain :ProcuringEntity ;
-                        rdfs:range :ProcuringEntityType ;
-                        rdfs:label "has procuring entity type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#hasPurpose
 :hasPurpose rdf:type owl:ObjectProperty ;
             rdfs:domain :ProcurementProject ;
@@ -686,7 +631,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasReservedContract
 :hasReservedContract rdf:type owl:ObjectProperty ;
                      rdfs:domain :ContractTerms ;
-                     rdfs:range :ReservedContractCodeType ;
+                     rdfs:range epo-rd:ReservedContractType ;
                      rdfs:label "has reserved contract type"@en .
 
 
@@ -745,7 +690,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasSubmissionLanguage
 :hasSubmissionLanguage rdf:type owl:ObjectProperty ;
                        rdfs:domain :TenderSubmissionTerms ;
-                       rdfs:range :LanguageCodeType ;
+                       rdfs:range euvoc:Language ;
                        rdfs:label "has submission language"@en .
 
 
@@ -809,7 +754,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#hasValuePeriod
 :hasValuePeriod rdf:type owl:ObjectProperty ;
                 rdfs:domain :CriterionPropertyDatum ;
-                rdfs:range :Period ;
+                rdfs:range ubl:Period ;
                 rdfs:label "has criterion property datum period"@en .
 
 
@@ -928,6 +873,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#maxAllowedLots
 :maxAllowedLots rdf:type owl:ObjectProperty ;
                 rdfs:domain :TenderSubmissionTerms ;
+                rdfs:range epo-rd:BidType ;
                 rdfs:label "max allowed lots"@en .
 
 
@@ -1183,7 +1129,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#underProcurementRegime
 :underProcurementRegime rdf:type owl:ObjectProperty ;
                         rdfs:domain :ProcurementProcedure ;
-                        rdfs:range :ProcurementRegimeCodeType ;
+                        rdfs:range epo-rd:ProcurementRegimeType ;
                         rdfs:label "under procurement regime"@en .
 
 
@@ -1195,39 +1141,68 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:label "Used to evaluate"@en .
 
 
+###  http://data.europa.eu/ePO/ontology#usesAcceleratedProcedureType
+:usesAcceleratedProcedureType rdf:type owl:ObjectProperty ;
+                              rdfs:domain :ProcurementProcedure ;
+                              rdfs:range epo-rd:AcceleratedProcedureJustificationType ;
+                              rdfs:comment "A procurement procedure where the time limit for receipt of tenders can be reduced due to a state of urgency." ;
+                              rdfs:label "Uses accelerated procedure type" .
+
+
 ###  http://data.europa.eu/ePO/ontology#usesAccountFormatType
 :usesAccountFormatType rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain :FinancialAccount ;
-                       rdfs:range :AccountFormatType ;
+                       rdfs:range epo-rd:AccountFormatType ;
                        rdfs:label "Uses account format type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesAccountType
 :usesAccountType rdf:type owl:ObjectProperty ;
                  rdfs:domain :FinancialAccount ;
-                 rdfs:range :AccountType ;
+                 rdfs:range epo-rd:AccountType ;
                  rdfs:label "Uses account type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesConfidentialityLevelType
+:usesConfidentialityLevelType rdf:type owl:ObjectProperty ;
+                              rdfs:domain :Evidence ;
+                              rdfs:range epo-rd:ConfidentialityLevelType ;
+                              rdfs:label "uses confidentiality level type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesContractModificationType
+:usesContractModificationType rdf:type owl:ObjectProperty ;
+                              rdfs:domain :ContractModification ;
+                              rdfs:range epo-rd:ContractModificationType ;
+                              rdfs:label "uses contract modification type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesContractNatureType
 :usesContractNatureType rdf:type owl:ObjectProperty ;
                         rdfs:domain :Purpose ;
-                        rdfs:range :ContractNatureType ;
+                        rdfs:range epo-rd:ContractNatureType ;
                         rdfs:label "Uses contract nature type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesCountryType
 :usesCountryType rdf:type owl:ObjectProperty ;
                  rdfs:domain :FinancialAccount ;
-                 rdfs:range :CountryType ;
+                 rdfs:range euvoc:Country ;
                  rdfs:label "Uses country type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesCriterionGroupPropertyType
+:usesCriterionGroupPropertyType rdf:type owl:ObjectProperty ;
+                                rdfs:domain :CriterionPropertyGroup ;
+                                rdfs:range epo-rd:CriterionGroupPropertyType ;
+                                rdfs:label "uses criterion group property type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesCriterionTaxonomy
 :usesCriterionTaxonomy rdf:type owl:ObjectProperty ;
                        rdfs:domain :Criterion ;
-                       rdfs:range :CriterionTaxonomy ;
+                       rdfs:range epo-rd:CriterionTaxonomy ;
                        rdfs:label "Uses criterion taxonomy"@en .
 
 
@@ -1241,50 +1216,92 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#usesEOGroupType
 :usesEOGroupType rdf:type owl:ObjectProperty ;
                  rdfs:domain :EconomicOperator ;
-                 rdfs:range :EOGroupType ;
+                 rdfs:range epo-rd:EOGroupType ;
                  rdfs:label "Uses economic operator group type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesEOIndustryClassificationType
 :usesEOIndustryClassificationType rdf:type owl:ObjectProperty ;
                                   rdfs:domain :EconomicOperator ;
-                                  rdfs:range :EOIndustryClassificationType ;
+                                  rdfs:range epo-rd:EOIndustryClassificationType ;
                                   rdfs:label "Uses economic operator classification type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesEORoleType
 :usesEORoleType rdf:type owl:ObjectProperty ;
                 rdfs:domain :EconomicOperator ;
-                rdfs:range :EORoleType ;
+                rdfs:range epo-rd:EORoleType ;
                 rdfs:label "Uses economic operator role type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesEvaluationBoardType
 :usesEvaluationBoardType rdf:type owl:ObjectProperty ;
                          rdfs:domain :EvaluationBoard ;
-                         rdfs:range :EvaluationBoardType ;
+                         rdfs:range epo-rd:EvaluationBoardType ;
                          rdfs:label "Uses evaluation board type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesEvaluationMethodType
 :usesEvaluationMethodType rdf:type owl:ObjectProperty ;
                           rdfs:domain :Criterion ;
-                          rdfs:range :EvaluationMethodType ;
+                          rdfs:range epo-rd:EvaluationMethodType ;
                           rdfs:label "Uses evaluation method type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesFrameworkAgreementType
 :usesFrameworkAgreementType rdf:type owl:ObjectProperty ;
                             rdfs:domain :FrameworkAgreement ;
-                            rdfs:range :FrameworkAgreementType ;
+                            rdfs:range epo-rd:FrameworkAgreementType ;
                             rdfs:label "Uses framework agreement type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesJointProcurementEntityRoleType
+:usesJointProcurementEntityRoleType rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :ProcuringEntity ;
+                                    rdfs:range epo-rd:JointProcurementEntityRoleType ;
+                                    rdfs:label "uses joint procurement entity role type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesJurisdictionalCompetenceLevelType
+:usesJurisdictionalCompetenceLevelType rdf:type owl:ObjectProperty ;
+                                       rdfs:domain :ProcuringEntity ;
+                                       rdfs:range epo-rd:JurisdictionalCompetenceLevelType ;
+                                       rdfs:label "uses jurisdictional competence level type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesMainActivityTaxonomy
+:usesMainActivityTaxonomy rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ProcuringEntity ;
+                          rdfs:range epo-rd:MainActivityTaxonomy ;
+                          rdfs:label "uses main activity taxonomy"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#usesPriorInformationNoticeType
 :usesPriorInformationNoticeType rdf:type owl:ObjectProperty ;
                                 rdfs:domain :PriorInformationNotice ;
-                                rdfs:range :PriorInformationNoticeType ;
+                                rdfs:range epo-rd:PriorInformationNoticeType ;
                                 rdfs:label "Uses prior information notice type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesProcurementProcedureType
+:usesProcurementProcedureType rdf:type owl:ObjectProperty ;
+                              rdfs:domain :ProcurementProcedure ;
+                              rdfs:range epo-rd:ProcurementProcedureType ;
+                              rdfs:label "uses procurement procedure type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesProcuringEntityRoleType
+:usesProcuringEntityRoleType rdf:type owl:ObjectProperty ;
+                             rdfs:domain :ProcuringEntity ;
+                             rdfs:range epo-rd:ProcuringEntityRoleType ;
+                             rdfs:label "uses procuring entity role type"@en .
+
+
+###  http://data.europa.eu/ePO/ontology#usesProcuringEntityType
+:usesProcuringEntityType rdf:type owl:ObjectProperty ;
+                         rdfs:domain :ProcuringEntity ;
+                         rdfs:range epo-rd:ProcuringEntityType ;
+                         rdfs:label "uses procuring entity type"@en .
 
 
 #################################################################
@@ -1988,27 +2005,12 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://data.europa.eu/ePO/ontology#AcceleratedProcedureJustificationType
-:AcceleratedProcedureJustificationType rdf:type owl:Class ;
-                                       rdfs:subClassOf ccts:Code ;
-                                       rdfs:comment "A procurement procedure where the time limit for receipt of tenders can be reduced due to a state of urgency."@en ;
-                                       rdfs:label "Accelerated procedure justification type"@en .
+:AcceleratedProcedureJustificationType rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#AccessTool
 :AccessTool rdf:type owl:Class ;
             rdfs:label "Access Tool"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#AccountFormatType
-:AccountFormatType rdf:type owl:Class ;
-                   rdfs:subClassOf ccts:Code ;
-                   rdfs:label "Account format type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#AccountType
-:AccountType rdf:type owl:Class ;
-             rdfs:subClassOf ccts:Code ;
-             rdfs:label "Account type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#AdditionalDocument
@@ -2050,12 +2052,6 @@ xsd:date rdf:type rdfs:Datatype .
 :BuyerProfile rdf:type owl:Class ;
               rdfs:comment "Website address where the buyer publishes information on its procurement procedures and general information."@en ;
               rdfs:label "Buyer Profile"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#CPVCodeType
-:CPVCodeType rdf:type owl:Class ;
-             rdfs:subClassOf ccts:Code ;
-             rdfs:comment "The CPV establishes a single classification system for public procurement aimed at standardising the references used by procuring entities to describe the purpose of procurement contracts and procurement projects."@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CallExpressionOfInterest
@@ -2102,18 +2098,6 @@ xsd:date rdf:type rdfs:Datatype .
                             rdfs:label "Contract Modification Notice"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#ContractModificationType
-:ContractModificationType rdf:type owl:Class ;
-                          rdfs:subClassOf ccts:Code ;
-                          rdfs:label "Contract modification type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#ContractNatureType
-:ContractNatureType rdf:type owl:Class ;
-                    rdfs:subClassOf ccts:Code ;
-                    rdfs:label "Contract nature type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#ContractNotice
 :ContractNotice rdf:type owl:Class ;
                 rdfs:subClassOf :Notice ;
@@ -2126,23 +2110,10 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:label "Contract Terms"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#CountryType
-:CountryType rdf:type owl:Class ;
-             rdfs:subClassOf ccts:Code ;
-             rdfs:comment "A country is one of the political units which the world is divided into, covering a particular area of land."@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#Criterion
 :Criterion rdf:type owl:Class ;
            rdfs:comment "A condition that needs to be answered for evaluation purposes."@en ;
            rdfs:label "Criterion"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#CriterionGroupPropertyType
-:CriterionGroupPropertyType rdf:type owl:Class ;
-                            rdfs:subClassOf ccts:Code ;
-                            rdfs:comment "A code categorising the data structure category, how to use or process it, etc."@en ;
-                            rdfs:label "Criterion group property type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CriterionProperty
@@ -2164,13 +2135,6 @@ xsd:date rdf:type rdfs:Datatype .
                         rdfs:label "Criterion property group"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#CriterionTaxonomy
-:CriterionTaxonomy rdf:type owl:Class ;
-                   rdfs:subClassOf ccts:Code ;
-                   rdfs:comment "A code signifying the type of criterion."@en ;
-                   rdfs:label "Criterion Taxonomy"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#DescriptiveDocument
 :DescriptiveDocument rdf:type owl:Class ;
                      rdfs:subClassOf :ProcurementDocument ;
@@ -2189,24 +2153,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://data.europa.eu/ePO/ontology#DynamicPurchaseSystem
 :DynamicPurchaseSystem rdf:type owl:Class ;
                        rdfs:subClassOf :Technique .
-
-
-###  http://data.europa.eu/ePO/ontology#EOGroupType
-:EOGroupType rdf:type owl:Class ;
-             rdfs:subClassOf ccts:Code ;
-             rdfs:label "Economic operator group type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#EOIndustryClassificationType
-:EOIndustryClassificationType rdf:type owl:Class ;
-                              rdfs:subClassOf ccts:Code ;
-                              rdfs:label "Economic operator classification type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#EORoleType
-:EORoleType rdf:type owl:Class ;
-            rdfs:subClassOf ccts:Code ;
-            rdfs:label "Economic operator role type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#ESPDRequest
@@ -2231,17 +2177,6 @@ xsd:date rdf:type rdfs:Datatype .
 :EvaluationBoard rdf:type owl:Class ;
                  rdfs:subClassOf foaf:Group ;
                  rdfs:label "Evaluation board"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#EvaluationBoardType
-:EvaluationBoardType rdf:type owl:Class ;
-                     rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#EvaluationMethodType
-:EvaluationMethodType rdf:type owl:Class ;
-                      rdfs:subClassOf ccts:Code ;
-                      rdfs:label "Evaluation method type"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#EvaluationResult
@@ -2277,41 +2212,15 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:label "Framework agreement"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#FrameworkAgreementType
-:FrameworkAgreementType rdf:type owl:Class ;
-                        rdfs:subClassOf ccts:Code ;
-                        rdfs:label "Framework agreement type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#FundsIdentification
 :FundsIdentification rdf:type owl:Class ;
                      rdfs:label "Funds Identification"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#IdentifierProvider
-:IdentifierProvider rdf:type owl:Class ;
-                    rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#InvitationToTender
 :InvitationToTender rdf:type owl:Class ;
                     rdfs:subClassOf :ProcurementDocument ;
                     rdfs:label "Invitation to Tender"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#JointProcurementEntityRoleType
-:JointProcurementEntityRoleType rdf:type owl:Class ;
-                                rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#JurisdictionalCompetenceLevelCodeType
-:JurisdictionalCompetenceLevelCodeType rdf:type owl:Class ;
-                                       rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#LanguageCodeType
-:LanguageCodeType rdf:type owl:Class ;
-                  rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#Legislation
@@ -2326,26 +2235,10 @@ xsd:date rdf:type rdfs:Datatype .
      rdfs:label "Lot"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#NUTS
-:NUTS rdf:type owl:Class ;
-      rdfs:subClassOf ccts:Code ;
-      rdfs:label "Nomenclature of Territorial Units for Statistics"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#NegotiatedProcedureJustificationType
-:NegotiatedProcedureJustificationType rdf:type owl:Class ;
-                                      rdfs:subClassOf ccts:Code ;
-                                      rdfs:label "Negotiated procedure justification type"@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#Notice
 :Notice rdf:type owl:Class ;
         rdfs:subClassOf :ProcurementDocument ;
         rdfs:label "Notice"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#Period
-:Period rdf:type owl:Class .
 
 
 ###  http://data.europa.eu/ePO/ontology#PreAwardCatalogue
@@ -2364,17 +2257,6 @@ xsd:date rdf:type rdfs:Datatype .
 :PriorInformationNotice rdf:type owl:Class ;
                         rdfs:subClassOf :Notice ;
                         rdfs:label "Prior Information Notice"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#PriorInformationNoticeType
-:PriorInformationNoticeType rdf:type owl:Class ;
-                            rdfs:subClassOf ccts:Code ;
-                            rdfs:label "Prior information notice type"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#ProcedureChoiceJustificationCode
-:ProcedureChoiceJustificationCode rdf:type owl:Class ;
-                                  rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcedureStatistics
@@ -2410,23 +2292,12 @@ xsd:date rdf:type rdfs:Datatype .
                       rdfs:label "Procurement Procedure"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#ProcurementProcedureCodeType
-:ProcurementProcedureCodeType rdf:type owl:Class ;
-                              rdfs:subClassOf ccts:Code ;
-                              rdfs:comment "The nature of what is acquired."@en .
-
-
 ###  http://data.europa.eu/ePO/ontology#ProcurementProject
 :ProcurementProject rdf:type owl:Class ;
                     owl:disjointUnionOf ( :Lot
                                           :ProcurementProcedure
                                         ) ;
                     rdfs:label "Procurement Project"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#ProcurementRegimeCodeType
-:ProcurementRegimeCodeType rdf:type owl:Class ;
-                           rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#ProcurementValue
@@ -2440,21 +2311,6 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:label "Procuring Entity"@en .
 
 
-###  http://data.europa.eu/ePO/ontology#ProcuringEntityActivityTaxonomy
-:ProcuringEntityActivityTaxonomy rdf:type owl:Class ;
-                                 rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#ProcuringEntityRoleType
-:ProcuringEntityRoleType rdf:type owl:Class ;
-                         rdfs:subClassOf ccts:Code .
-
-
-###  http://data.europa.eu/ePO/ontology#ProcuringEntityType
-:ProcuringEntityType rdf:type owl:Class ;
-                     rdfs:subClassOf ccts:Code .
-
-
 ###  http://data.europa.eu/ePO/ontology#Purpose
 :Purpose rdf:type owl:Class ;
          rdfs:label "Purpose"@en .
@@ -2464,11 +2320,6 @@ xsd:date rdf:type rdfs:Datatype .
 :RequestForParticipation rdf:type owl:Class ;
                          rdfs:subClassOf :Document ;
                          rdfs:label "Request for participation"@en .
-
-
-###  http://data.europa.eu/ePO/ontology#ReservedContractCodeType
-:ReservedContractCodeType rdf:type owl:Class ;
-                          rdfs:subClassOf ccts:Code .
 
 
 ###  http://data.europa.eu/ePO/ontology#ReviewTerms
@@ -2564,8 +2415,132 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:subClassOf :Technique .
 
 
+###  http://data.europa.eu/ePO/referencedata#AcceleratedProcedureJustificationType
+epo-rd:AcceleratedProcedureJustificationType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#AccountFormatType
+epo-rd:AccountFormatType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#AccountType
+epo-rd:AccountType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#BidType
+epo-rd:BidType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#CPVType
+epo-rd:CPVType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ConfidentialityLevelType
+epo-rd:ConfidentialityLevelType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ContractModificationType
+epo-rd:ContractModificationType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ContractNatureType
+epo-rd:ContractNatureType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#CriterionGroupPropertyType
+epo-rd:CriterionGroupPropertyType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#CriterionTaxonomy
+epo-rd:CriterionTaxonomy rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#EOGroupType
+epo-rd:EOGroupType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#EOIndustryClassificationType
+epo-rd:EOIndustryClassificationType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#EORoleType
+epo-rd:EORoleType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#EvaluationBoardType
+epo-rd:EvaluationBoardType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#EvaluationMethodType
+epo-rd:EvaluationMethodType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#FrameworkAgreementType
+epo-rd:FrameworkAgreementType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#JointProcurementEntityRoleType
+epo-rd:JointProcurementEntityRoleType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#JurisdictionalCompetenceLevelType
+epo-rd:JurisdictionalCompetenceLevelType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#LegalBasisIdentifier
+epo-rd:LegalBasisIdentifier rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#MainActivityTaxonomy
+epo-rd:MainActivityTaxonomy rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#NUTS
+epo-rd:NUTS rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#NegotiatedProcedureJustificationType
+epo-rd:NegotiatedProcedureJustificationType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#PriorInformationNoticeType
+epo-rd:PriorInformationNoticeType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ProcurementProcedureType
+epo-rd:ProcurementProcedureType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ProcurementRegimeType
+epo-rd:ProcurementRegimeType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ProcuringEntityRoleType
+epo-rd:ProcuringEntityRoleType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ProcuringEntityType
+epo-rd:ProcuringEntityType rdf:type owl:Class .
+
+
+###  http://data.europa.eu/ePO/referencedata#ReservedContractType
+epo-rd:ReservedContractType rdf:type owl:Class .
+
+
+###  http://docs.oasis-open.org/ubl#Period
+ubl:Period rdf:type owl:Class .
+
+
+###  http://publications.europa.eu/ontology/euvoc#Country
+euvoc:Country rdf:type owl:Class .
+
+
 ###  http://publications.europa.eu/ontology/euvoc#Currency
 euvoc:Currency rdf:type owl:Class .
+
+
+###  http://publications.europa.eu/ontology/euvoc#Language
+euvoc:Language rdf:type owl:Class .
 
 
 ###  http://www.unece.org/cefact#Amount
@@ -2600,18 +2575,12 @@ rov:RegisteredOrganization rdf:type owl:Class .
 foaf:Group rdf:type owl:Class .
 
 
-###  https://github.com/ESPD/ESPD-EDM/LegalForm
-espd:LegalForm rdf:type owl:Class ;
-               rdfs:subClassOf ccts:Code .
-
-
 #################################################################
 #    Individuals
 #################################################################
 
 ###  http://data.europa.eu/ePO/ontology#
-: rdf:type owl:NamedIndividual ,
-           :CPVCodeType ;
+: rdf:type owl:NamedIndividual ;
   dcterms:title "Agricultural and horticultural products" ,
                 "Agricultural, farming, fishing, forestry and related products" ,
                 "Crops, products of market gardening and horticulture" ,
@@ -2625,478 +2594,409 @@ espd:LegalForm rdf:type owl:Class ;
 
 
 ###  http://data.europa.eu/ePO/ontology#AMI
-:AMI rdf:type owl:NamedIndividual ,
-              :ProcurementProcedureCodeType ;
+:AMI rdf:type owl:NamedIndividual ;
      dcterms:title "Call for expressions of interest" ;
      rdfs:label "AMI" .
 
 
 ###  http://data.europa.eu/ePO/ontology#AWARD
-:AWARD rdf:type owl:NamedIndividual ,
-                :ProcurementProcedureCodeType ;
+:AWARD rdf:type owl:NamedIndividual ;
        dcterms:title "Contract awards" ;
        rdfs:label "AWARD" .
 
 
 ###  http://data.europa.eu/ePO/ontology#AWARD_DIRECT
-:AWARD_DIRECT rdf:type owl:NamedIndividual ,
-                       :ProcurementProcedureCodeType ;
+:AWARD_DIRECT rdf:type owl:NamedIndividual ;
               dcterms:title "Direct award" ;
               rdfs:label "AWARD_DIRECT" .
 
 
 ###  http://data.europa.eu/ePO/ontology#BGPL
-:BGPL rdf:type owl:NamedIndividual ,
-               :JurisdictionalCompetenceLevelCodeType ;
+:BGPL rdf:type owl:NamedIndividual ;
       dcterms:title "Body Governed by Public Law" ;
       rdfs:label "BODY_GOVERNED_BY_PUBLIC_LAW" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA
-:CA rdf:type owl:NamedIndividual ,
-             :ProcuringEntityType ;
+:CA rdf:type owl:NamedIndividual ;
     dcterms:title "Contracting Authority with other activities different to the ones of a CE" ;
     rdfs:label "CONTRACTING_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA.DEFENCE
-:CA.DEFENCE rdf:type owl:NamedIndividual ,
-                     :ProcuringEntityActivityTaxonomy ;
+:CA.DEFENCE rdf:type owl:NamedIndividual ;
             dcterms:title "Defence" ;
             rdfs:label "CA.DEFENCE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA.ECONOMIC_AND_FINANCIAL_AFFAIRS
-:CA.ECONOMIC_AND_FINANCIAL_AFFAIRS rdf:type owl:NamedIndividual ,
-                                            :ProcuringEntityActivityTaxonomy ;
+:CA.ECONOMIC_AND_FINANCIAL_AFFAIRS rdf:type owl:NamedIndividual ;
                                    dcterms:title "Economic and Financial Affairs" ;
                                    rdfs:label "CA.ECONOMIC_AND_FINANCIAL_AFFAIRS" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CA.EDUCATION
-:CA.EDUCATION rdf:type owl:NamedIndividual ,
-                       :ProcuringEntityActivityTaxonomy ;
+:CA.EDUCATION rdf:type owl:NamedIndividual ;
               dcterms:title "Education" ;
               rdfs:label "CA.EDUCATION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.CA
-:CE.CA rdf:type owl:NamedIndividual ,
-                :ProcuringEntityType ;
+:CE.CA rdf:type owl:NamedIndividual ;
        dcterms:title "Contracting Entity with CE activities" ;
        rdfs:label "CONTRACTING_AUTHORITY_CE_ACTIVITIES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.ELECTRICITY
-:CE.ELECTRICITY rdf:type owl:NamedIndividual ,
-                         :ProcuringEntityActivityTaxonomy ;
+:CE.ELECTRICITY rdf:type owl:NamedIndividual ;
                 dcterms:title "Electricity" ;
                 rdfs:label "CE.ELECTRICITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.ESER
-:CE.ESER rdf:type owl:NamedIndividual ,
-                  :ProcuringEntityType ;
+:CE.ESER rdf:type owl:NamedIndividual ;
          dcterms:title "Contracting Entity with special or exclusive rights" ;
          rdfs:label "CE_SPECIAL_OR_EXCLUSIVE_RIGHTS" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.PORT_RELATED_ACTIVITIES
-:CE.PORT_RELATED_ACTIVITIES rdf:type owl:NamedIndividual ,
-                                     :ProcuringEntityActivityTaxonomy ;
+:CE.PORT_RELATED_ACTIVITIES rdf:type owl:NamedIndividual ;
                             dcterms:title "Port related activities" ;
                             rdfs:label "CE.PORT_RELATED_ACTIVITIES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.PU
-:CE.PU rdf:type owl:NamedIndividual ,
-                :ProcuringEntityType ;
+:CE.PU rdf:type owl:NamedIndividual ;
        dcterms:title "Public  Undertaking with CE activities" ;
        rdfs:label "PUBLIC_UNDERTAKING_CE_ACTIVITIES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CE.WATER
-:CE.WATER rdf:type owl:NamedIndividual ,
-                   :ProcuringEntityActivityTaxonomy ;
+:CE.WATER rdf:type owl:NamedIndividual ;
           dcterms:title "Water" ;
           rdfs:label "CE.WATER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CGA
-:CGA rdf:type owl:NamedIndividual ,
-              :JurisdictionalCompetenceLevelCodeType ;
+:CGA rdf:type owl:NamedIndividual ;
      dcterms:title "Central Government Authority" ;
      rdfs:label "CENTRAL_GOVERNMENT_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CHANGE_OF_IPC
-:CHANGE_OF_IPC rdf:type owl:NamedIndividual ,
-                        :ContractModificationType ;
+:CHANGE_OF_IPC rdf:type owl:NamedIndividual ;
                dcterms:title "Change of IPC"@en ;
                rdfs:label "Change of IPC"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#COMBINED
-:COMBINED rdf:type owl:NamedIndividual ,
-                   :ContractNatureType ;
+:COMBINED rdf:type owl:NamedIndividual ;
           rdfs:label "Combined"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#COMP_DIALOGUE
-:COMP_DIALOGUE rdf:type owl:NamedIndividual ,
-                        :ProcurementProcedureCodeType ;
+:COMP_DIALOGUE rdf:type owl:NamedIndividual ;
                dcterms:title "Competitive dialogue" ;
                rdfs:label "COMP_DIALOGUE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#COMP_NEGOTIATION
-:COMP_NEGOTIATION rdf:type owl:NamedIndividual ,
-                           :ProcurementProcedureCodeType ;
+:COMP_NEGOTIATION rdf:type owl:NamedIndividual ;
                   dcterms:title "Competitive procedure with negotiation" ;
                   rdfs:label "COMP_NEGOTIATION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONCESSION
-:CONCESSION rdf:type owl:NamedIndividual ,
-                     :ProcurementProcedureCodeType ;
+:CONCESSION rdf:type owl:NamedIndividual ;
             dcterms:title "Concession award procedure" ;
             rdfs:label "CONCESSION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONCESSION_WO_PUB
-:CONCESSION_WO_PUB rdf:type owl:NamedIndividual ,
-                            :ProcurementProcedureCodeType ;
+:CONCESSION_WO_PUB rdf:type owl:NamedIndividual ;
                    dcterms:title "Concession award without prior concession notice" ;
                    rdfs:label "CONCESSION_WO_PUB" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONSORTIUM
-:CONSORTIUM rdf:type owl:NamedIndividual ,
-                     :EOGroupType ;
+:CONSORTIUM rdf:type owl:NamedIndividual ;
             rdfs:comment "Consortium"@en ;
             rdfs:label "CONSORTIUM" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONTESTS_RESULT
-:CONTESTS_RESULT rdf:type owl:NamedIndividual ,
-                          :ProcurementProcedureCodeType ;
+:CONTESTS_RESULT rdf:type owl:NamedIndividual ;
                  dcterms:title "Results of design contests" ;
                  rdfs:label "CONTESTS_RESULT" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONTRACT_DEADLINE_EXTENSION
-:CONTRACT_DEADLINE_EXTENSION rdf:type owl:NamedIndividual ,
-                                      :ContractModificationType ;
+:CONTRACT_DEADLINE_EXTENSION rdf:type owl:NamedIndividual ;
                              dcterms:title "Contract deadline extension"@en ;
                              rdfs:label "Contract deadline extension"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONTRACT_RENEWAL
-:CONTRACT_RENEWAL rdf:type owl:NamedIndividual ,
-                           :ContractModificationType ;
+:CONTRACT_RENEWAL rdf:type owl:NamedIndividual ;
                   dcterms:title "Contract renewal"@en ;
                   rdfs:label "Contract renewal"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CONTRACT_SCOPE_CHANGE
-:CONTRACT_SCOPE_CHANGE rdf:type owl:NamedIndividual ,
-                                :ContractModificationType ;
+:CONTRACT_SCOPE_CHANGE rdf:type owl:NamedIndividual ;
                        dcterms:title "Contract Scope Change"@en ;
                        rdfs:label "Contract Scope Change"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CON_PUBLIC_WORKS
-:CON_PUBLIC_WORKS rdf:type owl:NamedIndividual ,
-                           :ContractNatureType ;
+:CON_PUBLIC_WORKS rdf:type owl:NamedIndividual ;
                   rdfs:label "Public Works Concession"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CON_SERVICE
-:CON_SERVICE rdf:type owl:NamedIndividual ,
-                      :ContractNatureType ;
+:CON_SERVICE rdf:type owl:NamedIndividual ;
              rdfs:label "Service Concession"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CPB
-:CPB rdf:type owl:NamedIndividual ,
-              :ProcuringEntityRoleType ;
+:CPB rdf:type owl:NamedIndividual ;
      rdfs:comment "A procuring entity that provides centralised purchasing activities and, possibly, ancillary purchasing activities for other procuring entities."@en ;
      rdfs:label "Central purchasing body"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.LOWEST
-:CRITERION.AWARD.LOWEST rdf:type owl:NamedIndividual ,
-                                 :CriterionTaxonomy ;
+:CRITERION.AWARD.LOWEST rdf:type owl:NamedIndividual ;
                         rdfs:comment "Criterion Award Lowest"@en ;
                         rdfs:label "CRITERION.AWARD.LOWEST" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.MIXED
-:CRITERION.AWARD.MIXED rdf:type owl:NamedIndividual ,
-                                :CriterionTaxonomy ;
+:CRITERION.AWARD.MIXED rdf:type owl:NamedIndividual ;
                        rdfs:comment "Criterion Award Mixed"@en ;
                        rdfs:label "CRITERION.AWARD.MIXED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.MOST_ECONOMIC_TENDER
-:CRITERION.AWARD.MOST_ECONOMIC_TENDER rdf:type owl:NamedIndividual ,
-                                               :CriterionTaxonomy ;
+:CRITERION.AWARD.MOST_ECONOMIC_TENDER rdf:type owl:NamedIndividual ;
                                       rdfs:label "CRITERION.AWARD.MOST_ECONOMIC_TENDER" ,
                                                  "Criterion award most economic tender"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.AWARD.OTHER
-:CRITERION.AWARD.OTHER rdf:type owl:NamedIndividual ,
-                                :CriterionTaxonomy ;
+:CRITERION.AWARD.OTHER rdf:type owl:NamedIndividual ;
                        rdfs:comment "Criterion award other"@en ;
                        rdfs:label "CRITERION.AWARD.OTHER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.EXCLUSION
-:CRITERION.EXCLUSION rdf:type owl:NamedIndividual ,
-                              :CriterionTaxonomy ;
+:CRITERION.EXCLUSION rdf:type owl:NamedIndividual ;
                      rdfs:comment "All criterion exclusion"@en ;
                      rdfs:label "CRITERION.EXCLUSION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION
-:CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION rdf:type owl:NamedIndividual ,
-                                                                     :CriterionTaxonomy ;
+:CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION rdf:type owl:NamedIndividual ;
                                                             rdfs:comment "Criterion exclusion conflict of interest misinterpretation"@en ;
                                                             rdfs:label "CRITERION.EXCLUSION.CONFLICT_OF_INTEREST.MISINTERPRETATION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL
-:CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL rdf:type owl:NamedIndividual ,
-                                                         :CriterionTaxonomy ;
+:CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL rdf:type owl:NamedIndividual ;
                                                 rdfs:comment "Criterion exclusion misconduct professional"@en ;
                                                 rdfs:label "CRITERION.EXCLUSION.MISCONDUCT.MC_PROFESSIONAL" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.SELECTION
-:CRITERION.SELECTION rdf:type owl:NamedIndividual ,
-                              :CriterionTaxonomy ;
+:CRITERION.SELECTION rdf:type owl:NamedIndividual ;
                      rdfs:comment "All criterion selection"@en ;
                      rdfs:label "CRITERION.SELECTION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY
-:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY rdf:type owl:NamedIndividual ,
-                                                                                  :CriterionTaxonomy ;
+:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY rdf:type owl:NamedIndividual ;
                                                                          rdfs:comment "Criterion selection economic financial standing turnover general yearly"@en ;
                                                                          rdfs:label "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE
-:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE rdf:type owl:NamedIndividual ,
-                                                                                    :CriterionTaxonomy ;
+:CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE rdf:type owl:NamedIndividual ;
                                                                            rdfs:comment "Criterion selection economic financial standing turnover specific average"@en ;
                                                                            rdfs:label "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#DESIGN_CONTEST
-:DESIGN_CONTEST rdf:type owl:NamedIndividual ,
-                         :ProcurementRegimeCodeType ;
+:DESIGN_CONTEST rdf:type owl:NamedIndividual ;
                 dcterms:title "Design contest" ;
                 rdfs:label "DESIGN_CONTEST" .
 
 
 ###  http://data.europa.eu/ePO/ontology#INFO
-:INFO rdf:type owl:NamedIndividual ,
-               :ProcurementProcedureCodeType ;
+:INFO rdf:type owl:NamedIndividual ;
       dcterms:title "General information" ;
       rdfs:label "INFO" .
 
 
 ###  http://data.europa.eu/ePO/ontology#INNOVATION
-:INNOVATION rdf:type owl:NamedIndividual ,
-                     :ProcurementProcedureCodeType ;
+:INNOVATION rdf:type owl:NamedIndividual ;
             dcterms:title "Innovation partnership" ;
             rdfs:label "INNOVATION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JPL
-:JPL rdf:type owl:NamedIndividual ,
-              :JointProcurementEntityRoleType ;
+:JPL rdf:type owl:NamedIndividual ;
      dcterms:title "Joint Procurement Lead" ;
      rdfs:label "JOINT_PROCUREMENT_LEAD" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JPM
-:JPM rdf:type owl:NamedIndividual ,
-              :JointProcurementEntityRoleType ;
+:JPM rdf:type owl:NamedIndividual ;
      dcterms:title "Joint Procurement Member" ;
      rdfs:label "JOINT_PROCUREMENT_MEMBER" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JURY
-:JURY rdf:type owl:NamedIndividual ,
-               :EvaluationBoardType ;
+:JURY rdf:type owl:NamedIndividual ;
       dcterms:title "Jury evaluation board" ;
       rdfs:label "JURY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#JV
-:JV rdf:type owl:NamedIndividual ,
-             :EOGroupType ;
+:JV rdf:type owl:NamedIndividual ;
     rdfs:comment "Joint Venture"@en ;
     rdfs:label "JOINT_VENTURE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#LA
-:LA rdf:type owl:NamedIndividual ,
-             :JurisdictionalCompetenceLevelCodeType ;
+:LA rdf:type owl:NamedIndividual ;
     dcterms:title "Local Authority" ;
     rdfs:label "LOCAL_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#LARGE
-:LARGE rdf:type owl:NamedIndividual ,
-                :EOIndustryClassificationType ;
+:LARGE rdf:type owl:NamedIndividual ;
        dcterms:title "Non SME, Large Company" ;
        rdfs:label "LARGE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#LE
-:LE rdf:type owl:NamedIndividual ,
-             :EORoleType ;
+:LE rdf:type owl:NamedIndividual ;
     dcterms:title "Lead Entity" ;
     rdfs:label "LEAD_ENTITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#LOV
-:LOV rdf:type owl:NamedIndividual ,
-              :ProcurementProcedureCodeType ;
+:LOV rdf:type owl:NamedIndividual ;
      dcterms:title "Negotiated Procedure for low value contracts" ;
      rdfs:label "LOV" .
 
 
 ###  http://data.europa.eu/ePO/ontology#MEDIUM
-:MEDIUM rdf:type owl:NamedIndividual ,
-                 :EOIndustryClassificationType ;
+:MEDIUM rdf:type owl:NamedIndividual ;
         rdfs:comment "An enterprise which employs between 50 to 250 persons and and whose annual turnover and/or annual balance sheet total is between EUR 10 to 43 million."@en ;
         rdfs:label "Medium Enterprise"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#MICRO
-:MICRO rdf:type owl:NamedIndividual ,
-                :EOIndustryClassificationType ;
+:MICRO rdf:type owl:NamedIndividual ;
        rdfs:comment """An enterprise which employs fewer than 10 persons and
  whose annual turnover and/or annual balance sheet total does not exceed EUR 2 million."""@en ;
        rdfs:label "Micro Enterprise"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#NEGOTIATED
-:NEGOTIATED rdf:type owl:NamedIndividual ,
-                     :ProcurementProcedureCodeType ;
+:NEGOTIATED rdf:type owl:NamedIndividual ;
             dcterms:title "Negotiated procedure" ;
             rdfs:label "NEGOTIATED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#NEGOTIATED_ACCELERATED
-:NEGOTIATED_ACCELERATED rdf:type owl:NamedIndividual ,
-                                 :ProcurementProcedureCodeType ;
+:NEGOTIATED_ACCELERATED rdf:type owl:NamedIndividual ;
                         dcterms:title "Accelerated negotiated procedure" ;
                         rdfs:label "NEGOTIATED_ACCELERATED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#NEGOTIATED_WO_CALL
-:NEGOTIATED_WO_CALL rdf:type owl:NamedIndividual ,
-                             :ProcurementProcedureCodeType ;
+:NEGOTIATED_WO_CALL rdf:type owl:NamedIndividual ;
                     dcterms:title "Negotiated without a prior call for competition" ;
                     rdfs:label "NEGOTIATED_WO_CALL" .
 
 
 ###  http://data.europa.eu/ePO/ontology#NOT_SPECIFIED
-:NOT_SPECIFIED rdf:type owl:NamedIndividual ,
-                        :ProcurementProcedureCodeType ;
+:NOT_SPECIFIED rdf:type owl:NamedIndividual ;
                dcterms:title "Not specified" ;
                rdfs:label "NOT_SPECIFIED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OENRON
-:OENRON rdf:type owl:NamedIndividual ,
-                 :EORoleType ;
+:OENRON rdf:type owl:NamedIndividual ;
         dcterms:title "Other Entity (not relied upon)" ;
         rdfs:label "OTHER_ENTITY_NOT_RELIED_UPON" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OERON
-:OERON rdf:type owl:NamedIndividual ,
-                :EORoleType ;
+:OERON rdf:type owl:NamedIndividual ;
        dcterms:title "Other Entity (relied upon)" ;
        rdfs:label "OTHER_ENTITY_RELIED_UPON" .
 
 
 ###  http://data.europa.eu/ePO/ontology#ON
-:ON rdf:type owl:NamedIndividual ,
-             :CriterionGroupPropertyType ;
+:ON rdf:type owl:NamedIndividual ;
     rdfs:comment "Process the group always"@en ;
     rdfs:label "ON" .
 
 
 ###  http://data.europa.eu/ePO/ontology#ONFALSE
-:ONFALSE rdf:type owl:NamedIndividual ,
-                  :CriterionGroupPropertyType ;
+:ONFALSE rdf:type owl:NamedIndividual ;
          rdfs:comment "Process the group if the previous question was and INDICATOR answered with the value 'false'"@en ;
          rdfs:label "ONFALSE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#ONTRUE
-:ONTRUE rdf:type owl:NamedIndividual ,
-                 :CriterionGroupPropertyType ;
+:ONTRUE rdf:type owl:NamedIndividual ;
         rdfs:comment "Process the group if the previous question was and INDICATOR answered with the value 'true'"@en ;
         rdfs:label "ONTRUE" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OPEN
-:OPEN rdf:type owl:NamedIndividual ,
-               :ProcurementProcedureCodeType ;
+:OPEN rdf:type owl:NamedIndividual ;
       dcterms:title "Open procurement procedure" ;
       rdfs:label "OPEN" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OPEN_RECUR
-:OPEN_RECUR rdf:type owl:NamedIndividual ,
-                     :ProcurementProcedureCodeType ;
+:OPEN_RECUR rdf:type owl:NamedIndividual ;
             dcterms:title "Open procedure with recurring quantities" ;
             rdfs:label "OPEN_RECUR" .
 
 
 ###  http://data.europa.eu/ePO/ontology#OTHER
-:OTHER rdf:type owl:NamedIndividual ,
-                :ContractNatureType ;
+:OTHER rdf:type owl:NamedIndividual ;
        rdfs:label "Other"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#PARTLY_WITHOUT_REOPENING_COMPETITION
-:PARTLY_WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                               :FrameworkAgreementType ;
+:PARTLY_WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ;
                                       rdfs:label "Framework agreement partly without reopening of competition"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#PARTLY_WITH_REOPENING_COMPETITION
-:PARTLY_WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                            :FrameworkAgreementType ;
+:PARTLY_WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ;
                                    rdfs:label "Framework agreement partly with reopening of competition"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#PASSFAIL
-:PASSFAIL rdf:type owl:NamedIndividual ,
-                   :EvaluationMethodType ;
+:PASSFAIL rdf:type owl:NamedIndividual ;
           rdfs:label "Pass or Fail"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#PIN_CALL_COMPETITION
-:PIN_CALL_COMPETITION rdf:type owl:NamedIndividual ,
-                               :PriorInformationNoticeType ;
+:PIN_CALL_COMPETITION rdf:type owl:NamedIndividual ;
                       rdfs:comment "Prior Information Notice Call for Competition"@en ;
                       rdfs:label "PIN_CALL_COMPETITION" .
 
 
 ###  http://data.europa.eu/ePO/ontology#PIN_ONLY
-:PIN_ONLY rdf:type owl:NamedIndividual ,
-                   :PriorInformationNoticeType ;
+:PIN_ONLY rdf:type owl:NamedIndividual ;
           rdfs:comment "Prior Information Notice Only"@en ;
           rdfs:label "PIN_ONLY" .
 
@@ -3108,98 +3008,84 @@ espd:LegalForm rdf:type owl:Class ;
 
 
 ###  http://data.europa.eu/ePO/ontology#PIN_REDUCING_TIME_LIMITS
-:PIN_REDUCING_TIME_LIMITS rdf:type owl:NamedIndividual ,
-                                   :PriorInformationNoticeType ;
+:PIN_REDUCING_TIME_LIMITS rdf:type owl:NamedIndividual ;
                           rdfs:comment "Prior Information Notice to reduce the time limits"@en ;
                           rdfs:label "PIN_REDUCING_TIME_LIMITS" .
 
 
 ###  http://data.europa.eu/ePO/ontology#PRICE_RENEWAL
-:PRICE_RENEWAL rdf:type owl:NamedIndividual ,
-                        :ContractModificationType ;
+:PRICE_RENEWAL rdf:type owl:NamedIndividual ;
                dcterms:title "Price renewal"@en ;
                rdfs:label "Price renewal"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#QUAL
-:QUAL rdf:type owl:NamedIndividual ,
-               :ProcurementProcedureCodeType ;
+:QUAL rdf:type owl:NamedIndividual ;
       dcterms:title "Qualification system" ;
       rdfs:label "QUAL" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RA
-:RA rdf:type owl:NamedIndividual ,
-             :JurisdictionalCompetenceLevelCodeType ;
+:RA rdf:type owl:NamedIndividual ;
     dcterms:title "Regional Authority" ;
     rdfs:label "REGIONAL_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#REGULAR
-:REGULAR rdf:type owl:NamedIndividual ,
-                  :EvaluationBoardType ;
+:REGULAR rdf:type owl:NamedIndividual ;
          dcterms:title "Regular evaluation board" ;
          rdfs:label "REGULAR" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RESTRICTED
-:RESTRICTED rdf:type owl:NamedIndividual ,
-                     :ProcurementProcedureCodeType ;
+:RESTRICTED rdf:type owl:NamedIndividual ;
             dcterms:title "Restricted procurement procedure" ;
             rdfs:label "RESTRICTED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#RESTRICTED_ACCELERATED
-:RESTRICTED_ACCELERATED rdf:type owl:NamedIndividual ,
-                                 :ProcurementProcedureCodeType ;
+:RESTRICTED_ACCELERATED rdf:type owl:NamedIndividual ;
                         dcterms:title "Accelerated restricted procedure" ;
                         rdfs:label "RESTRICTED_ACCELERATED" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SC
-:SC rdf:type owl:NamedIndividual ,
-             :EORoleType ;
+:SC rdf:type owl:NamedIndividual ;
     dcterms:title "Sole Contractor" ;
     rdfs:label "SOLE_CONTRACTOR" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SCA
-:SCA rdf:type owl:NamedIndividual ,
-              :JurisdictionalCompetenceLevelCodeType ;
+:SCA rdf:type owl:NamedIndividual ;
      dcterms:title "Subcentral Government Authority" ;
      rdfs:label "SUBCENTRAL_GROVERNMENT_AUTHORITY" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SERVICES
-:SERVICES rdf:type owl:NamedIndividual ,
-                   :ContractNatureType ;
+:SERVICES rdf:type owl:NamedIndividual ;
           rdfs:label "Services"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#SMALL
-:SMALL rdf:type owl:NamedIndividual ,
-                :EOIndustryClassificationType ;
+:SMALL rdf:type owl:NamedIndividual ;
        rdfs:comment "Fewer than 50 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 10 million."@en ;
        rdfs:label "Small Enterprise"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#SME
-:SME rdf:type owl:NamedIndividual ,
-              :EOIndustryClassificationType ;
+:SME rdf:type owl:NamedIndividual ;
      rdfs:comment "An enterprise which employs fewer than 250 persons and whose annual turnover not exceeding EUR 50 million, and/or an annual balance sheet total not exceeding EUR 43 million."@en ;
      rdfs:label "SME" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SOCIAL_SPECIFIC_SERVICES
-:SOCIAL_SPECIFIC_SERVICES rdf:type owl:NamedIndividual ,
-                                   :ProcurementRegimeCodeType ;
+:SOCIAL_SPECIFIC_SERVICES rdf:type owl:NamedIndividual ;
                           dcterms:title "Social an other specific services" ;
                           rdfs:label "SOCIAL_SPECIFIC_SERVICES" .
 
 
 ###  http://data.europa.eu/ePO/ontology#SP
-:SP rdf:type owl:NamedIndividual ,
-             :ProcuringEntityRoleType ;
+:SP rdf:type owl:NamedIndividual ;
     dcterms:title "Service Provider" ;
     rdfs:label "SERVICE_PROVIDER" .
 
@@ -3211,47 +3097,40 @@ espd:LegalForm rdf:type owl:Class ;
 
 
 ###  http://data.europa.eu/ePO/ontology#SUPPLIES
-:SUPPLIES rdf:type owl:NamedIndividual ,
-                   :ContractNatureType ;
+:SUPPLIES rdf:type owl:NamedIndividual ;
           rdfs:label "Supplies"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#UNDERTAKING
-:UNDERTAKING rdf:type owl:NamedIndividual ,
-                      :EOGroupType ;
+:UNDERTAKING rdf:type owl:NamedIndividual ;
              rdfs:comment "Undertaking"@en ;
              rdfs:label "UNDERTAKING" .
 
 
 ###  http://data.europa.eu/ePO/ontology#VDL
-:VDL rdf:type owl:NamedIndividual ,
-              :ProcurementProcedureCodeType ;
+:VDL rdf:type owl:NamedIndividual ;
      dcterms:title "Vendor's list" ;
      rdfs:label "VDL" .
 
 
 ###  http://data.europa.eu/ePO/ontology#WEIGHTED
-:WEIGHTED rdf:type owl:NamedIndividual ,
-                   :EvaluationMethodType ;
+:WEIGHTED rdf:type owl:NamedIndividual ;
           rdfs:comment "The criterion is weighted"@en ;
           rdfs:label "Weighted"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#WITHOUT_REOPENING_COMPETITION
-:WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                        :FrameworkAgreementType ;
+:WITHOUT_REOPENING_COMPETITION rdf:type owl:NamedIndividual ;
                                rdfs:label "Framework agreement without reopening of competition"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#WITH_REOPENING_COMPETITION
-:WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ,
-                                     :FrameworkAgreementType ;
+:WITH_REOPENING_COMPETITION rdf:type owl:NamedIndividual ;
                             rdfs:label "Framework agreement with reopening of competition"@en .
 
 
 ###  http://data.europa.eu/ePO/ontology#WORKS
-:WORKS rdf:type owl:NamedIndividual ,
-                :ContractNatureType ;
+:WORKS rdf:type owl:NamedIndividual ;
        rdfs:label "Works"@en .
 
 
@@ -3262,62 +3141,6 @@ espd:LegalForm rdf:type owl:Class ;
                                   ]
 ] .
 
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
-                                     foaf:name "Enric Staromiejski" ,
-                                               "Laia Bota" ,
-                                               "Maria Font"
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
-                                     foaf:name "Enric Staromiejski" ,
-                                               "Laia Bota" ,
-                                               "Maria Font"
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
-[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
-                                     foaf:name "The Publications Office of the European Union"@en ,
-                                               "Unit C2"@en
-                                   ]
- ] .
-
 [ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
                                      foaf:name "Enric Staromiejski" ,
                                                "Laia Bota" ,
@@ -3358,6 +3181,158 @@ espd:LegalForm rdf:type owl:Class ;
                                    ]
  ] .
 
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
 [ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
                                      foaf:name "The Publications Office of the European Union"@en ,
                                                "Unit C2"@en
@@ -3384,6 +3359,56 @@ espd:LegalForm rdf:type owl:Class ;
                                    ]
  ] .
 
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
 [ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
                                      foaf:name "Enric Staromiejski" ,
                                                "Laia Bota" ,
@@ -3395,6 +3420,185 @@ espd:LegalForm rdf:type owl:Class ;
                                      foaf:name "Enric Staromiejski" ,
                                                "Laia Bota" ,
                                                "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <http://www.everis.com> ;
+                                     foaf:name "Enric Staromiejski" ,
+                                               "Laia Bota" ,
+                                               "Maria Font"
+                                   ]
+ ] .
+
+[ <http://schema.org/affiliation> [ foaf:homepage <https://publications.europa.eu/en> ;
+                                     foaf:name "The Publications Office of the European Union"@en ,
+                                               "Unit C2"@en
                                    ]
  ] .
 
