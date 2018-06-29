@@ -8,8 +8,7 @@
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 
 SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where { 
-	?contract :refersToLot ?lot.
-    ?lot :hasPurpose ?purpose.
-    ?purpose :hasCPVCode ?cpv.
-    ?contract a :Contract.
+	?contract a :Contract;
+        :hasContractPurpose ?purpose.
+    ?purpose :hasCPVType ?cpv.
 } group by ?cpv order by desc(?number_contracts)

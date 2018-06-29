@@ -10,14 +10,11 @@
 
 PREFIX : <http://data.europa.eu/ePO/ontology#>
 PREFIX rov: <http://www.w3.org/ns/regorg#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select (count(?Award_Date) as ?NUMBER_OF_AWARDED_SME) where { 
+select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where { 
 	?Award_Result :hasWinner ?Winner ;
-              :hasAwardResultDateOfConclusion ?Award_Date .
-    ?Winner :usesEOIndustryClassificationType :SME .
- 
-    FILTER (?Award_Date > "2015-01-01"^^xsd:dateTime && ?Award_Date < "2018-12-31"^^xsd:dateTime)	
+              :hasAwardResultDateOfConclusion ?Awarded_Date .
+    ?Winner :usesEOIndustryClassificationType ?WinnerSize ;
+            rov:legalName  ?Winner_Name .
 }
