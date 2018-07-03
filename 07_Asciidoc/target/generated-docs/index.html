@@ -523,7 +523,8 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#abstract">Abstract</a>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#introduction">Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#about-epo-v1-00">About ePO v1.00</a></li>
 <li><a href="#epo-v-20-0-objectives-and-scope">ePO v.20.0. objectives and scope</a></li>
@@ -550,30 +551,46 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="abstract"><a class="anchor" href="#abstract"></a><a class="link" href="#abstract">Abstract</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP) was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a>
-to organise and support the development of an Ontology of the Public e-Procurement (ePO).</em></p>
+<p>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP) was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a>
+to organise and support the development of an Ontology of the Public e-Procurement (ePO)._</p>
 </div>
 <div class="paragraph">
-<p><em>The ultimate objective of the Ontology is to put forth a commonly agreed OWL ontology that will conceptualise, formally encode and make available in an open,
+<p>The ultimate objective of the Ontology is to put forth a commonly agreed OWL ontology that will conceptualise, formally encode and make available in an open,
 structured and machine-readable format data about public procurement, covering it from end to end, i.e. from notification, through tendering to awarding, ordering, invoicing and payment.
-With this goal in mind the OP engaged a Working Group of experts with the mission of building consensus on the analysis results and deliverables developed by the OP&#8217;s teams.</em></p>
+With this goal in mind the OP engaged a Working Group (WG) of experts with the mission of building consensus on the analysis results and deliverables developed by the OP&#8217;s teams._</p>
 </div>
 <div class="paragraph">
-<p><em>By mid-2017 a version 1.00 of the Ontology was delivered and submitted to the Working group for discussion. All the materials related to this version were made public and are accessible
-through the ISA2 <a href="https://joinup.ec.europa.eu/solution/eprocurement-ontology">Joinup</a> platform; including the discussions held in the Working Group.</em></p>
+<p>By mid-2017 a version 1.00 of the Ontology was delivered and submitted to the Working group for discussion. All the materials related to this version were made public and are accessible
+through the ISA2 <a href="https://joinup.ec.europa.eu/solution/eprocurement-ontology">Joinup</a> platform; including the discussions held in the Working Group (WG).</p>
 </div>
 <div class="paragraph">
-<p><em>A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version. This document describes
-the objectives, the methodological approach and the deliverables produced in this new version.</em>
-== Introduction</p>
+<p>A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version. This document describes
+the objectives, the methodological approach and the deliverables produced in this new version.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given the increasing importance of data standards for e-Procurement, a number of initiatives driven by the public sector,
+the industry and academia have been launched in the recent years.
+Some have grown organically, while others are the result of standardisation work.
+The vocabularies and the semantics that they are introducing, the phases of public procurement they are covering,
+and the technologies they are using vary greatly amongst themselves.
+These differences hamper data interoperability and their reuse.</p>
 </div>
 <div class="paragraph">
-<p>Given the increasing importance of data standards for e-Procurement, a number of initiatives driven by the public sector, the industry and academia have been kick started in the recent years. Some have grown organically, while others are the result of standardisation work. The vocabularies and the semantics that they are introducing, the phases of public procurement that they are covering, and the technologies that they are using all differ. These differences hamper data interoperability and thus its reuse by them or by the wider public.</p>
+<p>This situation creates the need for a common representation of the knowledge about the eProcurement domain as it is understood
+and practiced in the European Union. For this to happen a common vocabulary, axioms and rules are needed.</p>
 </div>
 <div class="paragraph">
-<p>This creates the need for a common data standard for publishing procurement data, hence allowing data from different sources to be easily accessed and linked, and consequently reused.
-In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP) was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a>
-to organise and support the development of such a standard. This document describes the efforts made by the European Commission to develop the developemtn of an "<strong>eProcurement Ontology</strong>" (henceforth referred to as the ePO).</p>
+<p>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP)
+was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a> to organise and support the development of
+such a standard.</p>
+</div>
+<div class="paragraph">
+<p>This document describes the efforts made by the European Commission to develop the developemtn of an "<strong>eProcurement Ontology</strong>" (henceforth referred to as the ePO).</p>
 </div>
 <div class="sect2">
 <h3 id="about-epo-v1-00"><a class="anchor" href="#about-epo-v1-00"></a><a class="link" href="#about-epo-v1-00">About ePO v1.00</a></h3>
@@ -590,13 +607,13 @@ to organise and support the development of such a standard. This document descri
 <div class="content">
 <img src="images/eProcurement_Value_Chain.png" alt="EU eProcurement Value-Chain" width="1000">
 </div>
-<div class="title">Figure 1. eProcurement Value-Chain, EU vision</div>
+<div class="title">Figure 1. eProcurement Value-Chain, an EU vision</div>
 </div>
 <div class="paragraph">
-<p>An the scope was set to the "<em>specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the <a href="http://publications.europa.eu/mdr/">Metadata Registry</a>".</em></p>
+<p>The scope of the Charter was set to cover the "specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the <a href="http://publications.europa.eu/mdr/">Metadata Registry</a>".</p>
 </div>
 <div class="paragraph">
-<p>The aim was to produce the final Ontology within twelve months including a public review of at least two months; and a set of three deliverables was identified as the main outcome of the project:</p>
+<p>The original aim was to produce the final Ontology within twelve months including a public review of at least two months; and a set of three deliverables was identified as the main outcome of the project:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -605,7 +622,9 @@ to organise and support the development of such a standard. This document descri
 <div class="title">Figure 2. ePO Main Deliverables</div>
 </div>
 <div class="paragraph">
-<p>For the development of these objectives the OP team proposed a methodological approach based on the recommendations and good practices <sup class="footnote" id="_footnote_note1">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup><sup class="footnote" id="_footnote_note2">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>.</p>
+<p>For the development of these objectives the OP team proposed a methodological approach based on the recommendations and good practices
+ <sup class="footnote" id="_footnote_Cfr. <a href="http://protege.stanford.edu/publications/ontology_development/ontology101.pdf">"Ontology Development 101: A Guide to
+Creating Your First Ontology"</a>">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup><sup class="footnote" id="_footnote_Cfr. <a href="https://joinup.ec.europa.eu/site/core_vocabularies/Core_Vocabularies_user_handbook/ISA%20Hanbook%20for%20using%20Core%20Vocabularies.pdf">"e-Government Core Vocabularies handbook"">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -613,54 +632,88 @@ to organise and support the development of such a standard. This document descri
 </div>
 <div class="title">Figure 3. ePO v1.00 - Development methodological approach (source <a href="https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf">D02.01 Specification and Methodology</a>)</div>
 </div>
+<div class="paragraph">
+<p>Both the Working Group (WG) and the Publications Office (OP) put hands on the work and a version 1.0 of the
+eProcurement Ontology (ePO) was delivered in the planned period of 12 months.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="epo-v-20-0-objectives-and-scope"><a class="anchor" href="#epo-v-20-0-objectives-and-scope"></a><a class="link" href="#epo-v-20-0-objectives-and-scope">ePO v.20.0. objectives and scope</a></h3>
+<div class="paragraph">
+<p>The experience of the version 1.0 proved that the goal of developing a whole ontology on
+eProcurement that is aligned to the EU legislation and practices was too ambitious to be
+developed in 12 months.</p>
+</div>
+<div class="paragraph">
+<p>Two relevant conclusions were drawn for that experience:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The concepts of the ontology needed of common agreed terms and definitions that directed the design
+and implementation;</p>
+</li>
+<li>
+<p>The development of the ontology requires a "phased" approach based on the Use Cases defined version 1.0 on the one hand,
+but also focused on at least one of the processes of the eProcurement value chain as understood in the European Union (EU).
+See figure 4 above.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Hence the proposal of second version of the ePO ontology, named ePO 2.0.0.</p>
+</div>
 <div class="paragraph">
 <p>The main objective of the ePO v2.0.0 is to <strong>take leverage of the results produced in version 1.00</strong> and to <strong>extend and hone the OWL Ontology</strong>. To reach these objectives the owners of the project have set the following strategic objectives:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Focus on only one important policy area. We propose focusing on "<strong>Transparency</strong>";</p>
+<p>Focus on only one important policy area, e.g. "<strong>Transparency</strong>";</p>
 </li>
 <li>
-<p>Extend and hone a small set of phases of the eProcurement, if possible only one. Our proposal is <strong>e-Notification</strong> and <strong>e-Access</strong>. This does not preclude the Working Group or any other stakeholder to use the Ontology to implement the other Use Cases defined in v1.00, or the opposite, to use the Use Cases to test phase(s) developed so far;</p>
+<p>Extend and perfect a small set of phases of the eProcurement, if possible only one, e.g. <strong>e-Notification</strong> and <strong>e-Access</strong>.</p>
 </li>
 <li>
-<p>Develop and test exhaustively the phase chosen before undertaking the evolution and perfectioning of other phases;</p>
+<p>Develop and test exhaustively the phase chosen before undertaking the evolution of the ePO into other phases of the eProcurement;</p>
 </li>
 <li>
-<p>While developing the selected phase, elicit and define information requirements and data elements that will be used in other phases, even if the selected phases - i.e. e-Notification and e-Access-do not use them;</p>
+<p>While developing the selected phase, elicit and define information requirements and data elements that will be used in other phases, even if the selected phases - i.e. eNotification and eAccess-do not use them;</p>
+</li>
+<li>
+<p>Select a rich source of information from where to extract data in order to populate and test the ontology, e.g. the TED portal.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The above statements imply that <strong>the scope of this ePO v2.0.0 is set to the e-Notification and e-Access phases</strong> of the Public e-Procurement value-chain, represented as blue-coloured in the figure below:</p>
+<p>Hence <strong>the scope of the ePO v2.0.0 was set to the eNotification and eAccess phases</strong> of the Public eProcurement valuechain, represented as bluecoloured in the figure below:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/V2.0.0-Value_Chain_Focus.png" alt="ePO v2.0.0 main objective" width="1000">
+<img src="images/V2.0.0-Value_Chain_Focus.png" alt="ePO v2.0.0 scope" width="1000">
 </div>
-<div class="title">Figure 4. ePO v2.0.0 main objective: Develop deeply and test the e-Tendering phase</div>
+<div class="title">Figure 4. ePO v2.0.0 main objective: Scope of the ePO v2.0.0, eNotification and eAccess</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="methodological-approach"><a class="anchor" href="#methodological-approach"></a><a class="link" href="#methodological-approach">Methodological approach</a></h3>
 <div class="paragraph">
-<p>TODO: ADD REFERENCES TO DIRECTIVES, SDOs, etc. [TODO:]</p>
-</div>
-<div class="paragraph">
-<p>To reach the strategic objectives stated above this version 2.0.0 of the ePO proposes to evolve the previous v1.00 based on a few global principles:</p>
+<p>To reach the strategic objectives stated above this version 2.0.0 of the ePO proposes to
+evolve the previous v1.00 based on a few global principles:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Business and Information requirements cannot contradict the EU and the Member States legislations</strong>;</p>
+<p><strong>Business and Information requirements cannot contradict the EU and the Member States
+legislation</strong>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The ePO Ontology is soundly based on the EU Directives on Public Procurement, the new e-Forms Regulation (under consultation), the General Data Protection Regulation (GDPR), and other EU legal frameworks related to the Public Procurement.</p>
+<p>The ePO Ontology is soundly based on the EU Directives on Public Procurement
+<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup>,
+the ePO glossary, the new eForms Regulation (under consultation), the General Data Protection Regulation
+<a href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32016R0679">(GDPR)</a>,
+and other EU legal frameworks related to the Public Procurement;</p>
 </li>
 </ul>
 </div>
@@ -670,7 +723,13 @@ to organise and support the development of such a standard. This document descri
 <div class="ulist">
 <ul>
 <li>
-<p>This version 2.0.0 takes as inputs works like the CEN/BII Workshops, the e-Sens developments on the VCD and the ESPD, the DG GROWTH&#8217;s ESPD Service, e-Certis and ESPD-Exchange Data Model, as well as international standards like UN/CEFACT and OASIS UBL. All of them that used an UN/CEFACT Universal Method Modelling (UMM) approach that represent the "value-chain Use Cases" to identify the information requirements exhaustively. The "value-chain Use Cases" e-Notification and e-Access are perfectly described in these works and cast an extremely exhaustive list of information requirements and business rules.</p>
+<p>This version 2.0.0 takes as inputs works like the <a href="http://cenbii.eu/">CEN/BII Workshops</a>, the DG GROWTH&#8217;s
+<a href="https://github.com/ESPD">ESPD</a>-related developments, the eSens developments on the VCD and the ESPD (see the ESPDint project), as well as
+international standards like UN/CEFACT and OASIS UBL.
+Most of them used an UN/CEFACT Universal Method Modelling (UMM) approach that represent the "value-chain Use Cases"
+to identify the information requirements exhaustively.
+The "value chain Use Cases" eNotification and eAccess are described in these works and cast lists of information
+requirements and business rules.</p>
 </li>
 </ul>
 </div>
@@ -680,7 +739,17 @@ to organise and support the development of such a standard. This document descri
 <div class="ulist">
 <ul>
 <li>
-<p>The "Use Cases" defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited during the analysis of the business processes. In this version we propose to focus on the "Use Case 1: Data Journalism" as the e-Notification and e-Access provide the largest part of the requirements necessary to implement the case.</p>
+<p>The "Use Cases" defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited during the analysis of the business processes. In this version we propose to focus on the "Use Case 1: Data Journalism" as the eNotification and eAccess provide the largest part of the requirements necessary to implement the case.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Reuse of ontologies</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>TODO</em></strong></p>
 </li>
 </ul>
 </div>
@@ -690,7 +759,7 @@ to organise and support the development of such a standard. This document descri
 <div class="ulist">
 <ul>
 <li>
-<p>The analysis and design of an Ontology cannot be declared as finished unless it is tested. The Use Cases are only one of the essential elements to reach this goal. However the testing cannot be trusted unless the data used are not (i) abundant (maximum corpus of data), (ii) real data, and (iii) of the maximum possible quality. In the case of the <strong>e-Notification</strong> and <strong>e-Access</strong> phases this specification proposes the use of the Tender Electronic Daily (TED) platform to retrieve, transform and load the data contained in Prior Information Notices, Contract Notices, Contract Award Notices and Calls for Tenders into OWL graphs. This ePO 2.0.0 is accompanied by a Proof-Of-Concept development oriented precisely to test the Ontology.</p>
+<p>The analysis and design of an Ontology cannot be declared as finished unless it is tested. The Use Cases are only one of the essential elements to reach this goal. However the testing cannot be trusted unless the data used are not (i) abundant (maximum corpus of data), (ii) real data, and (iii) of the maximum possible quality. In the case of the <strong>eNotification</strong> and <strong>eAccess</strong> phases this specification proposes the use of the Tender Electronic Daily (TED) platform to retrieve, transform and load the data contained in Prior Information Notices, Contract Notices, Contract Award Notices and Calls for Tenders into OWL graphs. This ePO 2.0.0 is accompanied by a Proof-Of-Concept development oriented precisely to test the Ontology.</p>
 </li>
 </ul>
 </div>
@@ -698,7 +767,7 @@ to organise and support the development of such a standard. This document descri
 </ol>
 </div>
 <div class="paragraph">
-<p>The Knowledge Map (K-Map) <sup class="footnote" id="_footnote_note3">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup> method and tools below provides an abstract representation of the scope for the ePO v2.0.0.</p>
+<p>The Knowledge Map (K-Map) <sup class="footnote" id="_footnote_See <a href="http://lice.licef.ca/index.php/gmot-motplus-et-mot/">"MOTPlus">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</sup> method and tools below provides an abstract representation of the scope for the ePO v2.0.0.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -749,7 +818,7 @@ to organise and support the development of such a standard. This document descri
 <div class="title">Figure 9. ePO Project - Roles and responsibilites</div>
 </div>
 <div class="paragraph">
-<p>For more details on the members of each governance body see the document <a href="https://joinup.ec.europa.eu/document/report-policy-support-e-procurement">D04.07 Report on policy support for e-Procurement, e-Procurement ontology</a>; e.g. "<em>Editors: are responsible for the operational work of defining and documenting the ePO</em>".</p>
+<p>For more details on the members of each governance body see the document <a href="https://joinup.ec.europa.eu/document/report-policy-support-e-procurement">D04.07 Report on policy support for eProcurement, eProcurement ontology</a>; e.g. "<em>Editors: are responsible for the operational work of defining and documenting the ePO</em>".</p>
 </div>
 </div>
 </div>
@@ -817,18 +886,21 @@ to organise and support the development of such a standard. This document descri
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. Cfr. <a href="http://protege.stanford.edu/publications/ontology_development/ontology101.pdf">"Ontology Development 101: A Guide to Creating Your First Ontology"</a>, by Natalya F. Noy and Deborah L. McGuinness.
+<a href="#_footnoteref_1">1</a>. by Natalya F. Noy and Deborah L. McGuinness.
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a>. Cfr. <a href="https://joinup.ec.europa.eu/site/core_vocabularies/Core_Vocabularies_user_handbook/ISA%20Hanbook%20for%20using%20Core%20Vocabularies.pdf">"e-Government Core Vocabularies handbook", by ISA2 Programme</a>
+<a href="#_footnoteref_2">2</a>. by ISA2 Programme</a>
 </div>
 <div class="footnote" id="_footnote_3">
-<a href="#_footnoteref_3">3</a>. See <a href="http://lice.licef.ca/index.php/gmot-motplus-et-mot/">"MOTPlus, Modélisation par Object Typés", by LICEF, Téluq</a>
+<a href="#_footnoteref_3">3</a>. <a href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32014L0024">Directive 2014/24/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2014_094_R_0001_01">Directive 2014/23/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014L0025">Directive 2014/25/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081">Directive 2009/81/EC</a> and <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055">Directive 2014/55/EU</a>
+</div>
+<div class="footnote" id="_footnote_4">
+<a href="#_footnoteref_4">4</a>. Modélisation par Object Typés", by LICEF, Téluq</a>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-02-28 21:48:00 CET
+Last updated 2018-06-30 16:14:35 CEST
 </div>
 </div>
 </body>
