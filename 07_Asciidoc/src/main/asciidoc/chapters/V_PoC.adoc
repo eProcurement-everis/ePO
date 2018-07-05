@@ -1,0 +1,7 @@
+
+== Proof of Concept
+
+The diagram below shows the activities that were planned and executed to develop the Proof of Concept:
+
+.ePO Project v2.0.0 - Proof-Of-Concept
+image::ePO_PoC.png?raw=true[v2.0.0 - Proof-Of-Concept, align="center"]
