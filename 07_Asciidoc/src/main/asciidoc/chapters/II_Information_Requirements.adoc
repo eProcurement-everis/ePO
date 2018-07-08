@@ -1,5 +1,5 @@
 
-== Information Requirements
+== II. Information Requirements
 
 According to the development plan, the first task to undertake was the elicitation of information requirements, axioms and business rules. For this
 the version 2.0.0 of the ePO has taken into account the following inputs:

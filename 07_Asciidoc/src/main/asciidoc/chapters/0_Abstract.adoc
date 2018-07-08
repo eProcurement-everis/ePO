@@ -13,3 +13,4 @@ through the ISA2 link:++https://joinup.ec.europa.eu/solution/eprocurement-ontolo
 _A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version. This document describes
 the objectives, the methodological approach and the deliverables produced in this new version._
 
+_This report documents this development and its results._

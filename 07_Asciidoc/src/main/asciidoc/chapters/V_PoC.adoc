@@ -1,7 +1,412 @@
 
-== Proof of Concept
+== V. Proof of Concept
 
-The diagram below shows the activities that were planned and executed to develop the Proof of Concept:
+The main objectives of the Proof of Concept were:
+
+. Test the coherence of the Conceptual Data Model (of the T-Box);
+. Test the consistency of the data once loaded (in the A-Box);
+. Test the effectiveness of the OWL implementation of the eProcurement Ontology (ePO); and
+. Test the feasibility of the ePO to support the Use Cases defined in ePO v.1.0.
+
+Hence a varied set of activities were planned with these objectives in mind. The diagram below
+shows the activities that were planned and executed to develop the Proof of Concept:
 
 .ePO Project v2.0.0 - Proof-Of-Concept
 image::ePO_PoC.png?raw=true[v2.0.0 - Proof-Of-Concept, align="center"]
+
+The following subsections explain how each of the activities mentioned in the diagram above has been
+developed and where to check the inputs, processes and results.
+
+=== Activity 1: Use Cases
+.Competency Questions, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Identify and study the Use Cases related to monitoring and transparency.
+|*Responsible team*:|OP's contractor team.
+|*Inputs*:|ePO v1.0 link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Use Case 1]
+and link:https://github.com/eprocurementontology/eprocurementontology/issues/11[Issue #11].
+|*Outputs*:|Study of the Use Cases (slightly renaming).
+|===
+
+The ePO v1.0 focused on three different Use Cases:
+
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Use Case 1]: Data Journalism
+
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Use Case 2]: Automated matchmaking of procured services and products with businesses, and
+
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-3.-Verifying-VAT-payments-on-intracommunity-service-provision[Use Case 3]: Verifying VAT payments on intra-community service provision.
+
+During its development a fourth Use Case was identified as relevant related to Transparency and Monitoring. This
+use case was proposed through an "link:https://github.com/eprocurementontology/eprocurementontology/issues/11[Issue]",
+in the GitHub repository. This Use Case was accepted as as a relevant case for transparency and monitoring.
+
+Hence the ePO v2.0.0, which is focused only on transparency and monitoring, was developed taken into account two
+Use Cases (slightly renamed):
+
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring[Use Case 1]: Transparency and Monitoring; and
+
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use--ase-4.-Analyzing-eProcurement-procedures[Use Case 4]: Analyzing eProcurement procedures.
+
+=== Activity 2: User Stories
+
+.User Stories, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Prepare sample (example) User Stories.
+|*Responsible team*:|OP's contractor team.
+|*Inputs*:|Use Cases 1 and 4.
+|*Outputs*:|Examples of link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/WayforwardCompetencyQuestions.pdf[User Stories].
+|===
+
+User Stories are a method of helping identify information requirements. The method consists in
+drafting very simple sentence structured around three main questions:
+
+. Who is the beneficiary of an action (who benefits from it)?
+
+. What is the need?
+
+. What is the benefit?
+
+The structure of the sentence is always like this: “_As a <role of the user>, I need <something>in order to <benefit>._”
+
+*Example*:
+
+As a *contracting authority* (ROLE), I need to know *the number of tenderers* (WHAT DO I NEED?) that have submitted a tender
+in order *to add it to the award notice* (BENEFIT).
+
+Some examples of User Stories were prepared. The table below shows these sample User Stories for different
+roles and related to the Use Cases 1 and 4.
+
+.Examples of User Stories
+image::UserStoriesExamplesTable.png?raw=true[User Stories examples, align="center"]
+
+=== Activity 3: Competency Questions
+
+.Competency Questions, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Prepare sample (example) Competency Questions.
+|*Responsible team*:|OP's contractor team.
+|*Inputs*:|Use Cases 1 and 4, and the User Stories.
+|*Outputs*:|Examples of link:https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions[Competency Questions].
+|===
+
+User Stories help also draft very specific questions that need to be answered in order to
+meet the story. These questions will later on taken into account to draft concrete SPARQL queries.
+
+Some examples of Competency Questions were prepared. The two tables below illustrate how these Competency
+Questions, linked to their respective User Stories, may look like. The
+link link:https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions[Competency Questions],
+in the GitHub link:https://github.com/eprocurementontology/eprocurementontology/wiki[Wiki] page,
+supplies a longer list of concrete examples of CQ for the WG members to get inspiration.
+
+.Example (1/2) of Competency Questions
+image::CQExample1.png?raw=true[CQ example 1, align="center"]
+
+.Examples (2/2) of User Stories
+image::CQExample2.png?raw=true[CQ example 2, align="center"]
+
+=== Activity 4: Review CQs
+
+.Revision of Competency Questions, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Review Competency Questions.
+|*Responsible team*:|Working Group members.
+|*Inputs*:|Competency Questions and related User Stories.
+|*Outputs*:|Comments by the WG members.
+|===
+
+The examples were made available to the Working Group members through the GitHub Wiki page.
+A special link:++https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&labels=new%20competency%20question&title=COMPETENCY+QUESTION+-[Add a new competency question]
+to add comments or create new issues related to the CQs was also made available in the
+link:https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions[GitHub Wiki page].
+
+=== Activity 5: Input Data Set
+
+.Select Data Set, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Select Data Set.
+|*Responsible team*:|OP's team.
+|*Inputs*:|Use Cases, User Stories, Competency Questions, agreement with the members of the WG.
+|*Outputs*:|Documents published on TED, accessed via the OP's link:ftp://ted.europa.eu/[FTP] server.
+|===
+
+For the extraction of data, the decision was made that the source of data should be the Notices
+published on the link:http://ted.europa.eu/TED/main/HomePage.do[TED portal]. This decision was made
+based on, namely, the following reasons:
+
+* The Contract Award Notice (CAN) contains the data most relevant for Transparency, Monitoring and Procedure control (jointly
+with the Contract Notice (CN));
+
+* The CAN is the most published document, therefore the sample is richer;
+
+* The structure and elements of the standard form for the CAN are very similar or identical to many of other
+Notices. This allows to reuse a relevant part of the extraction and transformation artefacts (XSL-T) to process
+many other types of Forms.
+
+However the User Interface of the TED Portal does not allow downloading large amount of documents.
+For this we used the link:ftp://ted.europa.eu/[FTP] server supplied by the OP at: ftp://ted.europa.eu/
+(user: **guest**, password: **guest**).
+
+The TED-XML specification has been evolving for the past years. Different
+versions of XSD Schemas have been maintained in parallel for those years. The result is that, as
+per today, different schemas are being used to express the data in alignment to the 2014 Directives.
+For this PoC we decided to use CAN based only on the TED-XML XSD Schema
+link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd[R2.0.9.S01.E01 TED_EXPORT.xsd]
+and the Contract Award Notice (CAN) form for Directive 2014 supporting the
+link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd [F03_2014.xsd] standard form
+(all schemas are published on the Publications Office (OP) link:http://publications.europa.eu/mdr/eprocurement/ted/index.html[MDR site].
+
+For this PoC we downloaded the link:ftp://ted.europa.eu/monthly-packages/2018/[*.tar.gz] files corresponding
+to January to May 2018. These files contain all the documents published by the OP for those months. Bear in mind that, in
+the context of this PoC, we only extract data and import into the graph store the CANs for Directive 2014.
+However the TED_EXPORT.xsd includes all the forms (F01 to  F25) and the extraction process is able to extract data
+from many of these forms, as they share a large part of the elements (see "Activity 6: ETL process", just below).
+
+=== Activity 6: ETL process
+
+.ETL process development, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Develop ETL process.
+|*Responsible team*:|OP's team.
+|*Inputs*:|TED-XML schemas (on MDR) and TED notices published on the TED link:ftp://ted.europa.eu/[FTP] server.
+|*Outputs*:|Java code, XSL-T architecture, other resources (available on the GitHub repository and accessible
+via the GitHub Wiki page link
+link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl[Data Loading development (ETL)].
+|===
+
+The process for the Extraction, Transformation and Loading (ETL) was developed based on two technologies:
+
+. *Java*: version JDK 1.8 was used to build a Maven project (see link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/pom.xml[pom.xml]
+configuration file). The output of the build process is a "*.war" file. The link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/java/epo[source code]
+is available on the GitHub code repository. This java code is responsible for (i) organising the TED-XML files; (ii) launching the extraction + transformation and/or the
+loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;
+
+. XSL-T: version XSL-T 3.0 was used to draft a set of link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt[stylesheets]
+the mission of which is to read the TED-XML files (Extraction) and transform that information into
+SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
+The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
+The piece of code below illustrates one of those examples (if you use the identifier of the document you
+should be able to find the TED-XML source in the TED Portal).
+
+.Result of transforming the TED-XML instance "091271-2018" into ePO-v2.00 SPARQL INSERT queries
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX ccts: <http://www.unece.org/cefact#>
+PREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>
+PREFIX ubl: <http://docs.oasis-open.org/ubl#>
+PREFIX epo-rd: <http://data.europa.eu/ePO/referencedata#>
+
+INSERT DATA
+{
+	Graph <http://data.europa.eu/ePO/ontology>{
+		:CAN_091271-2018 rdf:type :ContractAwardNotice ;
+			:hasPublicationDate "2018-03-01T00:00:00"^^xsd:dateTime ;
+			:hasDocumentIdentifier :CAN_ID_091271-2018
+	}
+};
+INSERT DATA
+{
+	Graph <http://data.europa.eu/ePO/ontology>{
+		:CAN_ID_091271-2018 rdf:type ccts:Identifier ;
+			ccts:identifierValue "091271-2018" ;
+			ccts:schemeAgencyID "eu.europa.publicationsoffice.epo"
+	}
+}<--1-->
+----
+<1> See link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip[GitHub code repository]
+or execute the code for complete examples.
+
+==== Code Execution
+
+You can execute the code at least in two ways:
+
+. Either you clone the project onto your machine, import the Maven project in your preferred Java editor tool and
+execute the main class link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/main/java/epo/MainETLProcess.java[MainETLProcess].
+
+. Alternatively you may unzip the *.war file and execute the compiled code from a console window.
+The piece of code below provides a very simple script illustrating how this can be done:
+
+.Launching the code, a simple bash shell script
+[source,java]
+----
+#!/bin/bash
+
+arg="$1"
+exec java -classpath "lib/*:classes/." epo.MainETLProcess $arg
+
+----
+
+Beware that the MainETLProcess takes one argument:
+
+.Acceptable arguments
+[source]
+----
+Usage: epo.MainETLProcess [-t]|[-i]|[-a]
+
+Valid arguments are:
+
+-t .... transforms XML into .txt files containing the SPARQL queries, but does not execute the queries.
+-i .... executes the SPARQL queries only.
+-a .... does everything.
+
+Options are mutually exclusive. Only one option is accepted.
+
+Example:
+
+ java -classpath "lib/*:classes/." epo.MainETLProcess -t
+ java -classpath "lib/*:classes/." epo.MainETLProcess -i
+ java -classpath "lib/*:classes/." epo.MainETLProcess -a
+----
+
+==== ETL execution configuration
+
+The java code uses a file named _*epo.properties*_. This file is to be located under the `/home/user`
+directory of the computer from where the code is executed. See below an example of how this configuration
+file looks like. Notice the two lines about the proxy configuration.
+
+.The _epo.properties_ file, example
+[code]
+----
+#Thu Jun 28 10:49:40 CEST 2018
+
+### Types of documents that need to be transformed and loaded. ####################################
+##
+## The next line is an example of how more than one Notice type can be specified.
+## The numbers 1,2,3, etc. identify the type of standard form in  TED.
+##
+## BEWARE THAT ONLY NOTICES BASED ON DIRECTIVE 2014 AND R2.0.9.S02 TED_EXPORT.xsd ARE PROCESSED.
+## R2.0.8.* TED_EXPORT.xsd-based notices ARE NOT PROCESSED.
+##
+## The example below states that the forms F01_2014, F02_2014, F03_2014, F22_2014,
+## F23_2014, F24_2014 and F25_2014 have to be transformed into TTL SPARQL INSERT files.
+##
+###################################################################################################
+
+#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25
+DOCUMENT_TYPE_ID=3
+
+### Graph db access ###############################################################################
+#GRAPH_STORE_URL=http://localhost:7200
+GRAPH_STORE_URL=http://34.249.1.15:7200
+GRAPH_STORE_USER=guest
+GRAPH_STORE_PASSWORD=guest
+GRAPH_STORE_REPOSITORY=ePO
+
+### Proxy configuration ##########################################################################
+## Uncomment the lines below if you are not behind a Proxy and specify valid Proxy Host data.
+#PROXY_URL=10.110.8.42
+#PROXY_PORT=8080
+#PROXY_USER=
+#PROXU_PASSWORD=
+
+### Directories configuration ####################################################################
+INPUT_DATA_DIR=/TED-Resources
+OUTPUT_DATA_DIR=/TED-OUTPUT
+TED_TO_EPO_XSL=./src/main/resources/xslt/TEDXSD_to_ePOTTL.xsl
+TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/TED_EXPORT.xsd
+----
+
+=== Activity 7: Populate Graph store
+
+.Populate the Graph store, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Populate the Graph store.
+|*Responsible team*:|OP's team.
+|*Inputs*:|The result of the XSL-T-based transformation (SPARQL INSERT queries).
+|*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
+|===
+
+A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
+transformation- for the year 2018. The bar graphic below shows the exact number of files processed and the
+number of Contract Award Notices imported into the Graph Store.
+
+The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5). It can be freely
+downloaded from the link:https://ontotext.com/[Ontotext] website.
+
+.Total of Notices and number of Contract Award Notices used to populate the Graph store
+image::Statistics-2018.png?raw=true[Number of Notices, align="center"]
+
+.Frequency of Notices
+image::Statistics-Frequency-2018.png?raw=true[Frequency of Notices, align="center"]
+
+=== Activity 8: SPARQL Queries
+
+.Develop SPARQL Queries, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Develop SPARQL Queries.
+|*Responsible team*:|OP's team.
+|*Inputs*:|Competency Questions (link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[QCs examples]).
+|*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
+|===
+
+The document link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
+provides a few examples that were provided for the Working Group (WG) members to have a glimpse
+at how efficiently the ePO is responding.
+
+Thus for the query "list all the winners, the size of the company and the date of award"
+over more than 70,000 Contract Award Notices, the Graph Store installed on a regular
+machine in the cloud accessible through a home Wifi connection takes 0,2 seconds to provide the answer:
+
+.Response performance of a query of low complexity over 74K CAN (Example 1/3)
+image::QueryExample2.png?raw=true[Query example 1, align="center"]
+
+.Response performance of a query of medium complexity (Example 2/3)
+image::QueryExample1.png?raw=true[Query example 2, align="center"]
+
+For the query "the number of contracts awarded for each CPV" it takes 2 seconds to group 4,736 types of CPVs over more
+than 200,000 contracts (beware that one Contract Notice may refer to multiple contracts).
+
+.Response performance of a query of low complexity (Example 3/3)
+image::QueryExample3.png?raw=true[Query example 3, align="center"]
+
+See the document link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
+for more contextualisation and examples.
+
+=== Activity 9: Test and debug
+
+.Test and debug, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Prepare/Execute/Debug Test Reports
+|*Responsible team*:|OP's team.
+|*Inputs*:|SPARQL queries
+|*Outputs*:|SPARQL table results
+|===
+
+
+
+=== Activity 10: Validate results
+
+.Validate results, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Use SPARQL queries, validate results.
+|*Responsible team*:|Working Group WG) members.
+|*Inputs*:|Example SPARQL queries supplied by the OP's team.
+|*Outputs*:|SPARQL result-tables.
+|===
+
+(TODO): WG to prepare their own Queries.
+
+=== Activity 11: Provide feedback
+.Provide feedback, activity summary
+[cols="<1,<4"]
+|===
+|*Activity name*:|Provide feedback
+|*Responsible team*:|Working Group WG) members.
+|*Inputs*:|OP's example queries and WG's own Competency Questions and queries
+|*Outputs*:|Feed-back via the link:https://github.com/eprocurementontology/eprocurementontology/issues[GitHub Issues]
+work-space.
+|===

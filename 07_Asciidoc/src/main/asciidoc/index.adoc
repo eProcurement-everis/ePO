@@ -1,4 +1,4 @@
-= *ePO - The European eProcurement Ontology (v2.0.0)*
+= *ePO - eProcurement Ontology 2.0.0* [Report]
 :toc:
 :toclevels: 3
 ifndef::downloaddir[:downloaddir: download]
