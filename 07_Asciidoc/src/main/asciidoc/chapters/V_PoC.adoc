@@ -12,7 +12,7 @@ Hence a varied set of activities were planned with these objectives in mind. The
 shows the activities that were planned and executed to develop the Proof of Concept:
 
 .ePO Project v2.0.0 - Proof-Of-Concept
-image::ePO_PoC.png?raw=true[v2.0.0 - Proof-Of-Concept, align="center"]
+image::ePO_PoC.png[v2.0.0 - Proof-Of-Concept, align="center"]
 
 The following subsections explain how each of the activities mentioned in the diagram above has been
 developed and where to check the inputs, processes and results.
@@ -78,7 +78,7 @@ Some examples of User Stories were prepared. The table below shows these sample 
 roles and related to the Use Cases 1 and 4.
 
 .Examples of User Stories
-image::UserStoriesExamplesTable.png?raw=true[User Stories examples, align="center"]
+image::UserStoriesExamplesTable.png[User Stories examples, align="center"]
 
 === Activity 3: Competency Questions
 
@@ -101,10 +101,10 @@ in the GitHub link:https://github.com/eprocurementontology/eprocurementontology/
 supplies a longer list of concrete examples of CQ for the WG members to get inspiration.
 
 .Example (1/2) of Competency Questions
-image::CQExample1.png?raw=true[CQ example 1, align="center"]
+image::CQExample1.png[CQ example 1, align="center"]
 
 .Examples (2/2) of User Stories
-image::CQExample2.png?raw=true[CQ example 2, align="center"]
+image::CQExample2.png[CQ example 2, align="center"]
 
 === Activity 4: Review CQs
 
@@ -156,14 +156,15 @@ per today, different schemas are being used to express the data in alignment to 
 For this PoC we decided to use CAN based only on the TED-XML XSD Schema
 link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd[R2.0.9.S01.E01 TED_EXPORT.xsd]
 and the Contract Award Notice (CAN) form for Directive 2014 supporting the
-link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd [F03_2014.xsd] standard form
+link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd[F03_2014.xsd] standard form
 (all schemas are published on the Publications Office (OP) link:http://publications.europa.eu/mdr/eprocurement/ted/index.html[MDR site].
 
 For this PoC we downloaded the link:ftp://ted.europa.eu/monthly-packages/2018/[*.tar.gz] files corresponding
-to January to May 2018. These files contain all the documents published by the OP for those months. Bear in mind that, in
-the context of this PoC, we only extract data and import into the graph store the CANs for Directive 2014.
-However the TED_EXPORT.xsd includes all the forms (F01 to  F25) and the extraction process is able to extract data
-from many of these forms, as they share a large part of the elements (see "Activity 6: ETL process", just below).
+to January to May 2018. Bear in mind that, in the context of this PoC, we only extract data and import into the graph store the
+CANs for Directive 2014. However the TED_EXPORT.xsd includes all the forms (F01 to  F25) and the extraction process is able to extract data
+from many of these forms, as they share a large part of the elements (see "Activity 6: ETL process", just below). If you want a go with these
+other forms just uncomment the line "#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25 " and comment the line "DOCUMENT_TYPE_ID=3" in the `epo.properties` file.
+
 
 === Activity 6: ETL process
 
@@ -221,7 +222,9 @@ INSERT DATA
 			ccts:identifierValue "091271-2018" ;
 			ccts:schemeAgencyID "eu.europa.publicationsoffice.epo"
 	}
-}<--1-->
+}
+...
+<--1-->
 ----
 <1> See link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip[GitHub code repository]
 or execute the code for complete examples.
@@ -277,8 +280,6 @@ file looks like. Notice the two lines about the proxy configuration.
 .The _epo.properties_ file, example
 [code]
 ----
-#Thu Jun 28 10:49:40 CEST 2018
-
 ### Types of documents that need to be transformed and loaded. ####################################
 ##
 ## The next line is an example of how more than one Notice type can be specified.
@@ -296,23 +297,30 @@ file looks like. Notice the two lines about the proxy configuration.
 DOCUMENT_TYPE_ID=3
 
 ### Graph db access ###############################################################################
-#GRAPH_STORE_URL=http://localhost:7200
 GRAPH_STORE_URL=http://34.249.1.15:7200
+#GRAPH_STORE_URL=http://localhost:7200
 GRAPH_STORE_USER=guest
 GRAPH_STORE_PASSWORD=guest
-GRAPH_STORE_REPOSITORY=ePO
+GRAPH_STORE_REPOSITORY=ePO_test
 
 ### Proxy configuration ##########################################################################
-## Uncomment the lines below if you are not behind a Proxy and specify valid Proxy Host data.
+## Remove comments and provide the URL or IP of your proxy server and the proxy port numbers
 #PROXY_URL=10.110.8.42
 #PROXY_PORT=8080
-#PROXY_USER=
-#PROXU_PASSWORD=
 
 ### Directories configuration ####################################################################
+## The directory where the TED-XML files are located
 INPUT_DATA_DIR=/TED-Resources
+## The directory where the SPARQL INSERT TXT files, resulting form the XSL-T transformation, are written to.
+## This directory is the input directory from where the TXT files are taken to populate the Graph Store.
 OUTPUT_DATA_DIR=/TED-OUTPUT
+## The directory where the java application logs the operations executed and execeptions.
+LOG_DATA_DIR=/TED-LOG
+## Where the XSL-T architecture files are located. Relative or absolute paths can be specified.
+## Relative paths are relative to the path from where the etl-process is launched.
 TED_TO_EPO_XSL=./src/main/resources/xslt/TEDXSD_to_ePOTTL.xsl
+## Where the TED XSD Schemas are located. Relative or absolute paths can be specified.
+## Relative paths are relative to the path from where the etl-process is launched.
 TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/TED_EXPORT.xsd
 ----
 
@@ -328,17 +336,17 @@ TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/
 |===
 
 A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
-transformation- for the year 2018. The bar graphic below shows the exact number of files processed and the
-number of Contract Award Notices imported into the Graph Store.
+transformation- for the five first months of 2018. The tble and bar graphic below show the exact number of
+files processed and the number of Contract Award Notices imported into the Graph Store.
 
-The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5). It can be freely
+The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5)m which can be freely
 downloaded from the link:https://ontotext.com/[Ontotext] website.
 
 .Total of Notices and number of Contract Award Notices used to populate the Graph store
-image::Statistics-2018.png?raw=true[Number of Notices, align="center"]
+image::Statistics-2018.png[Number of Notices, align="center"]
 
 .Frequency of Notices
-image::Statistics-Frequency-2018.png?raw=true[Frequency of Notices, align="center"]
+image::Statistics-Frequency-2018.png[Frequency of Notices, align="center"]
 
 === Activity 8: SPARQL Queries
 
@@ -355,21 +363,60 @@ The document link:https://eprocurementontology.github.io/Competency_questions/SP
 provides a few examples that were provided for the Working Group (WG) members to have a glimpse
 at how efficiently the ePO is responding.
 
-Thus for the query "list all the winners, the size of the company and the date of award"
-over more than 70,000 Contract Award Notices, the Graph Store installed on a regular
-machine in the cloud accessible through a home Wifi connection takes 0,2 seconds to provide the answer:
+==== Query examples
 
-.Response performance of a query of low complexity over 74K CAN (Example 1/3)
-image::QueryExample2.png?raw=true[Query example 1, align="center"]
+*Example 1*: One very first exercise would consist in checking the amount of Contract Award Notice and to compare it to the number of
+transformations executed and compiled in the log files. For this open a browser, introduce the URL or IP of the GraphDB server
+(e.g. 34.249.1.15:7200) and copy this SPARQL Query in the textfield of the SPARQL Endpoint:
 
-.Response performance of a query of medium complexity (Example 2/3)
-image::QueryExample1.png?raw=true[Query example 2, align="center"]
+.Counting the number of Contract Award Notices
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+select ?s (count(?did) as ?cdid) where {
+	?s a :ContractAwardNotice;
+    	:hasDocumentIdentifier ?did;
+} group by ?s
+----
+.Number of Contract Award Notices between the 1s. January and the 30th May 2018
+image::CountingCANs.png[Counting CANs, align="center"]
 
-For the query "the number of contracts awarded for each CPV" it takes 2 seconds to group 4,736 types of CPVs over more
-than 200,000 contracts (beware that one Contract Notice may refer to multiple contracts).
+*Example 2*: List all the winners, the size of the company and the date of award.
 
-.Response performance of a query of low complexity (Example 3/3)
-image::QueryExample3.png?raw=true[Query example 3, align="center"]
+.Winners, size of the company, date of the awarding
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where {
+                ?Award_Result :hasWinner ?Winner ;
+                :hasAwardResultDateOfConclusion ?Awarded_Date .
+    			?Winner :usesEOIndustryClassificationType ?WinnerSize ;
+            	rov:legalName  ?Winner_Name
+}
+----
+
+.Winners
+image::QueryExample1.png[Winners, size and award date, align="center"]
+
+*Example 3*: Number of contracts awarded for each CPV (beware that one Contract Award Notice may
+refer to multiple contracts).
+
+.Number of contracts per CPV
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
+                ?contract a :Contract;
+        		:hasContractPurpose ?purpose.
+    			?purpose :hasCPVType ?cpv.
+} group by ?cpv order by desc(?number_contracts)
+----
+
+.Number of contracts per CPV
+image::QueryExample3.png[Contracts per CPV, align="center"]
+
 
 See the document link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
 for more contextualisation and examples.

@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>ePO - The European eProcurement Ontology (v2.0.0)</title>
+<title>ePO - eProcurement Ontology 2.0.0 [Report]</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -519,7 +519,7 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1><strong>ePO - The European eProcurement Ontology (v2.0.0)</strong></h1>
+<h1><strong>ePO - eProcurement Ontology 2.0.0</strong> [Report]</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -534,16 +534,39 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#epo-governance">ePO governance</a></li>
 </ul>
 </li>
-<li><a href="#information-requirements">Information Requirements</a></li>
+<li><a href="#ii-information-requirements">II. Information Requirements</a></li>
 <li><a href="#the-data-element-dictionary-ded-v2-0-0">The Data Element Dictionary (DED v2.0.0)</a></li>
-<li><a href="#the-conceptual-data-model">The Conceptual Data Model</a>
+<li><a href="#iii-the-conceptual-data-model">III. The Conceptual Data Model</a>
 <ul class="sectlevel2">
 <li><a href="#overview">Overview</a></li>
 <li><a href="#overview-and-class-attributes">Overview and class attributes</a></li>
 </ul>
 </li>
-<li><a href="#design-and-implementation">Design and Implementation</a></li>
-<li><a href="#proof-of-concept">Proof of Concept</a></li>
+<li><a href="#iv-design-and-implementation">IV. Design and Implementation</a></li>
+<li><a href="#v-proof-of-concept">V. Proof of Concept</a>
+<ul class="sectlevel2">
+<li><a href="#activity-1-use-cases">Activity 1: Use Cases</a></li>
+<li><a href="#activity-2-user-stories">Activity 2: User Stories</a></li>
+<li><a href="#activity-3-competency-questions">Activity 3: Competency Questions</a></li>
+<li><a href="#activity-4-review-cqs">Activity 4: Review CQs</a></li>
+<li><a href="#activity-5-input-data-set">Activity 5: Input Data Set</a></li>
+<li><a href="#activity-6-etl-process">Activity 6: ETL process</a>
+<ul class="sectlevel3">
+<li><a href="#code-execution">Code Execution</a></li>
+<li><a href="#etl-execution-configuration">ETL execution configuration</a></li>
+</ul>
+</li>
+<li><a href="#activity-7-populate-graph-store">Activity 7: Populate Graph store</a></li>
+<li><a href="#activity-8-sparql-queries">Activity 8: SPARQL Queries</a>
+<ul class="sectlevel3">
+<li><a href="#query-examples">Query examples</a></li>
+</ul>
+</li>
+<li><a href="#activity-9-test-and-debug">Activity 9: Test and debug</a></li>
+<li><a href="#activity-10-validate-results">Activity 10: Validate results</a></li>
+<li><a href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></li>
+</ul>
+</li>
 <li><a href="#conclusions-and-next-steps">Conclusions and next steps</a></li>
 </ul>
 </div>
@@ -568,6 +591,9 @@ through the ISA2 <a href="https://joinup.ec.europa.eu/solution/eprocurement-onto
 <div class="paragraph">
 <p><em>A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version. This document describes
 the objectives, the methodological approach and the deliverables produced in this new version.</em></p>
+</div>
+<div class="paragraph">
+<p><em>This report documents this development and its results.</em></p>
 </div>
 </div>
 </div>
@@ -872,7 +898,7 @@ procedure and the contract awarded.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="information-requirements"><a class="anchor" href="#information-requirements"></a><a class="link" href="#information-requirements">Information Requirements</a></h2>
+<h2 id="ii-information-requirements"><a class="anchor" href="#ii-information-requirements"></a><a class="link" href="#ii-information-requirements">II. Information Requirements</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>According to the development plan, the first task to undertake was the elicitation of information requirements, axioms and business rules. For this
@@ -1019,7 +1045,7 @@ those placeholders."</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="the-conceptual-data-model"><a class="anchor" href="#the-conceptual-data-model"></a><a class="link" href="#the-conceptual-data-model">The Conceptual Data Model</a></h2>
+<h2 id="iii-the-conceptual-data-model"><a class="anchor" href="#iii-the-conceptual-data-model"></a><a class="link" href="#iii-the-conceptual-data-model">III. The Conceptual Data Model</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The figure below provides an general view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put on e-Notification and e-Access.</p>
@@ -1048,22 +1074,772 @@ those placeholders."</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="design-and-implementation"><a class="anchor" href="#design-and-implementation"></a><a class="link" href="#design-and-implementation">Design and Implementation</a></h2>
+<h2 id="iv-design-and-implementation"><a class="anchor" href="#iv-design-and-implementation"></a><a class="link" href="#iv-design-and-implementation">IV. Design and Implementation</a></h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="proof-of-concept"><a class="anchor" href="#proof-of-concept"></a><a class="link" href="#proof-of-concept">Proof of Concept</a></h2>
+<h2 id="v-proof-of-concept"><a class="anchor" href="#v-proof-of-concept"></a><a class="link" href="#v-proof-of-concept">V. Proof of Concept</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The diagram below shows the activities that were planned and executed to develop the Proof of Concept:</p>
+<p>The main objectives of the Proof of Concept were:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Test the coherence of the Conceptual Data Model (of the T-Box);</p>
+</li>
+<li>
+<p>Test the consistency of the data once loaded (in the A-Box);</p>
+</li>
+<li>
+<p>Test the effectiveness of the OWL implementation of the eProcurement Ontology (ePO); and</p>
+</li>
+<li>
+<p>Test the feasibility of the ePO to support the Use Cases defined in ePO v.1.0.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Hence a varied set of activities were planned with these objectives in mind. The diagram below
+shows the activities that were planned and executed to develop the Proof of Concept:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/ePO_PoC.png?raw=true" alt="v2.0.0 - Proof-Of-Concept">
+<img src="images/ePO_PoC.png" alt="v2.0.0 - Proof-Of-Concept">
 </div>
 <div class="title">Figure 13. ePO Project v2.0.0 - Proof-Of-Concept</div>
+</div>
+<div class="paragraph">
+<p>The following subsections explain how each of the activities mentioned in the diagram above has been
+developed and where to check the inputs, processes and results.</p>
+</div>
+<div class="sect2">
+<h3 id="activity-1-use-cases"><a class="anchor" href="#activity-1-use-cases"></a><a class="link" href="#activity-1-use-cases">Activity 1: Use Cases</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Competency Questions, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify and study the Use Cases related to monitoring and transparency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s contractor team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ePO v1.0 <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism">Use Case 1</a>
+and <a href="https://github.com/eprocurementontology/eprocurementontology/issues/11">Issue #11</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Study of the Use Cases (slightly renaming).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ePO v1.0 focused on three different Use Cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism">Use Case 1</a>: Data Journalism</p>
+</li>
+<li>
+<p><a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism">Use Case 2</a>: Automated matchmaking of procured services and products with businesses, and</p>
+</li>
+<li>
+<p><a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-3.-Verifying-VAT-payments-on-intracommunity-service-provision">Use Case 3</a>: Verifying VAT payments on intra-community service provision.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>During its development a fourth Use Case was identified as relevant related to Transparency and Monitoring. This
+use case was proposed through an "<a href="https://github.com/eprocurementontology/eprocurementontology/issues/11">Issue</a>",
+in the GitHub repository. This Use Case was accepted as as a relevant case for transparency and monitoring.</p>
+</div>
+<div class="paragraph">
+<p>Hence the ePO v2.0.0, which is focused only on transparency and monitoring, was developed taken into account two
+Use Cases (slightly renamed):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring">Use Case 1</a>: Transparency and Monitoring; and</p>
+</li>
+<li>
+<p><a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use&#8212;&#8203;ase-4.-Analyzing-eProcurement-procedures">Use Case 4</a>: Analyzing eProcurement procedures.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-2-user-stories"><a class="anchor" href="#activity-2-user-stories"></a><a class="link" href="#activity-2-user-stories">Activity 2: User Stories</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. User Stories, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare sample (example) User Stories.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s contractor team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use Cases 1 and 4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples of <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/WayforwardCompetencyQuestions.pdf">User Stories</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>User Stories are a method of helping identify information requirements. The method consists in
+drafting very simple sentence structured around three main questions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Who is the beneficiary of an action (who benefits from it)?</p>
+</li>
+<li>
+<p>What is the need?</p>
+</li>
+<li>
+<p>What is the benefit?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The structure of the sentence is always like this: “<em>As a &lt;role of the user&gt;, I need &lt;something&gt;in order to &lt;benefit&gt;.</em>”</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong>:</p>
+</div>
+<div class="paragraph">
+<p>As a <strong>contracting authority</strong> (ROLE), I need to know <strong>the number of tenderers</strong> (WHAT DO I NEED?) that have submitted a tender
+in order <strong>to add it to the award notice</strong> (BENEFIT).</p>
+</div>
+<div class="paragraph">
+<p>Some examples of User Stories were prepared. The table below shows these sample User Stories for different
+roles and related to the Use Cases 1 and 4.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/UserStoriesExamplesTable.png" alt="User Stories examples">
+</div>
+<div class="title">Figure 14. Examples of User Stories</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-3-competency-questions"><a class="anchor" href="#activity-3-competency-questions"></a><a class="link" href="#activity-3-competency-questions">Activity 3: Competency Questions</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Competency Questions, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare sample (example) Competency Questions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s contractor team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use Cases 1 and 4, and the User Stories.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Examples of <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions">Competency Questions</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>User Stories help also draft very specific questions that need to be answered in order to
+meet the story. These questions will later on taken into account to draft concrete SPARQL queries.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of Competency Questions were prepared. The two tables below illustrate how these Competency
+Questions, linked to their respective User Stories, may look like. The
+link <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions">Competency Questions</a>,
+in the GitHub <a href="https://github.com/eprocurementontology/eprocurementontology/wiki">Wiki</a> page,
+supplies a longer list of concrete examples of CQ for the WG members to get inspiration.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CQExample1.png" alt="CQ example 1">
+</div>
+<div class="title">Figure 15. Example (1/2) of Competency Questions</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CQExample2.png" alt="CQ example 2">
+</div>
+<div class="title">Figure 16. Examples (2/2) of User Stories</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-4-review-cqs"><a class="anchor" href="#activity-4-review-cqs"></a><a class="link" href="#activity-4-review-cqs">Activity 4: Review CQs</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Revision of Competency Questions, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Review Competency Questions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Group members.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Competency Questions and related User Stories.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comments by the WG members.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The examples were made available to the Working Group members through the GitHub Wiki page.
+A special <a href="+https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&amp;labels=new%20competency%20question&amp;title=COMPETENCY+QUESTION-">Add a new competency question</a>
+to add comments or create new issues related to the CQs was also made available in the
+<a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions">GitHub Wiki page</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-5-input-data-set"><a class="anchor" href="#activity-5-input-data-set"></a><a class="link" href="#activity-5-input-data-set">Activity 5: Input Data Set</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Select Data Set, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select Data Set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use Cases, User Stories, Competency Questions, agreement with the members of the WG.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documents published on TED, accessed via the OP&#8217;s <a href="ftp://ted.europa.eu/">FTP</a> server.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For the extraction of data, the decision was made that the source of data should be the Notices
+published on the <a href="http://ted.europa.eu/TED/main/HomePage.do">TED portal</a>. This decision was made
+based on, namely, the following reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Contract Award Notice (CAN) contains the data most relevant for Transparency, Monitoring and Procedure control (jointly
+with the Contract Notice (CN));</p>
+</li>
+<li>
+<p>The CAN is the most published document, therefore the sample is richer;</p>
+</li>
+<li>
+<p>The structure and elements of the standard form for the CAN are very similar or identical to many of other
+Notices. This allows to reuse a relevant part of the extraction and transformation artefacts (XSL-T) to process
+many other types of Forms.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However the User Interface of the TED Portal does not allow downloading large amount of documents.
+For this we used the <a href="ftp://ted.europa.eu/">FTP</a> server supplied by the OP at: <a href="ftp://ted.europa.eu/" class="bare">ftp://ted.europa.eu/</a>
+(user: <strong>guest</strong>, password: <strong>guest</strong>).</p>
+</div>
+<div class="paragraph">
+<p>The TED-XML specification has been evolving for the past years. Different
+versions of XSD Schemas have been maintained in parallel for those years. The result is that, as
+per today, different schemas are being used to express the data in alignment to the 2014 Directives.
+For this PoC we decided to use CAN based only on the TED-XML XSD Schema
+<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd">R2.0.9.S01.E01 TED_EXPORT.xsd</a>
+and the Contract Award Notice (CAN) form for Directive 2014 supporting the
+<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd">F03_2014.xsd</a> standard form
+(all schemas are published on the Publications Office (OP) <a href="http://publications.europa.eu/mdr/eprocurement/ted/index.html">MDR site</a>.</p>
+</div>
+<div class="paragraph">
+<p>For this PoC we downloaded the <a href="ftp://ted.europa.eu/monthly-packages/2018/">*.tar.gz</a> files corresponding
+to January to May 2018. Bear in mind that, in the context of this PoC, we only extract data and import into the graph store the
+CANs for Directive 2014. However the TED_EXPORT.xsd includes all the forms (F01 to  F25) and the extraction process is able to extract data
+from many of these forms, as they share a large part of the elements (see "Activity 6: ETL process", just below). If you want a go with these
+other forms just uncomment the line "#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25 " and comment the line "DOCUMENT_TYPE_ID=3" in the <code>epo.properties</code> file.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-6-etl-process"><a class="anchor" href="#activity-6-etl-process"></a><a class="link" href="#activity-6-etl-process">Activity 6: ETL process</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. ETL process development, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Develop ETL process.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TED-XML schemas (on MDR) and TED notices published on the TED <a href="ftp://ted.europa.eu/">FTP</a> server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java code, XSL-T architecture, other resources (available on the GitHub repository and accessible
+via the GitHub Wiki page link
+<a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl">Data Loading development (ETL)</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The process for the Extraction, Transformation and Loading (ETL) was developed based on two technologies:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Java</strong>: version JDK 1.8 was used to build a Maven project (see <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/pom.xml">pom.xml</a>
+configuration file). The output of the build process is a "*.war" file. The <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/java/epo">source code</a>
+is available on the GitHub code repository. This java code is responsible for (i) organising the TED-XML files; (ii) launching the extraction + transformation and/or the
+loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;</p>
+</li>
+<li>
+<p>XSL-T: version XSL-T 3.0 was used to draft a set of <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt">stylesheets</a>
+the mission of which is to read the TED-XML files (Extraction) and transform that information into
+SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
+The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
+The piece of code below illustrates one of those examples (if you use the identifier of the document you
+should be able to find the TED-XML source in the TED Portal).</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">Result of transforming the TED-XML instance "091271-2018" into ePO-v2.00 SPARQL INSERT queries</div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
+PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX ccts: &lt;http://www.unece.org/cefact#&gt;
+PREFIX euvoc: &lt;http://publications.europa.eu/ontology/euvoc#&gt;
+PREFIX ubl: &lt;http://docs.oasis-open.org/ubl#&gt;
+PREFIX epo-rd: &lt;http://data.europa.eu/ePO/referencedata#&gt;
+
+INSERT DATA
+{
+	Graph &lt;http://data.europa.eu/ePO/ontology&gt;{
+		:CAN_091271-2018 rdf:type :ContractAwardNotice ;
+			:hasPublicationDate "2018-03-01T00:00:00"^^xsd:dateTime ;
+			:hasDocumentIdentifier :CAN_ID_091271-2018
+	}
+};
+INSERT DATA
+{
+	Graph &lt;http://data.europa.eu/ePO/ontology&gt;{
+		:CAN_ID_091271-2018 rdf:type ccts:Identifier ;
+			ccts:identifierValue "091271-2018" ;
+			ccts:schemeAgencyID "eu.europa.publicationsoffice.epo"
+	}
+}
+...
+<i class="conum" data-value="1"></i><b>(1)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>See <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip">GitHub code repository</a>
+or execute the code for complete examples.</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="code-execution"><a class="anchor" href="#code-execution"></a><a class="link" href="#code-execution">Code Execution</a></h4>
+<div class="paragraph">
+<p>You can execute the code at least in two ways:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Either you clone the project onto your machine, import the Maven project in your preferred Java editor tool and
+execute the main class <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/main/java/epo/MainETLProcess.java">MainETLProcess</a>.</p>
+</li>
+<li>
+<p>Alternatively you may unzip the *.war file and execute the compiled code from a console window.
+The piece of code below provides a very simple script illustrating how this can be done:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">Launching the code, a simple bash shell script</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="error">#</span>!/bin/bash
+
+arg=<span class="string"><span class="delimiter">&quot;</span><span class="content">$1</span><span class="delimiter">&quot;</span></span>
+exec java -classpath <span class="string"><span class="delimiter">&quot;</span><span class="content">lib/*:classes/.</span><span class="delimiter">&quot;</span></span> epo.MainETLProcess <span class="error">$</span>arg</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beware that the MainETLProcess takes one argument:</p>
+</div>
+<div class="listingblock">
+<div class="title">Acceptable arguments</div>
+<div class="content">
+<pre class="CodeRay highlight"><code>Usage: epo.MainETLProcess [-t]|[-i]|[-a]
+
+Valid arguments are:
+
+-t .... transforms XML into .txt files containing the SPARQL queries, but does not execute the queries.
+-i .... executes the SPARQL queries only.
+-a .... does everything.
+
+Options are mutually exclusive. Only one option is accepted.
+
+Example:
+
+ java -classpath "lib/*:classes/." epo.MainETLProcess -t
+ java -classpath "lib/*:classes/." epo.MainETLProcess -i
+ java -classpath "lib/*:classes/." epo.MainETLProcess -a</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="etl-execution-configuration"><a class="anchor" href="#etl-execution-configuration"></a><a class="link" href="#etl-execution-configuration">ETL execution configuration</a></h4>
+<div class="paragraph">
+<p>The java code uses a file named <em>*epo.properties*</em>. This file is to be located under the <code>/home/user</code>
+directory of the computer from where the code is executed. See below an example of how this configuration
+file looks like. Notice the two lines about the proxy configuration.</p>
+</div>
+<div class="listingblock">
+<div class="title">The <em>epo.properties</em> file, example</div>
+<div class="content">
+<pre>### Types of documents that need to be transformed and loaded. ####################################
+##
+## The next line is an example of how more than one Notice type can be specified.
+## The numbers 1,2,3, etc. identify the type of standard form in  TED.
+##
+## BEWARE THAT ONLY NOTICES BASED ON DIRECTIVE 2014 AND R2.0.9.S02 TED_EXPORT.xsd ARE PROCESSED.
+## R2.0.8.* TED_EXPORT.xsd-based notices ARE NOT PROCESSED.
+##
+## The example below states that the forms F01_2014, F02_2014, F03_2014, F22_2014,
+## F23_2014, F24_2014 and F25_2014 have to be transformed into TTL SPARQL INSERT files.
+##
+###################################################################################################
+
+#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25
+DOCUMENT_TYPE_ID=3
+
+### Graph db access ###############################################################################
+GRAPH_STORE_URL=http://34.249.1.15:7200
+#GRAPH_STORE_URL=http://localhost:7200
+GRAPH_STORE_USER=guest
+GRAPH_STORE_PASSWORD=guest
+GRAPH_STORE_REPOSITORY=ePO_test
+
+### Proxy configuration ##########################################################################
+## Remove comments and provide the URL or IP of your proxy server and the proxy port numbers
+#PROXY_URL=10.110.8.42
+#PROXY_PORT=8080
+
+### Directories configuration ####################################################################
+## The directory where the TED-XML files are located
+INPUT_DATA_DIR=/TED-Resources
+## The directory where the SPARQL INSERT TXT files, resulting form the XSL-T transformation, are written to.
+## This directory is the input directory from where the TXT files are taken to populate the Graph Store.
+OUTPUT_DATA_DIR=/TED-OUTPUT
+## The directory where the java application logs the operations executed and execeptions.
+LOG_DATA_DIR=/TED-LOG
+## Where the XSL-T architecture files are located. Relative or absolute paths can be specified.
+## Relative paths are relative to the path from where the etl-process is launched.
+TED_TO_EPO_XSL=./src/main/resources/xslt/TEDXSD_to_ePOTTL.xsl
+## Where the TED XSD Schemas are located. Relative or absolute paths can be specified.
+## Relative paths are relative to the path from where the etl-process is launched.
+TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/TED_EXPORT.xsd</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-7-populate-graph-store"><a class="anchor" href="#activity-7-populate-graph-store"></a><a class="link" href="#activity-7-populate-graph-store">Activity 7: Populate Graph store</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Populate the Graph store, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Populate the Graph store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The result of the XSL-T-based transformation (SPARQL INSERT queries).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
+transformation- for the five first months of 2018. The tble and bar graphic below show the exact number of
+files processed and the number of Contract Award Notices imported into the Graph Store.</p>
+</div>
+<div class="paragraph">
+<p>The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5)m which can be freely
+downloaded from the <a href="https://ontotext.com/">Ontotext</a> website.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Statistics-2018.png" alt="Number of Notices">
+</div>
+<div class="title">Figure 17. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Statistics-Frequency-2018.png" alt="Frequency of Notices">
+</div>
+<div class="title">Figure 18. Frequency of Notices</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-8-sparql-queries"><a class="anchor" href="#activity-8-sparql-queries"></a><a class="link" href="#activity-8-sparql-queries">Activity 8: SPARQL Queries</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 8. Develop SPARQL Queries, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Develop SPARQL Queries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Competency Questions (<a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">QCs examples</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The document <a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">SPARQL Query examples</a>
+provides a few examples that were provided for the Working Group (WG) members to have a glimpse
+at how efficiently the ePO is responding.</p>
+</div>
+<div class="sect3">
+<h4 id="query-examples"><a class="anchor" href="#query-examples"></a><a class="link" href="#query-examples">Query examples</a></h4>
+<div class="paragraph">
+<p><strong>Example 1</strong>: One very first exercise would consist in checking the amount of Contract Award Notice and to compare it to the number of
+transformations executed and compiled in the log files. For this open a browser, introduce the URL or IP of the GraphDB server
+(e.g. 34.249.1.15:7200) and copy this SPARQL Query in the textfield of the SPARQL Endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="title">Counting the number of Contract Award Notices</div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+select ?s (count(?did) as ?cdid) where {
+	?s a :ContractAwardNotice;
+    	:hasDocumentIdentifier ?did;
+} group by ?s</pre>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CountingCANs.png" alt="Counting CANs">
+</div>
+<div class="title">Figure 19. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 2</strong>: List all the winners, the size of the company and the date of award.</p>
+</div>
+<div class="listingblock">
+<div class="title">Winners, size of the company, date of the awarding</div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where {
+                ?Award_Result :hasWinner ?Winner ;
+                :hasAwardResultDateOfConclusion ?Awarded_Date .
+    			?Winner :usesEOIndustryClassificationType ?WinnerSize ;
+            	rov:legalName  ?Winner_Name
+}</pre>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/QueryExample1.png" alt="Winners" width="size and award date">
+</div>
+<div class="title">Figure 20. Winners</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 3</strong>: Number of contracts awarded for each CPV (beware that one Contract Award Notice may
+refer to multiple contracts).</p>
+</div>
+<div class="listingblock">
+<div class="title">Number of contracts per CPV</div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
+                ?contract a :Contract;
+        		:hasContractPurpose ?purpose.
+    			?purpose :hasCPVType ?cpv.
+} group by ?cpv order by desc(?number_contracts)</pre>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/QueryExample3.png" alt="Contracts per CPV">
+</div>
+<div class="title">Figure 21. Number of contracts per CPV</div>
+</div>
+<div class="paragraph">
+<p>See the document <a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">SPARQL Query examples</a>
+for more contextualisation and examples.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-9-test-and-debug"><a class="anchor" href="#activity-9-test-and-debug"></a><a class="link" href="#activity-9-test-and-debug">Activity 9: Test and debug</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Test and debug, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prepare/Execute/Debug Test Reports</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL queries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL table results</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="activity-10-validate-results"><a class="anchor" href="#activity-10-validate-results"></a><a class="link" href="#activity-10-validate-results">Activity 10: Validate results</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. Validate results, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use SPARQL queries, validate results.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Group WG) members.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example SPARQL queries supplied by the OP&#8217;s team.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL result-tables.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>(TODO): WG to prepare their own Queries.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activity-11-provide-feedback"><a class="anchor" href="#activity-11-provide-feedback"></a><a class="link" href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 11. Provide feedback, activity summary</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activity name</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide feedback</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Group WG) members.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s example queries and WG&#8217;s own Competency Questions and queries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feed-back via the <a href="https://github.com/eprocurementontology/eprocurementontology/issues">GitHub Issues</a>
+work-space.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1094,7 +1870,7 @@ those placeholders."</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-07-05 17:00:58 CEST
+Last updated 2018-07-08 14:02:26 CEST
 </div>
 </div>
 </body>
