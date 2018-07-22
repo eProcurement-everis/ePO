@@ -52,3 +52,6 @@ select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?perc
 }
 ----
 
+.KPI I: Single Bidder
+image::KPI_1_EU.png[KPI I, align="center"]
+
