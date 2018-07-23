@@ -20,7 +20,7 @@ The outcome of this task are namely two artefacts:
 2. The _**Data Element Dictionary (DED v2.0.0)**_: a link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/ePO_DED.xlsx[spread-sheet]
 where the Use Case information requirements are broken down into more detailed information requirements, axioms, business rules and annotations resulting from the analysis.
 
-## The Data Element Dictionary (DED v2.0.0)
+=== The Data Element Dictionary (DED v2.0.0)
 
 Information Analysts need to, based on each information requirement, make decisions like determining whether an element is an entity representing a _class_ of objects, an _attribute_ of the class of a basic data type e.g. a code, an identifier, a date, a time, a text, etc.), or a more complex _data object_ associated to the class (e.g. another class).
 
@@ -31,6 +31,38 @@ with the following columns and rows:
 .Information Requirements elicitation
 image::ePO_DED.png[DED, 1000, align="center"]
 
+==== Uses of the DED
+
+The DED is normally used with three objectives:
+
+. To *help analysts design the Ontology*. The DED is a "logical artefact". It takes the "Conceptual Data Model" as an input and reflects the
+conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints;
+
+. To *maintain the definitions of the data elements*. The ePO Glossary contains mainly the definitions of the concepts used in the Ontology. The
+DED takes the definitions of the ePO Glossary for the classes and adds definitions for each property of each class;
+
+. To *identify reference data linked to the data elements*, i.e. code lists and taxonomies;
+
+. To *automatise the production of different syntax bindings*. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
+generate XML, OWL or other machine-readable renditions of the data model. Thus it could be used to generate automatically the OWL-TTL expression
+of the ePO Ontology. Specifications like UN/CEFACT and UBL use the DED to automatically generate XSD schemas fully annotated (documented) with the
+data element definitions, examples, etc. This does also facilitates the registration of these data elements in registries for their automatic
+discovery and cross-sector mapping (See link:http://standards.iso.org/ittf/PubliclyAvailableStandards/c035348_ISO_IEC_11179-6_2005(E).zip[ISO 11179-6:2015 Registration]
+parts for more details on this).
+
+==== Current status of the DED
+
+The DED depends on the Glossary definitions and on the Conceptual Data Model, amongst other inputs for the elicitation of information requirements.
+The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved. It also helps to identify elements that may
+designed as object or data properties.
+
+As the ePO Glossary is an ongoing work the DED cannot be considered finished. Additionally many of the DED properties will have to be defined
+based on their context, the class where they belong in. These definitions are being worked out during the discussions about the ePO Glossary with the
+Member States.
+
+==== Content of the DED
+
+The content of the DED is organised as follows:
 
 **Columns**:
 
@@ -90,3 +122,6 @@ those placeholders."
 * "**Transparent rows**": represent a property of a class the range of which is an attribute (simple data type);
 
 * "**Green rows**": represents a property of class the range of which is another class of the Ontology.
+
+
+
