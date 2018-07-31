@@ -93,15 +93,27 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX epo-rd: <http://data.europa.eu/ePO/referencedata#>
 
-select ?country (count(?procurementProcedure) as ?procurementProcedure) where{
-    	?procurementProcedure a :ProcurementProcedure ;
-         	:usesProcurementProcedureType epo-rd:AWARD_WO_PUB;
-            :hasProcuringEntity ?procuringEntity .
-
-        ?procuringEntity org:hasSite ?site .
-        ?site vcard:hasAddress ?address .
-    	?address vcard:country-name ?country .
-} group by ?country
+select ?country (concat(str(round(?noBidsProcCount * 100 / ?allBidsProcCount)), '%') as ?proportion) where {
+    {
+        select ?country (count(?procurementProcedure) as ?noBidsProcCount) where{
+                ?procurementProcedure a :ProcurementProcedure ;
+                    :usesProcurementProcedureType epo-rd:AWARD_WO_PUB;
+                    :hasProcuringEntity ?procuringEntity .
+         ?procuringEntity org:hasSite ?site .
+                ?site vcard:hasAddress ?address .
+                ?address vcard:country-name ?country .
+        } group by ?country
+    }
+    {
+    	select ?country (count(?procurementProcedure) as ?allBidsProcCount) where{
+        ?procurementProcedure a :ProcurementProcedure ;
+                    :hasProcuringEntity ?procuringEntity .
+                ?procuringEntity org:hasSite ?site .
+                ?site vcard:hasAddress ?address .
+                ?address vcard:country-name ?country .
+        } group by ?country
+    }
+}
 ----
 
 ._KPI II. Result-set (csv)_
@@ -111,4 +123,7 @@ link:./images/KPI_II_QueryResult.csv[Query Result]
 
 ._KPI II. Comparative table_
 image::KPI_II_EU.png[KPI II, align="center"]
+
+NOTE: Beware that the total number of Contract Award Notices (R2.0.9.S02.E01)
+published by Romania is very small (just 13).
 
