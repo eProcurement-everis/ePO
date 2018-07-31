@@ -1,8 +1,8 @@
 
 == IV. Design and Implementation
 
-All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were used to
-produce an OWL ontology.
+All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were
+taken into account to produce an OWL ontology.
 
 The outcome of this task are mainly the expression of the ontology link:https://en.wikipedia.org/wiki/Tbox[T-Box] as an
 OWL-DL Turtle syntax and a comparison of the tools used (link:https://protege.stanford.edu/products.php[Protégé 5.2]

@@ -604,7 +604,13 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></li>
 </ul>
 </li>
-<li><a href="#conclusions-and-next-steps">Conclusions and next steps</a></li>
+<li><a href="#vi-conclusions-and-next-steps">VI. Conclusions and next steps</a></li>
+<li><a href="#annex-i-public-procurement-kpis">Annex I: Public Procurement KPIs</a>
+<ul class="sectlevel2">
+<li><a href="#indicator-i-single-bidder">Indicator I: Single bidder</a></li>
+<li><a href="#indicator-ii-no-calls-for-bids">Indicator II: No calls for bids</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1750,8 +1756,8 @@ See section <a href="file:#iv-design-and-implementation">IV. Design and Implemen
 <h2 id="iv-design-and-implementation"><a class="anchor" href="#iv-design-and-implementation"></a><a class="link" href="#iv-design-and-implementation">IV. Design and Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were used to
-produce an OWL ontology.</p>
+<p>All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were
+taken into account to produce an OWL ontology.</p>
 </div>
 <div class="paragraph">
 <p>The outcome of this task are mainly the expression of the ontology <a href="https://en.wikipedia.org/wiki/Tbox">T-Box</a> as an
@@ -2623,9 +2629,183 @@ work-space.</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="conclusions-and-next-steps"><a class="anchor" href="#conclusions-and-next-steps"></a><a class="link" href="#conclusions-and-next-steps">Conclusions and next steps</a></h2>
+<h2 id="vi-conclusions-and-next-steps"><a class="anchor" href="#vi-conclusions-and-next-steps"></a><a class="link" href="#vi-conclusions-and-next-steps">VI. Conclusions and next steps</a></h2>
 <div class="sectionbody">
 
+</div>
+</div>
+<div class="sect1">
+<h2 id="annex-i-public-procurement-kpis"><a class="anchor" href="#annex-i-public-procurement-kpis"></a><a class="link" href="#annex-i-public-procurement-kpis">Annex I: Public Procurement KPIs</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides some more examples of SPARQL queries and results obtained
+for the period January 2018 to May 2018.</p>
+</div>
+<div class="paragraph">
+<p>The queries are intended to produce similar
+KPIs results as the ones shown in the
+<a href="http://ec.europa.eu/internal_market/scoreboard/performance_per_policy_area/public_procurement/index_en.htm">EU Single Market on Public Procurement</a>.
+The source of information for the results shown in this chapter are the
+Contract Award Notices available in the OP&#8217;s <a href="ftp://ted.europa.eu">TED ftp server</a>,
+only CANs under Directive 2014/24/EU, from January to May 2018).</p>
+</div>
+<div class="paragraph">
+<p>While comparing results, bear in mind that the information used by the EU Single Market portal
+is also extracted from the TED, but the sample is much bigger and richer (more years, types of forms and different
+releases) than the one used for this PoC.</p>
+</div>
+<div class="paragraph">
+<p>The explanations about "What they do measure, what they do reflect, and how to interpret the
+results" were copied from the EU Single Market portal.</p>
+</div>
+<div class="sect2">
+<h3 id="indicator-i-single-bidder"><a class="anchor" href="#indicator-i-single-bidder"></a><a class="link" href="#indicator-i-single-bidder">Indicator I: Single bidder</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 12. <em>KPI II. No calls for bids, interpretation</em></caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it measure?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The proportion of contracts awarded where there was just a single bidder (excluding framework agreements, as they have different reporting patterns).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it reflect?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Several aspects of procurement, including <strong>competition</strong> and <strong>bureaucracy</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>How to interpret it?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More bidders are better, as this means public buyers have more options, and can get better value for money.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title"><em>KPI II. No call for bids, SPARQL query</em></div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
+select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?percent) where
+{
+    {select ?c (count(?c) as ?cc) where {
+        {select ?ar (count(?w) as ?cw) where{
+            ?contract a :Contract ;
+                      :refersToAwardResult ?ar.
+            ?ar :hasWinner ?w
+            filter not exists {?contract :hasFrameworkContract ?fc}
+
+            } group by ?ar
+            having (count(?w) = 1)}
+        ?ar :hasWinner ?w .
+           ?w org:hasSite ?s .
+        ?s vcard:hasAddress ?a .
+        ?a vcard:country-name ?c} group by ?c order by ?c
+    }
+    {
+        select ?c (count(?c) as ?countContract) where
+        {
+            ?con a :Contract ;
+               :refersToAwardResult ?ar .
+            ?ar :hasWinner ?w .
+            ?w org:hasSite ?s .
+            ?s vcard:hasAddress ?add .
+            ?add vcard:country-name ?c
+        } group by ?c order by ?c
+    }
+}</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title"><em>KPI I. Result-set (csv)</em></div>
+Click here to download the figures resulting from the query:
+<a href="./images/KPI_I_QueryResult.csv">Query Result</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/KPI_I_EU.png" alt="KPI I">
+</div>
+<div class="title">Figure 43. <em>KPI I. Comparative table</em></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="indicator-ii-no-calls-for-bids"><a class="anchor" href="#indicator-ii-no-calls-for-bids"></a><a class="link" href="#indicator-ii-no-calls-for-bids">Indicator II: No calls for bids</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 13. <em>KPI II. No calls for bids, interpretation</em></caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it measure?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The proportion of procurement procedures that were negotiated with a company without a call for bids.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it reflect?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Several aspects of procurement, including <strong>transparency</strong> and <strong>competition</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>How to interpret it?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calling for bids (or "calling for tenders") before starting procurement negotiations is better,
+as it makes the bidder selection process more transparent and increases competition. This leads to better value for money.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title"><em>Indicator II. No call for bids, SPARQL query</em></div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
+PREFIX epo-rd: &lt;http://data.europa.eu/ePO/referencedata#&gt;
+
+select ?country (count(?procurementProcedure) as ?procurementProcedure) where{
+    	?procurementProcedure a :ProcurementProcedure ;
+         	:usesProcurementProcedureType epo-rd:AWARD_WO_PUB;
+            :hasProcuringEntity ?procuringEntity .
+
+        ?procuringEntity org:hasSite ?site .
+        ?site vcard:hasAddress ?address .
+    	?address vcard:country-name ?country .
+} group by ?country</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title"><em>KPI II. Result-set (csv)</em></div>
+Click here to download the figures resulting from the query:
+<a href="./images/KPI_II_QueryResult.csv">Query Result</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/KPI_II_EU.png" alt="KPI II">
+</div>
+<div class="title">Figure 44. <em>KPI II. Comparative table</em></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2649,7 +2829,7 @@ work-space.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-07-08 14:02:26 CEST
+Last updated 2018-07-31 19:04:21 CEST
 </div>
 </div>
 </body>
