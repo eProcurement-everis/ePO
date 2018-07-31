@@ -534,15 +534,47 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#epo-governance">ePO governance</a></li>
 </ul>
 </li>
-<li><a href="#ii-information-requirements">II. Information Requirements</a></li>
-<li><a href="#the-data-element-dictionary-ded-v2-0-0">The Data Element Dictionary (DED v2.0.0)</a></li>
-<li><a href="#iii-the-conceptual-data-model">III. The Conceptual Data Model</a>
+<li><a href="#ii-information-requirements">II. Information Requirements</a>
 <ul class="sectlevel2">
-<li><a href="#overview">Overview</a></li>
-<li><a href="#overview-and-class-attributes">Overview and class attributes</a></li>
+<li><a href="#the-data-element-dictionary-ded-v2-0-0">The Data Element Dictionary (DED v2.0.0)</a>
+<ul class="sectlevel3">
+<li><a href="#uses-of-the-ded">Uses of the DED</a></li>
+<li><a href="#current-status-of-the-ded">Current status of the DED</a></li>
+<li><a href="#content-of-the-ded">Content of the DED</a></li>
 </ul>
 </li>
-<li><a href="#iv-design-and-implementation">IV. Design and Implementation</a></li>
+</ul>
+</li>
+<li><a href="#iii-conceptual-data-model-cm">III. Conceptual Data Model (CM)</a>
+<ul class="sectlevel2">
+<li><a href="#cm-overview">CM Overview</a></li>
+<li><a href="#procurement-project">Procurement Project</a></li>
+<li><a href="#procurement-procedure">Procurement Procedure</a></li>
+<li><a href="#accelerated-procedure">Accelerated Procedure</a></li>
+<li><a href="#procurement-terms">Procurement Terms</a></li>
+<li><a href="#lots">Lots</a></li>
+<li><a href="#technique">Technique</a></li>
+<li><a href="#procuring-entity">Procuring Entity</a></li>
+<li><a href="#economic-operator">Economic Operator</a></li>
+<li><a href="#contract">Contract</a></li>
+<li><a href="#tender">Tender</a></li>
+<li><a href="#evaluation-result">Evaluation Result</a></li>
+<li><a href="#contract-2">Contract</a></li>
+<li><a href="#criterion">Criterion</a></li>
+<li><a href="#award-criterion">Award Criterion</a></li>
+<li><a href="#exclusion-grounds">Exclusion Grounds</a></li>
+<li><a href="#selection-criterion">Selection Criterion</a></li>
+<li><a href="#documents">Documents</a></li>
+<li><a href="#contract-award-notice">Contract Award Notice</a></li>
+<li><a href="#data-types">Data Types</a></li>
+</ul>
+</li>
+<li><a href="#iv-design-and-implementation">IV. Design and Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#epo-1-0-rdf-xml-vocabulary">ePo 1.0 RDF-XML vocabulary</a></li>
+<li><a href="#epo-v2-0-0-owl-dl-syntax">ePO v2.0.0 OWL-DL syntax</a></li>
+</ul>
+</li>
 <li><a href="#v-proof-of-concept">V. Proof of Concept</a>
 <ul class="sectlevel2">
 <li><a href="#activity-1-use-cases">Activity 1: Use Cases</a></li>
@@ -551,6 +583,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#activity-4-review-cqs">Activity 4: Review CQs</a></li>
 <li><a href="#activity-5-input-data-set">Activity 5: Input Data Set</a></li>
 <li><a href="#activity-6-etl-process">Activity 6: ETL process</a>
+<ul class="sectlevel3">
+<li><a href="#ted-to-epo-mapping">TED to ePO Mapping</a></li>
+</ul>
+</li>
+<li><a href="#technical-approach">Technical approach</a>
 <ul class="sectlevel3">
 <li><a href="#code-execution">Code Execution</a></li>
 <li><a href="#etl-execution-configuration">ETL execution configuration</a></li>
@@ -939,11 +976,8 @@ where the Use Case information requirements are broken down into more detailed i
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="the-data-element-dictionary-ded-v2-0-0"><a class="anchor" href="#the-data-element-dictionary-ded-v2-0-0"></a><a class="link" href="#the-data-element-dictionary-ded-v2-0-0">The Data Element Dictionary (DED v2.0.0)</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="the-data-element-dictionary-ded-v2-0-0"><a class="anchor" href="#the-data-element-dictionary-ded-v2-0-0"></a><a class="link" href="#the-data-element-dictionary-ded-v2-0-0">The Data Element Dictionary (DED v2.0.0)</a></h3>
 <div class="paragraph">
 <p>Information Analysts need to, based on each information requirement, make decisions like determining whether an element is an entity representing a <em>class</em> of objects, an <em>attribute</em> of the class of a basic data type e.g. a code, an identifier, a date, a time, a text, etc.), or a more complex <em>data object</em> associated to the class (e.g. another class).</p>
 </div>
@@ -957,6 +991,53 @@ with the following columns and rows:</p>
 <img src="images/ePO_DED.png" alt="DED" width="1000">
 </div>
 <div class="title">Figure 10. Information Requirements elicitation</div>
+</div>
+<div class="sect3">
+<h4 id="uses-of-the-ded"><a class="anchor" href="#uses-of-the-ded"></a><a class="link" href="#uses-of-the-ded">Uses of the DED</a></h4>
+<div class="paragraph">
+<p>The DED is normally used with three objectives:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To <strong>help analysts design the Ontology</strong>. The DED is a "logical artefact". It takes the "Conceptual Data Model" as an input and reflects the
+conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints;</p>
+</li>
+<li>
+<p>To <strong>maintain the definitions of the data elements</strong>. The ePO Glossary contains mainly the definitions of the concepts used in the Ontology. The
+DED takes the definitions of the ePO Glossary for the classes and adds definitions for each property of each class;</p>
+</li>
+<li>
+<p>To <strong>identify reference data linked to the data elements</strong>, i.e. code lists and taxonomies;</p>
+</li>
+<li>
+<p>To <strong>automatise the production of different syntax bindings</strong>. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
+generate XML, OWL or other machine-readable renditions of the data model. Thus it could be used to generate automatically the OWL-TTL expression
+of the ePO Ontology. Specifications like UN/CEFACT and UBL use the DED to automatically generate XSD schemas fully annotated (documented) with the
+data element definitions, examples, etc. This does also facilitates the registration of these data elements in registries for their automatic
+discovery and cross-sector mapping (See <a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c035348_ISO_IEC_11179-6_2005(E).zip">ISO 11179-6:2015 Registration</a>
+parts for more details on this).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-status-of-the-ded"><a class="anchor" href="#current-status-of-the-ded"></a><a class="link" href="#current-status-of-the-ded">Current status of the DED</a></h4>
+<div class="paragraph">
+<p>The DED depends on the Glossary definitions and on the Conceptual Data Model, amongst other inputs for the elicitation of information requirements.
+The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved. It also helps to identify elements that may
+designed as object or data properties.</p>
+</div>
+<div class="paragraph">
+<p>As the ePO Glossary is an ongoing work the DED cannot be considered finished. Additionally many of the DED properties will have to be defined
+based on their context, the class where they belong in. These definitions are being worked out during the discussions about the ePO Glossary with the
+Member States.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="content-of-the-ded"><a class="anchor" href="#content-of-the-ded"></a><a class="link" href="#content-of-the-ded">Content of the DED</a></h4>
+<div class="paragraph">
+<p>The content of the DED is organised as follows:</p>
 </div>
 <div class="paragraph">
 <p><strong>Columns</strong>:</p>
@@ -1044,31 +1125,623 @@ those placeholders."</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="iii-the-conceptual-data-model"><a class="anchor" href="#iii-the-conceptual-data-model"></a><a class="link" href="#iii-the-conceptual-data-model">III. The Conceptual Data Model</a></h2>
+<h2 id="iii-conceptual-data-model-cm"><a class="anchor" href="#iii-conceptual-data-model-cm"></a><a class="link" href="#iii-conceptual-data-model-cm">III. Conceptual Data Model (CM)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The figure below provides an general view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put on e-Notification and e-Access.</p>
+<p>The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to 15 diagrams have
+been drafted. Fourteen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
+Procurement Procedure, Procuring Entity, Economic Operator, Lots, Procurement Terms, etc. An additional "overview" diagram
+provides a general view of the whole model.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CMDevelopmentPlan.png" alt="CM development">
+</div>
+<div class="title">Figure 11. Development of the Domain Conceptual Data Model</div>
+</div>
+<div class="paragraph">
+<p>The conceptual data model is available both as an
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml">XMI format - version 2.1</a>
+and <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">Enterprise Architect</a>
+project file.</p>
 </div>
 <div class="sect2">
-<h3 id="overview"><a class="anchor" href="#overview"></a><a class="link" href="#overview">Overview</a></h3>
+<h3 id="cm-overview"><a class="anchor" href="#cm-overview"></a><a class="link" href="#cm-overview">CM Overview</a></h3>
+<div class="paragraph">
+<p>General view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put
+on e-Notification and e-Access.</p>
+</div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ConceptualModel_Overview.png" alt="ePO Conceptual Data Model" width="overview">
 </div>
-<div class="title">Figure 11. ePO Conceptual Data Model, overview</div>
+<div class="title">Figure 12. ePO Conceptual Data Model, overview</div>
 </div>
 <div class="paragraph">
-<p>This other view adds the attributes of each class, including cardinalitites and the <em>abstract</em> data types. At OWL design time these <em>abstract</em> data types are implemented through the reuse of standard types (see the ePO specification "OWL Design" chapter for details on this).</p>
+<p>The subsections below provide further details on key Classes of the ePO and about how these Classes relate to other Ontologies.
+A brief description for each model is provided in order to make it more understandable. The "legend" below should also facilitate
+the comprehension of the diagrams content.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/EAPDiagramsLegend.png" alt="Legend" width="300">
+</div>
+<div class="title">Figure 13. Legend</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="overview-and-class-attributes"><a class="anchor" href="#overview-and-class-attributes"></a><a class="link" href="#overview-and-class-attributes">Overview and class attributes</a></h3>
+<h3 id="procurement-project"><a class="anchor" href="#procurement-project"></a><a class="link" href="#procurement-project">Procurement Project</a></h3>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/ConceptualModel_Overview_Detailed.png" alt="ePO Conceptual Data Model" width="overview">
+<img src="images/ProcurementProject.png" alt="Procurement Project">
 </div>
-<div class="title">Figure 12. ePO Conceptual Data Model, overview</div>
+<div class="title">Figure 14. Procurement Project</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Procurement is the acquisition by means of a public contract of works, supplies or services by one or more contracting authorities from economic operators chosen by those contracting authorities, whether or not the works, supplies or services are intended for a public purpose. (Directive 2014/24/EU, Article 1(2)).</p>
+</li>
+<li>
+<p>At its inception phase, the Procurement can be thought as a "Procurement Project".</p>
+</li>
+<li>
+<p>Procurement Projects are implemented through a Procurement Procedure or through the Lots of a Procurement Procedure.</p>
+</li>
+<li>
+<p>Procurement projects have a purpose which include aspects such as the subject-matter, the place of performance, contract nature, estimated duration, and other elements.</p>
+</li>
+<li>
+<p>The Procurement Project has an estimated value. These estimations are later on confirmed or finally established and reflected in the Contract and announced through the Contract Award Notice.</p>
+</li>
+<li>
+<p>The Procurement Project may use  Techniques (see Technique Type).</p>
+</li>
+<li>
+<p>The Procurement Project may use Funds provided by the European Union.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="procurement-procedure"><a class="anchor" href="#procurement-procedure"></a><a class="link" href="#procurement-procedure">Procurement Procedure</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ProcurementProcedure.png" alt="Procurement Procedure">
+</div>
+<div class="title">Figure 15. Procurement Procedure</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Procurement Procedures is a series of activities leading to the conclusion of a public contract.</p>
+</li>
+<li>
+<p>Pay attention to the fact that the Procuring Procedure is not directly linked to the Contract. Instead, this connection is made through the Procuring Entities involved in the Procedure. There are different reasons for this: e.g. if no Tenders are submitted for a Procedure, no Contract is issued, which also entails that the link could not be established through the Tender. This also explains why Economic Operator is not directly related to the Procurement Procedure.</p>
+</li>
+<li>
+<p>Different types of Procurement Procedures are carried out according to the EU Legislation (see Procurement Procedure Type).</p>
+</li>
+<li>
+<p>Some Procurement Procedures apply specific legal regimes and instruments for the awarding of certain services or the acquisition of designs (see Procurement Regime Type).</p>
+</li>
+<li>
+<p>Procurement Procedures are divided in one or more Lots (see diagram Lots).</p>
+</li>
+<li>
+<p>Procurement Procedures usually generate, collect or refer to different documents. Two of the most relevant groups of documents are represented by the classes Procurement Document and Tender Document (see diagram Documents).</p>
+</li>
+<li>
+<p>All Procurement Procedures are conducted by at least one Procuring Entity, in some cases Procuring Entities carry out join procurement (see diagram Procuring Entity).</p>
+</li>
+<li>
+<p>Procurement Procedures may need to refer to certain types of organisations responsible for the management or control of a number of aspects of the procedure, e.g. environmental party, tax party.</p>
+</li>
+<li>
+<p>In some types of Procurement Procedures (e.g. restricted, competitive with negotiation, other), Procuring Entities may limit the number of candidates accessing the award criteria phase. When this is the case, certain information must be notified by the Procuring Entity, e.g. expected maximum and minimum number of candidates, justification / description of the limitation, etc. (Tender Short List).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accelerated-procedure"><a class="anchor" href="#accelerated-procedure"></a><a class="link" href="#accelerated-procedure">Accelerated Procedure</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/AcceleratedProcedure.png" alt="Accelerated Procedure">
+</div>
+<div class="title">Figure 16. Accelerated Procedure</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An accelerated procedure takes place when the time limits within the procedure are reduced.</p>
+</li>
+<li>
+<p>Time limits can be reduced due to as state of urgency (Accelerated Procedure Justification Type) in which case a justification must be provided (Accelerated Procedure Further Justification).</p>
+</li>
+<li>
+<p>They can also be reduced by a Prior Information Notice (PIN) published specifically for reducing the time limits.</p>
+</li>
+<li>
+<p>For example see Directive 2014/24/EU Article 27(3) and 28(6).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="procurement-terms"><a class="anchor" href="#procurement-terms"></a><a class="link" href="#procurement-terms">Procurement Terms</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ProcurementTerms.png" alt="Procurement Terms">
+</div>
+<div class="title">Figure 17. Procurement Terms</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The Procurement Terms are "conditions or stipulations established by the Procuring  Entity:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Procedure Terms: conditions and stipulations determining how the procurement procedure is executed.</p>
+</li>
+<li>
+<p>Review Terms: conditions and stipulations about the information and organisation responsible for the revision of a Procurement Procedure.</p>
+</li>
+<li>
+<p>Tender Submission Terms: conditions and stipulations about the Tender and its submission.</p>
+</li>
+<li>
+<p>Contract Terms: conditions and stipulations related to the implementation of the contract.</p>
+</li>
+<li>
+<p>Tender Evaluation Terms: conditions and stipulations to evaluate the tenders.</p>
+</li>
+<li>
+<p>Award Terms: conditions and stipulations to determine how the procurement procedure is awarded.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lots"><a class="anchor" href="#lots"></a><a class="link" href="#lots">Lots</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Lots.png" alt="Lots">
+</div>
+<div class="title">Figure 18. Lots</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A Lot is one of the parts into which a Procurement Procedure is divided.</p>
+</li>
+<li>
+<p>One or more lots may aim at one or more Contract.</p>
+</li>
+<li>
+<p>When preparing the Procurement Projects, Lots may be grouped.</p>
+</li>
+<li>
+<p>Tenderers prepare their Tender for one or more Lots.</p>
+</li>
+<li>
+<p>The Procuring Entity apply Selection and Award Criteria to one or more Lots or Group of Lots.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="technique"><a class="anchor" href="#technique"></a><a class="link" href="#technique">Technique</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Technique.png" alt="Technique">
+</div>
+<div class="title">Figure 19. Technique</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Techniques are specific methods of carrying out the procurement or a purchase. E.g. Framework Agreement, e-Auction or Dynamic Purchase System.</p>
+</li>
+<li>
+<p>Each Technique has its own properties, thus Framework Agreement can be typified, has a duration, its own values, etc.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="procuring-entity"><a class="anchor" href="#procuring-entity"></a><a class="link" href="#procuring-entity">Procuring Entity</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ProcuringEntity.png" alt="Procuring Entity">
+</div>
+<div class="title">Figure 20. Procuring Entity</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In any Procurement Procedure, there is at least one Procuring Entity;</p>
+</li>
+<li>
+<p>Procuring Entities are “Organizations”, appropriately identified and described (IDs, Names, Addresses, Contact Points, etc.);</p>
+</li>
+<li>
+<p>Depending on its nature and main activity a Procuring Entity may be identified simply as a Contracting Authority (general procurement) or as a Contracting Entity pursuing the procurement of gas and heat, electricity, water, transport services, ports and airports, postal services and extraction of oil and gas and exploration for, or extraction of, coal or other solid fuels. A Contracting Entity may in turn be a Contracting Authority, a Public Undertaking or entities with special or exclusive rights (Procuring Entity Type code list);</p>
+</li>
+<li>
+<p>For some Procurement Procedures, a Procuring Entity can join other Procuring Entities (Joint Procurement)</p>
+</li>
+<li>
+<p>In these cases, the Procuring Entities participating in the Joint Procurement adopt one role (Procuring Entity Role Type code list), e.g. the lead of the group.</p>
+</li>
+<li>
+<p>Procuring Entities are in general responsible for the both the management of the procurement procedure and the purchase.  However in some cases procuring entities may buy on behalf of other procuring entities or through other procuring entities ("Procuring Entity Role Type").</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="economic-operator"><a class="anchor" href="#economic-operator"></a><a class="link" href="#economic-operator">Economic Operator</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/EconomicOperator.png" alt="Economic Operator">
+</div>
+<div class="title">Figure 21. Economic Operator</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An Economic Operator is an organisation.</p>
+</li>
+<li>
+<p>Economic Operators can be Tenderers (the submitter of the Tender) or sub-contractors.</p>
+</li>
+<li>
+<p>When the Economic Operators are members of a group (e.g. Consortia, Joint ventures, Undertaking (EO Group Type)), and they play different roles, e.g. group lead entity, member of the group, etc. (EO Role Type).</p>
+</li>
+<li>
+<p>The Winner of a contract is a tenderer or group of Tenderers.</p>
+</li>
+<li>
+<p>Tenderers may rely on other Economic Operator that are subcontractors but not tenderers.</p>
+</li>
+<li>
+<p>When guarantees are required by the Procuring Entity, Economic Operators may have to provide Financial Account details (e.g. a bank account data).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contract"><a class="anchor" href="#contract"></a><a class="link" href="#contract">Contract</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Contract.png" alt="Contract">
+</div>
+<div class="title">Figure 22. Contract</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>One of the activities that takes place in the Procurement Procedure life-cycle is the evaluation of Tenderers and Tenders, and the awarding of a contract to one or more Tenderer. The awarded Tenderer(s) are the "Winner(s)".</p>
+</li>
+<li>
+<p>The Contract may attach other Procurement Documents and other types of Documents.</p>
+</li>
+<li>
+<p>The object of the Contract and additional data that where stated in the Procurement Project are also placed in the contract Purpose (e.g. Subject Matter, Place of Performance, Total Magnitude Quantity, etc.).</p>
+</li>
+<li>
+<p>Similarly, the values of the Procurement that where initially estimated in the Procurement Project are set in the Procurement Value class.</p>
+</li>
+<li>
+<p>The Contract reflects also the Awarding Results (resulting from the evaluation) and the signatory parties (Procuring Entities and Winners).</p>
+</li>
+<li>
+<p>In case the Procurement Procedure uses Framework Agreement as Technique, the contract refers to it.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tender"><a class="anchor" href="#tender"></a><a class="link" href="#tender">Tender</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Tender.png" alt="Tender">
+</div>
+<div class="title">Figure 23. Tender</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tenders are submitted by Tenderers, who are Economic Operators.</p>
+</li>
+<li>
+<p>One Tender may attach one or more "Tender Documents" (e.g. the Financial Tender, the Technical Tender, Technical annexes and specifications, etc.; see the Diagram "Documents");</p>
+</li>
+<li>
+<p>In Procurement Procedures divided into Lots, one Economic Operator submits one  Tender.  The tender specifies to which Lots it applies.</p>
+</li>
+<li>
+<p>Procurement Procedures are always considered to have at least one lot.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="evaluation-result"><a class="anchor" href="#evaluation-result"></a><a class="link" href="#evaluation-result">Evaluation Result</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/EvaluationResult.png" alt="Evaluation Result">
+</div>
+<div class="title">Figure 24. Evaluation Result</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The Evaluation Result is presented in the form of a report showing the assessment of the tenders by the evaluation board.</p>
+</li>
+<li>
+<p>The Evaluation board takes into consideration the Criterion and the Tender Evaluation Terms when assessing the tenders.</p>
+</li>
+<li>
+<p>The awards result takes into consideration the evaluation result and awards the contract.</p>
+</li>
+<li>
+<p>In the case of contest design competitions, the board is formed by a Jury, whose decision may be binding for the Procuring Entity (see Evaluation Board Type).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contract-2"><a class="anchor" href="#contract-2"></a><a class="link" href="#contract-2">Contract</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Contract.png" alt="Contract">
+</div>
+<div class="title">Figure 25. Contract</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>One of the activities that takes place in the Procurement Procedure life-cycle is the evaluation of Tenderers and Tenders, and the awarding of a contract to one or more Tenderer. The awarded Tenderer(s) are the "Winner(s)".</p>
+</li>
+<li>
+<p>The Contract may attach other Procurement Documents and other types of Documents.</p>
+</li>
+<li>
+<p>The object of the Contract and additional data that where stated in the Procurement Project are also placed in the contract Purpose (e.g. Subject Matter, Place of Performance, Total Magnitude Quantity, etc.).</p>
+</li>
+<li>
+<p>Similarly, the values of the Procurement that where initially estimated in the Procurement Project are set in the Procurement Value class.</p>
+</li>
+<li>
+<p>The Contract reflects also the Awarding Results (resulting from the evaluation) and the signatory parties (Procuring Entities and Winners).</p>
+</li>
+<li>
+<p>In case the Procurement Procedure uses Framework Agreement as Technique, the contract refers to it.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="criterion"><a class="anchor" href="#criterion"></a><a class="link" href="#criterion">Criterion</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Criterion.png" alt="Criterion">
+</div>
+<div class="title">Figure 26. Criterion</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Criterion is a generic business-agnostic class. This eProcurement ontology (ePO) uses this as a base class to extend Award Criterion, Exclusion Grounds and Selection Criterion (see the rest of diagrams about criteria for details).</p>
+</li>
+<li>
+<p>A Criterion is a condition that needs to be answered for evaluation purposes. For example:  General average turnover for the past three years.</p>
+</li>
+<li>
+<p>All Criteria are codified via a Criteria Taxonomy. Thus, the examples above have an associated code as exclusion, selection and award criteria (see Criteria Taxonomy). Exclusion, Selection and Award criteria do extend the classes and properties of Criterion.</p>
+</li>
+<li>
+<p>In general, Criteria are evaluated using a pass/fail method, meaning that the Tenderer or the Tender meet or do not meet the Criterion. However, selection and award criteria may be weighted (see Evaluation Method Type).</p>
+</li>
+<li>
+<p>A Criterion may contain sub-criteria. Thus, the exclusion criteria defined in the European Directives may be further detailed in national sub-criteria, e.g. national professional misconduct-related criteria.</p>
+</li>
+<li>
+<p>The condition described in a Criterion may be broken down into simpler elements named "Criterion Property", which are always grouped into Criterion Property Groups.</p>
+</li>
+<li>
+<p>A Criterion Property is a more specific information needed to measure a criterion. It is a question that usually goes hand in hand with a specific requirement.  For example which follows on from the example given for criterion: Question: Amount? Requirement: The text explaining what the procuring entity is interested in measuring i.e. minimum turnover.</p>
+</li>
+<li>
+<p>Criterion Property Groups are organised structures or related criterion properties. Following on from the example of Criterion property.  In the case of a yearly general turnover that needs to specify three turnovers for three specific years, a group of properties would be:  turnover 1987, turnover 1988, turnover 1989.</p>
+</li>
+<li>
+<p>One criterion property is normally associated to a value (Criterion Property Datum). The value may be an economic amount, a text, a date or a period, etc.</p>
+</li>
+<li>
+<p>The responses to one Criterion may be supported by one or more evidences (property "provides evidence"). This evidence might have to be based on a template specified by the Procuring Entity (property "base on evidence template"). The fact that one individual of an evidence is linked to one Criterion does not preclude the possibility of linking this same individual (or instance) to other Criteria.</p>
+</li>
+<li>
+<p>In the domain of public procurement, exclusion grounds, selection criteria and award criteria are normally based on a specific legal framework (see class Legislation).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="award-criterion"><a class="anchor" href="#award-criterion"></a><a class="link" href="#award-criterion">Award Criterion</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/AwardCriterion.png" alt="Award Criterion">
+</div>
+<div class="title">Figure 27. Award Criterion</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Award Criteria are used to evaluate Tenders. They may include the best price-quality ratio, including qualitative, environmental and/or social aspects, linked to the subject-matter of the public contract in question.</p>
+</li>
+<li>
+<p>Thus, an Award Criterion needs to be codified as lowest, most economic tender, mixed or other (for non-objective / qualitative criteria - see Criteria Taxonomy).</p>
+</li>
+<li>
+<p>In two-phase procedures technical and financial criteria, used in the first phase for the selection, can be reused as weighted criteria to evaluate the Tenders.</p>
+</li>
+<li>
+<p>Award Criterion is a class that specialises Criterion. The specialisation consists in providing a property to link the Criterion to Lot.</p>
+</li>
+<li>
+<p>Award Criterion and Award Criterion Property, both need to link to Lot.</p>
+</li>
+<li>
+<p>This is why the class Award Criterion needs to provide specialised sub-classes for the Criterion Property Group and Criterion Property, as well as the properties linking them.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exclusion-grounds"><a class="anchor" href="#exclusion-grounds"></a><a class="link" href="#exclusion-grounds">Exclusion Grounds</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ExclusionGrounds.png" alt="Exclusion Grounds">
+</div>
+<div class="title">Figure 28. Exclusion Grounds</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tenderers may be excluded from participate in a Procurement Procedure, in case they bridge any of the legal criteria established in the Directives. This criteria are named Exclusion Grounds.</p>
+</li>
+<li>
+<p>Exclusion Ground extends the generic Criterion class by adding a new property ("applies to") to refer to the Tenderers that are excluded in a procedure.</p>
+</li>
+<li>
+<p>The ePO allows to determine the exact Exclusion Grounds were not met by the Tenderer for specific Procurement Procedure. To see how the Tenderer related to Procurement Procedure, please see the diagram "Evaluation Result".</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selection-criterion"><a class="anchor" href="#selection-criterion"></a><a class="link" href="#selection-criterion">Selection Criterion</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/SelectionCriterion.png" alt="Selection Criterion">
+</div>
+<div class="title">Figure 29. Selection Criterion</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selection Criteria aim at ensuring that a candidate or tenderer has the legal and financial capacities and the technical and professional abilities to perform the contract to be awarded (see ePO Glossary for the difference between Candidate and Tenderer).</p>
+</li>
+<li>
+<p>Thus, a Selection Criterion is to be classified using the Criteria Taxonomy (e.g. CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY, CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE, etc.).</p>
+</li>
+<li>
+<p>Selection Criterion is a class that specialises Criterion. The specialisation consists in providing a property to link the Criterion to Lot.</p>
+</li>
+<li>
+<p>Selection Criterion and Selection Criterion Property, both need to link to Lot.</p>
+</li>
+<li>
+<p>This is why the class Selection Criterion needs to provide specialised sub-classes for the Criterion Property Group and Criterion Property, as well as the properties linking them.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="documents"><a class="anchor" href="#documents"></a><a class="link" href="#documents">Documents</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Documents.png" alt="Documents">
+</div>
+<div class="title">Figure 30. Documents</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The ePO sees Documents as aggregators of the business domain data. In other words, the content of a Document are individuals that exist in the data graphs. A such (aggregators of individuals) they are ideal artifacts for the interoperability.</p>
+</li>
+<li>
+<p>In the scope of the e-Notification and e-Access time, we can identify "Procurement Documents", whilst during the e-Submission, the Tenderer prepares and sends "Tender Documents".</p>
+</li>
+<li>
+<p>Procurement Documents are prepared by the Procuring Entity and are always particular to a Procurement Procedure.</p>
+</li>
+<li>
+<p>Several groups of Notices can be distinguished: Prior Information Notice, Contract Notice, Contract Award Notice and Call for Expression of Interest.</p>
+</li>
+<li>
+<p>Prior Information Notices are often drafted prior to the existence of the Procurement Procedure and in some cases may refer to more than one Procurement Procedure.</p>
+</li>
+<li>
+<p>Prior Information Notices (PIN) announce Procurement Projects.</p>
+</li>
+<li>
+<p>Contract Notices (CN) announce the initiation of Procurement Procedures as do certain PINs. If the CN follows a PIN previously published, the CN should refer to that PIN.</p>
+</li>
+<li>
+<p>Contract Award Notices (CAN) in turn announce the award of a Contract(s). In the case that a CN has been published prior to the CAN the CN should be referenced in the CAN.  In the case where neither a PIN or CAN have been published prior to the CAN then a justification should be provided.</p>
+</li>
+<li>
+<p>In restricted procedures the need of limiting the number of candidates to a short list may appear and for these cases Invitations to Tender are forward to each one of the candidates. Candidates interested in participating may submit a Request for Participation. The Invitation to Tender may refer to the Notices previously published in the context of the Procurement Procedure.</p>
+</li>
+<li>
+<p>At tendering time, the Tenderer submits its own Tender Documents, which normally encompass a Financial Tender and a Technical Tender among other possible annexes and additional documents.</p>
+</li>
+<li>
+<p>Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures. Each modification has to be duly identified (see Contract Modification Type) and justified. These Modifications are to be published via Contract Modification Notices.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contract-award-notice"><a class="anchor" href="#contract-award-notice"></a><a class="link" href="#contract-award-notice">Contract Award Notice</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ContractAwardNotice.png" alt="Contract Award Notice">
+</div>
+<div class="title">Figure 31. Contract Award Notice</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Procuring Entities shall publish the award of a contract by means of Contract Award Notices.</p>
+</li>
+<li>
+<p>In the case of negotiated procedures without prior publication of a call for competition or for concession, a justification must be provided (Negotiated Procedure Justification Type)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-types"><a class="anchor" href="#data-types"></a><a class="link" href="#data-types">Data Types</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/DataTypes.png" alt="Data Types">
+</div>
+<div class="title">Figure 32. Data Types</div>
+</div>
+<div class="paragraph">
+<p>The Conceptual Data Model (CM) represents "data properties" (as understood from the ontology perspective) as "class attributes" (as normally represented in UML diagrams).
+For the representation of literals and other attributes, the CM uses the CCT notation (Text, Numeric, Indicator, Amount, etc.).</p>
+</div>
+<div class="paragraph">
+<p>Beware, however that this ontology works with two types of data properties, those that can be considered truly "primitive" (like Text, Numeric, Indicator, Date) and
+those that have additional dimensions (attributes) like Identifier, Amount, Quantity, Measure and Code).</p>
+</div>
+<div class="paragraph">
+<p>This ePO implementation "primitive" ones as xsd types, string for Text, dateTime for Date and Time, boolean for Indicator, decimal for Numeric, and so on.
+The rest of complex data types are implemented as classes with their own data properties, including a placeholder for the value (the actual datum).
+See section <a href="file:#iv-design-and-implementation">IV. Design and Implementation</a> for details on the Turtle (TTL) implementation.</p>
 </div>
 </div>
 </div>
@@ -1076,7 +1749,58 @@ those placeholders."</p>
 <div class="sect1">
 <h2 id="iv-design-and-implementation"><a class="anchor" href="#iv-design-and-implementation"></a><a class="link" href="#iv-design-and-implementation">IV. Design and Implementation</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were used to
+produce an OWL ontology.</p>
+</div>
+<div class="paragraph">
+<p>The outcome of this task are mainly the expression of the ontology <a href="https://en.wikipedia.org/wiki/Tbox">T-Box</a> as an
+OWL-DL Turtle syntax and a comparison of the tools used (<a href="https://protege.stanford.edu/products.php">Protégé 5.2</a>
+and <a href="https://joinup.ec.europa.eu/solution/vocbench3/about">VocBench 3.0</a>) for the development of the T-Box.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/OWLDesignImplementationPlan.png" alt="Design &amp; Implementation">
+</div>
+<div class="title">Figure 33. ePO Design and Implementation</div>
+</div>
+<div class="sect2">
+<h3 id="epo-1-0-rdf-xml-vocabulary"><a class="anchor" href="#epo-1-0-rdf-xml-vocabulary"></a><a class="link" href="#epo-1-0-rdf-xml-vocabulary">ePo 1.0 RDF-XML vocabulary</a></h3>
+<div class="paragraph">
+<p>In ePO v1.0 the Working Group decided that the ontology was to be expressed as an RDF vocabulary. This vocabulary was also
+expressed as an RDF-XML syntax: see file
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/eproc_v0.6.owl">eproc_v0.6.owl</a>
+located in the <a href="https://github.com/eprocurementontology/eprocurementontology">root folder</a> of the
+GitHub code repository.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="epo-v2-0-0-owl-dl-syntax"><a class="anchor" href="#epo-v2-0-0-owl-dl-syntax"></a><a class="link" href="#epo-v2-0-0-owl-dl-syntax">ePO v2.0.0 OWL-DL syntax</a></h3>
+<div class="paragraph">
+<p>For this new version ePO v.2.0.0 the ePO development team proposed to the WG to approach the development of the ontology
+with the more expressive language <a href="https://ca.wikipedia.org/wiki/OWL">OWL DL</a> (Description Logic), which allows for
+advanced reasoning and logic inference, and the <a href="https://en.wikipedia.org/wiki/Turtle_(syntax)">Turtle</a> (TTL) syntax,
+as it is more human-readable than the OWL-XML equivalent.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Automated generation of the ePO-TTL T-Box</div>
+<div class="paragraph">
+<p>One way of automatising the generation of the OWL-TTL T-Box is to use the DED jointly with a transformation process and
+artefacts (e.g. XSL-T stylesheets for the conversion of the spreadsheet into TTL). This can be used for the generation
+of a first draft version that needs to be improved manually, e.g. using Protégé, VocBench or a simple txt editor.
+The production of such transformation and artefacts were out of the scope of this phase.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1109,7 +1833,7 @@ shows the activities that were planned and executed to develop the Proof of Conc
 <div class="content">
 <img src="images/ePO_PoC.png" alt="v2.0.0 - Proof-Of-Concept">
 </div>
-<div class="title">Figure 13. ePO Project v2.0.0 - Proof-Of-Concept</div>
+<div class="title">Figure 34. ePO Project v2.0.0 - Proof-Of-Concept</div>
 </div>
 <div class="paragraph">
 <p>The following subsections explain how each of the activities mentioned in the diagram above has been
@@ -1241,7 +1965,7 @@ roles and related to the Use Cases 1 and 4.</p>
 <div class="content">
 <img src="images/UserStoriesExamplesTable.png" alt="User Stories examples">
 </div>
-<div class="title">Figure 14. Examples of User Stories</div>
+<div class="title">Figure 35. Examples of User Stories</div>
 </div>
 </div>
 <div class="sect2">
@@ -1286,13 +2010,13 @@ supplies a longer list of concrete examples of CQ for the WG members to get insp
 <div class="content">
 <img src="images/CQExample1.png" alt="CQ example 1">
 </div>
-<div class="title">Figure 15. Example (1/2) of Competency Questions</div>
+<div class="title">Figure 36. Example (1/2) of Competency Questions</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/CQExample2.png" alt="CQ example 2">
 </div>
-<div class="title">Figure 16. Examples (2/2) of User Stories</div>
+<div class="title">Figure 37. Examples (2/2) of User Stories</div>
 </div>
 </div>
 <div class="sect2">
@@ -1423,14 +2147,27 @@ other forms just uncomment the line "#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25 " and c
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Java code, XSL-T architecture, other resources (available on the GitHub repository and accessible
+<td class="tableblock halign-left valign-top"><p class="tableblock">TED to ePO Mapping (Wiring), Java code, XSL-T architecture, other resources (available on the GitHub repository and accessible
 via the GitHub Wiki page link
 <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl">Data Loading development (ETL)</a>.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="ted-to-epo-mapping"><a class="anchor" href="#ted-to-epo-mapping"></a><a class="link" href="#ted-to-epo-mapping">TED to ePO Mapping</a></h4>
 <div class="paragraph">
-<p>The process for the Extraction, Transformation and Loading (ETL) was developed based on two technologies:</p>
+<p>ETL stands for Extraction, Transformation and Loading. The first step (Extraction) requires to identify well where the data of origin are and
+how they are expressed. For this, the ePO analysts produced a map (in a
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/Mapping%20TED%20XML%20to%20ePO.xlsx">spread-sheet</a>)
+putting side by side (wiring) each element of the TED-XML Schema
+(<a href="http://publications.europa.eu/mdr/eprocurement/ted/index.html">R2.0.9.S02.E01</a>) and the corresponding element in ePO.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="technical-approach"><a class="anchor" href="#technical-approach"></a><a class="link" href="#technical-approach">Technical approach</a></h3>
+<div class="paragraph">
+<p>The ETL process was developed based on two technologies:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1441,7 +2178,7 @@ is available on the GitHub code repository. This java code is responsible for (i
 loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;</p>
 </li>
 <li>
-<p>XSL-T: version XSL-T 3.0 was used to draft a set of <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt">stylesheets</a>
+<p><strong>XSL-T</strong>: version XSL-T 3.0 was used to draft a set of <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt">stylesheets</a>
 the mission of which is to read the TED-XML files (Extraction) and transform that information into
 SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
 The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
@@ -1490,6 +2227,36 @@ INSERT DATA
 <td><i class="conum" data-value="1"></i><b>1</b></td>
 <td>See <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip">GitHub code repository</a>
 or execute the code for complete examples.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">A note about the performance</div>
+<div class="paragraph">
+<p>The Java code developed and the XSL-T approach are extremely fast:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Transformation speed</strong>: <em>1 notice x 2 ms</em>. One Contract Award Notice transformed into a SPARQL file with multiple INSERT operations in
+about 2 milliseconds. See the use of XMLStreamReader APIs (e.g. STAX) to capture the metadata about the TED-XML instances
+in <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/common/XSLTTransformer.java">XSLTTransformer.java</a>.</p>
+</li>
+<li>
+<p><strong>Insertion speed</strong>: <em>1 notice x 0,5 s</em>. One Contract Award Notice containing hundreds of INSERT operations inserted in the GraphDB as one single transaction
+in about 0,5 seconds. When the file is greater than 1MB the INSERT operations are split into individual transactions, in
+which case the operations can consume up to around 1 second. See java code in
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/common/KBManagement.java">KBManagement.java</a>.</p>
+</li>
+</ul>
+</div>
+</td>
 </tr>
 </table>
 </div>
@@ -1553,38 +2320,23 @@ file looks like. Notice the two lines about the proxy configuration.</p>
 <div class="listingblock">
 <div class="title">The <em>epo.properties</em> file, example</div>
 <div class="content">
-<pre>### Types of documents that need to be transformed and loaded. ####################################
-##
-## The next line is an example of how more than one Notice type can be specified.
-## The numbers 1,2,3, etc. identify the type of standard form in  TED.
-##
-## BEWARE THAT ONLY NOTICES BASED ON DIRECTIVE 2014 AND R2.0.9.S02 TED_EXPORT.xsd ARE PROCESSED.
-## R2.0.8.* TED_EXPORT.xsd-based notices ARE NOT PROCESSED.
-##
-## The example below states that the forms F01_2014, F02_2014, F03_2014, F22_2014,
-## F23_2014, F24_2014 and F25_2014 have to be transformed into TTL SPARQL INSERT files.
-##
-###################################################################################################
-
-#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25
-DOCUMENT_TYPE_ID=3
+<pre>#Thu Jun 28 10:49:40 CEST 2018
 
 ### Graph db access ###############################################################################
-GRAPH_STORE_URL=http://34.249.1.15:7200
-#GRAPH_STORE_URL=http://localhost:7200
-GRAPH_STORE_USER=guest
-GRAPH_STORE_PASSWORD=guest
+#GRAPH_STORE_URL=http://34.249.1.15:7200
+GRAPH_STORE_URL=http://localhost:7200
+GRAPH_STORE_USER=paulakeen
+GRAPH_STORE_PASSWORD=shootingNicely2018Times
 GRAPH_STORE_REPOSITORY=ePO_test
 
 ### Proxy configuration ##########################################################################
-## Remove comments and provide the URL or IP of your proxy server and the proxy port numbers
 #PROXY_URL=10.110.8.42
 #PROXY_PORT=8080
 
 ### Directories configuration ####################################################################
 ## The directory where the TED-XML files are located
 INPUT_DATA_DIR=/TED-Resources
-## The directory where the SPARQL INSERT TXT files, resulting form the XSL-T transformation, are written to.
+## The directory where the SPARQL INSERT TXT files, resulting form the XSL-T transformation, are written.
 ## This directory is the input directory from where the TXT files are taken to populate the Graph Store.
 OUTPUT_DATA_DIR=/TED-OUTPUT
 ## The directory where the java application logs the operations executed and execeptions.
@@ -1594,8 +2346,35 @@ LOG_DATA_DIR=/TED-LOG
 TED_TO_EPO_XSL=./src/main/resources/xslt/TEDXSD_to_ePOTTL.xsl
 ## Where the TED XSD Schemas are located. Relative or absolute paths can be specified.
 ## Relative paths are relative to the path from where the etl-process is launched.
-TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/TED_EXPORT.xsd</pre>
+## @DEPRECATED comment="the latest version uses STAX XMLStreamReader and works on multiple TED_XSD_VERSIONS
+TED_EXPORT_XSD=./src/main/resources/TED_publication_R2.0.9.S02.E01_003-20170123/TED_EXPORT.xsd
+## Subystem IDs, XSD root element local name of the Subsystems that produced the XML instances that are
+## requested to be processed. A comma separated list of names is expected.
+TED_SUBSYSTEMS=TED_EXPORT
+## Version IDs of the TED-XSD schemas upon which the XML that are requested to be
+## processed are instantiated. A comma separated list of names is expected.
+#TED_XSD_VERSIONS=R2.0.9.S02.E01, R2.0.9.S01.E01
+TED_XSD_VERSIONS=R2.0.9.S02.E01
+## Form types requested to be  processed.
+#TED_XSD_FORM_TYPES=F01, F02, F03
+TED_XSD_FORM_TYPES=F03</pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notice that each execution of the ETL process generates a log file in the specified directory (property "LOG_DATA_DIR").
+The log files append the total number of files transformed and inserted at the end of the file. These figures can be used
+to study the amount and types of documents that have been published by the OP. For an example see the section following
+<a href="#activity-7-populate-graph-store">Activity 7: Populate Graph store</a>.
+The data were extracted from the logs about the transformation of each month of 2018, separately, from January to May.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1639,13 +2418,13 @@ downloaded from the <a href="https://ontotext.com/">Ontotext</a> website.</p>
 <div class="content">
 <img src="images/Statistics-2018.png" alt="Number of Notices">
 </div>
-<div class="title">Figure 17. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
+<div class="title">Figure 38. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/Statistics-Frequency-2018.png" alt="Frequency of Notices">
 </div>
-<div class="title">Figure 18. Frequency of Notices</div>
+<div class="title">Figure 39. Frequency of Notices</div>
 </div>
 </div>
 <div class="sect2">
@@ -1701,7 +2480,7 @@ select ?s (count(?did) as ?cdid) where {
 <div class="content">
 <img src="images/CountingCANs.png" alt="Counting CANs">
 </div>
-<div class="title">Figure 19. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
+<div class="title">Figure 40. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 2</strong>: List all the winners, the size of the company and the date of award.</p>
@@ -1724,7 +2503,7 @@ select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where {
 <div class="content">
 <img src="images/QueryExample1.png" alt="Winners" width="size and award date">
 </div>
-<div class="title">Figure 20. Winners</div>
+<div class="title">Figure 41. Winners</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 3</strong>: Number of contracts awarded for each CPV (beware that one Contract Award Notice may
@@ -1745,7 +2524,7 @@ SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
 <div class="content">
 <img src="images/QueryExample3.png" alt="Contracts per CPV">
 </div>
-<div class="title">Figure 21. Number of contracts per CPV</div>
+<div class="title">Figure 42. Number of contracts per CPV</div>
 </div>
 <div class="paragraph">
 <p>See the document <a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">SPARQL Query examples</a>

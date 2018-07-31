@@ -1,3 +1,37 @@
 
 == IV. Design and Implementation
 
+All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were used to
+produce an OWL ontology.
+
+The outcome of this task are mainly the expression of the ontology link:https://en.wikipedia.org/wiki/Tbox[T-Box] as an
+OWL-DL Turtle syntax and a comparison of the tools used (link:https://protege.stanford.edu/products.php[Protégé 5.2]
+and link:https://joinup.ec.europa.eu/solution/vocbench3/about[VocBench 3.0]) for the development of the T-Box.
+
+.ePO Design and Implementation
+image::OWLDesignImplementationPlan.png[Design & Implementation, align="center"]
+
+=== ePo 1.0 RDF-XML vocabulary
+
+In ePO v1.0 the Working Group decided that the ontology was to be expressed as an RDF vocabulary. This vocabulary was also
+expressed as an RDF-XML syntax: see file
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/eproc_v0.6.owl[eproc_v0.6.owl]
+located in the link:https://github.com/eprocurementontology/eprocurementontology[root folder] of the
+GitHub code repository.
+
+=== ePO v2.0.0 OWL-DL syntax
+For this new version ePO v.2.0.0 the ePO development team proposed to the WG to approach the development of the ontology
+with the more expressive language link:https://ca.wikipedia.org/wiki/OWL[OWL DL] (Description Logic), which allows for
+advanced reasoning and logic inference, and the link:https://en.wikipedia.org/wiki/Turtle_(syntax)[Turtle] (TTL) syntax,
+as it is more human-readable than the OWL-XML equivalent.
+
+.Automated generation of the ePO-TTL T-Box
+[TIP]
+====
+One way of automatising the generation of the OWL-TTL T-Box is to use the DED jointly with a transformation process and
+artefacts (e.g. XSL-T stylesheets for the conversion of the spreadsheet into TTL). This can be used for the generation
+of a first draft version that needs to be improved manually, e.g. using Protégé, VocBench or a simple txt editor.
+The production of such transformation and artefacts were out of the scope of this phase.
+====
+
+

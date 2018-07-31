@@ -6,6 +6,9 @@ been drafted. Fourteen of them cover specific "topics" in the scope of eNotifica
 Procurement Procedure, Procuring Entity, Economic Operator, Lots, Procurement Terms, etc. An additional "overview" diagram
 provides a general view of the whole model.
 
+.Development of the Domain Conceptual Data Model
+image::CMDevelopmentPlan.png[CM development, align="center"]
+
 The conceptual data model is available both as an
 link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml[XMI format - version 2.1]
 and link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap[Enterprise Architect]
