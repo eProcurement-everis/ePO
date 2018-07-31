@@ -1,22 +1,358 @@
 
-== III. The Conceptual Data Model
+== III. Conceptual Data Model (CM)
 
-The
+The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to 15 diagrams have
+been drafted. Fourteen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
+Procurement Procedure, Procuring Entity, Economic Operator, Lots, Procurement Terms, etc. An additional "overview" diagram
+provides a general view of the whole model.
 
+The conceptual data model is available both as an
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml[XMI format - version 2.1]
+and link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap[Enterprise Architect]
+project file.
 
-
-The figure below provides an general view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put on e-Notification and e-Access.
-
-=== Overview
+=== CM Overview
+General view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put
+on e-Notification and e-Access.
 
 .ePO Conceptual Data Model, overview
 image::ConceptualModel_Overview.png[ePO Conceptual Data Model, overview, align="center"]
 
-=== Overview and class attributes
+The subsections below provide further details on key Classes of the ePO and about how these Classes relate to other Ontologies.
+A brief description for each model is provided in order to make it more understandable. The "legend" below should also facilitate
+the comprehension of the diagrams content.
 
-.ePO Conceptual Data Model, overview
-image::ConceptualModel_Overview_Detailed.png[ePO Conceptual Data Model, overview, align="center"]
+.Legend
+image::EAPDiagramsLegend.png[Legend, width="300", align="center"]
 
 
+=== Procurement Project
+
+.Procurement Project
+image::ProcurementProject.png[Procurement Project, align="center"]
+
+. Procurement is the acquisition by means of a public contract of works, supplies or services by one or more contracting authorities from economic operators chosen by those contracting authorities, whether or not the works, supplies or services are intended for a public purpose. (Directive 2014/24/EU, Article 1(2)).
+
+. At its inception phase, the Procurement can be thought as a "Procurement Project".
+
+. Procurement Projects are implemented through a Procurement Procedure or through the Lots of a Procurement Procedure.
+
+. Procurement projects have a purpose which include aspects such as the subject-matter, the place of performance, contract nature, estimated duration, and other elements.
+
+. The Procurement Project has an estimated value. These estimations are later on confirmed or finally established and reflected in the Contract and announced through the Contract Award Notice.
+
+. The Procurement Project may use  Techniques (see Technique Type).
+
+. The Procurement Project may use Funds provided by the European Union.
+
+
+=== Procurement Procedure
+
+.Procurement Procedure
+image::ProcurementProcedure.png[Procurement Procedure, align="center"]
+
+. Procurement Procedures is a series of activities leading to the conclusion of a public contract.
+
+. Pay attention to the fact that the Procuring Procedure is not directly linked to the Contract. Instead, this connection is made through the Procuring Entities involved in the Procedure. There are different reasons for this: e.g. if no Tenders are submitted for a Procedure, no Contract is issued, which also entails that the link could not be established through the Tender. This also explains why Economic Operator is not directly related to the Procurement Procedure.
+
+. Different types of Procurement Procedures are carried out according to the EU Legislation (see Procurement Procedure Type).
+
+. Some Procurement Procedures apply specific legal regimes and instruments for the awarding of certain services or the acquisition of designs (see Procurement Regime Type).
+
+. Procurement Procedures are divided in one or more Lots (see diagram Lots).
+
+. Procurement Procedures usually generate, collect or refer to different documents. Two of the most relevant groups of documents are represented by the classes Procurement Document and Tender Document (see diagram Documents).
+
+. All Procurement Procedures are conducted by at least one Procuring Entity, in some cases Procuring Entities carry out join procurement (see diagram Procuring Entity).
+
+. Procurement Procedures may need to refer to certain types of organisations responsible for the management or control of a number of aspects of the procedure, e.g. environmental party, tax party.
+
+. In some types of Procurement Procedures (e.g. restricted, competitive with negotiation, other), Procuring Entities may limit the number of candidates accessing the award criteria phase. When this is the case, certain information must be notified by the Procuring Entity, e.g. expected maximum and minimum number of candidates, justification / description of the limitation, etc. (Tender Short List).
+
+
+=== Accelerated Procedure
+
+.Accelerated Procedure
+image::AcceleratedProcedure.png[Accelerated Procedure, align="center"]
+
+. An accelerated procedure takes place when the time limits within the procedure are reduced.
+
+. Time limits can be reduced due to as state of urgency (Accelerated Procedure Justification Type) in which case a justification must be provided (Accelerated Procedure Further Justification).
+
+. They can also be reduced by a Prior Information Notice (PIN) published specifically for reducing the time limits.
+
+. For example see Directive 2014/24/EU Article 27(3) and 28(6).
+
+
+=== Procurement Terms
+
+.Procurement Terms
+image::ProcurementTerms.png[Procurement Terms, align="center"]
+
+. The Procurement Terms are "conditions or stipulations established by the Procuring  Entity:
+
+.. Procedure Terms: conditions and stipulations determining how the procurement procedure is executed.
+
+.. Review Terms: conditions and stipulations about the information and organisation responsible for the revision of a Procurement Procedure.
+
+.. Tender Submission Terms: conditions and stipulations about the Tender and its submission.
+
+.. Contract Terms: conditions and stipulations related to the implementation of the contract.
+
+.. Tender Evaluation Terms: conditions and stipulations to evaluate the tenders.
+
+.. Award Terms: conditions and stipulations to determine how the procurement procedure is awarded.
+
+
+=== Lots
+
+.Lots
+image::Lots.png[Lots, align="center"]
+
+. A Lot is one of the parts into which a Procurement Procedure is divided.
+
+. One or more lots may aim at one or more Contract.
+
+. When preparing the Procurement Projects, Lots may be grouped.
+
+. Tenderers prepare their Tender for one or more Lots.
+
+. The Procuring Entity apply Selection and Award Criteria to one or more Lots or Group of Lots.
+
+
+=== Technique
+
+.Technique
+image::Technique.png[Technique, align="center"]
+
+. Techniques are specific methods of carrying out the procurement or a purchase. E.g. Framework Agreement, e-Auction or Dynamic Purchase System.
+
+. Each Technique has its own properties, thus Framework Agreement can be typified, has a duration, its own values, etc.
+
+
+=== Procuring Entity
+
+.Procuring Entity
+image::ProcuringEntity.png[Procuring Entity, align="center"]
+
+. In any Procurement Procedure, there is at least one Procuring Entity;
+
+. Procuring Entities are “Organizations”, appropriately identified and described (IDs, Names, Addresses, Contact Points, etc.);
+
+. Depending on its nature and main activity a Procuring Entity may be identified simply as a Contracting Authority (general procurement) or as a Contracting Entity pursuing the procurement of gas and heat, electricity, water, transport services, ports and airports, postal services and extraction of oil and gas and exploration for, or extraction of, coal or other solid fuels. A Contracting Entity may in turn be a Contracting Authority, a Public Undertaking or entities with special or exclusive rights (Procuring Entity Type code list);
+
+. For some Procurement Procedures, a Procuring Entity can join other Procuring Entities (Joint Procurement)
+
+. In these cases, the Procuring Entities participating in the Joint Procurement adopt one role (Procuring Entity Role Type code list), e.g. the lead of the group.
+
+. Procuring Entities are in general responsible for the both the management of the procurement procedure and the purchase.  However in some cases procuring entities may buy on behalf of other procuring entities or through other procuring entities ("Procuring Entity Role Type").
+
+
+=== Economic Operator
+
+.Economic Operator
+image::EconomicOperator.png[Economic Operator, align="center"]
+
+. An Economic Operator is an organisation.
+
+. Economic Operators can be Tenderers (the submitter of the Tender) or sub-contractors.
+
+. When the Economic Operators are members of a group (e.g. Consortia, Joint ventures, Undertaking (EO Group Type)), and they play different roles, e.g. group lead entity, member of the group, etc. (EO Role Type).
+
+. The Winner of a contract is a tenderer or group of Tenderers.
+
+. Tenderers may rely on other Economic Operator that are subcontractors but not tenderers.
+
+. When guarantees are required by the Procuring Entity, Economic Operators may have to provide Financial Account details (e.g. a bank account data).
+
+=== Contract
+
+.Contract
+image::Contract.png[Contract, align="center"]
+
+. One of the activities that takes place in the Procurement Procedure life-cycle is the evaluation of Tenderers and Tenders, and the awarding of a contract to one or more Tenderer. The awarded Tenderer(s) are the "Winner(s)".
+
+. The Contract may attach other Procurement Documents and other types of Documents.
+
+. The object of the Contract and additional data that where stated in the Procurement Project are also placed in the contract Purpose (e.g. Subject Matter, Place of Performance, Total Magnitude Quantity, etc.).
+
+. Similarly, the values of the Procurement that where initially estimated in the Procurement Project are set in the Procurement Value class.
+
+. The Contract reflects also the Awarding Results (resulting from the evaluation) and the signatory parties (Procuring Entities and Winners).
+
+. In case the Procurement Procedure uses Framework Agreement as Technique, the contract refers to it.
+
+=== Tender
+
+.Tender
+image::Tender.png[Tender, align="center"]
+
+. Tenders are submitted by Tenderers, who are Economic Operators.
+
+. One Tender may attach one or more "Tender Documents" (e.g. the Financial Tender, the Technical Tender, Technical annexes and specifications, etc.; see the Diagram "Documents");
+
+. In Procurement Procedures divided into Lots, one Economic Operator submits one  Tender.  The tender specifies to which Lots it applies.
+
+. Procurement Procedures are always considered to have at least one lot.
+
+
+=== Evaluation Result
+
+.Evaluation Result
+image::EvaluationResult.png[Evaluation Result, align="center"]
+
+. The Evaluation Result is presented in the form of a report showing the assessment of the tenders by the evaluation board.
+
+. The Evaluation board takes into consideration the Criterion and the Tender Evaluation Terms when assessing the tenders.
+
+. The awards result takes into consideration the evaluation result and awards the contract.
+
+. In the case of contest design competitions, the board is formed by a Jury, whose decision may be binding for the Procuring Entity (see Evaluation Board Type).
+
+
+=== Contract
+
+.Contract
+image::Contract.png[Contract, align="center"]
+
+. One of the activities that takes place in the Procurement Procedure life-cycle is the evaluation of Tenderers and Tenders, and the awarding of a contract to one or more Tenderer. The awarded Tenderer(s) are the "Winner(s)".
+
+. The Contract may attach other Procurement Documents and other types of Documents.
+
+. The object of the Contract and additional data that where stated in the Procurement Project are also placed in the contract Purpose (e.g. Subject Matter, Place of Performance, Total Magnitude Quantity, etc.).
+
+. Similarly, the values of the Procurement that where initially estimated in the Procurement Project are set in the Procurement Value class.
+
+. The Contract reflects also the Awarding Results (resulting from the evaluation) and the signatory parties (Procuring Entities and Winners).
+
+. In case the Procurement Procedure uses Framework Agreement as Technique, the contract refers to it.
+
+
+=== Criterion
+
+.Criterion
+image::Criterion.png[Criterion, align="center"]
+
+. Criterion is a generic business-agnostic class. This eProcurement ontology (ePO) uses this as a base class to extend Award Criterion, Exclusion Grounds and Selection Criterion (see the rest of diagrams about criteria for details).
+
+. A Criterion is a condition that needs to be answered for evaluation purposes. For example:  General average turnover for the past three years.
+
+. All Criteria are codified via a Criteria Taxonomy. Thus, the examples above have an associated code as exclusion, selection and award criteria (see Criteria Taxonomy). Exclusion, Selection and Award criteria do extend the classes and properties of Criterion.
+
+. In general, Criteria are evaluated using a pass/fail method, meaning that the Tenderer or the Tender meet or do not meet the Criterion. However, selection and award criteria may be weighted (see Evaluation Method Type).
+
+. A Criterion may contain sub-criteria. Thus, the exclusion criteria defined in the European Directives may be further detailed in national sub-criteria, e.g. national professional misconduct-related criteria.
+
+. The condition described in a Criterion may be broken down into simpler elements named "Criterion Property", which are always grouped into Criterion Property Groups.
+
+. A Criterion Property is a more specific information needed to measure a criterion. It is a question that usually goes hand in hand with a specific requirement.  For example which follows on from the example given for criterion: Question: Amount? Requirement: The text explaining what the procuring entity is interested in measuring i.e. minimum turnover.
+
+. Criterion Property Groups are organised structures or related criterion properties. Following on from the example of Criterion property.  In the case of a yearly general turnover that needs to specify three turnovers for three specific years, a group of properties would be:  turnover 1987, turnover 1988, turnover 1989.
+
+. One criterion property is normally associated to a value (Criterion Property Datum). The value may be an economic amount, a text, a date or a period, etc.
+
+. The responses to one Criterion may be supported by one or more evidences (property "provides evidence"). This evidence might have to be based on a template specified by the Procuring Entity (property "base on evidence template"). The fact that one individual of an evidence is linked to one Criterion does not preclude the possibility of linking this same individual (or instance) to other Criteria.
+
+. In the domain of public procurement, exclusion grounds, selection criteria and award criteria are normally based on a specific legal framework (see class Legislation).
+
+
+=== Award Criterion
+
+.Award Criterion
+image::AwardCriterion.png[Award Criterion, align="center"]
+
+1. Award Criteria are used to evaluate Tenders. They may include the best price-quality ratio, including qualitative, environmental and/or social aspects, linked to the subject-matter of the public contract in question.
+
+2. Thus, an Award Criterion needs to be codified as lowest, most economic tender, mixed or other (for non-objective / qualitative criteria - see Criteria Taxonomy).
+
+3. In two-phase procedures technical and financial criteria, used in the first phase for the selection, can be reused as weighted criteria to evaluate the Tenders.
+
+4. Award Criterion is a class that specialises Criterion. The specialisation consists in providing a property to link the Criterion to Lot.
+
+5. Award Criterion and Award Criterion Property, both need to link to Lot.
+
+6. This is why the class Award Criterion needs to provide specialised sub-classes for the Criterion Property Group and Criterion Property, as well as the properties linking them.
+
+
+=== Exclusion Grounds
+
+.Exclusion Grounds
+image::ExclusionGrounds.png[Exclusion Grounds, align="center"]
+
+1. Tenderers may be excluded from participate in a Procurement Procedure, in case they bridge any of the legal criteria established in the Directives. This criteria are named Exclusion Grounds.
+
+2. Exclusion Ground extends the generic Criterion class by adding a new property ("applies to") to refer to the Tenderers that are excluded in a procedure.
+
+3. The ePO allows to determine the exact Exclusion Grounds were not met by the Tenderer for specific Procurement Procedure. To see how the Tenderer related to Procurement Procedure, please see the diagram "Evaluation Result".
+
+
+=== Selection Criterion
+
+.Selection Criterion
+image::SelectionCriterion.png[Selection Criterion, align="center"]
+
+1. Selection Criteria aim at ensuring that a candidate or tenderer has the legal and financial capacities and the technical and professional abilities to perform the contract to be awarded (see ePO Glossary for the difference between Candidate and Tenderer).
+
+2. Thus, a Selection Criterion is to be classified using the Criteria Taxonomy (e.g. CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY, CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SPECIFIC_AVERAGE, etc.).
+
+3. Selection Criterion is a class that specialises Criterion. The specialisation consists in providing a property to link the Criterion to Lot.
+
+4. Selection Criterion and Selection Criterion Property, both need to link to Lot.
+
+5. This is why the class Selection Criterion needs to provide specialised sub-classes for the Criterion Property Group and Criterion Property, as well as the properties linking them.
+
+
+=== Documents
+
+.Documents
+image::Documents.png[Documents, align="center"]
+
+1. The ePO sees Documents as aggregators of the business domain data. In other words, the content of a Document are individuals that exist in the data graphs. A such (aggregators of individuals) they are ideal artifacts for the interoperability.
+
+2. In the scope of the e-Notification and e-Access time, we can identify "Procurement Documents", whilst during the e-Submission, the Tenderer prepares and sends "Tender Documents".
+
+3. Procurement Documents are prepared by the Procuring Entity and are always particular to a Procurement Procedure.
+
+4. Several groups of Notices can be distinguished: Prior Information Notice, Contract Notice, Contract Award Notice and Call for Expression of Interest.
+
+5. Prior Information Notices are often drafted prior to the existence of the Procurement Procedure and in some cases may refer to more than one Procurement Procedure.
+
+6. Prior Information Notices (PIN) announce Procurement Projects.
+
+7. Contract Notices (CN) announce the initiation of Procurement Procedures as do certain PINs. If the CN follows a PIN previously published, the CN should refer to that PIN.
+
+8. Contract Award Notices (CAN) in turn announce the award of a Contract(s). In the case that a CN has been published prior to the CAN the CN should be referenced in the CAN.  In the case where neither a PIN or CAN have been published prior to the CAN then a justification should be provided.
+
+9. In restricted procedures the need of limiting the number of candidates to a short list may appear and for these cases Invitations to Tender are forward to each one of the candidates. Candidates interested in participating may submit a Request for Participation. The Invitation to Tender may refer to the Notices previously published in the context of the Procurement Procedure.
+
+10. At tendering time, the Tenderer submits its own Tender Documents, which normally encompass a Financial Tender and a Technical Tender among other possible annexes and additional documents.
+
+11. Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures. Each modification has to be duly identified (see Contract Modification Type) and justified. These Modifications are to be published via Contract Modification Notices.
+
+
+=== Contract Award Notice
+
+.Contract Award Notice
+image::ContractAwardNotice.png[Contract Award Notice, align="center"]
+
+1. Procuring Entities shall publish the award of a contract by means of Contract Award Notices.
+
+2. In the case of negotiated procedures without prior publication of a call for competition or for concession, a justification must be provided (Negotiated Procedure Justification Type)
+
+
+=== Data Types
+
+.Data Types
+image::DataTypes.png[Data Types, align="center"]
+
+The Conceptual Data Model (CM) represents "data properties" (as understood from the ontology perspective) as "class attributes" (as normally represented in UML diagrams).
+For the representation of literals and other attributes, the CM uses the CCT notation (Text, Numeric, Indicator, Amount, etc.).
+
+Beware, however that this ontology works with two types of data properties, those that can be considered truly "primitive" (like Text, Numeric, Indicator, Date) and
+those that have additional dimensions (attributes) like Identifier, Amount, Quantity, Measure and Code).
+
+This ePO implementation "primitive" ones as xsd types, string for Text, dateTime for Date and Time, boolean for Indicator, decimal for Numeric, and so on.
+The rest of complex data types are implemented as classes with their own data properties, including a placeholder for the value (the actual datum).
+See section link:file:#iv-design-and-implementation[IV. Design and Implementation] for details on the Turtle (TTL) implementation.
 
 
