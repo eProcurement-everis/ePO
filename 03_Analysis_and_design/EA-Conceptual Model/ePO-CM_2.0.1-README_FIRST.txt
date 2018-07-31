@@ -1,0 +1,14 @@
+ePO-Conceptual Data Model version 2.0.1
+
+Version 2.0.0 of the Conceptual Data Map was delivered on the 25th June 2018, jointly with the rest of deliverables 
+(OWL TTL syntax, PoC software, Competency Questions, etc.).
+
+As the work on the ePO Glossary was progressing with the cooperation of the Working Group members, the decision was
+made of producing a new version 2.0.1 of the Conceptual Data Model to reflect changes derived from the discussions 
+on the ePO Glossary and on improvements of the ontology.
+
+The modifications introduced in the v.2.0.1 will be implemented at a later stage, once the Conceptual Data Model 
+reaches a more stable stage.
+
+23rd. July 2018
+
