@@ -1,4 +1,4 @@
-== Annex I: Public Procurement KPIs
+== Public Procurement KPIs
 
 This section provides some more examples of SPARQL queries and results obtained
 for the period January 2018 to May 2018.

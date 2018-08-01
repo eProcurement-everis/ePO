@@ -188,10 +188,9 @@ link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2
 
 ==== TED to ePO Mapping
 ETL stands for Extraction, Transformation and Loading. The first step (Extraction) requires to identify well where the data of origin are and
-how they are expressed. For this, the ePO analysts produced a map (in a
-link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/Mapping%20TED%20XML%20to%20ePO.xlsx[spread-sheet])
-putting side by side (wiring) each element of the TED-XML Schema
-(link:http://publications.europa.eu/mdr/eprocurement/ted/index.html[R2.0.9.S02.E01]) and the corresponding element in ePO.
+how they are expressed. For this, the ePO analysts produced a link:https://eprocurementontology.github.io/Mapping/Mapping%20TED%20XML%20to%20ePO.html[map]
+putting side by side (wiring) each element of the TED-XML Schema (link:http://publications.europa.eu/mdr/eprocurement/ted/index.html[R2.0.9.S02.E01])
+and the corresponding element in ePO.
 
 === Technical approach
 The ETL process was developed based on two technologies:
@@ -387,7 +386,7 @@ image::Statistics-Frequency-2018.png[Frequency of Notices, align="center"]
 |===
 |*Activity name*:|Develop SPARQL Queries.
 |*Responsible team*:|OP's team.
-|*Inputs*:|Competency Questions (link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[QCs examples]).
+|*Inputs*:|Competency Questions (https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[QCs examples]).
 |*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
 |===
 

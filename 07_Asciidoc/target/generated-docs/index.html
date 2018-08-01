@@ -548,6 +548,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#iii-conceptual-data-model-cm">III. Conceptual Data Model (CM)</a>
 <ul class="sectlevel2">
 <li><a href="#cm-overview">CM Overview</a></li>
+<li><a href="#how-to-read-the-diagrams">How to read the diagrams</a></li>
 <li><a href="#procurement-project">Procurement Project</a></li>
 <li><a href="#procurement-procedure">Procurement Procedure</a></li>
 <li><a href="#accelerated-procedure">Accelerated Procedure</a></li>
@@ -573,6 +574,13 @@ table.CodeRay td.code>pre{padding:0}
 <ul class="sectlevel2">
 <li><a href="#epo-1-0-rdf-xml-vocabulary">ePo 1.0 RDF-XML vocabulary</a></li>
 <li><a href="#epo-v2-0-0-owl-dl-syntax">ePO v2.0.0 OWL-DL syntax</a></li>
+<li><a href="#codes-and-identifiers">Codes and Identifiers</a>
+<ul class="sectlevel3">
+<li><a href="#alignment-to-ccts">Alignment to CCTS</a></li>
+<li><a href="#codes-and-code-lists">Codes and code lists</a></li>
+<li><a href="#identifiers">Identifiers</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#v-proof-of-concept">V. Proof of Concept</a>
@@ -605,12 +613,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </li>
 <li><a href="#vi-conclusions-and-next-steps">VI. Conclusions and next steps</a></li>
-<li><a href="#annex-i-public-procurement-kpis">Annex I: Public Procurement KPIs</a>
-<ul class="sectlevel2">
-<li><a href="#indicator-i-single-bidder">Indicator I: Single bidder</a></li>
-<li><a href="#indicator-ii-no-calls-for-bids">Indicator II: No calls for bids</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -623,7 +625,7 @@ table.CodeRay td.code>pre{padding:0}
 to organise and support the development of an Ontology of the Public e-Procurement (ePO).</em></p>
 </div>
 <div class="paragraph">
-<p><em>The ultimate objective of the Ontology is to put forth a commonly agreed OWL ontology ☺that will conceptualise, formally encode and make available in an open,
+<p><em>The ultimate objective of the ontology is to put forth a commonly agreed OWL ontology that will conceptualise, formally encode and make available in an open,
 structured and machine-readable format data about public procurement, covering it from end to end, i.e. from notification, through tendering to awarding, ordering, invoicing and payment.
 With this goal in mind the OP engaged a Working Group (WG) of experts with the mission of building consensus on the analysis results and deliverables developed by the OP&#8217;s teams.</em></p>
 </div>
@@ -632,11 +634,10 @@ With this goal in mind the OP engaged a Working Group (WG) of experts with the m
 through the ISA2 <a href="https://joinup.ec.europa.eu/solution/eprocurement-ontology">Joinup</a> platform; including the discussions held in the Working Group (WG).</em></p>
 </div>
 <div class="paragraph">
-<p><em>A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version. This document describes
-the objectives, the methodological approach and the deliverables produced in this new version.</em></p>
+<p><em>A new stage of the development, identified as ePO v2.0.0, was initiated in January 2018. The goal of this new version is to improve and extend the previous version.</em></p>
 </div>
 <div class="paragraph">
-<p><em>This report documents this development and its results.</em></p>
+<p><em>This document describes the objectives, the methodological approach and the deliverables produced in this new version.</em></p>
 </div>
 </div>
 </div>
@@ -1166,6 +1167,9 @@ on e-Notification and e-Access.</p>
 </div>
 <div class="title">Figure 12. ePO Conceptual Data Model, overview</div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="how-to-read-the-diagrams"><a class="anchor" href="#how-to-read-the-diagrams"></a><a class="link" href="#how-to-read-the-diagrams">How to read the diagrams</a></h3>
 <div class="paragraph">
 <p>The subsections below provide further details on key Classes of the ePO and about how these Classes relate to other Ontologies.
 A brief description for each model is provided in order to make it more understandable. The "legend" below should also facilitate
@@ -1176,6 +1180,65 @@ the comprehension of the diagrams content.</p>
 <img src="images/EAPDiagramsLegend.png" alt="Legend" width="300">
 </div>
 <div class="title">Figure 13. Legend</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Boxes in colour beige are Classes, i.e. main entities of the ontology, like "Procurement Procedure", "Procuring Entity", "Economic Operator", etc.;</p>
+</li>
+<li>
+<p>Boxes in colour green are "Code Lists", i.e. enumerations of disjoint concepts represented with a code);</p>
+</li>
+<li>
+<p>Classes associate other classes via "object properties", i.e. directed association arrows ("predicates", from the ontology perspective)
+that have a class at the origin (the subject of a triple, in the ontology) and another class at the end of the link (the "object" of the triple).</p>
+</li>
+<li>
+<p>"Data properties", i.e. links between the Class and more primitive/basic elements, are represented as attributes of the Classes, e.g. Text, Indicator, Date, etc.</p>
+</li>
+<li>
+<p>Associations between Classes are represented as unidirectional arrows to keep the diagrams simple. However, when the association is bi-directional
+it is indicated with two predicates and the second one is enclosed with parenthesis "()". In the OWL-TTL these are declared as "inverse" properties.
+Examples: "<em>Procurement Procedure includes lots (belongs to) Lots</em>", in the diagram, is to be read as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>"<em>Procurement Procedure includes one or more Lots</em>", and</p>
+</li>
+<li>
+<p>"<em>One Lot belongs to one Procurement Procedure</em>";</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Classes may contain codes. In this representation, the ePO codes are not included inside the Class but are represented as
+associations of the Class to a specific enumeration element. The name of the code is built upon the verb "uses" and the name of the
+enumeration. Thus the triple used to say that a <em>Procurement Procedure is of type Open</em> is expressed like this in the OWL-TTL:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:ProcurementProcedure :usesProcurementProcedureType epo-rd:ProcurementProcedureType</code>, where <code>:</code> is the default prefix representing the
+ePO ontology and <code>epo-rd:</code> is the prefix reserved for the namespace representing all the codes defined in ePO (eProcurement-specific, to
+be located in the OP&#8217;s Metadata Registry (<a href="https://publications.europa.eu/en/web/eu-vocabularies">MDR</a>)).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See also the section "<a href="#identifiers-and-codes">Codes and Identifiers</a>", in chapter
+<a href="#iv-design-and-implementation">"IV. Design and implementation"</a> for details on the implementation of these.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1773,8 +1836,8 @@ and <a href="https://joinup.ec.europa.eu/solution/vocbench3/about">VocBench 3.0<
 <div class="sect2">
 <h3 id="epo-1-0-rdf-xml-vocabulary"><a class="anchor" href="#epo-1-0-rdf-xml-vocabulary"></a><a class="link" href="#epo-1-0-rdf-xml-vocabulary">ePo 1.0 RDF-XML vocabulary</a></h3>
 <div class="paragraph">
-<p>In ePO v1.0 the Working Group decided that the ontology was to be expressed as an RDF vocabulary. This vocabulary was also
-expressed as an RDF-XML syntax: see file
+<p>In ePO v1.0 the Working Group decided that the ontology was to be expressed as an RDF vocabulary. This vocabulary
+(without axioms defined therein) was expressed as an OWL-XML syntax: see file
 <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/eproc_v0.6.owl">eproc_v0.6.owl</a>
 located in the <a href="https://github.com/eprocurementontology/eprocurementontology">root folder</a> of the
 GitHub code repository.</p>
@@ -1806,12 +1869,426 @@ The production of such transformation and artefacts were out of the scope of thi
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>As commented above, for the drafting of the TTL syntax the ePO development team used the Standford&#8217;s
+<a href="https://protege.stanford.edu/products.php">Protégé 5.2</a> editor. The resulting OWL-TTL file can be accessed from the
+GitHub <a href="">Wiki</a> page (menu <a href="https://github.com/eprocurementontology/eprocurementontology/wiki">OWL-TTL) or from the
+link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl[repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3
+(VB3). The objective of this exercise was to check the feasibility of using VB to maintain the ePO.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/Protege.png" alt="Design &amp; Implementation">
+</div>
+<div class="title">Figure 34. Protégé 5.2 for the edition of ePO</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="codes-and-identifiers"><a class="anchor" href="#codes-and-identifiers"></a><a class="link" href="#codes-and-identifiers">Codes and Identifiers</a></h3>
+<div class="paragraph">
+<p>A code is a shortened way (a number or a short abbreviated text), leading to the definition of a 'concept'. The code epresents the concept and is used by software applications to retrieve the definition of the concept or make automatic decisions.</p>
+</div>
+<div class="paragraph">
+<p>An Identifier, in turn, can be defined as “a value (represented as a short text, a number or a combination of both) used to establish the identity of, and distinguish uniquely, one occurrence of an object following a pattern” .</p>
+</div>
+<div class="paragraph">
+<p>The essential distinctive features between identifiers and codes are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Identifiers point at specific occurrences of objects (instances); codes replace concepts;</p>
+</li>
+<li>
+<p>Identifiers are virtually limitless while codes are finite. In other words, identifier lists are “open”
+(the lists may grow) and code list are “closed” (practically never updated, once consolidated).
+Hence codes are maintained in 'Codelists' whilst identifiers are usually kept in databases.</p>
+</li>
+<li>
+<p>Identifiers are in principle maintained in the business domain, e.g. buyer identifiers, economic operator identifiers,
+product identifiers, etc.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="alignment-to-ccts"><a class="anchor" href="#alignment-to-ccts"></a><a class="link" href="#alignment-to-ccts">Alignment to CCTS</a></h4>
+<div class="paragraph">
+<p>The ePO tries to reuse as much as possible standards, specifications and practices commonly applied
+in the eProcurement domain. Hence one design decision, coordinated with the WG members, was to
+use the <a href="https://www.iso.org/standard/61433.html">ISO 15000-5:2014</a> (Core Components Specification)
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnote_6" title="View footnote.">6</a>]</sup>
+to implement the data types <code>Identifier</code>, <code>Amount</code>, <code>Quantity</code> and <code>Measure</code>.</p>
+</div>
+<div class="paragraph">
+<p>The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">05_Implementation/ttl/</a>.</p>
+</div>
+<div class="paragraph">
+<p>Codes, in ePO, are implemented as <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">SKOS</a>
+concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="codes-and-code-lists"><a class="anchor" href="#codes-and-code-lists"></a><a class="link" href="#codes-and-code-lists">Codes and code lists</a></h4>
+<div class="paragraph">
+<p>The ePO tries to reuse as much as possible the codes that are already used for e-Procurement. Many of these codes are already
+published in different formats by the Publications Office and are freely available in the section link:https://publications.europa.eu/en/web/eu-vocabularies/authority-tablesAuthority Tables]
+of the OP&#8217;s [MDR] site. These codes are described in "code lists", in all the EU official languages.</p>
+</div>
+<div class="paragraph">
+<p>We distinguish at least three layers of codes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Cross-sector</strong>, common, codes, like the ones defined and maintained by the ISO for currencies, languages, countries, etc.; or the ones defined by the European Commission
+that can be used in multiple business domains, e.g. the NUTS defined by EUROSTAT;</p>
+</li>
+<li>
+<p><strong>Business domain-related</strong>, maintained by international or European authorities, e.g. the ones defined by UNECE (as unit codes), or by the OP, e.g. types of procurement procedures (based on the EU Directives);</p>
+</li>
+<li>
+<p><strong>Project-specific</strong> (or application-specific), i.e. those codes that are particular of the project, e.g. codes used by the OP&#8217;s applications (eSenders' tools);</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Codes are normally maintained in "code lists". All code lists available on he MDR site can be download as HTML, XML, XSD, SKOS or SKOS-EU-AP (a profile of SKOS-XL).</p>
+</div>
+<div class="paragraph">
+<p>The ePO development team, jointly with the WG members, convened to use the SKOS-EU-AP syntax available on the MDR site. The fragment of code below shows
+how an instance of a code is referred to in a SPARQL insert query:</p>
+</div>
+<div class="listingblock">
+<div class="title">Use of SKOS-EU-AP code lists in ePO</div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
+PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt;
+PREFIX ccts: &lt;http://www.unece.org/cefact#&gt;
+PREFIX euvoc: &lt;http://publications.europa.eu/ontology/euvoc#&gt;
+PREFIX epo-rd: &lt;http://data.europa.eu/ePO/referencedata#&gt;
+
+INSERT
+{
+	Graph &lt;http://data.europa.eu/ePO/ontology&gt; {
+		:PE143899-2018 rdf:type :ProcuringEntity ;
+			:usesProcuringEntityType epo-rd:CA ;
+			skos:prefLabel "Etat de Fribourg, Direction des finances, Service de l´informatique et des télécommunications (SITel)" ;
+			org:hasSite :PESite_143899-2018 ;
+			:usesJurisdictionalCompetenceLevelType epo-rd:AUTHORITY_LOCAL .
+		:PESite_143899-2018 rdf:type vcard:Individual ;
+			vcard:hasAddress :PEAddress143899-2018 .
+		:PEAddress143899-2018 rdf:type vcard:Address ;
+			vcard:region epo-rd:CH0 ; <i class="conum" data-value="1"></i><b>(1)</b>
+			vcard:street-address "Route André Piller 50" ;
+			vcard:postal-code "1762" ;
+			vcard:country-name euvoc:CH ; <i class="conum" data-value="2"></i><b>(2)</b>
+			vcard:hasEmail "AOP_SITel@fr.ch" ;
+			vcard:locality "Givisiez"
+	}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>NUTS 2016 code, defined by EUROSTAT</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Country Code, available on the MDR</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This other code shows a fragment of the SKOS-EU-AP code list for countries. Click
+<a href="http://publications.europa.eu/resource/cellar/07ed8d46-2b56-11e7-9412-01aa75ed71a1.0001.09/DOC_1">here</a>
+to download the file.</p>
+</div>
+<div class="listingblock">
+<div class="title">SKOS-EU-AP Country Code code list (Luxembourg code)</div>
+<div class="content">
+<pre> &lt;skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/LUX"
+                 at:deprecated="false"
+                 at:protocol.order="EU-16"&gt;
+      &lt;rdf:type rdf:resource="http://publications.europa.eu/ontology/euvoc#Country"/&gt;
+      &lt;dc:identifier&gt;LUX&lt;/dc:identifier&gt;
+      &lt;at:protocol-order&gt;EU-16&lt;/at:protocol-order&gt;
+      &lt;at:authority-code&gt;LUX&lt;/at:authority-code&gt;
+      &lt;at:op-code&gt;LUX&lt;/at:op-code&gt;
+      &lt;atold:op-code&gt;LUX&lt;/atold:op-code&gt;
+ ...
+       &lt;skos:topConceptOf rdf:resource="http://publications.europa.eu/resource/authority/country"/&gt;
+       &lt;skos:inScheme rdf:resource="http://publications.europa.eu/resource/authority/country"/&gt;
+       &lt;owl:versionInfo&gt;20180620-0&lt;/owl:versionInfo&gt;
+       &lt;dct:dateAccepted rdf:datatype="http://www.w3.org/2001/XMLSchema#date"&gt;2012-06-27&lt;/dct:dateAccepted&gt;
+       &lt;dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date"&gt;2010-01-01&lt;/dct:created&gt;
+       &lt;dct:dateSubmitted rdf:datatype="http://www.w3.org/2001/XMLSchema#date"&gt;2011-10-06&lt;/dct:dateSubmitted&gt;
+       &lt;euvoc:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date"&gt;1950-05-09&lt;/euvoc:startDate&gt;
+       &lt;euvoc:status rdf:resource="http://publications.europa.eu/resource/authority/concept-status/CURRENT"/&gt;
+       &lt;euvoc:order&gt;EU-16&lt;/euvoc:order&gt;
+... etc.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One interesting aspect of the OP&#8217;s SKOS EU Application Profile (SKOS-EU-AP) is that all the metadata specified as
+attributes of the ISO 15000 <code>CodeType</code> Core Component Specification are also expressed in the equivalent OP&#8217;s
+SKOS-EU-AP code list. A as a matter of fact, the features of the SKOS-XL specification which the SKOS-EU-AP
+is built upon permits the specification of any metadata that can be necessary on both the code list (the "concept scheme")
+and the individuals of the list (each "concept" of the list).</p>
+</div>
+<div class="paragraph">
+<p>The figure below shows the set of attributes that can be used for a CCTS CodeType element:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CCT_CodeType_Attributes.png" alt="CCTS CodeType attributes">
+</div>
+<div class="title">Figure 35. Attributes of the CCTS CodeType element</div>
+</div>
+<div class="paragraph">
+<p>The table below contains the definitions of each attribute (as defined in <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl">OASIS UBL</a>,
+<a href="https://www.iso.org/standard/66370.html">ISO/IEC 19845:2015</a>):</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. UBL attributes for codes</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identification of a list of codes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listAgencyID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An agency that maintains one or more lists of codes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listAgencyName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the agency that maintains the list of codes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of a list of codes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listVersionID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the list of codes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The textual equivalent of the code content component.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>languageID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identifier of the language used in the code name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listURI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Uniform Resource Identifier that identifies where the code list is located.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>listSchemeURI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Uniform Resource Identifier that identifies where the code list scheme is located.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="identifiers"><a class="anchor" href="#identifiers"></a><a class="link" href="#identifiers">Identifiers</a></h4>
+<div class="paragraph">
+<p>As commented above, ePO defines a class Identifier in alignment to the ISO 15000 Core Component Specification.
+This link:<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">class</a>
+looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="title">Definition in ePO of the CCTS-based Identifier class</div>
+<div class="content">
+<pre> @prefix : &lt;http://www.unece.org/cefact#&gt; .
+ @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+ @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+ @prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+ @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+ @prefix ccts: &lt;http://www.unece.org/cefact#&gt; .
+ @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+ @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+ @prefix schema: &lt;http://schema.org/&gt; .
+ @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+ @base &lt;http://www.unece.org/cefact&gt; .
+
+ &lt;http://www.unece.org/cefact&gt; rdf:type owl:Ontology ;
+                                owl:versionIRI &lt;http://www.unece.org/cefact/2&gt; ;
+                                dcterms:title "Core Component Type Specification (CCTS)"@en ;
+                                dcterms:creator [ schema:affiliation &lt;https://www.unece.org/cefact/&gt;
+                                                ] ,
+                                                [ schema:affiliation [ foaf:homepage &lt;http://www.everis.com&gt; ;
+                                                                       foaf:name "Enric Staromiejski" ,
+                                                                                 "Laia Bota" ,
+                                                                                 "Maria Font"
+                                                                     ]
+                                                ] ;
+                                rdfs:label "Core Component Type Specification (CCTS)"@en ;
+                                dcterms:creator [ schema:affiliation [ foaf:homepage &lt;https://publications.europa.eu/en&gt; ;
+                                                                       foaf:name "The Publications Office of the European Union" ,
+                                                                                 "Unit C2"
+                                                                     ]
+                                                ] ,
+                                                [ schema:affiliation &lt;http://www.ebxml.org/&gt;
+                                                ] ;
+                                dcterms:abstract "CCTS defines generic, business-agnostic, core components that are reused by other standards thus facilitating the interoperability at the technical level. Originally defined by ebXML, the specification is currently maintained by UN/CEFACT"@en .
+
+ #################################################################
+ #    Data properties
+ #################################################################
+
+ ###  http://www.unece.org/cefact#identifierValue
+ ccts:identifierValue rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ccts:Identifier ;
+                      rdfs:range xsd:normalizedString ;
+                      rdfs:comment "The literal identifying an entity, like a person or an object."@en ;
+                      rdfs:isDefinedBy &lt;http://www.everis.com&gt; .
+
+ ###  http://www.unece.org/cefact#schemeAgencyName
+ ccts:schemeAgencyName rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain ccts:Identifier ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "The name of the agency that maintains the identification scheme."@en .
+
+ ###  http://www.unece.org/cefact#schemeDataURI
+ ccts:schemeDataURI rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain ccts:Identifier ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:comment "The Uniform Resource Identifier that identifies where the identification scheme data is located."@en .
+
+ ###  http://www.unece.org/cefact#schemeID
+ ccts:schemeID rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain ccts:Identifier ;
+               rdfs:range xsd:normalizedString ;
+               rdfs:comment "The identification of the identification scheme."@en .
+
+ ###  http://www.unece.org/cefact#schemeName
+ ccts:schemeName rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain ccts:Identifier ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "The name of the identification scheme."@en .
+
+ ###  http://www.unece.org/cefact#schemeURI
+ ccts:schemeURI rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain ccts:Identifier ;
+                rdfs:range xsd:anyURI ;
+                rdfs:comment "The Uniform Resource Identifier that identifies where the identification scheme is located."@en .
+
+ ###  http://www.unece.org/cefact#schemeVersionID
+ ccts:schemeVersionID rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ccts:Identifier ;
+                      rdfs:range xsd:normalizedString ;
+                      rdfs:comment "The version of the identification scheme."@en .
+
+ #################################################################
+ #    Classes
+ #################################################################
+
+ ###  http://www.unece.org/cefact#Identifier
+ ccts:Identifier rdf:type owl:Class ;
+                 rdfs:comment "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information. This class is based on the UN/CEFACT Identifier complex type defined in See Section 5.8 of Core Components Data Type Catalogue Version 3.1 (http://www.unece.org/fileadmin/DAM/cefact/codesfortrade/CCTS/CCTS-DTCatalogueVersion3p1.pdf). In RDF this is expressed using the following properties: - the content string should be provided using skos:notation, datatyped with the identifier scheme (inclduing the version number if appropriate); - use dcterms:creator to link to a class describing the agency that manages the identifier scheme or adms:schemaAgency to provide the name as a literal. Although not part of the ADMS conceptual model, it may be useful to provide further properties to the Identifier class such as dcterms:created to provide the date on which the identifier was issued."@en ;
+                 rdfs:isDefinedBy &lt;http://www.ebxml.org/&gt; ,
+                                  &lt;http://www.unece.org/cefact&gt; ;
+                 rdfs:label "Identifier"@en .
+... etc.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code matches the specification and definitions maintained by UN/CEFACT:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/CCT_IdentifierType_Attributes.png" alt="CCTS IdentifierType attributes">
+</div>
+<div class="title">Figure 36. Attributes of the CCTS IdentifierType element</div>
+</div>
+<div class="paragraph">
+<p>The definition of these definitions, as provided by OASIS UBL (ISO/IEC 19845), follows:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. CCTS IdentifierType attributes</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identification of the identification scheme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the identification scheme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeAgencyID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identification of the agency that maintains the identification scheme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeAgencyName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the agency that maintains the identification scheme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeVersionID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The version of the identification scheme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeDataURI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Uniform Resource Identifier that identifies where the identification scheme data is located.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>schemeURI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Uniform Resource Identifier that identifies where the identification scheme is located.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="v-proof-of-concept"><a class="anchor" href="#v-proof-of-concept"></a><a class="link" href="#v-proof-of-concept">V. Proof of Concept</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The ePO development team agreed with the WG members to provide a means to test the deliverables produced, especially
+the Conceptual Data Model and the OWL-TTL implementation. With this purpose in mind a Proof of Concept was planned and
+executed.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/ePOTesting.png" alt="ePO Testing">
+</div>
+<div class="title">Figure 37. ePO Testing</div>
+</div>
 <div class="paragraph">
 <p>The main objectives of the Proof of Concept were:</p>
 </div>
@@ -1839,7 +2316,7 @@ shows the activities that were planned and executed to develop the Proof of Conc
 <div class="content">
 <img src="images/ePO_PoC.png" alt="v2.0.0 - Proof-Of-Concept">
 </div>
-<div class="title">Figure 34. ePO Project v2.0.0 - Proof-Of-Concept</div>
+<div class="title">Figure 38. ePO Project v2.0.0 - Proof-Of-Concept</div>
 </div>
 <div class="paragraph">
 <p>The following subsections explain how each of the activities mentioned in the diagram above has been
@@ -1848,7 +2325,7 @@ developed and where to check the inputs, processes and results.</p>
 <div class="sect2">
 <h3 id="activity-1-use-cases"><a class="anchor" href="#activity-1-use-cases"></a><a class="link" href="#activity-1-use-cases">Activity 1: Use Cases</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Competency Questions, activity summary</caption>
+<caption class="title">Table 3. Competency Questions, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1912,7 +2389,7 @@ Use Cases (slightly renamed):</p>
 <div class="sect2">
 <h3 id="activity-2-user-stories"><a class="anchor" href="#activity-2-user-stories"></a><a class="link" href="#activity-2-user-stories">Activity 2: User Stories</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 2. User Stories, activity summary</caption>
+<caption class="title">Table 4. User Stories, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1971,13 +2448,13 @@ roles and related to the Use Cases 1 and 4.</p>
 <div class="content">
 <img src="images/UserStoriesExamplesTable.png" alt="User Stories examples">
 </div>
-<div class="title">Figure 35. Examples of User Stories</div>
+<div class="title">Figure 39. Examples of User Stories</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="activity-3-competency-questions"><a class="anchor" href="#activity-3-competency-questions"></a><a class="link" href="#activity-3-competency-questions">Activity 3: Competency Questions</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 3. Competency Questions, activity summary</caption>
+<caption class="title">Table 5. Competency Questions, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2016,19 +2493,19 @@ supplies a longer list of concrete examples of CQ for the WG members to get insp
 <div class="content">
 <img src="images/CQExample1.png" alt="CQ example 1">
 </div>
-<div class="title">Figure 36. Example (1/2) of Competency Questions</div>
+<div class="title">Figure 40. Example (1/2) of Competency Questions</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/CQExample2.png" alt="CQ example 2">
 </div>
-<div class="title">Figure 37. Examples (2/2) of User Stories</div>
+<div class="title">Figure 41. Examples (2/2) of User Stories</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="activity-4-review-cqs"><a class="anchor" href="#activity-4-review-cqs"></a><a class="link" href="#activity-4-review-cqs">Activity 4: Review CQs</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 4. Revision of Competency Questions, activity summary</caption>
+<caption class="title">Table 6. Revision of Competency Questions, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2062,7 +2539,7 @@ to add comments or create new issues related to the CQs was also made available 
 <div class="sect2">
 <h3 id="activity-5-input-data-set"><a class="anchor" href="#activity-5-input-data-set"></a><a class="link" href="#activity-5-input-data-set">Activity 5: Input Data Set</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 5. Select Data Set, activity summary</caption>
+<caption class="title">Table 7. Select Data Set, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2133,7 +2610,7 @@ other forms just uncomment the line "#DOCUMENT_TYPE_ID=1,2,3,22,23,24,25 " and c
 <div class="sect2">
 <h3 id="activity-6-etl-process"><a class="anchor" href="#activity-6-etl-process"></a><a class="link" href="#activity-6-etl-process">Activity 6: ETL process</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 6. ETL process development, activity summary</caption>
+<caption class="title">Table 8. ETL process development, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2163,10 +2640,9 @@ via the GitHub Wiki page link
 <h4 id="ted-to-epo-mapping"><a class="anchor" href="#ted-to-epo-mapping"></a><a class="link" href="#ted-to-epo-mapping">TED to ePO Mapping</a></h4>
 <div class="paragraph">
 <p>ETL stands for Extraction, Transformation and Loading. The first step (Extraction) requires to identify well where the data of origin are and
-how they are expressed. For this, the ePO analysts produced a map (in a
-<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/Mapping%20TED%20XML%20to%20ePO.xlsx">spread-sheet</a>)
-putting side by side (wiring) each element of the TED-XML Schema
-(<a href="http://publications.europa.eu/mdr/eprocurement/ted/index.html">R2.0.9.S02.E01</a>) and the corresponding element in ePO.</p>
+how they are expressed. For this, the ePO analysts produced a <a href="https://eprocurementontology.github.io/Mapping/Mapping%20TED%20XML%20to%20ePO.html">map</a>
+putting side by side (wiring) each element of the TED-XML Schema (<a href="http://publications.europa.eu/mdr/eprocurement/ted/index.html">R2.0.9.S02.E01</a>)
+and the corresponding element in ePO.</p>
 </div>
 </div>
 </div>
@@ -2387,7 +2863,7 @@ The data were extracted from the logs about the transformation of each month of 
 <div class="sect2">
 <h3 id="activity-7-populate-graph-store"><a class="anchor" href="#activity-7-populate-graph-store"></a><a class="link" href="#activity-7-populate-graph-store">Activity 7: Populate Graph store</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 7. Populate the Graph store, activity summary</caption>
+<caption class="title">Table 9. Populate the Graph store, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2424,19 +2900,19 @@ downloaded from the <a href="https://ontotext.com/">Ontotext</a> website.</p>
 <div class="content">
 <img src="images/Statistics-2018.png" alt="Number of Notices">
 </div>
-<div class="title">Figure 38. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
+<div class="title">Figure 42. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/Statistics-Frequency-2018.png" alt="Frequency of Notices">
 </div>
-<div class="title">Figure 39. Frequency of Notices</div>
+<div class="title">Figure 43. Frequency of Notices</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="activity-8-sparql-queries"><a class="anchor" href="#activity-8-sparql-queries"></a><a class="link" href="#activity-8-sparql-queries">Activity 8: SPARQL Queries</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 8. Develop SPARQL Queries, activity summary</caption>
+<caption class="title">Table 10. Develop SPARQL Queries, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2486,7 +2962,7 @@ select ?s (count(?did) as ?cdid) where {
 <div class="content">
 <img src="images/CountingCANs.png" alt="Counting CANs">
 </div>
-<div class="title">Figure 40. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
+<div class="title">Figure 44. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 2</strong>: List all the winners, the size of the company and the date of award.</p>
@@ -2509,7 +2985,7 @@ select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where {
 <div class="content">
 <img src="images/QueryExample1.png" alt="Winners" width="size and award date">
 </div>
-<div class="title">Figure 41. Winners</div>
+<div class="title">Figure 45. Winners</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 3</strong>: Number of contracts awarded for each CPV (beware that one Contract Award Notice may
@@ -2530,7 +3006,7 @@ SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
 <div class="content">
 <img src="images/QueryExample3.png" alt="Contracts per CPV">
 </div>
-<div class="title">Figure 42. Number of contracts per CPV</div>
+<div class="title">Figure 46. Number of contracts per CPV</div>
 </div>
 <div class="paragraph">
 <p>See the document <a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">SPARQL Query examples</a>
@@ -2541,7 +3017,7 @@ for more contextualisation and examples.</p>
 <div class="sect2">
 <h3 id="activity-9-test-and-debug"><a class="anchor" href="#activity-9-test-and-debug"></a><a class="link" href="#activity-9-test-and-debug">Activity 9: Test and debug</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 9. Test and debug, activity summary</caption>
+<caption class="title">Table 11. Test and debug, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2569,7 +3045,7 @@ for more contextualisation and examples.</p>
 <div class="sect2">
 <h3 id="activity-10-validate-results"><a class="anchor" href="#activity-10-validate-results"></a><a class="link" href="#activity-10-validate-results">Activity 10: Validate results</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 10. Validate results, activity summary</caption>
+<caption class="title">Table 12. Validate results, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2600,7 +3076,7 @@ for more contextualisation and examples.</p>
 <div class="sect2">
 <h3 id="activity-11-provide-feedback"><a class="anchor" href="#activity-11-provide-feedback"></a><a class="link" href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 11. Provide feedback, activity summary</caption>
+<caption class="title">Table 13. Provide feedback, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2634,180 +3110,6 @@ work-space.</p></td>
 
 </div>
 </div>
-<div class="sect1">
-<h2 id="annex-i-public-procurement-kpis"><a class="anchor" href="#annex-i-public-procurement-kpis"></a><a class="link" href="#annex-i-public-procurement-kpis">Annex I: Public Procurement KPIs</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This section provides some more examples of SPARQL queries and results obtained
-for the period January 2018 to May 2018.</p>
-</div>
-<div class="paragraph">
-<p>The queries are intended to produce similar
-KPIs results as the ones shown in the
-<a href="http://ec.europa.eu/internal_market/scoreboard/performance_per_policy_area/public_procurement/index_en.htm">EU Single Market on Public Procurement</a>.
-The source of information for the results shown in this chapter are the
-Contract Award Notices available in the OP&#8217;s <a href="ftp://ted.europa.eu">TED ftp server</a>,
-only CANs under Directive 2014/24/EU, from January to May 2018).</p>
-</div>
-<div class="paragraph">
-<p>While comparing results, bear in mind that the information used by the EU Single Market portal
-is also extracted from the TED, but the sample is much bigger and richer (more years, types of forms and different
-releases) than the one used for this PoC.</p>
-</div>
-<div class="paragraph">
-<p>The explanations about "What they do measure, what they do reflect, and how to interpret the
-results" were copied from the EU Single Market portal.</p>
-</div>
-<div class="sect2">
-<h3 id="indicator-i-single-bidder"><a class="anchor" href="#indicator-i-single-bidder"></a><a class="link" href="#indicator-i-single-bidder">Indicator I: Single bidder</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. <em>KPI II. No calls for bids, interpretation</em></caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it measure?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The proportion of contracts awarded where there was just a single bidder (excluding framework agreements, as they have different reporting patterns).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it reflect?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Several aspects of procurement, including <strong>competition</strong> and <strong>bureaucracy</strong>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>How to interpret it?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">More bidders are better, as this means public buyers have more options, and can get better value for money.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="title"><em>KPI II. No call for bids, SPARQL query</em></div>
-<div class="content">
-<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
-PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
-PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
-select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?percent) where
-{
-    {select ?c (count(?c) as ?cc) where {
-        {select ?ar (count(?w) as ?cw) where{
-            ?contract a :Contract ;
-                      :refersToAwardResult ?ar.
-            ?ar :hasWinner ?w
-            filter not exists {?contract :hasFrameworkContract ?fc}
-
-            } group by ?ar
-            having (count(?w) = 1)}
-        ?ar :hasWinner ?w .
-           ?w org:hasSite ?s .
-        ?s vcard:hasAddress ?a .
-        ?a vcard:country-name ?c} group by ?c order by ?c
-    }
-    {
-        select ?c (count(?c) as ?countContract) where
-        {
-            ?con a :Contract ;
-               :refersToAwardResult ?ar .
-            ?ar :hasWinner ?w .
-            ?w org:hasSite ?s .
-            ?s vcard:hasAddress ?add .
-            ?add vcard:country-name ?c
-        } group by ?c order by ?c
-    }
-}</pre>
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title"><em>KPI I. Result-set (csv)</em></div>
-Click here to download the figures resulting from the query:
-<a href="./images/KPI_I_QueryResult.csv">Query Result</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/KPI_I_EU.png" alt="KPI I">
-</div>
-<div class="title">Figure 43. <em>KPI I. Comparative table</em></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="indicator-ii-no-calls-for-bids"><a class="anchor" href="#indicator-ii-no-calls-for-bids"></a><a class="link" href="#indicator-ii-no-calls-for-bids">Indicator II: No calls for bids</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. <em>KPI II. No calls for bids, interpretation</em></caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it measure?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The proportion of procurement procedures that were negotiated with a company without a call for bids.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it reflect?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Several aspects of procurement, including <strong>transparency</strong> and <strong>competition</strong>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>How to interpret it?</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calling for bids (or "calling for tenders") before starting procurement negotiations is better,
-as it makes the bidder selection process more transparent and increases competition. This leads to better value for money.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="title"><em>Indicator II. No call for bids, SPARQL query</em></div>
-<div class="content">
-<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
-PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
-PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
-PREFIX epo-rd: &lt;http://data.europa.eu/ePO/referencedata#&gt;
-
-select ?country (count(?procurementProcedure) as ?procurementProcedure) where{
-    	?procurementProcedure a :ProcurementProcedure ;
-         	:usesProcurementProcedureType epo-rd:AWARD_WO_PUB;
-            :hasProcuringEntity ?procuringEntity .
-
-        ?procuringEntity org:hasSite ?site .
-        ?site vcard:hasAddress ?address .
-    	?address vcard:country-name ?country .
-} group by ?country</pre>
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title"><em>KPI II. Result-set (csv)</em></div>
-Click here to download the figures resulting from the query:
-<a href="./images/KPI_II_QueryResult.csv">Query Result</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/KPI_II_EU.png" alt="KPI II">
-</div>
-<div class="title">Figure 44. <em>KPI II. Comparative table</em></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footnotes">
 <hr>
@@ -2826,10 +3128,13 @@ Click here to download the figures resulting from the query:
 <div class="footnote" id="_footnote_5">
 <a href="#_footnoteref_5">5</a>. <strong>A note about codes</strong>: although the CCTS library defines a data type for code (CodeType), we decided to use SKOS to represent code list and taxonomy concepts. Therefore this CCTS element is not used in ePO (see the ePO Conceptual Data Map "<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">ccts package</a>" and the <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">ccts.ttl</a> file for these definitions). There are some good reasons on which this decisions was based: (1) The OP&#8217;s MDR site does already maintain and supply the largest part of the code lists needed by ePO as a SKOS-XL syntax (named SKOS-AP-EU); and (2) SKOS, and specially SKOS-XL, cater for a rich expressivity and metadata extensibility
 </div>
+<div class="footnote" id="_footnote_6">
+<a href="#_footnoteref_6">6</a>. currently maintained by UN/CEFACT, see UNECE&#8217;s <a href="https://www.unece.org/cefact/codesfortrade/ccts_index.html">CCTS</a>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-07-31 19:04:21 CEST
+Last updated 2018-08-01 22:11:01 CEST
 </div>
 </div>
 </body>
