@@ -1,6 +1,13 @@
 
 == V. Proof of Concept
 
+The ePO development team agreed with the WG members to provide a means to test the deliverables produced, especially
+the Conceptual Data Model and the OWL-TTL implementation. With this purpose in mind a Proof of Concept was planned and
+executed.
+
+.ePO Testing
+image::ePOTesting.png[ePO Testing, align="center"]
+
 The main objectives of the Proof of Concept were:
 
 . Test the coherence of the Conceptual Data Model (of the T-Box);
