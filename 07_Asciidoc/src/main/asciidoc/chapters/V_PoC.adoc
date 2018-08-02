@@ -367,10 +367,10 @@ The data were extracted from the logs about the transformation of each month of 
 |===
 
 A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
-transformation- for the five first months of 2018. The tble and bar graphic below show the exact number of
+transformation- for the five first months of 2018. The table and bar graphic below show the exact number of
 files processed and the number of Contract Award Notices imported into the Graph Store.
 
-The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5)m which can be freely
+The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5) which can be freely
 downloaded from the link:https://ontotext.com/[Ontotext] website.
 
 .Total of Notices and number of Contract Award Notices used to populate the Graph store

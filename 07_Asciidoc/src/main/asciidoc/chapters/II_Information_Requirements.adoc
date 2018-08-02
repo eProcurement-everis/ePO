@@ -1,11 +1,15 @@
 
 == II. Information Requirements
 
-According to the development plan, the first task to undertake was the elicitation of information requirements, axioms and business rules. For this
-the version 2.0.0 of the ePO has taken into account the following inputs:
+According to the development plan, the first task was the identification of information requirements,
+axioms and business rules. For this the version 2.0.0 of the ePO has taken into account the following inputs:
 
-. The _**Use Case 1 defined in version 1.00**_, link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Data Journalism]; and
-. The _**Standards, business needs and Legislation**_ studied in the previous versions, plus the most recent developments;
+. The
+       "link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring[Use Case 1: Data Journalism]"
+       and the link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use--ase-4.-Analyzing-eProcurement-procedures[Use Case 4: Analysing eProcurement Procedures];
+
+. The _Standards, business needs and Legislation**_ studied in the previous versions, plus the most recent developments;
+
 . The _**EU eProcurement Glossary**_, maintained by the ePO Working group; see
 link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary_and%20DED.xlsx[Glossary Management]
 and link:https://github.com/eprocurementontology/eprocurementontology/wiki/Glossary-Management[Glossary].
@@ -25,7 +29,7 @@ where the Use Case information requirements are broken down into more detailed i
 Information Analysts need to, based on each information requirement, make decisions like determining whether an element is an entity representing a _class_ of objects, an _attribute_ of the class of a basic data type e.g. a code, an identifier, a date, a time, a text, etc.), or a more complex _data object_ associated to the class (e.g. another class).
 
 One way of listing this information is using a _**Data Element Dictionary**_, a table (e.g. a
-link:ePO_DED.xlsx[spread-sheet]
+link:ePO_DED.xlsx[spread-sheet])
 with the following columns and rows:
 
 .Information Requirements elicitation
@@ -36,14 +40,15 @@ image::ePO_DED.png[DED, 1000, align="center"]
 The DED is normally used with three objectives:
 
 . To *help analysts design the Ontology*. The DED is a "logical artefact". It takes the "Conceptual Data Model" as an input and reflects the
-conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints;
+conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints. Sometimes,
+as it has been in our case, it is developed simultaneously with the Conceptual Data Model;
 
 . To *maintain the definitions of the data elements*. The ePO Glossary contains mainly the definitions of the concepts used in the Ontology. The
-DED takes the definitions of the ePO Glossary for the classes and adds definitions for each property of each class;
+DED takes the definitions of the ePO Glossary for the classes and adds definitions *for each property* of each class;
 
 . To *identify reference data linked to the data elements*, i.e. code lists and taxonomies;
 
-. To *automatise the production of different syntax bindings*. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
+. To *automatise the production of the model into different syntax bindings*. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
 generate XML, OWL or other machine-readable renditions of the data model. Thus it could be used to generate automatically the OWL-TTL expression
 of the ePO Ontology. Specifications like UN/CEFACT and UBL use the DED to automatically generate XSD schemas fully annotated (documented) with the
 data element definitions, examples, etc. This does also facilitates the registration of these data elements in registries for their automatic
@@ -53,8 +58,8 @@ parts for more details on this).
 ==== Current status of the DED
 
 The DED depends on the Glossary definitions and on the Conceptual Data Model, amongst other inputs for the elicitation of information requirements.
-The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved. It also helps to identify elements that may
-designed as object or data properties.
+The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved. It also helps
+identify elements that may be designed as object or data properties.
 
 As the ePO Glossary is an ongoing work the DED cannot be considered finished. Additionally many of the DED properties will have to be defined
 based on their context, the class where they belong in. These definitions are being worked out during the discussions about the ePO Glossary with the
@@ -71,11 +76,10 @@ the class, attribute or property;
 
 * **B - "ePO Business Term"**: Contains a label in English ("the term") assigned by the analysts to each class or property of the Dictionary.
 Beware that: (i) _**A term is a set of one or more words that represent a concept**_; (ii) most of the concepts of the ePO Ontology are defined
-in the link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary_and%20DED.xlsx[ePO Glossary]);
+in the link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary.xlsx[ePO Glossary]);
 and (iii) the analysts sometimes decide to shorten the text (the label) of the term by combining differently the words of the term or by eliminating
 some words (e.g. "Access Tool URI" instead of "URI of the Access Tool").
 The reason for this is that at design and implementation time the name of the classes and properties need to be simple and yet self-explanatory.
-When this happens, the rewording shall be agreed with the Working Group.
 
 * **C - "Concept Definition"**: The definition of each concept as it appears in the ePO Glossary.
 

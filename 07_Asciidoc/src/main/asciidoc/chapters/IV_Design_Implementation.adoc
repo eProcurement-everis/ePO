@@ -36,7 +36,7 @@ The production of such transformation and artefacts were out of the scope of thi
 
 As commented above, for the drafting of the TTL syntax the ePO development team used the Standford's
 link:https://protege.stanford.edu/products.php[Protégé 5.2] editor. The resulting OWL-TTL file can be accessed from the
-GitHub link:[Wiki] page (menu https://github.com/eprocurementontology/eprocurementontology/wiki[OWL-TTL) or from the
+GitHub link:[Wiki] page (menu https://github.com/eprocurementontology/eprocurementontology/wiki[OWL-TTL]) or from the
 link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl[repository].
 
 While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3
