@@ -55,8 +55,8 @@ enumeration. Thus the triple used to say that a _Procurement Procedure is of typ
 ePO ontology and `epo-rd:` is the prefix reserved for the namespace representing all the codes defined in ePO (eProcurement-specific, to
 be located in the OP's Metadata Registry (link:https://publications.europa.eu/en/web/eu-vocabularies[MDR])).
 
-TIP: See also the section "link:#identifiers-and-codes[Codes and Identifiers]", in chapter
-link:#iv-design-and-implementation["IV. Design and implementation"] for details on the implementation of these.
+TIP: See also the section "link:https://eprocurement-everis.github.io/#codes-and-identifiers[Codes and Identifiers]", in chapter
+link:https://eprocurement-everis.github.io/#iv-design-and-implementation["IV. Design and implementation"] for details on the implementation of these.
 
 
 
@@ -388,6 +388,6 @@ those that have additional dimensions (attributes) like Identifier, Amount, Quan
 
 This ePO implementation "primitive" ones as xsd types, string for Text, dateTime for Date and Time, boolean for Indicator, decimal for Numeric, and so on.
 The rest of complex data types are implemented as classes with their own data properties, including a placeholder for the value (the actual datum).
-See section link:file:#iv-design-and-implementation[IV. Design and Implementation] for details on the Turtle (TTL) implementation.
+See section link:file:https://eprocurement-everis.github.io/#iv-design-and-implementation[IV. Design and Implementation] for details on the Turtle (TTL) implementation.
 
 
