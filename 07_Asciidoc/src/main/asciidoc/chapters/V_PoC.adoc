@@ -39,7 +39,7 @@ The ePO v1.0 focused on three different Use Cases:
 
 * link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Use Case 1]: Data Journalism
 
-* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism[Use Case 2]: Automated matchmaking of procured services and products with businesses, and
+* link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-2.-Automated-matchmaking-of-procured-services-and-products-with-businesses[Use Case 2]: Automated matchmaking of procured services and products with businesses, and
 
 * link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-3.-Verifying-VAT-payments-on-intracommunity-service-provision[Use Case 3]: Verifying VAT payments on intra-community service provision.
 
@@ -200,7 +200,7 @@ configuration file). The output of the build process is a "*.war" file. The link
 is available on the GitHub code repository. This java code is responsible for (i) organising the TED-XML files; (ii) launching the extraction + transformation and/or the
 loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;
 
-. *XSL-T*: version XSL-T 3.0 was used to draft a set of link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt[stylesheets]
+. *XSL-T*: version XSL-T 3.0 was used to draft a set of link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src/main/resources/xslt[stylesheets]
 the mission of which is to read the TED-XML files (Extraction) and transform that information into
 SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
 The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
@@ -240,7 +240,7 @@ INSERT DATA
 ...
 <--1-->
 ----
-<1> See link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip[GitHub code repository]
+<1> See link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src/test/resources[GitHub code repository]
 or execute the code for complete examples.
 
 .A note about the performance
@@ -263,7 +263,7 @@ link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2
 You can execute the code at least in two ways:
 
 . Either you clone the project onto your machine, import the Maven project in your preferred Java editor tool and
-execute the main class link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/main/java/epo/MainETLProcess.java[MainETLProcess].
+execute the main class link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/MainETLProcess.java[MainETLProcess].
 
 . Alternatively you may unzip the *.war file and execute the compiled code from a console window.
 The piece of code below provides a very simple script illustrating how this can be done:
@@ -390,7 +390,7 @@ image::Statistics-Frequency-2018.png[Frequency of Notices, align="center"]
 |*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
 |===
 
-The document link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
+The document link:https://github.com/eprocurementontology/eprocurementontology.github.io/blob/master/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
 provides a few examples that were provided for the Working Group (WG) members to have a glimpse
 at how efficiently the ePO is responding.
 
