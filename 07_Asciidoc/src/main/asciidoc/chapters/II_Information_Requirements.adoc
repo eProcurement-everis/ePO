@@ -11,7 +11,7 @@ axioms and business rules. For this the version 2.0.0 of the ePO has taken into 
 . The _Standards, business needs and Legislation**_ studied in the previous versions, plus the most recent developments;
 
 . The _**EU eProcurement Glossary**_, maintained by the ePO Working group; see
-link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary_and%20DED.xlsx[Glossary Management]
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary.xlsx[Glossary Management]
 and link:https://github.com/eprocurementontology/eprocurementontology/wiki/Glossary-Management[Glossary].
 
 .Information Requirements elicitation
@@ -19,7 +19,7 @@ image::InformationRequirementsAndDED.png[Information Requirements elicitation, 1
 
 The outcome of this task are namely two artefacts:
 
-1. The _**Information Requirements (IR v2.0.0)**_ already identified in link:https://github.com/eprocurementontology/eprocurementontology/wiki/Information-Requirements-v1.00[Information Requirements v1.00];
+1. The _**Information Requirements link:https://github.com/eprocurementontology/eprocurementontology/wiki/Information-Requirements-v2.0.0[(IR v2.0.0)]**_ already identified in link:https://github.com/eprocurementontology/eprocurementontology/wiki/Information-Requirements-v1.00[Information Requirements v1.00];
 
 2. The _**Data Element Dictionary (DED v2.0.0)**_: a link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/ePO_DED.xlsx[spread-sheet]
 where the Use Case information requirements are broken down into more detailed information requirements, axioms, business rules and annotations resulting from the analysis.
@@ -29,7 +29,7 @@ where the Use Case information requirements are broken down into more detailed i
 Information Analysts need to, based on each information requirement, make decisions like determining whether an element is an entity representing a _class_ of objects, an _attribute_ of the class of a basic data type e.g. a code, an identifier, a date, a time, a text, etc.), or a more complex _data object_ associated to the class (e.g. another class).
 
 One way of listing this information is using a _**Data Element Dictionary**_, a table (e.g. a
-link:ePO_DED.xlsx[spread-sheet])
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/ePO_DED.xlsx[spread-sheet])
 with the following columns and rows:
 
 .Information Requirements elicitation
