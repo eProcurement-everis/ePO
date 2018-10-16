@@ -1,5 +1,5 @@
 
-== IV. Design and Implementation
+== IV. Design and implementation
 
 All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were
 taken into account to produce an OWL ontology.
@@ -7,6 +7,10 @@ taken into account to produce an OWL ontology.
 The outcome of this task are mainly the expression of the ontology link:https://en.wikipedia.org/wiki/Tbox[T-Box] as an
 OWL-DL Turtle syntax and a comparison of the tools used (link:https://protege.stanford.edu/products.php[Protégé 5.2]
 and link:https://joinup.ec.europa.eu/solution/vocbench3/about[VocBench 3.0]) for the development of the T-Box.
+
+This section describes the tasks performed during the design and implementation of the ontology (see process
+"OWL design and implementation" highlighted with a blue inverted "L" in the Knowledge Map below; inputs: "Conceptual
+Data Model v2.0.0", "OWL-Turtle syntax v2.0.0").
 
 .ePO Design and Implementation
 image::OWLDesignImplementationPlan.png[Design & Implementation, align="center"]
@@ -36,50 +40,68 @@ The production of such transformation and artefacts were out of the scope of thi
 
 As commented above, for the drafting of the TTL syntax the ePO development team used the Standford's
 link:https://protege.stanford.edu/products.php[Protégé 5.2] editor. The resulting OWL-TTL file can be accessed from the
-GitHub link:[Wiki] page (menu https://github.com/eprocurementontology/eprocurementontology/wiki[OWL-TTL]) or from the
-link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl[repository].
-
-While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3
-(VB3). The objective of this exercise was to check the feasibility of using VB to maintain the ePO.
+GitHub link:https://github.com/eprocurementontology/eprocurementontology/wiki[Wiki] page
+or from the link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl[repository].
 
 .Protégé 5.2 for the edition of ePO
 image::Protege.png[Design & Implementation, align="center"]
 
-=== Codes and Identifiers
-A code is a shortened way (a number or a short abbreviated text), leading to the definition of a 'concept'. The code epresents the concept and is used by software applications to retrieve the definition of the concept or make automatic decisions.
+While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3.0
+(link:http://aims.fao.org/activity/blog/vocbench-3-free-and-open-source-platform-editing-ontologies-thesauri-and-rdf-datasets[VB3]).
+The objective of this exercise was to check the feasibility of using VB3 to maintain the ePO.
 
-An Identifier, in turn, can be defined as “a value (represented as a short text, a number or a combination of both) used to establish the identity of, and distinguish uniquely, one occurrence of an object following a pattern” .
+VocBench 3.0 is a free and open source platform for editing ontologies, thesauri and RDF datasets
+developed at University of Roma, link:https://web.uniroma2.it/[Tor Vergata], under the mandate of the
+Publications Office of the European Union (link:https://publications.europa.eu/en/web/about-us/who-we-are[OP]).
+
+.VocBench 3.0 for the maintenance of ePO
+image::VB3.png[Maintenance of ePO in VB3, align="center"]
+
+
+=== Codes and Identifiers
+A code is a shortened way (a number or a short abbreviated text), leading to the definition of a 'concept'.
+The code represents the concept and is used by software applications to retrieve the definition of the concept or make automatic decisions.
+
+An Identifier, in turn, can be understood as a value
+(represented as a short text, a number or a combination of both) used to establish the identity of, and distinguish
+uniquely, one occurrence of an object following a pattern.
 
 The essential distinctive features between identifiers and codes are:
 
-. Identifiers point at specific occurrences of objects (instances); codes replace concepts;
+. Identifiers point at specific occurrences of objects (instances). Codes replace concepts, e.g. economic operator identifiers;
 
 . Identifiers are virtually limitless while codes are finite. In other words, identifier lists are “open”
-(the lists may grow) and code list are “closed” (practically never updated, once consolidated).
-Hence codes are maintained in 'Codelists' whilst identifiers are usually kept in databases.
+(the lists may grow) and code list are “quited closed” (they grow very slowly, once consolidated: new concepts
+appear rarely, and when an existing code needs to be modified a new code is added and the old one is
+marked as "deprecated", i.e. not to be used anymore at some point in time).
+Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.
 
-. Identifiers are in principle maintained in the business domain, e.g. buyer identifiers, economic operator identifiers,
-product identifiers, etc.
+
+. Identifiers are in principle maintained in the business domain, e.g. procurement procedure identifiers,
+economic operator identifiers, product identifiers, etc.
 
 ==== Alignment to CCTS
 
 The ePO tries to reuse as much as possible standards, specifications and practices commonly applied
 in the eProcurement domain. Hence one design decision, coordinated with the WG members, was to
-use the link:https://www.iso.org/standard/61433.html[ISO 15000-5:2014] (Core Components Specification)
-footnote:[currently maintained by UN/CEFACT, see UNECE's link:https://www.unece.org/cefact/codesfortrade/ccts_index.html[CCTS]]
-to implement the data types `Identifier`, `Amount`, `Quantity` and `Measure`.
+use the link:https://www.unece.org/cefact/codesfortrade/ccts_index.html[UN/CEFACT CCTS] (Core Component Type Specification)
+footnote:[currently maintained by UN/CEFACT] to implement the data types `Identifier`, `Amount`, `Quantity` and `Measure`.
 
 The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
 link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[05_Implementation/ttl/].
 
-Codes, in ePO, are implemented as link:https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System[SKOS]
+Codes, in ePO, are implemented as link:[SKOS]
 concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).
+See also the link:https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System[Wikipedia] about SKOS, which contains a comprehensible summary of what SKOS is about and links to interesting references.
 
 ==== Codes and code lists
 
 The ePO tries to reuse as much as possible the codes that are already used for e-Procurement. Many of these codes are already
-published in different formats by the Publications Office and are freely available in the section link:https://publications.europa.eu/en/web/eu-vocabularies/authority-tablesAuthority Tables]
-of the OP's [MDR] site. These codes are described in "code lists", in all the EU official languages.
+published in different formats by the Publications Office and are freely available in the section
+link:https://publications.europa.eu/en/web/eu-vocabularies/authority-tables[Authority Tables]
+of the OP's link:https://publications.europa.eu/en/web/eu-vocabularies[MDR] site, which is being moved to their EU Vocabularies site.
+
+These codes are described in "code lists", in all the EU official languages.
 
 We distinguish at least three layers of codes:
 
@@ -90,12 +112,12 @@ that can be used in multiple business domains, e.g. the NUTS defined by EUROSTAT
 
 . *Project-specific* (or application-specific), i.e. those codes that are particular of the project, e.g. codes used by the OP's applications (eSenders' tools);
 
-Codes are normally maintained in "code lists". All code lists available on he MDR site can be download as HTML, XML, XSD, SKOS or SKOS-EU-AP (a profile of SKOS-XL).
+Codes are normally maintained in "code lists". All code lists available on the MDR site can be download as HTML, XML, XSD, SKOS or SKOS-EU-AP (a profile of SKOS-XL).
 
-The ePO development team, jointly with the WG members, convened to use the SKOS-EU-AP syntax available on the MDR site. The fragment of code below shows
+The ePO development team, jointly with the WG members, convened to use the SKOS-AP-EU syntax available on the MDR site. The fragment of code below shows
 how an instance of a code is referred to in a SPARQL insert query:
 
-.Use of SKOS-EU-AP code lists in ePO
+.Use of SKOS-AP-EU code lists in ePO
 [code]
 ----
 PREFIX : <http://data.europa.eu/ePO/ontology#>
@@ -131,11 +153,11 @@ INSERT
 <1> NUTS 2016 code, defined by EUROSTAT
 <2> Country Code, available on the MDR
 
-This other code shows a fragment of the SKOS-EU-AP code list for countries. Click
+This other code shows a fragment of the SKOS-AP-EU code list for countries. Click
 link:http://publications.europa.eu/resource/cellar/07ed8d46-2b56-11e7-9412-01aa75ed71a1.0001.09/DOC_1[here]
 to download the file.
 
-.SKOS-EU-AP Country Code code list (Luxembourg code)
+.SKOS-AP-EU Country Code code list (Luxembourg code)
 [code]
 ----
  <skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/LUX"
@@ -160,9 +182,9 @@ to download the file.
 ... etc.
 ----
 
-One interesting aspect of the OP's SKOS EU Application Profile (SKOS-EU-AP) is that all the metadata specified as
+One interesting aspect of the OP's SKOS EU Application Profile (SKOS-AP-EU) is that all the metadata specified as
 attributes of the ISO 15000 `CodeType` Core Component Specification are also expressed in the equivalent OP's
-SKOS-EU-AP code list. A as a matter of fact, the features of the SKOS-XL specification which the SKOS-EU-AP
+SKOS-AP-EU code list. As a matter of fact, the features of the SKOS-XL specification which the SKOS-AP-EU
 is built upon permits the specification of any metadata that can be necessary on both the code list (the "concept scheme")
 and the individuals of the list (each "concept" of the list).
 
@@ -202,8 +224,8 @@ link:https://www.iso.org/standard/66370.html[ISO/IEC 19845:2015]):
 
 ==== Identifiers
 
-As commented above, ePO defines a class Identifier in alignment to the ISO 15000 Core Component Specification.
-This link:link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[class]
+As commented above, ePO defines a class Identifier in alignment to the UN/CEFACT Core Component Specification (CTTS).
+This link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[Class]
 looks like this:
 
 .Definition in ePO of the CCTS-based Identifier class
@@ -315,7 +337,7 @@ This code matches the specification and definitions maintained by UN/CEFACT:
 image::CCT_IdentifierType_Attributes.png[CCTS IdentifierType attributes, align="center"]
 
  
-The definition of these definitions, as provided by OASIS UBL (ISO/IEC 19845), follows:
+These definitions, as provided by OASIS UBL (ISO/IEC 19845), follow:
 
 .CCTS IdentifierType attributes
 [cols="<1,<4"]

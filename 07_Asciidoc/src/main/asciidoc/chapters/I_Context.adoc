@@ -11,11 +11,8 @@ These differences hamper data interoperability and their reuse.
 This situation creates the need for a common representation of the knowledge about the eProcurement domain as it is understood
 and practiced in the European Union. For this to happen a common vocabulary, axioms and rules are needed.
 
-In 2016 the link:++https://publications.europa.eu/en/home++[Publications Office of the European Union] (Publications Office or OP)
-was commissioned by the link:++https://ec.europa.eu/isa2/home_en++[ISA Programme] to organise and support the development of
-such a standard.
-
-This document describes the efforts made by the European Commission to develop an "*eProcurement Ontology*" (henceforth referred to as the ePO).
+This document describes the work carried out by the Publications Office and the working group to develop the
+"eProcurement Ontology" (henceforth referred to as the ePO).
 
 === About ePO v1.00
 
@@ -28,22 +25,24 @@ The figure below represents the eProcurement Value-Chain as commonly envisaged i
 .eProcurement Value-Chain, an EU vision
 image::eProcurement_Value_Chain.png[EU eProcurement Value-Chain, 1000, align="center"]
 
-The scope of the Charter was set to cover the "specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the link:++http://publications.europa.eu/mdr/++[Metadata Registry]".
+The scope of the Charter was set to cover the specification showing the conceptual model and its representation in OWL,
+and the deployment of the ontology and related code lists and classifications on the
+link:http://publications.europa.eu/mdr/[Metadata Registry], which is being moved to EU Vocabularies.
 
 The original aim was to produce the final Ontology within twelve months including a public review of at least two months; and a set of three deliverables was identified as the main outcome of the project:
 
-.ePO Main Deliverables
+.ePO v1.0 main deliverables
 image::Main_Deliverables.png[ePO Main Deliverables, align="center"]
 
 For the development of these objectives the OP team proposed a methodological approach based on the recommendations and good practices
  footnote:[Cfr. link:http://protege.stanford.edu/publications/ontology_development/ontology101.pdf["Ontology Development 101: A Guide to
 Creating Your First Ontology"], by Natalya F. Noy and Deborah L. McGuinness.]footnote:[Cfr. link:https://joinup.ec.europa.eu/site/core_vocabularies/Core_Vocabularies_user_handbook/ISA%20Hanbook%20for%20using%20Core%20Vocabularies.pdf["e-Government Core Vocabularies handbook", by ISA2 Programme]].
 
-.ePO v1.00 - Development methodological approach (source link:https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf[D02.01 Specification and Methodology])
+.ePO v1.0 - development methodological approach (source link:https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf[D02.01 Specification and Methodology])
 image::v1.00_Development_Approach.png[ePO v1.00 - Development methodological approach, 900, align="center"]
 
-Both the Working Group (WG) and the Publications Office (OP) put hands on the work and a version 1.0 of the
-eProcurement Ontology (ePO) was delivered in the planned period of 12 months.
+Following the work of the Working Group (WG) and the Publications Office
+version 1.0 of the eProcurement Ontology (ePO) was delivered in the planned period of 12 months.
 
 === ePO v.20.0. objectives
 
@@ -74,16 +73,17 @@ The main objective of the ePO v2.0.0 is to *take leverage of the results produce
 
 === Scope
 
-*The scope of the ePO v2.0.0 was set to the eNotification and eAccess phases* of the Public eProcurement valuechain,
+Hence *the scope of the ePO v2.0.0 was set to the eNotification and eAccess phases* of the Public eProcurement value chain,
 represented as blue coloured in the figure below:
  
-.ePO v2.0.0 Scope of the ePO v2.0.0, eNotification and eAccess
+.ePO v2.0.0 scope of the ePO v2.0.0, eNotification and eAccess
 image::V2.0.0-Value_Chain_Focus.png[ePO v2.0.0 scope, 1000, align="center"]
 
 === Tasks in-scope
 
 The Knowledge Map (K-Map) footnote:[See link:http://lice.licef.ca/index.php/gmot-motplus-et-mot/["MOTPlus, Modélisation par Object Typés", by LICEF, Téluq]]
-below provides an abstract representation of the objectives, tasks, inputs and outputs in the scope of the ePO v2.0.0.
+below provides an abstract representation of the objectives, tasks, inputs and outputs in the scope of the ePO v2.0.0 (see Annex III for a summary of
+the MOTPLus vocabulary and syntax).
 
 Each task (ellipses in blue) is used to organise the structure of the rest of this document into four main sections:
 
@@ -97,10 +97,10 @@ the axioms of the ePO;
 
 * *ePO testing*: About the Proof-of-Concept developed to test and refine the Conceptual Data Model and the OWL DL implementation.
 
-.ePO Project v2.0.0 - Objectives
+.ePO Project v2.0.0 - objectives
 image::v2.0.0-Scope.png[ePO v2.0.0 - Scope, align="center"]
 
-This other activity diagram, below, provides  a more simplified view of the recurrent (and cyclic) activities of requirements elicitation,
+The activity diagram, below, provides  a more simplified view of the recurrent (and cyclic) activities of requirements elicitation,
 data element definition, analysis, design, implementation and testing:
 
 .ePO Project v2.0.0 - development activities
@@ -122,49 +122,59 @@ link:https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081[Dire
 link:https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055[Directive 2014/55/EU]],
 the ePO glossary, the new eForms Regulation (under consultation), the General Data Protection Regulation
 link:https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32016R0679[(GDPR)],
-and other EU legal frameworks related to the Public Procurement;
+and other EU legal frameworks related to public procurement;
 
 . *Information Requirements should be identified through the analysis of the business processes*;
 
-** This version 2.0.0 takes as inputs works like the link:http://cenbii.eu/[CEN/BII Workshops], the DG GROWTH's
-link:https://github.com/ESPD[ESPD]-related developments, the eSens developments on the VCD and the ESPD (see the ESPDint project), as well as
+** This version 2.0.0 takes as inputs works like the link:http://cenbii.eu/[CEN/BII Workshops],
+the standard forms and notices published by the Publications Office, DG GROW's
+link:https://github.com/ESPD[ESPD]-related developments, the eSens developments on the VCD and the ESPD (see the
+link:http://wiki.ds.unipi.gr/display/ESPDInt/ESPD+International+Knowledge+Base[ESPDint] project), as well as
 international standards like UN/CEFACT and OASIS UBL.
 Most of them used an UN/CEFACT Universal Method Modelling (UMM) approach that represent the "value-chain Use Cases"
 to identify the information requirements exhaustively.
 The "value chain Use Cases" eNotification and eAccess are described in these works and cast lists of information
 requirements and business rules.
 
-. *Use Cases about the policy area should be defined to (i) complement the identification of information requirements; and (ii) test the completeness, correctness and performance of the Ontology*;
+. *Use Cases around the policy area should be defined to (i) complement the identification of information requirements;
+and (ii) test the completeness, correctness and performance of the Ontology*;
 
-** The Use Cases defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited
-during the analysis of the business processes.
+** Use Cases defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited
+during the analysis of the business processes. In this version we propose to focus on the
+"Use Case 1: link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring[Data Journalism]"
+and the Use "Case 4: link:https://github.com/eprocurementontology/eprocurementontology/wiki/Use—​ase-4.-Analyzing-eProcurement-procedures[Analysing eProcurement Procedures]",
+as these cases provide the largest part of the requirements necessary
+to implement and test the eNotification and eAccess phases which is the object of ePO version 2.0.
 
 . *Reuse of ontologies*:
 
-** There is no point in reinventing models that already exist and are reusable. That is the case, for example, when the time comes to represent entities like natural person, legal person,
-address, etc. Hence, for generic ontologies, we proposed to reuse: W3C's rov (link:https://www.w3.org/TR/vocab-regorg/[Registered Organization Vocabulary]),
-org (link:https://www.w3.org/TR/vocab-org/[Organization]), skos (link:https://www.w3.org/TR/2008/WD-skos-reference-20080829/skos.html[Simple Knowledge Organization System])
+** There is no point in reinventing models that already exist and are reusable. That is the case, for example, when representing
+entities such as natural persons, legal persons, addresses, etc. Hence, for generic ontologies, we proposed to reuse:
+ISA2's link:https://joinup.ec.europa.eu/solution/core-criterion-and-core-evidence-vocabulary[CCEV] (Core Criterion and Evidence Vocabulary),
+W3C's (link:https://www.w3.org/TR/vocab-org/[Organization ontology]),
+skos (link:https://www.w3.org/TR/2008/WD-skos-reference-20080829/skos.html[Simple Knowledge Organization System])
 and vCard (link:https://www.w3.org/TR/vcard-rdf/[Virtual Contact File];
 originally proposed by the link:https://en.wikipedia.org/wiki/Versit_Consortium[Versit Consortium]);
 foaf (link:http://www.foaf-project.org/[Friend of a Friend]).
 
-** On another hand, other lexical (non-ontological) resources and good practices have been taken as models to inspire the drafting of sub-vocabularies
+** Other lexical (non-ontological) resources and good practices have been taken as models to inspire the drafting of sub-vocabularies
 to be imported and reused by the ePO. This has been the case of the CCTS
-(link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[Core Component Type Specification],
-an link:http://www.ebxml.org/[ebXML] model based on the link:https://www.iso.org/standard/61433.html[ISO 15000-5:2014] maintained by UN/CEFACT) for the data types
+(link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[Core Component Type Specification]
 Identifier, Amount, Quantity and Measure footnote:[*A note about codes*: although the CCTS library defines a
 data type for code (CodeType), we decided to use SKOS to represent code list and taxonomy concepts. Therefore this CCTS element is not used in ePO (see
 the ePO Conceptual Data Map
 "link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap[ccts package]"
 and the link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[ccts.ttl]
-file for these definitions). There are some good reasons on which this decisions was based:
-(1) The OP's MDR site does already maintain and supply the largest part of the code lists needed by ePO as a SKOS-XL syntax (named SKOS-AP-EU);
+file for these definitions). There are some good reasons for this decision:
+(1) The OP's MDR site already maintains and supplies the largest part of the code lists needed by ePO as a SKOS-XL syntax (named SKOS-AP-EU);
 and (2) SKOS, and specially SKOS-XL, cater for a rich expressivity and metadata extensibility]); and
 link:http://docs.oasis-open.org/ubl/UBL-2.2.html[UBL-2.2] (OASIS link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ubl.ttl[Universal Business Language],
 just the Period element, for the time being).
 
-** Finally, the inputs from other ontology developments have been, and still are, appreciated and welcome. Thus the OCDS (link:https://www.open-contracting.org/events/ocds-ontologies-linked-data/[Open Contracting Partnership])
-and PPROC (link:http://contsem.unizar.es/def/sector-publico/pproc.html[Public Procurement Ontology]) vocabularies where studied and lessons were drawn from them.
+** Finally, the inputs from other ontology developments have been, and still are, appreciated and welcome.
+Thus the OCDS (link:https://www.open-contracting.org/events/ocds-ontologies-linked-data/[Open Contracting Partnership])
+and PPROC (link:http://contsem.unizar.es/def/sector-publico/pproc.html[Public Procurement Ontology]) vocabularies
+have been taken into consideration.
 
 . *The Ontology must always be tested and perfected using a sufficiently large sample of real data*;
 
@@ -173,8 +183,18 @@ The Use Cases are only one of the essential elements to reach this goal.
 However the testing cannot be trusted unless the data used are not (i) abundant, (ii) real data,
 and (iii) with a certain degree of quality. In the case of the *eNotification* and *eAccess* phases
 the use of the Tender Electronic Daily (TED) platform was proposed to retrieve, transform and load the
-data contained in Contract Award Notices. The Contract Award Notice document contains the richest data related to the procurement
-procedure and the contracts awarded.
+data contained in Contract Award notices. This type of notice contains the richest
+data related to the procurement procedure and the contract awarded.
+
+NOTE: The present development (this phase of the ePO v2.0.0, including eNotification and eAccess) includes a
+Proof-of-Concept aimed at testing the design and performance of the Ontology. See Chapter link:#v-proof-of-concept[V. Proof of Concept].
+
+Notice however that the A-Box was loaded only with data extracted from the Contract Notices published between January to
+May 2018 (the reason for this being that for transparency and monitoring the OP's TED form F03 (Contract Award Notices) contain the most
+interesting data).
+
+The ETL software, however, can be configured to extract and load data from other TED forms. See the section
+link:#etl-configuration[ETL configuration] about the configuration of the file `epo.properties`.
 
 
 === ePO governance
@@ -189,5 +209,7 @@ With the following *roles and responsibilites*:
 .ePO Project - Roles and responsibilites
 image::Roles_Responsibilities.png[ePO - Roles and responsibilities, 900, align="center"]
       
-For more details on the members of each governance body see the document link:++https://joinup.ec.europa.eu/document/report-policy-support-e-procurement++[D04.07 Report on policy support for eProcurement, eProcurement ontology]; e.g. "_Editors: are responsible for the operational work of defining and documenting the ePO_".
+For more details on the members of each governance body see the document
+link:https://joinup.ec.europa.eu/document/report-policy-support-e-procurement[D04.07 Report on policy support for eProcurement, eProcurement ontology];
+e.g. "_Editors: are responsible for the operational work of defining and documenting the ePO_".
 

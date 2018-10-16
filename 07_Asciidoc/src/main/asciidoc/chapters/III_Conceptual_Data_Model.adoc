@@ -1,25 +1,36 @@
 
 == III. Conceptual Data Model (CM)
 
-The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to 15 diagrams have
-been drafted. Fourteen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
+The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to nineteen diagrams have
+been drafted. seventeen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
 Procurement Procedure, Procuring Entity, Economic Operator, Lots, Procurement Terms, etc. An additional "overview" diagram
-provides a general view of the whole model.
+provides a general view of the whole model. Data types are put together in its own diagram, too.
+
+This section covers the development of the Domain Conceptual Data Model (see process "Conceptual Data Modelling" highlighted with
+a blue inverted "L" in the Knowledge Map below (input: "DED 2.0.2"; output: "Conceptual Data Model v2.0.2").
 
 .Development of the Domain Conceptual Data Model
 image::CMDevelopmentPlan.png[CM development, align="center"]
 
 The conceptual data model is available both as an
-link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml[XMI format - version 2.1]
-and link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap[Enterprise Architect]
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml[XMI format]
+footnote:[The version of the XMI specification used for the exportation of the Conceptual Data Model is "2.1". Please do not confound this
+with the version of the ePO development, currently "v2.0.0"] and link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap[Enterprise Architect]
 project file.
 
 === CM Overview
 General view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put
 on e-Notification and e-Access.
 
-.ePO Conceptual Data Model, overview
-image::ConceptualModel_Overview.png[ePO Conceptual Data Model, overview, align="center"]
+NOTE: Beware that this Conceptual Data Model is right now being reviewed by the Working Group (WG).
+This revision, is available through the GitHub wiki page and takes also into account the on-going
+revision of the ePO Glossary by the WG. Once reviewed, the OLW-TTL will be re-drafted, too. See all the menu
+entries on the right side of the
+link:https://github.com/eprocurementontology/eprocurementontology/wiki/Conceptual-Model-v2.0.1[GitHub wiki page]
+(marked with the version number "*v2.0.1*" and the note "(under revision)".
+
+.ePO v2.0.0 Conceptual Data Model, overview
+image::ConceptualModel_Overview.png[ePO v2.0.0 Conceptual Data Model, overview, align="center"]
 
 === How to read the diagrams
 The subsections below provide further details on key Classes of the ePO and about how these Classes relate to other Ontologies.
@@ -27,25 +38,10 @@ A brief description for each model is provided in order to make it more understa
 the comprehension of the diagrams content.
 
 .Legend
-image::EAPDiagramsLegend.png[Legend, width="300", align="center"]
+image::EAPDiagramsLegend.png[Legend, width="400", align="center"]
 
 
 * Boxes in colour beige are Classes, i.e. main entities of the ontology, like "Procurement Procedure", "Procuring Entity", "Economic Operator", etc.;
-
-* Boxes in colour green are "Code Lists", i.e. enumerations of disjoint concepts represented with a code);
-
-* Classes associate other classes via "object properties", i.e. directed association arrows ("predicates", from the ontology perspective)
-that have a class at the origin (the subject of a triple, in the ontology) and another class at the end of the link (the "object" of the triple).
-
-* "Data properties", i.e. links between the Class and more primitive/basic elements, are represented as attributes of the Classes, e.g. Text, Indicator, Date, etc.
-
-* Associations between Classes are represented as unidirectional arrows to keep the diagrams simple. However, when the association is bi-directional
-it is indicated with two predicates and the second one is enclosed with parenthesis "()". In the OWL-TTL these are declared as "inverse" properties.
-Examples: "_Procurement Procedure includes lots (belongs to) Lots_", in the diagram, is to be read as:
-
-** "_Procurement Procedure includes one or more Lots_", and
-
-** "_One Lot belongs to one Procurement Procedure_";
 
 * Classes may contain codes. In this representation, the ePO codes are not included inside the Class but are represented as
 associations of the Class to a specific enumeration element. The name of the code is built upon the verb "uses" and the name of the
@@ -55,11 +51,26 @@ enumeration. Thus the triple used to say that a _Procurement Procedure is of typ
 ePO ontology and `epo-rd:` is the prefix reserved for the namespace representing all the codes defined in ePO (eProcurement-specific, to
 be located in the OP's Metadata Registry (link:https://publications.europa.eu/en/web/eu-vocabularies[MDR])).
 
-TIP: See also the section "link:#identifiers-and-codes[Codes and Identifiers]", in chapter
+TIP: See also the section "link:#codes-and-identifiers[Codes and Identifiers]", in chapter
 link:#iv-design-and-implementation["IV. Design and implementation"] for details on the implementation of these.
 
 
+* Boxes in colour green are "Code Lists", i.e. enumerations of disjoint concepts represented with a code);
 
+* Classes associate other classes via "object properties", i.e. directed association arrows ("predicates", from the ontology perspective)
+that have a class at the origin (the subject of a triple, in the ontology) and another class at the end of the link (the "object" of the triple).
+
+* "Data properties", i.e. links between the Class and more primitive/basic elements, are represented as attributes of the Classes.
+These attributes appear as lines of text inside the box representing the Class, e.g. see the attributes "Description: Text[0..*]",
+"ID: Identifier [0..1]" and "Title: Text [0..1]", inside the Class "Procurement Project".
+
+* Associations between Classes are represented as unidirectional arrows to keep the diagrams simple. However, when the association is bi-directional
+it is indicated with two predicates and the second one is enclosed with parenthesis "()". In the OWL-TTL these are declared as "inverse" properties.
+Examples: "_Procurement Procedure includes lots (belongs to) Lots_", in the diagram, is to be read as:
+
+** "_Procurement Procedure includes one or more Lots_", and
+
+** "_One Lot belongs to one Procurement Procedure_";
 
 === Procurement Project
 
@@ -265,6 +276,22 @@ image::Contract.png[Contract, align="center"]
 
 === Criterion
 
+In ePO, Exclusion, Selection and Award criteria are designed based on the ISA2's Core Criterion and Evidence Vocabulary
+(link:https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100[CCEV]).
+
+This vocabulary was originally proposed in the context of the
+link:https://github.com/ESPD[ESPD Service and Exchange Data Model] and e-Certis developments
+(under the mandate of
+link:https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32014L0024[Directive 2014/24/EU], Articles 59 and 61,
+and the link:https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0007[ESPD Regulation]).
+OASIS link:http://docs.oasis-open.org/ubl/UBL-2.2.html[UBL-2.2] took also the CCEV as the basis
+to model their documents `Qualification Application Request` and `Qualification Application Response` (implemented as W3C XSD schemas).
+
+During the analysis of the ePO some aspects of this vocabulary were improved. The results of this improvement is
+presented in the diagram below. Please compare this diagram with the
+link:https://joinup.ec.europa.eu/solution/core-criterion-and-core-evidence-vocabulary/releases[ISA2 vocabulary]
+and the link:https://www.oasis-open.org/committees/document.php?document_id=60554[OASIS UBL-2.2] model.
+
 .Criterion
 image::Criterion.png[Criterion, align="center"]
 
@@ -362,7 +389,10 @@ image::Documents.png[Documents, align="center"]
 
 10. At tendering time, the Tenderer submits its own Tender Documents, which normally encompass a Financial Tender and a Technical Tender among other possible annexes and additional documents.
 
-11. Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures. Each modification has to be duly identified (see Contract Modification Type) and justified. These Modifications are to be published via Contract Modification Notices.
+11. Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures.
+Each modification has to be duly identified (see Contract Modification Type) and justified.
+These Modifications are to be published via Contract Modification Notices.
+Contract Modification notices are treated as Contract Award Notices.
 
 
 === Contract Award Notice
@@ -388,6 +418,6 @@ those that have additional dimensions (attributes) like Identifier, Amount, Quan
 
 This ePO implementation "primitive" ones as xsd types, string for Text, dateTime for Date and Time, boolean for Indicator, decimal for Numeric, and so on.
 The rest of complex data types are implemented as classes with their own data properties, including a placeholder for the value (the actual datum).
-See section link:file:#iv-design-and-implementation[IV. Design and Implementation] for details on the Turtle (TTL) implementation.
+See section link:#iv-design-and-implementation[IV. Design and Implementation] for details on the Turtle (TTL) implementation.
 
 

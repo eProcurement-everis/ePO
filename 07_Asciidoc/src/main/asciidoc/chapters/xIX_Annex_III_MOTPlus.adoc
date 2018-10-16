@@ -1,0 +1,12 @@
+
+== MOTPlus vocabulary and syntax
+
+MOT, standing for Modélisation par Objets Typées, is a method for the representation of
+abstract knowledge developed by the LICEF in the context of the methodology MISA (Méthode
+Pour l'Ingénierie de Systèmes d'Apprenentatge).
+
+Visit the link:http://lice.licef.ca/index.php/gmot-motplus-et-mot/[LICEF web site] for extensive details on MOT, MISA and the LICEF.
+
+.Legend: MOTPlus vocabulary ans syntax
+image::MOTPlysVocabularySyntax.png[MOTPlys vocabulary and syntax, width="550", align = "center"]
+

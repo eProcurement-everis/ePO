@@ -1,0 +1,129 @@
+== Public Procurement KPIs
+
+This section provides some more examples of SPARQL queries and results obtained
+for the period January 2018 to May 2018.
+
+The queries are intended to produce similar
+KPIs results as the ones shown in the
+link:http://ec.europa.eu/internal_market/scoreboard/performance_per_policy_area/public_procurement/index_en.htm[EU Single Market on Public Procurement].
+The source of information for the results shown in this chapter are the
+Contract Award Notices available in the OP's link:ftp://ted.europa.eu[TED ftp server],
+only CANs under Directive 2014/24/EU, from January to May 2018).
+
+While comparing results, bear in mind that the information used by the EU Single Market portal
+is also extracted from the TED, but the sample is much bigger and richer (more years, types of forms and different
+releases) than the one used for this PoC.
+
+The explanations about "What they do measure, what they do reflect, and how to interpret the
+results" were copied from the EU Single Market portal.
+
+=== Indicator I: Single bidder
+
+._KPI II. No calls for bids, interpretation_
+[cols="<1,<4"]
+|===
+|_What does it measure?_|The proportion of contracts awarded where there was just a single bidder (excluding framework agreements, as they have different reporting patterns).
+|_What does it reflect?_|Several aspects of procurement, including *competition* and *bureaucracy*.
+|_How to interpret it?_|More bidders are better, as this means public buyers have more options, and can get better value for money.
+|===
+
+._KPI II. No call for bids, SPARQL query_
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?percent) where
+{
+    {select ?c (count(?c) as ?cc) where {
+        {select ?ar (count(?w) as ?cw) where{
+            ?contract a :Contract ;
+                      :refersToAwardResult ?ar.
+            ?ar :hasWinner ?w
+            filter not exists {?contract :hasFrameworkContract ?fc}
+
+            } group by ?ar
+            having (count(?w) = 1)}
+        ?ar :hasWinner ?w .
+           ?w org:hasSite ?s .
+        ?s vcard:hasAddress ?a .
+        ?a vcard:country-name ?c} group by ?c order by ?c
+    }
+    {
+        select ?c (count(?c) as ?countContract) where
+        {
+            ?con a :Contract ;
+               :refersToAwardResult ?ar .
+            ?ar :hasWinner ?w .
+            ?w org:hasSite ?s .
+            ?s vcard:hasAddress ?add .
+            ?add vcard:country-name ?c
+        } group by ?c order by ?c
+    }
+}
+----
+
+._KPI I. Result-set (csv)_
+TIP: Click here to download the figures resulting from the query:
+link:./images/KPI_I_QueryResult.csv[Query Result]
+
+._KPI I. Comparative table_
+image::KPI_I_EU.png[KPI I, align="center"]
+
+=== Indicator II: No calls for bids
+
+._KPI II. No calls for bids, interpretation_
+[cols="<1,<4"]
+|===
+|_What does it measure?_|The proportion of procurement procedures that were negotiated with a company without a call for bids.
+|_What does it reflect?_|Several aspects of procurement, including *transparency* and *competition*.
+|_How to interpret it?_|Calling for bids (or "calling for tenders") before starting procurement negotiations is better,
+as it makes the bidder selection process more transparent and increases competition. This leads to better value for money.
+|===
+
+._Indicator II. No call for bids, SPARQL query_
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX epo-rd: <http://data.europa.eu/ePO/referencedata#>
+
+select ?country (concat(str(round(?noBidsProcCount * 100 / ?allBidsProcCount)), '%') as ?proportion) where {
+    {
+        select ?country (count(?procurementProcedure) as ?noBidsProcCount) where{
+                ?procurementProcedure a :ProcurementProcedure ;
+                    :usesProcurementProcedureType epo-rd:AWARD_WO_PUB;
+                    :hasProcuringEntity ?procuringEntity .
+         ?procuringEntity org:hasSite ?site .
+                ?site vcard:hasAddress ?address .
+                ?address vcard:country-name ?country .
+        } group by ?country
+    }
+    {
+    	select ?country (count(?procurementProcedure) as ?allBidsProcCount) where{
+        ?procurementProcedure a :ProcurementProcedure ;
+                    :hasProcuringEntity ?procuringEntity .
+                ?procuringEntity org:hasSite ?site .
+                ?site vcard:hasAddress ?address .
+                ?address vcard:country-name ?country .
+        } group by ?country
+    }
+}
+----
+
+._KPI II. Result-set (csv)_
+
+TIP: Click here to download the figures resulting from the query:
+link:./images/KPI_II_QueryResult.csv[Query Result]
+
+._KPI II. Comparative table_
+image::KPI_II_EU.png[KPI II, align="center"]
+
+NOTE: Beware that the total number of Contract Award Notices (R2.0.9.S02.E01)
+published by Romania is very small (just 13).
+

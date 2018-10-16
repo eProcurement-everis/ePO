@@ -5,6 +5,9 @@ The ePO development team agreed with the WG members to provide a means to test t
 the Conceptual Data Model and the OWL-TTL implementation. With this purpose in mind a Proof of Concept was planned and
 executed.
 
+This section describes the tasks performed during the development of the Proof of Concept (see process
+"ePO Testing" highlighted with a blue box; input: "TED XML instances", "OWL-Turtle syntax v2.0.0"; trace: "Proof of Concept").
+
 .ePO Testing
 image::ePOTesting.png[ePO Testing, align="center"]
 
@@ -125,7 +128,8 @@ image::CQExample2.png[CQ example 2, align="center"]
 |===
 
 The examples were made available to the Working Group members through the GitHub Wiki page.
-A special link:++https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&labels=new%20competency%20question&title=COMPETENCY+QUESTION+-[Add a new competency question]
+A special
+link:https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&labels=new%20competency%20question&title=COMPETENCY+QUESTION+-[Add a new competency question]
 to add comments or create new issues related to the CQs was also made available in the
 link:https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions[GitHub Wiki page].
 
@@ -140,9 +144,8 @@ link:https://github.com/eprocurementontology/eprocurementontology/wiki/Competenc
 |*Outputs*:|Documents published on TED, accessed via the OP's link:ftp://ted.europa.eu/[FTP] server.
 |===
 
-For the extraction of data, the decision was made that the source of data should be the Notices
-published on the link:http://ted.europa.eu/TED/main/HomePage.do[TED portal]. This decision was made
-based on, namely, the following reasons:
+For the extraction of data, the decision was made that the source of data should be the Contract Award Notices
+published on the TED website, as:
 
 * The Contract Award Notice (CAN) contains the data most relevant for Transparency, Monitoring and Procedure control (jointly
 with the Contract Notice (CN));
@@ -153,18 +156,27 @@ with the Contract Notice (CN));
 Notices. This allows to reuse a relevant part of the extraction and transformation artefacts (XSL-T) to process
 many other types of Forms.
 
-However the User Interface of the TED Portal does not allow downloading large amount of documents.
-For this we used the link:ftp://ted.europa.eu/[FTP] server supplied by the OP at: ftp://ted.europa.eu/
+For bulk downloads of monthly or daily packages of XML TED offers two alternatives:
+
+. The menu “XML bulk downloads“ in “link:https://ted.europa.eu/TED/browse/browseByBO.do[My TED]”: to access this feature
+you will need to register as a User of the TED website and to have an ECAS account to authenticate yourself as a User of the EU Commission’s services;
+
+. The link:ftp://ted.europa.eu/[FTP] server supplied by the OP at: ftp://ted.europa.eu/
 (user: **guest**, password: **guest**).
 
+.XML bulk downloads menu in the "My TED" section of the TED Portal
+image::MyTED.png[XML bulk downloads in My TED, align="center"]
+
+
 The TED-XML specification has been evolving for the past years. Different
-versions of XSD Schemas have been maintained in parallel for those years. The result is that, as
-per today, different schemas are being used to express the data in alignment to the 2014 Directives.
-For this PoC we decided to use CAN based only on the TED-XML XSD Schema
-link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd[R2.0.9.S01.E01 TED_EXPORT.xsd]
-and the Contract Award Notice (CAN) form for Directive 2014 supporting the
-link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd[F03_2014.xsd] standard form
-(all schemas are published on the Publications Office (OP) link:http://publications.europa.eu/mdr/eprocurement/ted/index.html[MDR site].
+versions of XSD Schemas have been maintained in parallel. The result is that different schemas are being used
+to express the data in alignment to the 2014 Directives.
+For this PoC we decided to use the Contract Award Notice (CAN) form for Directive 2014 supporting the
+link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd[F03_2014.xsd] standard form.
+Beware that notices in TED are in turn "enveloped" in another TED Schema, the
+link:http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd[R2.0.9.S01.E01 TED_EXPORT.xsd].
+All schemas are published on the Publications Office (OP) link:https://publications.europa.eu/en/web/eu-vocabularies[MDR site],
+which is being moved to to EU Vocabularies.
 
 For this PoC we downloaded the link:ftp://ted.europa.eu/monthly-packages/2018/[*.tar.gz] files corresponding
 to January to May 2018. Bear in mind that, in the context of this PoC, we only extract data and import into the graph store the
@@ -196,11 +208,13 @@ and the corresponding element in ePO.
 The ETL process was developed based on two technologies:
 
 . *Java*: version JDK 1.8 was used to build a Maven project (see link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/pom.xml[pom.xml]
-configuration file). The output of the build process is a "*.war" file. The link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/java/epo[source code]
+configuration file). The output of the build process is a "*.war" file.
+The link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src[source code]
 is available on the GitHub code repository. This java code is responsible for (i) organising the TED-XML files; (ii) launching the extraction + transformation and/or the
 loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;
 
-. *XSL-T*: version XSL-T 3.0 was used to draft a set of link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt[stylesheets]
+. *XSL-T*: version XSL-T 3.0 was used to draft a set of link:
+https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src/main/resources/xslt[stylesheets]
 the mission of which is to read the TED-XML files (Extraction) and transform that information into
 SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
 The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
@@ -238,10 +252,8 @@ INSERT DATA
 	}
 }
 ...
-<--1-->
+
 ----
-<1> See link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip[GitHub code repository]
-or execute the code for complete examples.
 
 .A note about the performance
 [NOTE]
@@ -263,7 +275,9 @@ link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2
 You can execute the code at least in two ways:
 
 . Either you clone the project onto your machine, import the Maven project in your preferred Java editor tool and
-execute the main class link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/main/java/epo/MainETLProcess.java[MainETLProcess].
+execute the main class
+link:
+https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/MainETLProcess.java[MainETLProcess].
 
 . Alternatively you may unzip the *.war file and execute the compiled code from a console window.
 The piece of code below provides a very simple script illustrating how this can be done:
@@ -300,9 +314,9 @@ Example:
  java -classpath "lib/*:classes/." epo.MainETLProcess -a
 ----
 
-==== ETL execution configuration
+==== ETL configuration
 
-The java code uses a file named _*epo.properties*_. This file is to be located under the `/home/user`
+The java code uses a file named *_epo.properties_*. This file is to be located under the `/home/user`
 directory of the computer from where the code is executed. See below an example of how this configuration
 file looks like. Notice the two lines about the proxy configuration.
 
@@ -363,18 +377,24 @@ The data were extracted from the logs about the transformation of each month of 
 |*Activity name*:|Populate the Graph store.
 |*Responsible team*:|OP's team.
 |*Inputs*:|The result of the XSL-T-based transformation (SPARQL INSERT queries).
-|*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
+|*Outputs*:|The link:http://34.249.1.15:7200[Graph store] is populated with triples.
 |===
 
 A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
 transformation- for the five first months of 2018. The table and bar graphic below show the exact number of
 files processed and the number of Contract Award Notices imported into the Graph Store.
 
+NOTE: Please beware that the files indicated in the figure below refer to the files that were "downloaded and read"
+(processed) from the FTP Server and that only CANs based on the Directive 2014/24/EU were actually imported into the GraphDB Store.
+
 The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5) which can be freely
 downloaded from the link:https://ontotext.com/[Ontotext] website.
 
 .Total of Notices and number of Contract Award Notices used to populate the Graph store
 image::Statistics-2018.png[Number of Notices, align="center"]
+
+"The graph below, generated out of the figures in the table above, supports the statement that the data
+in Contract Award Notices are amongst the most abundant (and are relevant)."
 
 .Frequency of Notices
 image::Statistics-Frequency-2018.png[Frequency of Notices, align="center"]
@@ -385,9 +405,9 @@ image::Statistics-Frequency-2018.png[Frequency of Notices, align="center"]
 [cols="<1,<4"]
 |===
 |*Activity name*:|Develop SPARQL Queries.
-|*Responsible team*:|OP's team.
-|*Inputs*:|Competency Questions (https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[QCs examples]).
-|*Outputs*:|The link:34.249.1.15:7200[Graph store] is populated with triples.
+|*Responsible team*:|OP's team
+|*Inputs*:|Competency Questions.
+|*Outputs*:|The link:http://34.249.1.15:7200[Graph store] is populated with triples.
 |===
 
 The document link:https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html[SPARQL Query examples]
@@ -458,12 +478,89 @@ for more contextualisation and examples.
 [cols="<1,<4"]
 |===
 |*Activity name*:|Prepare/Execute/Debug Test Reports
-|*Responsible team*:|OP's team.
-|*Inputs*:|SPARQL queries
-|*Outputs*:|SPARQL table results
+|*Responsible team*:|WG Members supprted by the OP development team.
+|*Inputs*:|Ad-hoc SPARQL queries prepared on the basis of Transparency,
+Monitoring and Procurement Procedure management perspectives.
+|*Outputs*:|SPARQL table results and graphic representations.
 |===
 
+Additional revision, testing an debugging is currently being performed on the Conceptual Data Model and
+the OWL TTL. This task is being done jointly with the OP officers, the WG members and the
+ePO development team.
 
+Anyone interested in participating in this task of improvement is welcome to join.
+
+One suggestion for the WG members, or anyone interested in transparency, competition, monitoring, etc.
+would be that they try to obtain KPIs (Key Performance Indicators) as the ones shown in the
+link:http://ec.europa.eu/internal_market/scoreboard/performance_per_policy_area/public_procurement/index_en.htm[EU Single Market on Public Procurement].
+
+Next we show one example for the first one, KPI I: Single bidder. The source of
+information for the results shown are the Contract Award Notices (CAN) extracted from the OP's
+link:ftp://ted.europa.eu[TED ftp server]. The sample covers only CANs under
+Directive 2014/24/EU, from January to May 2018).
+
+While comparing results to the ones presented on the EU Single Market portal, bear in mind
+that the information used by that portal is also extracted from the TED, but their sample
+is much bigger and richer (more years, types of forms and different releases) than the one
+used for this PoC.
+
+The explanations about "What they do measure, what they do reflect, and how to interpret the
+results" were copied as-they-are in the EU Single Market portal.
+
+==== Indicator I: Single bidder
+
+._KPI I. Single bidder, interpretation_
+[cols="<1,<4"]
+|===
+|_What does it measure?_|The proportion of contracts awarded where there was just a single bidder (excluding framework agreements, as they have different reporting patterns).
+|_What does it reflect?_|Several aspects of procurement, including *competition* and *bureaucracy*.
+|_How to interpret it?_|More bidders are better, as this means public buyers have more options, and can get better value for money.
+|===
+
+._KPI II. Single bidder, SPARQL query_
+[code]
+----
+PREFIX : <http://data.europa.eu/ePO/ontology#>
+PREFIX rov: <http://www.w3.org/ns/regorg#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?percent) where
+{
+    {select ?c (count(?c) as ?cc) where {
+        {select ?ar (count(?w) as ?cw) where{
+            ?contract a :Contract ;
+                      :refersToAwardResult ?ar.
+            ?ar :hasWinner ?w
+            filter not exists {?contract :hasFrameworkContract ?fc}
+
+            } group by ?ar
+            having (count(?w) = 1)}
+        ?ar :hasWinner ?w .
+           ?w org:hasSite ?s .
+        ?s vcard:hasAddress ?a .
+        ?a vcard:country-name ?c} group by ?c order by ?c
+    }
+    {
+        select ?c (count(?c) as ?countContract) where
+        {
+            ?con a :Contract ;
+               :refersToAwardResult ?ar .
+            ?ar :hasWinner ?w .
+            ?w org:hasSite ?s .
+            ?s vcard:hasAddress ?add .
+            ?add vcard:country-name ?c
+        } group by ?c order by ?c
+    }
+}
+----
+
+._KPI I. Result-set (csv)_
+TIP: Click here to download the figures resulting from the query:
+link:./images/KPI_I_QueryResult.csv[Query Result]
+
+._KPI I. Comparative table_
+image::KPI_I_EU.png[KPI I, align="center"]
 
 === Activity 10: Validate results
 
@@ -471,12 +568,23 @@ for more contextualisation and examples.
 [cols="<1,<4"]
 |===
 |*Activity name*:|Use SPARQL queries, validate results.
-|*Responsible team*:|Working Group WG) members.
+|*Responsible team*:|Working Group WG members.
 |*Inputs*:|Example SPARQL queries supplied by the OP's team.
 |*Outputs*:|SPARQL result-tables.
 |===
 
-(TODO): WG to prepare their own Queries.
+The members of the Working Group are expected to study this documentation and the rest
+of deliverables, signal possible errors and improvements and issue their opinion,
+recommendations, additional examples and comments.
+
+With all the materials developed, namely the Conceptual Data Model, the OWL-TLL
+ontoly, SPARQL query examples and the documentation produced for this phase, the
+members of the Working Group have sufficient elements to define their own
+Test Cases, prepare the necessary SPARQL queries and execute them by themselves
+using the SPARQL link:http://34.249.1.15:7200/sparql[endpoint] that OP
+made publicly available.
+
+If prompted for a user sign in, use "guest" for both, the user name and the password.
 
 === Activity 11: Provide feedback
 .Provide feedback, activity summary
@@ -485,6 +593,13 @@ for more contextualisation and examples.
 |*Activity name*:|Provide feedback
 |*Responsible team*:|Working Group WG) members.
 |*Inputs*:|OP's example queries and WG's own Competency Questions and queries
-|*Outputs*:|Feed-back via the link:https://github.com/eprocurementontology/eprocurementontology/issues[GitHub Issues]
+|*Outputs*:|Feed-back via the link:
+https://github.com/eprocurementontology/eprocurementontology/issues[GitHub Issues]
 work-space.
 |===
+
+OP development team will suport the WG members in case of doubts or issues related to the
+development or the SPARQL endpoint.
+
+Any issue related to the design or implementation of the ePO is expected to be raised in the
+link:https://github.com/eprocurementontology/eprocurementontology/issues/[GitHub Issues] workspace.

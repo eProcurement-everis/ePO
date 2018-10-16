@@ -1,0 +1,32 @@
+
+== Annex I: Types of documents processed
+
+During the development of the ETL process a certain effort was invested in analsying
+which documents are published on TED, in which quantities, the variations month to month, etc.
+
+It was interesting to confirm that the information already advanced by the OP for previous years
+is consistent with the link:./images/ePO_stats_2018-JAN-MAY.xlsx[figures]footnote:[these figures
+are produced automatically by the
+link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/process/TedXMLProcess.java[transformation algorithm]
+and logged into a csv file in the directory `LOG_DATA_DIR` specified in the
+`/home/user/epo.properties` file.]
+obtained for the first months of 2018 (January to May), during
+the ETL Transformation phase, e.g.:
+
+. The most published documents are Contract Notices (F02) and Contract Award Notices (F03);
+
+. The amount of one type of notice published is very regular (similar) all along the year;
+
+. The average of documents published monthly is quite regular (around 45,000);
+
+. Many eSenders are still using the old version R2.0.8 schema, especially for CN and CAN
+(over 10% of the total in January and February, but it is a descending trend)
+
+. Corrigenda (F14) are intensively used (around 10% of the documents published are corrigenda).
+
+._Amount of documents published on TED from January to May 2018 (source link:ftp://ted.europa.eu/[OP])_
+image::TypesOfFormsReadDuringTransformation_MAY_JUNE_2018Data.png[Docs publish on TED Jan-May 2018, align="center"]
+
+._Amount of documents published on TED from January to May 2018 (source link:ftp://ted.europa.eu/[OP])_
+image::TypesOfFormsReadDuringTransformation_MAY_JUNE_2018.png[Docs publish on TED Jan-May 2018, align="center"]
+
