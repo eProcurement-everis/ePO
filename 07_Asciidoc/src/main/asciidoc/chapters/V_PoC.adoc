@@ -162,7 +162,8 @@ For bulk downloads of monthly or daily packages of XML TED offers two alternativ
 you will need to register as a User of the TED website and to have an ECAS account to authenticate yourself as a User of the EU Commission’s services;
 
 . The link:ftp://ted.europa.eu/[FTP] server supplied by the OP at: ftp://ted.europa.eu/
-(user: **guest**, password: **guest**).
+(user: **guest**, password: **guest**). If you use this FTP Server please read the *rules defined to avoid performance issues* for other users
+in the folder "Resources".
 
 .XML bulk downloads menu in the "My TED" section of the TED Portal
 image::MyTED.png[XML bulk downloads in My TED, align="center"]

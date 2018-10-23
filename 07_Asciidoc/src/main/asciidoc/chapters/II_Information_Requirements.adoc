@@ -72,11 +72,9 @@ Working Group.
 
 ==== Content of the DED
 
-The content of the DED is organised based on the UBL-2.2 file "UBL-Entities-2.2-Pre-award.xls". You can
-download a version from link:https://www.oasis-open.org/committees/document.php?document_id=60554[here].
-
 To the effects of using the DED to get a quick glimpse of the terms used in the ePO, their definitions just look
-into the columns "Component Name" and "Definitions".
+into the columns "Component Name" and "Definitions". The rest of columns are used to indicate the cardinality of the data element, to compose
+the name of the class or property, and other information needed during the transformation of the DED into a specific syntax (e.g. into XML, Turtle, etc.).
 
 The colour of the rows mean is intended to distinguish classes from properties:
 

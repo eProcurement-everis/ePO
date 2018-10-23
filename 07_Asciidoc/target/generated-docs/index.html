@@ -570,7 +570,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#data-types">Data Types</a></li>
 </ul>
 </li>
-<li><a href="#iv-design-and-implementation">IV. Design and Implementation</a>
+<li><a href="#iv-design-and-implementation">IV. Design and implementation</a>
 <ul class="sectlevel2">
 <li><a href="#epo-1-0-rdf-xml-vocabulary">ePo 1.0 RDF-XML vocabulary</a></li>
 <li><a href="#epo-v2-0-0-owl-dl-syntax">ePO v2.0.0 OWL-DL syntax</a></li>
@@ -598,7 +598,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#technical-approach">Technical approach</a>
 <ul class="sectlevel3">
 <li><a href="#code-execution">Code Execution</a></li>
-<li><a href="#etl-execution-configuration">ETL execution configuration</a></li>
+<li><a href="#etl-configuration">ETL configuration</a></li>
 </ul>
 </li>
 <li><a href="#activity-7-populate-graph-store">Activity 7: Populate Graph store</a></li>
@@ -607,12 +607,16 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#query-examples">Query examples</a></li>
 </ul>
 </li>
-<li><a href="#activity-9-test-and-debug">Activity 9: Test and debug</a></li>
+<li><a href="#activity-9-test-and-debug">Activity 9: Test and debug</a>
+<ul class="sectlevel3">
+<li><a href="#indicator-i-single-bidder">Indicator I: Single bidder</a></li>
+</ul>
+</li>
 <li><a href="#activity-10-validate-results">Activity 10: Validate results</a></li>
 <li><a href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></li>
 </ul>
 </li>
-<li><a href="#vi-conclusions-and-next-steps">VI. Conclusions and next steps</a></li>
+<li><a href="#annex-i-types-of-documents-processed">Annex I: Types of documents processed</a></li>
 </ul>
 </div>
 </div>
@@ -621,8 +625,8 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="abstract"><a class="anchor" href="#abstract"></a><a class="link" href="#abstract">Abstract</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP) was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a>
-to organise and support the development of an Ontology of the Public e-Procurement (ePO).</em></p>
+<p><em>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP) started a project funded by the
+ <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a> to organise and support the development of a Public Procurement Ontology (ePO).</em></p>
 </div>
 <div class="paragraph">
 <p><em>The ultimate objective of the ontology is to put forth a commonly agreed OWL ontology that will conceptualise, formally encode and make available in an open,
@@ -657,12 +661,8 @@ These differences hamper data interoperability and their reuse.</p>
 and practiced in the European Union. For this to happen a common vocabulary, axioms and rules are needed.</p>
 </div>
 <div class="paragraph">
-<p>In 2016 the <a href="https://publications.europa.eu/en/home">Publications Office of the European Union</a> (Publications Office or OP)
-was commissioned by the <a href="https://ec.europa.eu/isa2/home_en">ISA Programme</a> to organise and support the development of
-such a standard.</p>
-</div>
-<div class="paragraph">
-<p>This document describes the efforts made by the European Commission to develop the developemtn of an "<strong>eProcurement Ontology</strong>" (henceforth referred to as the ePO).</p>
+<p>This document describes the work carried out by the Publications Office and the working group to develop the
+"eProcurement Ontology" (henceforth referred to as the ePO).</p>
 </div>
 <div class="sect2">
 <h3 id="about-epo-v1-00"><a class="anchor" href="#about-epo-v1-00"></a><a class="link" href="#about-epo-v1-00">About ePO v1.00</a></h3>
@@ -682,7 +682,9 @@ such a standard.</p>
 <div class="title">Figure 1. eProcurement Value-Chain, an EU vision</div>
 </div>
 <div class="paragraph">
-<p>The scope of the Charter was set to cover the "specification showing the conceptual model and its representation in OWL, and the deployment of the ontology and related code lists and classifications on the <a href="http://publications.europa.eu/mdr/">Metadata Registry</a>".</p>
+<p>The scope of the Charter was set to cover the specification showing the conceptual model and its representation in OWL,
+and the deployment of the ontology and related code lists and classifications on the
+<a href="http://publications.europa.eu/mdr/">Metadata Registry</a>, which is being moved to EU Vocabularies.</p>
 </div>
 <div class="paragraph">
 <p>The original aim was to produce the final Ontology within twelve months including a public review of at least two months; and a set of three deliverables was identified as the main outcome of the project:</p>
@@ -691,22 +693,21 @@ such a standard.</p>
 <div class="content">
 <img src="images/Main_Deliverables.png" alt="ePO Main Deliverables">
 </div>
-<div class="title">Figure 2. ePO Main Deliverables</div>
+<div class="title">Figure 2. ePO v1.0 main deliverables</div>
 </div>
 <div class="paragraph">
 <p>For the development of these objectives the OP team proposed a methodological approach based on the recommendations and good practices
- <sup class="footnote" id="_footnote_Cfr. <a href="http://protege.stanford.edu/publications/ontology_development/ontology101.pdf">"Ontology Development 101: A Guide to
-Creating Your First Ontology"</a>">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup><sup class="footnote" id="_footnote_Cfr. <a href="https://joinup.ec.europa.eu/site/core_vocabularies/Core_Vocabularies_user_handbook/ISA%20Hanbook%20for%20using%20Core%20Vocabularies.pdf">"e-Government Core Vocabularies handbook"">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>.</p>
+ <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup><sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/v1.00_Development_Approach.png" alt="ePO v1.00 - Development methodological approach" width="900">
 </div>
-<div class="title">Figure 3. ePO v1.00 - Development methodological approach (source <a href="https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf">D02.01 Specification and Methodology</a>)</div>
+<div class="title">Figure 3. ePO v1.0 - development methodological approach (source <a href="https://joinup.ec.europa.eu/sites/default/files/document/2017-08/d02.01_specification_of_the_process_and_methodology_v1.00.pdf">D02.01 Specification and Methodology</a>)</div>
 </div>
 <div class="paragraph">
-<p>Both the Working Group (WG) and the Publications Office (OP) put hands on the work and a version 1.0 of the
-eProcurement Ontology (ePO) was delivered in the planned period of 12 months.</p>
+<p>Following the work of the Working Group (WG) and the Publications Office
+version 1.0 of the eProcurement Ontology (ePO) was delivered in the planned period of 12 months.</p>
 </div>
 </div>
 <div class="sect2">
@@ -717,18 +718,17 @@ eProcurement that is aligned to the EU legislation and practices was too ambitio
 completed in 12 months.</p>
 </div>
 <div class="paragraph">
-<p>Two other relevant conclusions were drawn for that experience:</p>
+<p>Two other relevant conclusions were drawn from that experience:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The concepts of the ontology needed of common agreed terms and definitions that directed the design
+<p>The concepts of the ontology needed of commonly agreed terms and definitions that directed the design
 and implementation;</p>
 </li>
 <li>
-<p>The development of the ontology requires a "phased" approach based on the Use Cases defined version 1.0 on the one hand,
-but also focused on at least one of the processes of the eProcurement value chain as understood in the European Union (EU).
-See figure 4 above.</p>
+<p>The development of the ontology requires a "phased" approach based on the Use Cases defined version 1.0 on the one hand;
+but also focused on at least one of the processes of the eProcurement value chain, on the other hand (see figure 4 above).</p>
 </li>
 </ol>
 </div>
@@ -741,19 +741,16 @@ See figure 4 above.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Focus on only one important policy area, e.g. "<strong>Transparency</strong>";</p>
+<p>Focus on one important policy area, e.g. "<strong>Transparency</strong>";</p>
 </li>
 <li>
 <p>Extend and perfect a small set of phases of the eProcurement, if possible only one, e.g. <strong>e-Notification</strong> and <strong>e-Access</strong>.</p>
 </li>
 <li>
-<p>Develop and test exhaustively the phase chosen before undertaking the evolution of the ePO into other phases of the eProcurement;</p>
-</li>
-<li>
 <p>While developing the selected phase, elicit and define information requirements and data elements that will be used in other phases, even if the selected phases - i.e. eNotification and eAccess-do not use them;</p>
 </li>
 <li>
-<p>Select a rich source of information from where to extract data in order to populate and test the ontology, e.g. the TED portal.</p>
+<p>Select a rich source of information from where to extract data in order to populate and test the ontology, e.g. the TED portal for eNotification.</p>
 </li>
 </ol>
 </div>
@@ -761,40 +758,41 @@ See figure 4 above.</p>
 <div class="sect2">
 <h3 id="scope"><a class="anchor" href="#scope"></a><a class="link" href="#scope">Scope</a></h3>
 <div class="paragraph">
-<p>Hence <strong>the scope of the ePO v2.0.0 was set to the eNotification and eAccess phases</strong> of the Public eProcurement valuechain,
+<p>Hence <strong>the scope of the ePO v2.0.0 was set to the eNotification and eAccess phases</strong> of the Public eProcurement value chain,
 represented as blue coloured in the figure below:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/V2.0.0-Value_Chain_Focus.png" alt="ePO v2.0.0 scope" width="1000">
 </div>
-<div class="title">Figure 4. ePO v2.0.0 Scope of the ePO v2.0.0, eNotification and eAccess</div>
+<div class="title">Figure 4. ePO v2.0.0 scope of the ePO v2.0.0, eNotification and eAccess</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="tasks-in-scope"><a class="anchor" href="#tasks-in-scope"></a><a class="link" href="#tasks-in-scope">Tasks in-scope</a></h3>
 <div class="paragraph">
 <p>The Knowledge Map (K-Map) <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup>
-method and tools below provides an abstract representation of the objectives, tasks, inputs and outputs of the tasks in the scope of the ePO v2.0.0.</p>
+below provides an abstract representation of the objectives, tasks, inputs and outputs in the scope of the ePO v2.0.0 (see Annex III for a summary of
+the MOTPLus vocabulary and syntax).</p>
 </div>
 <div class="paragraph">
-<p>Eac task (ellipses in blue) is used to organise the structure of the rest of this document into four main sections:</p>
+<p>Each task (ellipses in blue) is used to organise the structure of the rest of this document into four main sections:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Information elicitation: About the main inputs taken into consideration when identifying information requirement and artefacts used to this elicitation;</p>
+<p><strong>Information requirement elicitation</strong>: About the main inputs taken into consideration when identifying information requirement and artefacts used to this elicitation;</p>
 </li>
 <li>
-<p>Conceptual Data Model: About the analysis of the information requirements - and business rules-  and the drafting of a simple graphic representation of
+<p><strong>Conceptual Data Model</strong>: About the analysis of the information requirements - and business rules-  and the drafting of a simple graphic representation of
 the Ontology;</p>
 </li>
 <li>
-<p>OWL design and implementation: About the transformation of the Conceptual Data Model into a machine-readable format (TTL) that includes the vocabulary and
+<p><strong>OWL design and implementation</strong>: About the transformation of the Conceptual Data Model into a machine-readable OWL DL format that includes the vocabulary and
 the axioms of the ePO;</p>
 </li>
 <li>
-<p>ePO testing: About the Proof-of-Concept developed to test and refine the Conceptual Data Model and the OWL implementation.</p>
+<p><strong>ePO testing</strong>: About the Proof-of-Concept developed to test and refine the Conceptual Data Model and the OWL DL implementation.</p>
 </li>
 </ul>
 </div>
@@ -802,10 +800,10 @@ the axioms of the ePO;</p>
 <div class="content">
 <img src="images/v2.0.0-Scope.png" alt="ePO v2.0.0 - Scope">
 </div>
-<div class="title">Figure 5. ePO Project v2.0.0 - Objectives</div>
+<div class="title">Figure 5. ePO Project v2.0.0 - objectives</div>
 </div>
 <div class="paragraph">
-<p>This other activity diagram, below, provides  a more simplified view of the recurrent (and cyclic) activities of requirements elicitation,
+<p>The activity diagram, below, provides  a more simplified view of the recurrent (and cyclic) activities of requirements elicitation,
 data element definition, analysis, design, implementation and testing:</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -833,18 +831,20 @@ legislation</strong>;</p>
 <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</sup>,
 the ePO glossary, the new eForms Regulation (under consultation), the General Data Protection Regulation
 <a href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32016R0679">(GDPR)</a>,
-and other EU legal frameworks related to the Public Procurement;</p>
+and other EU legal frameworks related to public procurement;</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Information Requirements should be identified through the exhaustive analysis of the business processes</strong>;</p>
+<p><strong>Information Requirements should be identified through the analysis of the business processes</strong>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This version 2.0.0 takes as inputs works like the <a href="http://cenbii.eu/">CEN/BII Workshops</a>, the DG GROWTH&#8217;s
-<a href="https://github.com/ESPD">ESPD</a>-related developments, the eSens developments on the VCD and the ESPD (see the ESPDint project), as well as
+<p>This version 2.0.0 takes as inputs works like the <a href="http://cenbii.eu/">CEN/BII Workshops</a>,
+the standard forms and notices published by the Publications Office, DG GROW&#8217;s
+<a href="https://github.com/ESPD">ESPD</a>-related developments, the eSens developments on the VCD and the ESPD (see the
+<a href="http://wiki.ds.unipi.gr/display/ESPDInt/ESPD+International+Knowledge+Base">ESPDint</a> project), as well as
 international standards like UN/CEFACT and OASIS UBL.
 Most of them used an UN/CEFACT Universal Method Modelling (UMM) approach that represent the "value-chain Use Cases"
 to identify the information requirements exhaustively.
@@ -855,15 +855,17 @@ requirements and business rules.</p>
 </div>
 </li>
 <li>
-<p><strong>Use Cases around the policy area should be defined to (i) complement the identification of information requirements; and (ii) test the completeness, correctness and performance of the Ontology</strong>;</p>
+<p><strong>Use Cases around the policy area should be defined to (i) complement the identification of information requirements;
+and (ii) test the completeness, correctness and performance of the Ontology</strong>;</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The link:Use Cases defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited
+<p>Use Cases defined in the ePO v1.00 are essential instruments to complete and test the information requirements elicited
 during the analysis of the business processes. In this version we propose to focus on the
-"<a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring">Use Case 1: Data Journalism</a>"
-and the <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use&#8212;&#8203;ase-4.-Analyzing-eProcurement-procedures">Use Case 4: Analysing eProcurement Procedures</a>,
-as the eNotification and eAccess provide the largest part of the requirements necessary to implement the case.</p>
+"Use Case 1: <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring">Data Journalism</a>"
+and the Use "Case 4: <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use—​ase-4.-Analyzing-eProcurement-procedures">Analysing eProcurement Procedures</a>",
+as these cases provide the largest part of the requirements necessary
+to implement and test the eNotification and eAccess phases which is the object of ePO version 2.0.</p>
 </li>
 </ul>
 </div>
@@ -873,25 +875,28 @@ as the eNotification and eAccess provide the largest part of the requirements ne
 <div class="ulist">
 <ul>
 <li>
-<p>There is no point in reinventing models that do already exist and are so generic that they can be reused. That is the case, for example, when the time comes to represent entities like natural person, legal person,
-address, etc. Hence, for generic ontologies, we proposed to reuse: W3C&#8217;s rov (<a href="https://www.w3.org/TR/vocab-regorg/">Registered Organization Vocabulary</a>),
-org (<a href="https://www.w3.org/TR/vocab-org/">Organization</a>), skos (<a href="https://www.w3.org/TR/2008/WD-skos-reference-20080829/skos.html">Simple Knowledge Organization System</a>)
+<p>There is no point in reinventing models that already exist and are reusable. That is the case, for example, when representing
+entities such as natural persons, legal persons, addresses, etc. Hence, for generic ontologies, we proposed to reuse:
+ISA2&#8217;s <a href="https://joinup.ec.europa.eu/solution/core-criterion-and-core-evidence-vocabulary">CCEV</a> (Core Criterion and Evidence Vocabulary),
+W3C&#8217;s (<a href="https://www.w3.org/TR/vocab-org/">Organization ontology</a>),
+skos (<a href="https://www.w3.org/TR/2008/WD-skos-reference-20080829/skos.html">Simple Knowledge Organization System</a>)
 and vCard (<a href="https://www.w3.org/TR/vcard-rdf/">Virtual Contact File</a>;
 originally proposed by the <a href="https://en.wikipedia.org/wiki/Versit_Consortium">Versit Consortium</a>);
 foaf (<a href="http://www.foaf-project.org/">Friend of a Friend</a>).</p>
 </li>
 <li>
-<p>On another hand, other lexical (non-ontological) resources and good practices have been taken as models to inspire the drafting of sub-vocabularies
+<p>Other lexical (non-ontological) resources and good practices have been taken as models to inspire the drafting of sub-vocabularies
 to be imported and reused by the ePO. This has been the case of the CCTS
-(<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">Core Component Type Specification</a>,
-an <a href="http://www.ebxml.org/">ebXML</a> model based on the <a href="https://www.iso.org/standard/61433.html">ISO 15000-5:2014</a> maintained by UN/CEFACT) for the data types
+(<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">Core Component Type Specification</a>
 Identifier, Amount, Quantity and Measure <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnote_5" title="View footnote.">5</a>]</sup>); and
 <a href="http://docs.oasis-open.org/ubl/UBL-2.2.html">UBL-2.2</a> (OASIS <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ubl.ttl">Universal Business Language</a>,
 just the Period element, for the time being).</p>
 </li>
 <li>
-<p>Finally, the inputs from other ontology developments have been, and still are, appreciated and welcome. Thus the OCDS (<a href="https://www.open-contracting.org/events/ocds-ontologies-linked-data/">Open Contracting Partnership</a>)
-and PPROC (<a href="http://contsem.unizar.es/def/sector-publico/pproc.html">Public Procurement Ontology</a>) vocabularies where studied and lessons were drawn from them.</p>
+<p>Finally, the inputs from other ontology developments have been, and still are, appreciated and welcome.
+Thus the OCDS (<a href="https://www.open-contracting.org/events/ocds-ontologies-linked-data/">Open Contracting Partnership</a>)
+and PPROC (<a href="http://contsem.unizar.es/def/sector-publico/pproc.html">Public Procurement Ontology</a>) vocabularies
+have been taken into consideration.</p>
 </li>
 </ul>
 </div>
@@ -906,13 +911,35 @@ The Use Cases are only one of the essential elements to reach this goal.
 However the testing cannot be trusted unless the data used are not (i) abundant, (ii) real data,
 and (iii) with a certain degree of quality. In the case of the <strong>eNotification</strong> and <strong>eAccess</strong> phases
 the use of the Tender Electronic Daily (TED) platform was proposed to retrieve, transform and load the
-data contained in Contract Notice. Contract Notices contain the richest data related to the procurement
-procedure and the contract awarded.</p>
+data contained in Contract Award notices. This type of notice contains the richest
+data related to the procurement procedure and the contract awarded.</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The present development (this phase of the ePO v2.0.0, including eNotification and eAccess) includes a
+Proof-of-Concept aimed at testing the design and performance of the Ontology. See Chapter <a href="#v-proof-of-concept">V. Proof of Concept</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notice however that the A-Box was loaded only with data extracted from the Contract Notices published between January to
+May 2018 (the reason for this being that for transparency and monitoring the OP&#8217;s TED form F03 (Contract Award Notices) contain the most
+interesting data).</p>
+</div>
+<div class="paragraph">
+<p>The ETL software, however, can be configured to extract and load data from other TED forms. See the section
+<a href="#etl-configuration">ETL configuration</a> about the configuration of the file <code>epo.properties</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -936,7 +963,9 @@ procedure and the contract awarded.</p>
 <div class="title">Figure 8. ePO Project - Roles and responsibilites</div>
 </div>
 <div class="paragraph">
-<p>For more details on the members of each governance body see the document <a href="https://joinup.ec.europa.eu/document/report-policy-support-e-procurement">D04.07 Report on policy support for eProcurement, eProcurement ontology</a>; e.g. "<em>Editors: are responsible for the operational work of defining and documenting the ePO</em>".</p>
+<p>For more details on the members of each governance body see the document
+<a href="https://joinup.ec.europa.eu/document/report-policy-support-e-procurement">D04.07 Report on policy support for eProcurement, eProcurement ontology</a>;
+e.g. "<em>Editors: are responsible for the operational work of defining and documenting the ePO</em>".</p>
 </div>
 </div>
 </div>
@@ -945,16 +974,18 @@ procedure and the contract awarded.</p>
 <h2 id="ii-information-requirements"><a class="anchor" href="#ii-information-requirements"></a><a class="link" href="#ii-information-requirements">II. Information Requirements</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>According to the development plan, the first task to undertake was the elicitation of information requirements, axioms and business rules. For this
-the version 2.0.0 of the ePO has taken into account the following inputs:</p>
+<p>According to the development plan, the first task was the identification of information requirements,
+axioms and business rules. For this the version 2.0.0 of the ePO has taken into account the following inputs:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <em><strong>Use Case 1 defined in version 1.00</strong></em>, <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Data-journalism">Data Journalism</a>; and</p>
+<p>The
+"<a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use-case-1.-Transparency-and-Monitoring">Use Case 1: Data Journalism</a>"
+and the <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Use&#8212;&#8203;ase-4.-Analyzing-eProcurement-procedures">Use Case 4: Analysing eProcurement Procedures</a>;</p>
 </li>
 <li>
-<p>The <em><strong>Standards, business needs and Legislation</strong></em> studied in the previous versions, plus the most recent developments;</p>
+<p>The <em>Standards, business needs and Legislation**</em> studied in the previous versions, plus the most recent developments;</p>
 </li>
 <li>
 <p>The <em><strong>EU eProcurement Glossary</strong></em>, maintained by the ePO Working group; see
@@ -962,6 +993,12 @@ the version 2.0.0 of the ePO has taken into account the following inputs:</p>
 and <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Glossary-Management">Glossary</a>.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>This section covers the process applied for the elicitation of information requirements (see process "Information Requirement Elicitation" highlighted with
+the largest semi-transparent blue box in the Knowledge Map below (rulin scope: "eNotification" and "eAccess; inputs: "ePO Glossary",
+"Use Cases"; output: "DED 2.0.2". The upper blue box highlights the "ruling principles" that apply to the
+entire development, including the elicitation of requirements.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -975,7 +1012,7 @@ and <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/G
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <em><strong>Information Requirements (IR v2.0.0)</strong></em> already identified in <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Information-Requirements-v1.00">Information Requirements v1.00</a>;</p>
+<p>The <em><strong>Information Requirements</strong></em> identified in ePO v1.0 <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Information-Requirements-v1.00">Information Requirements v1.00</a>;</p>
 </li>
 <li>
 <p>The <em><strong>Data Element Dictionary (DED v2.0.0)</strong></em>: a <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/ePO_DED.xlsx">spread-sheet</a>
@@ -990,7 +1027,7 @@ where the Use Case information requirements are broken down into more detailed i
 </div>
 <div class="paragraph">
 <p>One way of listing this information is using a <em><strong>Data Element Dictionary</strong></em>, a table (e.g. a
-<a href="ePO_DED.xlsx">spread-sheet</a>
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/ePO_DED.xlsx">spread-sheet</a>)
 with the following columns and rows:</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -1008,20 +1045,21 @@ with the following columns and rows:</p>
 <ol class="arabic">
 <li>
 <p>To <strong>help analysts design the Ontology</strong>. The DED is a "logical artefact". It takes the "Conceptual Data Model" as an input and reflects the
-conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints;</p>
+conceptual model and adds more technical details, such as all object and data properties of each class, their axioms and constraints. Sometimes,
+as it has been in our case, it is developed simultaneously with the Conceptual Data Model;</p>
 </li>
 <li>
 <p>To <strong>maintain the definitions of the data elements</strong>. The ePO Glossary contains mainly the definitions of the concepts used in the Ontology. The
-DED takes the definitions of the ePO Glossary for the classes and adds definitions for each property of each class;</p>
+DED takes the definitions of the ePO Glossary for the classes and adds definitions <strong>for each property</strong> of each class;</p>
 </li>
 <li>
 <p>To <strong>identify reference data linked to the data elements</strong>, i.e. code lists and taxonomies;</p>
 </li>
 <li>
-<p>To <strong>automatise the production of different syntax bindings</strong>. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
+<p>To <strong>automatise the production of the model into different syntax bindings</strong>. The DED is usually kept as a spread-sheet. This spread-sheet can be easily used to
 generate XML, OWL or other machine-readable renditions of the data model. Thus it could be used to generate automatically the OWL-TTL expression
 of the ePO Ontology. Specifications like UN/CEFACT and UBL use the DED to automatically generate XSD schemas fully annotated (documented) with the
-data element definitions, examples, etc. This does also facilitates the registration of these data elements in registries for their automatic
+data element definitions, examples, etc. This also facilitates the registration of these data elements in registries for their automatic
 discovery and cross-sector mapping (See <a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c035348_ISO_IEC_11179-6_2005(E).zip">ISO 11179-6:2015 Registration</a>
 parts for more details on this).</p>
 </li>
@@ -1032,90 +1070,26 @@ parts for more details on this).</p>
 <h4 id="current-status-of-the-ded"><a class="anchor" href="#current-status-of-the-ded"></a><a class="link" href="#current-status-of-the-ded">Current status of the DED</a></h4>
 <div class="paragraph">
 <p>The DED depends on the Glossary definitions and on the Conceptual Data Model, amongst other inputs for the elicitation of information requirements.
-The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved. It also helps to identify elements that may
-designed as object or data properties.</p>
+The ePO Glossary is currently under revision by the members of the Working Group. This revision makes evident how the Conceptual Data Model can be improved.</p>
 </div>
 <div class="paragraph">
 <p>As the ePO Glossary is an ongoing work the DED cannot be considered finished. Additionally many of the DED properties will have to be defined
-based on their context, the class where they belong in. These definitions are being worked out during the discussions about the ePO Glossary with the
-Member States.</p>
+based on their context, the class where they belong in. These definitions are being worked on during the discussions about the ePO Glossary with the
+Working Group.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="content-of-the-ded"><a class="anchor" href="#content-of-the-ded"></a><a class="link" href="#content-of-the-ded">Content of the DED</a></h4>
 <div class="paragraph">
-<p>The content of the DED is organised as follows:</p>
+<p>The content of the DED is organised based on the UBL-2.2 file "UBL-Entities-2.2-Pre-award.xls". You can
+download a version from <a href="https://www.oasis-open.org/committees/document.php?document_id=60554">here</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Columns</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>A - "IR#ID"</strong>: Reserved to link each entry of the Dictionary (each element) with the general or concrete information requirement that generated
-the class, attribute or property;</p>
-</li>
-<li>
-<p><strong>B - "ePO Business Term"</strong>: Contains a label in English ("the term") assigned by the analysts to each class or property of the Dictionary.
-Beware that: (i) <em><strong>A term is a set of one or more words that represent a concept</strong></em>; (ii) most of the concepts of the ePO Ontology are defined
-in the <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/02_IR_DED/eProcurement_glossary_and%20DED.xlsx">ePO Glossary</a>);
-and (iii) the analysts sometimes decide to shorten the text (the label) of the term by combining differently the words of the term or by eliminating
-some words (e.g. "Access Tool URI" instead of "URI of the Access Tool").
-The reason for this is that at design and implementation time the name of the classes and properties need to be simple and yet self-explanatory.
-When this happens, the rewording shall be agreed with the Working Group.</p>
-</li>
-<li>
-<p><strong>C - "Concept Definition"</strong>: The definition of each concept as it appears in the ePO Glossary.</p>
-</li>
-<li>
-<p><strong>D - "Examples</strong>": When considered useful to better illustrate the concept, this column contains examples. Concept definitions should
-not contain examples (hence the <a href="https://infostore.saiglobal.com/Store/Details.aspx?ProductID=1777745">ISO 11179-3:2015</a> defines a special field for
-documenting the examples for data elements that may be registered for automatic discovery and reuse).</p>
-</li>
-<li>
-<p><strong>E - "Comments</strong>: Notes and observations by the analysts that may be relevant at design time; e.g. "Buyer Category - This make sense especially,
-but perhaps not uniquely, in the case of Framework Agreements where the Buyer can have an "Added Category"; or "Buyer Role - Two roles identified so
-far: "Central Purchasing Body" and "Buyer On Behalf Of Other Procuring Entities", etc.</p>
-</li>
-<li>
-<p><strong>F - "Inheritance</strong>": Some classes can already be proposed at this phase to be considered (at design time) as possible base (parent) classes;
-e.g. the study and knowledge of the W3C Organization Ontology (identified with the prefix "org:") tells the analysts that the Buyer is a class that
-can inherit many of its attributes from the the "org:Organization" class.</p>
-</li>
-<li>
-<p><strong>G - "Range</strong>": Identifies the type of a data type or of an object type. The name of the column, "range", comes from the fact that these elements
-can be seen as the "object" of a <em><strong>triple</strong></em> composed of (i) a "subject", i.e. the class being analysed (the "domain"); (ii) a "predicate", i.e. the
-property that links the subject and the object; and (iii) this "object".</p>
-</li>
-<li>
-<p><strong>H - "Cardinality</strong>": Identifies the multiplicity and compulsorility of an element inside a class. The possibilities are: 1, meaning
-"compulsory"; 1..n, meaning at least one instance is compulsory, but additional instances are also possible; 0..1, meaning optional and if used
-maximum one instance; 0..n, meaning optional and if used multiple instances are possible.</p>
-</li>
-<li>
-<p><strong>J to M - in e-Forms, v1.00, OCDS, etc.</strong>": used by the analysts to check whether this elements was defined in one of the studied ontologies,
-standards or resources <strong>related to the business domain</strong> selected to be reused. Beware that other <strong>generic</strong> ontologies and vocabularies are also used or
-reused by ePO, e.g. W3C org (Organization), W3C rov (Registered Organizations), ISA2&#8217;s Core Criterion and Evidence Vocabulary, Dublin Core, vCard, FOAF, etc.</p>
-</li>
-<li>
-<p><strong>N - "Axioms</strong>": Analysts while studying the data element MAY already identify certain elementary conditions to which the properties MAY be submitted,
-e.g. transitivity, disjointness, reciprocity, etc.;</p>
-</li>
-<li>
-<p><strong>O - "Axiom Objects</strong>": The object of the axiom; as in "Lots are disjoint with Groups of Lots" where "Groups of Lots" are the object of the
-disjoint axiom, meaning that a specific procurement procedure that is divided into Lots will refer to individual Lots or to Groups of Lots but not to both;</p>
-</li>
-<li>
-<p><strong>P - "Business Rules</strong>": Ontology constraints and axioms cannot control specific business rules, as when flexible cardinalities that in certain
-situations need to be further restricted (e.g.: "If Procurement Procedure is divided into lots then cardinality should be 1"); or to check the values of
-two or more fields that is present in different individuals (e.g., "If an economic group has already been registered the text of the group name should
-match exactly the text kept in the registry. If this name is used in different places the text of the name MUST be always, and exactly, the same in all
-those placeholders."</p>
-</li>
-</ul>
+<p>To the effects of using the DED to get a quick glimpse of the terms used in the ePO, their definitions just look
+into the columns "Component Name" and "Definitions".</p>
 </div>
 <div class="paragraph">
-<p><strong>Rows</strong>:</p>
+<p>The colour of the rows mean is intended to distinguish classes from properties:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1138,10 +1112,14 @@ those placeholders."</p>
 <h2 id="iii-conceptual-data-model-cm"><a class="anchor" href="#iii-conceptual-data-model-cm"></a><a class="link" href="#iii-conceptual-data-model-cm">III. Conceptual Data Model (CM)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to 15 diagrams have
-been drafted. Fourteen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
+<p>The construction of the DED ran in parallel to the drafting of the Domain Conceptual Data Model. Up to nineteen diagrams have
+been drafted. seventeen of them cover specific "topics" in the scope of eNotification and eAccess, e.g. Procurement Project,
 Procurement Procedure, Procuring Entity, Economic Operator, Lots, Procurement Terms, etc. An additional "overview" diagram
-provides a general view of the whole model.</p>
+provides a general view of the whole model. Data types are put together in its own diagram, too.</p>
+</div>
+<div class="paragraph">
+<p>This section covers the development of the Domain Conceptual Data Model (see process "Conceptual Data Modelling" highlighted with
+a blue inverted "L" in the Knowledge Map below (input: "DED 2.0.2"; output: "Conceptual Data Model v2.0.2").</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1151,8 +1129,8 @@ provides a general view of the whole model.</p>
 </div>
 <div class="paragraph">
 <p>The conceptual data model is available both as an
-<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml">XMI format - version 2.1</a>
-and <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">Enterprise Architect</a>
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/XMI/ePO-CM_v2.0.0.xml">XMI format</a>
+<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnote_6" title="View footnote.">6</a>]</sup> and <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">Enterprise Architect</a>
 project file.</p>
 </div>
 <div class="sect2">
@@ -1161,11 +1139,28 @@ project file.</p>
 <p>General view of the Classes and relations of the ePO v2.0.0 Ontology. Keep in mind that for this version the focus was put
 on e-Notification and e-Access.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Beware that this Conceptual Data Model is right now being reviewed by the Working Group (WG).
+This revision, is available through the GitHub wiki page and takes also into account the on-going
+revision of the ePO Glossary by the WG. Once reviewed, the OLW-TTL will be re-drafted, too. See all the menu
+entries on the right side of the
+<a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Conceptual-Model-v2.0.1">GitHub wiki page</a>
+(marked with the version number "<strong>v2.0.1</strong>" and the note "(under revision)".
+</td>
+</tr>
+</table>
+</div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/ConceptualModel_Overview.png" alt="ePO Conceptual Data Model" width="overview">
+<img src="images/ConceptualModel_Overview.png" alt="ePO v2.0.0 Conceptual Data Model" width="overview">
 </div>
-<div class="title">Figure 12. ePO Conceptual Data Model, overview</div>
+<div class="title">Figure 12. ePO v2.0.0 Conceptual Data Model, overview</div>
 </div>
 </div>
 <div class="sect2">
@@ -1177,7 +1172,7 @@ the comprehension of the diagrams content.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/EAPDiagramsLegend.png" alt="Legend" width="300">
+<img src="images/EAPDiagramsLegend.png" alt="Legend" width="400">
 </div>
 <div class="title">Figure 13. Legend</div>
 </div>
@@ -1185,31 +1180,6 @@ the comprehension of the diagrams content.</p>
 <ul>
 <li>
 <p>Boxes in colour beige are Classes, i.e. main entities of the ontology, like "Procurement Procedure", "Procuring Entity", "Economic Operator", etc.;</p>
-</li>
-<li>
-<p>Boxes in colour green are "Code Lists", i.e. enumerations of disjoint concepts represented with a code);</p>
-</li>
-<li>
-<p>Classes associate other classes via "object properties", i.e. directed association arrows ("predicates", from the ontology perspective)
-that have a class at the origin (the subject of a triple, in the ontology) and another class at the end of the link (the "object" of the triple).</p>
-</li>
-<li>
-<p>"Data properties", i.e. links between the Class and more primitive/basic elements, are represented as attributes of the Classes, e.g. Text, Indicator, Date, etc.</p>
-</li>
-<li>
-<p>Associations between Classes are represented as unidirectional arrows to keep the diagrams simple. However, when the association is bi-directional
-it is indicated with two predicates and the second one is enclosed with parenthesis "()". In the OWL-TTL these are declared as "inverse" properties.
-Examples: "<em>Procurement Procedure includes lots (belongs to) Lots</em>", in the diagram, is to be read as:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>"<em>Procurement Procedure includes one or more Lots</em>", and</p>
-</li>
-<li>
-<p>"<em>One Lot belongs to one Procurement Procedure</em>";</p>
-</li>
-</ul>
-</div>
 </li>
 <li>
 <p>Classes may contain codes. In this representation, the ePO codes are not included inside the Class but are represented as
@@ -1234,11 +1204,42 @@ be located in the OP&#8217;s Metadata Registry (<a href="https://publications.eu
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-See also the section "<a href="#identifiers-and-codes">Codes and Identifiers</a>", in chapter
+See also the section "<a href="#codes-and-identifiers">Codes and Identifiers</a>", in chapter
 <a href="#iv-design-and-implementation">"IV. Design and implementation"</a> for details on the implementation of these.
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Boxes in colour green are "Code Lists", i.e. enumerations of disjoint concepts represented with a code);</p>
+</li>
+<li>
+<p>Classes associate other classes via "object properties", i.e. directed association arrows ("predicates", from the ontology perspective)
+that have a class at the origin (the subject of a triple, in the ontology) and another class at the end of the link (the "object" of the triple).</p>
+</li>
+<li>
+<p>"Data properties", i.e. links between the Class and more primitive/basic elements, are represented as attributes of the Classes.
+These attributes appear as lines of text inside the box representing the Class, e.g. see the attributes "Description: Text[0..*]",
+"ID: Identifier [0..1]" and "Title: Text [0..1]", inside the Class "Procurement Project".</p>
+</li>
+<li>
+<p>Associations between Classes are represented as unidirectional arrows to keep the diagrams simple. However, when the association is bi-directional
+it is indicated with two predicates and the second one is enclosed with parenthesis "()". In the OWL-TTL these are declared as "inverse" properties.
+Examples: "<em>Procurement Procedure includes lots (belongs to) Lots</em>", in the diagram, is to be read as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>"<em>Procurement Procedure includes one or more Lots</em>", and</p>
+</li>
+<li>
+<p>"<em>One Lot belongs to one Procurement Procedure</em>";</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -1601,6 +1602,25 @@ See also the section "<a href="#identifiers-and-codes">Codes and Identifiers</a>
 </div>
 <div class="sect2">
 <h3 id="criterion"><a class="anchor" href="#criterion"></a><a class="link" href="#criterion">Criterion</a></h3>
+<div class="paragraph">
+<p>In ePO, Exclusion, Selection and Award criteria are designed based on the ISA2&#8217;s Core Criterion and Evidence Vocabulary
+(<a href="https://joinup.ec.europa.eu/release/core-criterion-and-core-evidence-vocabulary-v100">CCEV</a>).</p>
+</div>
+<div class="paragraph">
+<p>This vocabulary was originally proposed in the context of the
+<a href="https://github.com/ESPD">ESPD Service and Exchange Data Model</a> and e-Certis developments
+(under the mandate of
+<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32014L0024">Directive 2014/24/EU</a>, Articles 59 and 61,
+and the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0007">ESPD Regulation</a>).
+OASIS <a href="http://docs.oasis-open.org/ubl/UBL-2.2.html">UBL-2.2</a> took also the CCEV as the basis
+to model their documents <code>Qualification Application Request</code> and <code>Qualification Application Response</code> (implemented as W3C XSD schemas).</p>
+</div>
+<div class="paragraph">
+<p>During the analysis of the ePO some aspects of this vocabulary were improved. The results of this improvement is
+presented in the diagram below. Please compare this diagram with the
+<a href="https://joinup.ec.europa.eu/solution/core-criterion-and-core-evidence-vocabulary/releases">ISA2 vocabulary</a>
+and the <a href="https://www.oasis-open.org/committees/document.php?document_id=60554">OASIS UBL-2.2</a> model.</p>
+</div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/Criterion.png" alt="Criterion">
@@ -1767,7 +1787,10 @@ See also the section "<a href="#identifiers-and-codes">Codes and Identifiers</a>
 <p>At tendering time, the Tenderer submits its own Tender Documents, which normally encompass a Financial Tender and a Technical Tender among other possible annexes and additional documents.</p>
 </li>
 <li>
-<p>Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures. Each modification has to be duly identified (see Contract Modification Type) and justified. These Modifications are to be published via Contract Modification Notices.</p>
+<p>Contracts can experience minor modifications (Contract Modification), otherwise they may carry out new Procurement Procedures.
+Each modification has to be duly identified (see Contract Modification Type) and justified.
+These Modifications are to be published via Contract Modification Notices.
+Contract Modification notices are treated as Contract Award Notices.</p>
 </li>
 </ol>
 </div>
@@ -1810,13 +1833,13 @@ those that have additional dimensions (attributes) like Identifier, Amount, Quan
 <div class="paragraph">
 <p>This ePO implementation "primitive" ones as xsd types, string for Text, dateTime for Date and Time, boolean for Indicator, decimal for Numeric, and so on.
 The rest of complex data types are implemented as classes with their own data properties, including a placeholder for the value (the actual datum).
-See section <a href="file:#iv-design-and-implementation">IV. Design and Implementation</a> for details on the Turtle (TTL) implementation.</p>
+See section <a href="#iv-design-and-implementation">IV. Design and Implementation</a> for details on the Turtle (TTL) implementation.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="iv-design-and-implementation"><a class="anchor" href="#iv-design-and-implementation"></a><a class="link" href="#iv-design-and-implementation">IV. Design and Implementation</a></h2>
+<h2 id="iv-design-and-implementation"><a class="anchor" href="#iv-design-and-implementation"></a><a class="link" href="#iv-design-and-implementation">IV. Design and implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>All deliverables produced in the previous tasks, e.g. Glossary and DED, but namely the Conceptual Data Model, were
@@ -1826,6 +1849,11 @@ taken into account to produce an OWL ontology.</p>
 <p>The outcome of this task are mainly the expression of the ontology <a href="https://en.wikipedia.org/wiki/Tbox">T-Box</a> as an
 OWL-DL Turtle syntax and a comparison of the tools used (<a href="https://protege.stanford.edu/products.php">Protégé 5.2</a>
 and <a href="https://joinup.ec.europa.eu/solution/vocbench3/about">VocBench 3.0</a>) for the development of the T-Box.</p>
+</div>
+<div class="paragraph">
+<p>This section describes the tasks performed during the design and implementation of the ontology (see process
+"OWL design and implementation" highlighted with a blue inverted "L" in the Knowledge Map below; inputs: "Conceptual
+Data Model v2.0.0", "OWL-Turtle syntax v2.0.0").</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1872,12 +1900,8 @@ The production of such transformation and artefacts were out of the scope of thi
 <div class="paragraph">
 <p>As commented above, for the drafting of the TTL syntax the ePO development team used the Standford&#8217;s
 <a href="https://protege.stanford.edu/products.php">Protégé 5.2</a> editor. The resulting OWL-TTL file can be accessed from the
-GitHub <a href="">Wiki</a> page (menu <a href="https://github.com/eprocurementontology/eprocurementontology/wiki">OWL-TTL) or from the
-link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl[repository</a>.</p>
-</div>
-<div class="paragraph">
-<p>While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3
-(VB3). The objective of this exercise was to check the feasibility of using VB to maintain the ePO.</p>
+GitHub <a href="https://github.com/eprocurementontology/eprocurementontology/wiki">Wiki</a> page
+or from the <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/ttl">repository</a>.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1885,14 +1909,33 @@ link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2
 </div>
 <div class="title">Figure 34. Protégé 5.2 for the edition of ePO</div>
 </div>
+<div class="paragraph">
+<p>While developing and evolving the OWL-TTL each new version was also loaded and reviewed using the latest version of VocBench 3.0
+(<a href="http://aims.fao.org/activity/blog/vocbench-3-free-and-open-source-platform-editing-ontologies-thesauri-and-rdf-datasets">VB3</a>).
+The objective of this exercise was to check the feasibility of using VB3 to maintain the ePO.</p>
+</div>
+<div class="paragraph">
+<p>VocBench 3.0 is a free and open source platform for editing ontologies, thesauri and RDF datasets
+developed at University of Roma, <a href="https://web.uniroma2.it/">Tor Vergata</a>, under the mandate of the
+Publications Office of the European Union (<a href="https://publications.europa.eu/en/web/about-us/who-we-are">OP</a>).</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/VB3.png" alt="Maintenance of ePO in VB3">
+</div>
+<div class="title">Figure 35. VocBench 3.0 for the maintenance of ePO</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="codes-and-identifiers"><a class="anchor" href="#codes-and-identifiers"></a><a class="link" href="#codes-and-identifiers">Codes and Identifiers</a></h3>
 <div class="paragraph">
-<p>A code is a shortened way (a number or a short abbreviated text), leading to the definition of a 'concept'. The code epresents the concept and is used by software applications to retrieve the definition of the concept or make automatic decisions.</p>
+<p>A code is a shortened way (a number or a short abbreviated text), leading to the definition of a 'concept'.
+The code represents the concept and is used by software applications to retrieve the definition of the concept or make automatic decisions.</p>
 </div>
 <div class="paragraph">
-<p>An Identifier, in turn, can be defined as “a value (represented as a short text, a number or a combination of both) used to establish the identity of, and distinguish uniquely, one occurrence of an object following a pattern” .</p>
+<p>An Identifier, in turn, can be understood as a value
+(represented as a short text, a number or a combination of both) used to establish the identity of, and distinguish
+uniquely, one occurrence of an object following a pattern.</p>
 </div>
 <div class="paragraph">
 <p>The essential distinctive features between identifiers and codes are:</p>
@@ -1900,16 +1943,18 @@ link:https://github.com/eprocurementontology/eprocurementontology/tree/master/v2
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Identifiers point at specific occurrences of objects (instances); codes replace concepts;</p>
+<p>Identifiers point at specific occurrences of objects (instances). Codes replace concepts, e.g. economic operator identifiers;</p>
 </li>
 <li>
 <p>Identifiers are virtually limitless while codes are finite. In other words, identifier lists are “open”
-(the lists may grow) and code list are “closed” (practically never updated, once consolidated).
-Hence codes are maintained in 'Codelists' whilst identifiers are usually kept in databases.</p>
+(the lists may grow) and code list are “quited closed” (they grow very slowly, once consolidated: new concepts
+appear rarely, and when an existing code needs to be modified a new code is added and the old one is
+marked as "deprecated", i.e. not to be used anymore at some point in time).
+Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.</p>
 </li>
 <li>
-<p>Identifiers are in principle maintained in the business domain, e.g. buyer identifiers, economic operator identifiers,
-product identifiers, etc.</p>
+<p>Identifiers are in principle maintained in the business domain, e.g. procurement procedure identifiers,
+economic operator identifiers, product identifiers, etc.</p>
 </li>
 </ol>
 </div>
@@ -1918,25 +1963,29 @@ product identifiers, etc.</p>
 <div class="paragraph">
 <p>The ePO tries to reuse as much as possible standards, specifications and practices commonly applied
 in the eProcurement domain. Hence one design decision, coordinated with the WG members, was to
-use the <a href="https://www.iso.org/standard/61433.html">ISO 15000-5:2014</a> (Core Components Specification)
-<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnote_6" title="View footnote.">6</a>]</sup>
-to implement the data types <code>Identifier</code>, <code>Amount</code>, <code>Quantity</code> and <code>Measure</code>.</p>
+use the <a href="https://www.unece.org/cefact/codesfortrade/ccts_index.html">UN/CEFACT CCTS</a> (Core Component Type Specification)
+<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnote_7" title="View footnote.">7</a>]</sup> to implement the data types <code>Identifier</code>, <code>Amount</code>, <code>Quantity</code> and <code>Measure</code>.</p>
 </div>
 <div class="paragraph">
 <p>The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
 <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">05_Implementation/ttl/</a>.</p>
 </div>
 <div class="paragraph">
-<p>Codes, in ePO, are implemented as <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">SKOS</a>
-concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).</p>
+<p>Codes, in ePO, are implemented as <a href="">SKOS</a>
+concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).
+See also the <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">Wikipedia</a> about SKOS, which contains a comprehensible summary of what SKOS is about and links to interesting references.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="codes-and-code-lists"><a class="anchor" href="#codes-and-code-lists"></a><a class="link" href="#codes-and-code-lists">Codes and code lists</a></h4>
 <div class="paragraph">
 <p>The ePO tries to reuse as much as possible the codes that are already used for e-Procurement. Many of these codes are already
-published in different formats by the Publications Office and are freely available in the section link:https://publications.europa.eu/en/web/eu-vocabularies/authority-tablesAuthority Tables]
-of the OP&#8217;s [MDR] site. These codes are described in "code lists", in all the EU official languages.</p>
+published in different formats by the Publications Office and are freely available in the section
+<a href="https://publications.europa.eu/en/web/eu-vocabularies/authority-tables">Authority Tables</a>
+of the OP&#8217;s <a href="https://publications.europa.eu/en/web/eu-vocabularies">MDR</a> site, which is being moved to their EU Vocabularies site.</p>
+</div>
+<div class="paragraph">
+<p>These codes are described in "code lists", in all the EU official languages.</p>
 </div>
 <div class="paragraph">
 <p>We distinguish at least three layers of codes:</p>
@@ -1956,14 +2005,14 @@ that can be used in multiple business domains, e.g. the NUTS defined by EUROSTAT
 </ol>
 </div>
 <div class="paragraph">
-<p>Codes are normally maintained in "code lists". All code lists available on he MDR site can be download as HTML, XML, XSD, SKOS or SKOS-EU-AP (a profile of SKOS-XL).</p>
+<p>Codes are normally maintained in "code lists". All code lists available on the MDR site can be download as HTML, XML, XSD, SKOS or SKOS-EU-AP (a profile of SKOS-XL).</p>
 </div>
 <div class="paragraph">
-<p>The ePO development team, jointly with the WG members, convened to use the SKOS-EU-AP syntax available on the MDR site. The fragment of code below shows
+<p>The ePO development team, jointly with the WG members, convened to use the SKOS-AP-EU syntax available on the MDR site. The fragment of code below shows
 how an instance of a code is referred to in a SPARQL insert query:</p>
 </div>
 <div class="listingblock">
-<div class="title">Use of SKOS-EU-AP code lists in ePO</div>
+<div class="title">Use of SKOS-AP-EU code lists in ePO</div>
 <div class="content">
 <pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
@@ -2009,12 +2058,12 @@ INSERT
 </table>
 </div>
 <div class="paragraph">
-<p>This other code shows a fragment of the SKOS-EU-AP code list for countries. Click
+<p>This other code shows a fragment of the SKOS-AP-EU code list for countries. Click
 <a href="http://publications.europa.eu/resource/cellar/07ed8d46-2b56-11e7-9412-01aa75ed71a1.0001.09/DOC_1">here</a>
 to download the file.</p>
 </div>
 <div class="listingblock">
-<div class="title">SKOS-EU-AP Country Code code list (Luxembourg code)</div>
+<div class="title">SKOS-AP-EU Country Code code list (Luxembourg code)</div>
 <div class="content">
 <pre> &lt;skos:Concept rdf:about="http://publications.europa.eu/resource/authority/country/LUX"
                  at:deprecated="false"
@@ -2039,9 +2088,9 @@ to download the file.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>One interesting aspect of the OP&#8217;s SKOS EU Application Profile (SKOS-EU-AP) is that all the metadata specified as
+<p>One interesting aspect of the OP&#8217;s SKOS EU Application Profile (SKOS-AP-EU) is that all the metadata specified as
 attributes of the ISO 15000 <code>CodeType</code> Core Component Specification are also expressed in the equivalent OP&#8217;s
-SKOS-EU-AP code list. A as a matter of fact, the features of the SKOS-XL specification which the SKOS-EU-AP
+SKOS-AP-EU code list. As a matter of fact, the features of the SKOS-XL specification which the SKOS-AP-EU
 is built upon permits the specification of any metadata that can be necessary on both the code list (the "concept scheme")
 and the individuals of the list (each "concept" of the list).</p>
 </div>
@@ -2052,7 +2101,7 @@ and the individuals of the list (each "concept" of the list).</p>
 <div class="content">
 <img src="images/CCT_CodeType_Attributes.png" alt="CCTS CodeType attributes">
 </div>
-<div class="title">Figure 35. Attributes of the CCTS CodeType element</div>
+<div class="title">Figure 36. Attributes of the CCTS CodeType element</div>
 </div>
 <div class="paragraph">
 <p>The table below contains the definitions of each attribute (as defined in <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ubl">OASIS UBL</a>,
@@ -2111,8 +2160,8 @@ and the individuals of the list (each "concept" of the list).</p>
 <div class="sect3">
 <h4 id="identifiers"><a class="anchor" href="#identifiers"></a><a class="link" href="#identifiers">Identifiers</a></h4>
 <div class="paragraph">
-<p>As commented above, ePO defines a class Identifier in alignment to the ISO 15000 Core Component Specification.
-This link:<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">class</a>
+<p>As commented above, ePO defines a class Identifier in alignment to the UN/CEFACT Core Component Specification (CTTS).
+This <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">Class</a>
 looks like this:</p>
 </div>
 <div class="listingblock">
@@ -2225,10 +2274,10 @@ looks like this:</p>
 <div class="content">
 <img src="images/CCT_IdentifierType_Attributes.png" alt="CCTS IdentifierType attributes">
 </div>
-<div class="title">Figure 36. Attributes of the CCTS IdentifierType element</div>
+<div class="title">Figure 37. Attributes of the CCTS IdentifierType element</div>
 </div>
 <div class="paragraph">
-<p>The definition of these definitions, as provided by OASIS UBL (ISO/IEC 19845), follows:</p>
+<p>These definitions, as provided by OASIS UBL (ISO/IEC 19845), follow:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. CCTS IdentifierType attributes</caption>
@@ -2283,11 +2332,15 @@ looks like this:</p>
 the Conceptual Data Model and the OWL-TTL implementation. With this purpose in mind a Proof of Concept was planned and
 executed.</p>
 </div>
+<div class="paragraph">
+<p>This section describes the tasks performed during the development of the Proof of Concept (see process
+"ePO Testing" highlighted with a blue box; input: "TED XML instances", "OWL-Turtle syntax v2.0.0"; trace: "Proof of Concept").</p>
+</div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ePOTesting.png" alt="ePO Testing">
 </div>
-<div class="title">Figure 37. ePO Testing</div>
+<div class="title">Figure 38. ePO Testing</div>
 </div>
 <div class="paragraph">
 <p>The main objectives of the Proof of Concept were:</p>
@@ -2316,7 +2369,7 @@ shows the activities that were planned and executed to develop the Proof of Conc
 <div class="content">
 <img src="images/ePO_PoC.png" alt="v2.0.0 - Proof-Of-Concept">
 </div>
-<div class="title">Figure 38. ePO Project v2.0.0 - Proof-Of-Concept</div>
+<div class="title">Figure 39. ePO Project v2.0.0 - Proof-Of-Concept</div>
 </div>
 <div class="paragraph">
 <p>The following subsections explain how each of the activities mentioned in the diagram above has been
@@ -2448,7 +2501,7 @@ roles and related to the Use Cases 1 and 4.</p>
 <div class="content">
 <img src="images/UserStoriesExamplesTable.png" alt="User Stories examples">
 </div>
-<div class="title">Figure 39. Examples of User Stories</div>
+<div class="title">Figure 40. Examples of User Stories</div>
 </div>
 </div>
 <div class="sect2">
@@ -2493,13 +2546,13 @@ supplies a longer list of concrete examples of CQ for the WG members to get insp
 <div class="content">
 <img src="images/CQExample1.png" alt="CQ example 1">
 </div>
-<div class="title">Figure 40. Example (1/2) of Competency Questions</div>
+<div class="title">Figure 41. Example (1/2) of Competency Questions</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/CQExample2.png" alt="CQ example 2">
 </div>
-<div class="title">Figure 41. Examples (2/2) of User Stories</div>
+<div class="title">Figure 42. Examples (2/2) of User Stories</div>
 </div>
 </div>
 <div class="sect2">
@@ -2531,7 +2584,8 @@ supplies a longer list of concrete examples of CQ for the WG members to get insp
 </table>
 <div class="paragraph">
 <p>The examples were made available to the Working Group members through the GitHub Wiki page.
-A special <a href="+https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&amp;labels=new%20competency%20question&amp;title=COMPETENCY+QUESTION-">Add a new competency question</a>
+A special
+<a href="https://github.com/eprocurementontology/eprocurementontology/issues/new?template=new_competency_question.md&amp;labels=new%20competency%20question&amp;title=COMPETENCY+QUESTION+-">Add a new competency question</a>
 to add comments or create new issues related to the CQs was also made available in the
 <a href="https://github.com/eprocurementontology/eprocurementontology/wiki/Competency-Questions">GitHub Wiki page</a>.</p>
 </div>
@@ -2564,9 +2618,8 @@ to add comments or create new issues related to the CQs was also made available 
 </tbody>
 </table>
 <div class="paragraph">
-<p>For the extraction of data, the decision was made that the source of data should be the Notices
-published on the <a href="http://ted.europa.eu/TED/main/HomePage.do">TED portal</a>. This decision was made
-based on, namely, the following reasons:</p>
+<p>For the extraction of data, the decision was made that the source of data should be the Contract Award Notices
+published on the TED website, as:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2585,19 +2638,36 @@ many other types of Forms.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>However the User Interface of the TED Portal does not allow downloading large amount of documents.
-For this we used the <a href="ftp://ted.europa.eu/">FTP</a> server supplied by the OP at: <a href="ftp://ted.europa.eu/" class="bare">ftp://ted.europa.eu/</a>
+<p>For bulk downloads of monthly or daily packages of XML TED offers two alternatives:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The menu “XML bulk downloads“ in “<a href="https://ted.europa.eu/TED/browse/browseByBO.do">My TED</a>”: to access this feature
+you will need to register as a User of the TED website and to have an ECAS account to authenticate yourself as a User of the EU Commission’s services;</p>
+</li>
+<li>
+<p>The <a href="ftp://ted.europa.eu/">FTP</a> server supplied by the OP at: <a href="ftp://ted.europa.eu/" class="bare">ftp://ted.europa.eu/</a>
 (user: <strong>guest</strong>, password: <strong>guest</strong>).</p>
+</li>
+</ol>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/MyTED.png" alt="XML bulk downloads in My TED">
+</div>
+<div class="title">Figure 43. XML bulk downloads menu in the "My TED" section of the TED Portal</div>
 </div>
 <div class="paragraph">
 <p>The TED-XML specification has been evolving for the past years. Different
-versions of XSD Schemas have been maintained in parallel for those years. The result is that, as
-per today, different schemas are being used to express the data in alignment to the 2014 Directives.
-For this PoC we decided to use CAN based only on the TED-XML XSD Schema
-<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd">R2.0.9.S01.E01 TED_EXPORT.xsd</a>
-and the Contract Award Notice (CAN) form for Directive 2014 supporting the
-<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd">F03_2014.xsd</a> standard form
-(all schemas are published on the Publications Office (OP) <a href="http://publications.europa.eu/mdr/eprocurement/ted/index.html">MDR site</a>.</p>
+versions of XSD Schemas have been maintained in parallel. The result is that different schemas are being used
+to express the data in alignment to the 2014 Directives.
+For this PoC we decided to use the Contract Award Notice (CAN) form for Directive 2014 supporting the
+<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/F03_2014.xsd">F03_2014.xsd</a> standard form.
+Beware that notices in TED are in turn "enveloped" in another TED Schema, the
+<a href="http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/latest/TED_EXPORT.xsd">R2.0.9.S01.E01 TED_EXPORT.xsd</a>.
+All schemas are published on the Publications Office (OP) <a href="https://publications.europa.eu/en/web/eu-vocabularies">MDR site</a>,
+which is being moved to to EU Vocabularies.</p>
 </div>
 <div class="paragraph">
 <p>For this PoC we downloaded the <a href="ftp://ted.europa.eu/monthly-packages/2018/">*.tar.gz</a> files corresponding
@@ -2655,12 +2725,14 @@ and the corresponding element in ePO.</p>
 <ol class="arabic">
 <li>
 <p><strong>Java</strong>: version JDK 1.8 was used to build a Maven project (see <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/pom.xml">pom.xml</a>
-configuration file). The output of the build process is a "*.war" file. The <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/java/epo">source code</a>
+configuration file). The output of the build process is a "*.war" file.
+The <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src">source code</a>
 is available on the GitHub code repository. This java code is responsible for (i) organising the TED-XML files; (ii) launching the extraction + transformation and/or the
 loading the data into the graph store, and (iii) log all the events and generate logs for monitoring the process;</p>
 </li>
 <li>
-<p><strong>XSL-T</strong>: version XSL-T 3.0 was used to draft a set of <a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/main/resources/xslt">stylesheets</a>
+<p><strong>XSL-T</strong>: version XSL-T 3.0 was used to draft a set of link:
+<a href="https://github.com/eprocurementontology/eprocurementontology/tree/master/v2.0.0/05_Implementation/epo-etl/src/main/resources/xslt">stylesheets</a>
 the mission of which is to read the TED-XML files (Extraction) and transform that information into
 SPARQL INSERT patterns. Per each TED-XML a new TXT document is created with the mapped SPARQL INSERT patterns.
 The name of the resulting TXT takes the name of the TED XML file and appends the suffix "_output.txt".
@@ -2699,18 +2771,8 @@ INSERT DATA
 			ccts:schemeAgencyID "eu.europa.publicationsoffice.epo"
 	}
 }
-...
-<i class="conum" data-value="1"></i><b>(1)</b></pre>
+...</pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>See <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/test/resources/output/SPARQL_Queries.zip">GitHub code repository</a>
-or execute the code for complete examples.</td>
-</tr>
-</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2751,7 +2813,9 @@ which case the operations can consume up to around 1 second. See java code in
 <ol class="arabic">
 <li>
 <p>Either you clone the project onto your machine, import the Maven project in your preferred Java editor tool and
-execute the main class <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/main/java/epo/MainETLProcess.java">MainETLProcess</a>.</p>
+execute the main class
+link:
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/MainETLProcess.java">MainETLProcess</a>.</p>
 </li>
 <li>
 <p>Alternatively you may unzip the *.war file and execute the compiled code from a console window.
@@ -2793,9 +2857,9 @@ Example:
 </div>
 </div>
 <div class="sect3">
-<h4 id="etl-execution-configuration"><a class="anchor" href="#etl-execution-configuration"></a><a class="link" href="#etl-execution-configuration">ETL execution configuration</a></h4>
+<h4 id="etl-configuration"><a class="anchor" href="#etl-configuration"></a><a class="link" href="#etl-configuration">ETL configuration</a></h4>
 <div class="paragraph">
-<p>The java code uses a file named <em>*epo.properties*</em>. This file is to be located under the <code>/home/user</code>
+<p>The java code uses a file named <strong><em>epo.properties</em></strong>. This file is to be located under the <code>/home/user</code>
 directory of the computer from where the code is executed. See below an example of how this configuration
 file looks like. Notice the two lines about the proxy configuration.</p>
 </div>
@@ -2883,30 +2947,47 @@ The data were extracted from the logs about the transformation of each month of 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>A large amount of TXT files containing the SPARQL INSERT queries was automatically obtained - out of the
-transformation- for the five first months of 2018. The tble and bar graphic below show the exact number of
+transformation- for the five first months of 2018. The table and bar graphic below show the exact number of
 files processed and the number of Contract Award Notices imported into the Graph Store.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Please beware that the files indicated in the figure below refer to the files that were "downloaded and read"
+(processed) from the FTP Server and that only CANs based on the Directive 2014/24/EU were actually imported into the GraphDB Store.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5)m which can be freely
+<p>The Graph Store chosen for this PoC was the Community version of GraphDB (version 8.5) which can be freely
 downloaded from the <a href="https://ontotext.com/">Ontotext</a> website.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/Statistics-2018.png" alt="Number of Notices">
 </div>
-<div class="title">Figure 42. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
+<div class="title">Figure 44. Total of Notices and number of Contract Award Notices used to populate the Graph store</div>
+</div>
+<div class="paragraph">
+<p>"The graph below, generated out of the figures in the table above, supports the statement that the data
+in Contract Award Notices are amongst the most abundant (and are relevant)."</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/Statistics-Frequency-2018.png" alt="Frequency of Notices">
 </div>
-<div class="title">Figure 43. Frequency of Notices</div>
+<div class="title">Figure 45. Frequency of Notices</div>
 </div>
 </div>
 <div class="sect2">
@@ -2924,15 +3005,15 @@ downloaded from the <a href="https://ontotext.com/">Ontotext</a> website.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Competency Questions (<a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">QCs examples</a>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Competency Questions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://34.249.1.15:7200">Graph store</a> is populated with triples.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2962,7 +3043,7 @@ select ?s (count(?did) as ?cdid) where {
 <div class="content">
 <img src="images/CountingCANs.png" alt="Counting CANs">
 </div>
-<div class="title">Figure 44. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
+<div class="title">Figure 46. Number of Contract Award Notices between the 1s. January and the 30th May 2018</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 2</strong>: List all the winners, the size of the company and the date of award.</p>
@@ -2985,7 +3066,7 @@ select distinct ?Winner_Name ?WinnerSize ?Awarded_Date where {
 <div class="content">
 <img src="images/QueryExample1.png" alt="Winners" width="size and award date">
 </div>
-<div class="title">Figure 45. Winners</div>
+<div class="title">Figure 47. Winners</div>
 </div>
 <div class="paragraph">
 <p><strong>Example 3</strong>: Number of contracts awarded for each CPV (beware that one Contract Award Notice may
@@ -3006,7 +3087,7 @@ SELECT ?cpv (COUNT(DISTINCT(?contract)) AS ?number_contracts) where {
 <div class="content">
 <img src="images/QueryExample3.png" alt="Contracts per CPV">
 </div>
-<div class="title">Figure 46. Number of contracts per CPV</div>
+<div class="title">Figure 48. Number of contracts per CPV</div>
 </div>
 <div class="paragraph">
 <p>See the document <a href="https://eprocurementontology.github.io/Competency_questions/SPARQL_examples.html">SPARQL Query examples</a>
@@ -3029,23 +3110,135 @@ for more contextualisation and examples.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OP&#8217;s team.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WG Members supprted by the OP development team.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL queries</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ad-hoc SPARQL queries prepared on the basis of Transparency,
+Monitoring and Procurement Procedure management perspectives.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL table results</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPARQL table results and graphic representations.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Additional revision, testing an debugging is currently being performed on the Conceptual Data Model and
+the OWL TTL. This task is being done jointly with the OP officers, the WG members and the
+ePO development team.</p>
+</div>
+<div class="paragraph">
+<p>Anyone interested in participating in this task of improvement is welcome to join.</p>
+</div>
+<div class="paragraph">
+<p>One suggestion for the WG members, or anyone interested in transparency, competition, monitoring, etc.
+would be that they try to obtain KPIs (Key Performance Indicators) as the ones shown in the
+<a href="http://ec.europa.eu/internal_market/scoreboard/performance_per_policy_area/public_procurement/index_en.htm">EU Single Market on Public Procurement</a>.</p>
+</div>
+<div class="paragraph">
+<p>Next we show one example for the first one, KPI I: Single bidder. The source of
+information for the results shown are the Contract Award Notices (CAN) extracted from the OP&#8217;s
+<a href="ftp://ted.europa.eu">TED ftp server</a>. The sample covers only CANs under
+Directive 2014/24/EU, from January to May 2018).</p>
+</div>
+<div class="paragraph">
+<p>While comparing results to the ones presented on the EU Single Market portal, bear in mind
+that the information used by that portal is also extracted from the TED, but their sample
+is much bigger and richer (more years, types of forms and different releases) than the one
+used for this PoC.</p>
+</div>
+<div class="paragraph">
+<p>The explanations about "What they do measure, what they do reflect, and how to interpret the
+results" were copied as-they-are in the EU Single Market portal.</p>
+</div>
+<div class="sect3">
+<h4 id="indicator-i-single-bidder"><a class="anchor" href="#indicator-i-single-bidder"></a><a class="link" href="#indicator-i-single-bidder">Indicator I: Single bidder</a></h4>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 12. <em>KPI I. Single bidder, interpretation</em></caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it measure?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The proportion of contracts awarded where there was just a single bidder (excluding framework agreements, as they have different reporting patterns).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>What does it reflect?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Several aspects of procurement, including <strong>competition</strong> and <strong>bureaucracy</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>How to interpret it?</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More bidders are better, as this means public buyers have more options, and can get better value for money.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title"><em>KPI II. Single bidder, SPARQL query</em></div>
+<div class="content">
+<pre>PREFIX : &lt;http://data.europa.eu/ePO/ontology#&gt;
+PREFIX rov: &lt;http://www.w3.org/ns/regorg#&gt;
+PREFIX org: &lt;http://www.w3.org/ns/org#&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt;
+select distinct ?c (concat(str(round(?cc * 100 / ?countContract)), '%') as ?percent) where
+{
+    {select ?c (count(?c) as ?cc) where {
+        {select ?ar (count(?w) as ?cw) where{
+            ?contract a :Contract ;
+                      :refersToAwardResult ?ar.
+            ?ar :hasWinner ?w
+            filter not exists {?contract :hasFrameworkContract ?fc}
+
+            } group by ?ar
+            having (count(?w) = 1)}
+        ?ar :hasWinner ?w .
+           ?w org:hasSite ?s .
+        ?s vcard:hasAddress ?a .
+        ?a vcard:country-name ?c} group by ?c order by ?c
+    }
+    {
+        select ?c (count(?c) as ?countContract) where
+        {
+            ?con a :Contract ;
+               :refersToAwardResult ?ar .
+            ?ar :hasWinner ?w .
+            ?w org:hasSite ?s .
+            ?s vcard:hasAddress ?add .
+            ?add vcard:country-name ?c
+        } group by ?c order by ?c
+    }
+}</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title"><em>KPI I. Result-set (csv)</em></div>
+Click here to download the figures resulting from the query:
+<a href="./images/KPI_I_QueryResult.csv">Query Result</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/KPI_I_EU.png" alt="KPI I">
+</div>
+<div class="title">Figure 49. <em>KPI I. Comparative table</em></div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="activity-10-validate-results"><a class="anchor" href="#activity-10-validate-results"></a><a class="link" href="#activity-10-validate-results">Activity 10: Validate results</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 12. Validate results, activity summary</caption>
+<caption class="title">Table 13. Validate results, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -3057,7 +3250,7 @@ for more contextualisation and examples.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Responsible team</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Working Group WG) members.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Working Group WG members.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inputs</strong>:</p></td>
@@ -3070,13 +3263,26 @@ for more contextualisation and examples.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>(TODO): WG to prepare their own Queries.</p>
+<p>The members of the Working Group are expected to study this documentation and the rest
+of deliverables, signal possible errors and improvements and issue their opinion,
+recommendations, additional examples and comments.</p>
+</div>
+<div class="paragraph">
+<p>With all the materials developed, namely the Conceptual Data Model, the OWL-TLL
+ontoly, SPARQL query examples and the documentation produced for this phase, the
+members of the Working Group have sufficient elements to define their own
+Test Cases, prepare the necessary SPARQL queries and execute them by themselves
+using the SPARQL <a href="http://34.249.1.15:7200/sparql">endpoint</a> that OP
+made publicly available.</p>
+</div>
+<div class="paragraph">
+<p>If prompted for a user sign in, use "guest" for both, the user name and the password.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="activity-11-provide-feedback"><a class="anchor" href="#activity-11-provide-feedback"></a><a class="link" href="#activity-11-provide-feedback">Activity 11: Provide feedback</a></h3>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Provide feedback, activity summary</caption>
+<caption class="title">Table 14. Provide feedback, activity summary</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -3096,28 +3302,78 @@ for more contextualisation and examples.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outputs</strong>:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feed-back via the <a href="https://github.com/eprocurementontology/eprocurementontology/issues">GitHub Issues</a>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feed-back via the link:
+<a href="https://github.com/eprocurementontology/eprocurementontology/issues">GitHub Issues</a>
 work-space.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>OP development team will suport the WG members in case of doubts or issues related to the
+development or the SPARQL endpoint.</p>
+</div>
+<div class="paragraph">
+<p>Any issue related to the design or implementation of the ePO is expected to be raised in the
+<a href="https://github.com/eprocurementontology/eprocurementontology/issues/">GitHub Issues</a> workspace.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vi-conclusions-and-next-steps"><a class="anchor" href="#vi-conclusions-and-next-steps"></a><a class="link" href="#vi-conclusions-and-next-steps">VI. Conclusions and next steps</a></h2>
+<h2 id="annex-i-types-of-documents-processed"><a class="anchor" href="#annex-i-types-of-documents-processed"></a><a class="link" href="#annex-i-types-of-documents-processed">Annex I: Types of documents processed</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>During the development of the ETL process a certain effort was invested in analsying
+which documents are published on TED, in which quantities, the variations month to month, etc.</p>
+</div>
+<div class="paragraph">
+<p>It was interesting to confirm that the information already advanced by the OP for previous years
+is consistent with the <a href="./images/ePO_stats_2018-JAN-MAY.xlsx">figures</a><sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnote_8" title="View footnote.">8</a>]</sup>
+obtained for the first months of 2018 (January to May), during
+the ETL Transformation phase, e.g.:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The most published documents are Contract Notices (F02) and Contract Award Notices (F03);</p>
+</li>
+<li>
+<p>The amount of one type of notice published is very regular (similar) all along the year;</p>
+</li>
+<li>
+<p>The average of documents published monthly is quite regular (around 45,000);</p>
+</li>
+<li>
+<p>Many eSenders are still using the old version R2.0.8 schema, especially for CN and CAN
+(over 10% of the total in January and February, but it is a descending trend)</p>
+</li>
+<li>
+<p>Corrigenda (F14) are intensively used (around 10% of the documents published are corrigenda).</p>
+</li>
+</ol>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TypesOfFormsReadDuringTransformation_MAY_JUNE_2018Data.png" alt="Docs publish on TED Jan-May 2018">
+</div>
+<div class="title">Figure 50. <em>Amount of documents published on TED from January to May 2018 (source <a href="ftp://ted.europa.eu/">OP</a>)</em></div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TypesOfFormsReadDuringTransformation_MAY_JUNE_2018.png" alt="Docs publish on TED Jan-May 2018">
+</div>
+<div class="title">Figure 51. <em>Amount of documents published on TED from January to May 2018 (source <a href="ftp://ted.europa.eu/">OP</a>)</em></div>
+</div>
 </div>
 </div>
 </div>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. by Natalya F. Noy and Deborah L. McGuinness.
+<a href="#_footnoteref_1">1</a>. Cfr. <a href="http://protege.stanford.edu/publications/ontology_development/ontology101.pdf">"Ontology Development 101: A Guide to Creating Your First Ontology"</a>, by Natalya F. Noy and Deborah L. McGuinness.
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a>. by ISA2 Programme</a>
+<a href="#_footnoteref_2">2</a>. Cfr. <a href="https://joinup.ec.europa.eu/site/core_vocabularies/Core_Vocabularies_user_handbook/ISA%20Hanbook%20for%20using%20Core%20Vocabularies.pdf">"e-Government Core Vocabularies handbook", by ISA2 Programme</a>
 </div>
 <div class="footnote" id="_footnote_3">
 <a href="#_footnoteref_3">3</a>. See <a href="http://lice.licef.ca/index.php/gmot-motplus-et-mot/">"MOTPlus, Modélisation par Object Typés", by LICEF, Téluq</a>
@@ -3126,15 +3382,21 @@ work-space.</p></td>
 <a href="#_footnoteref_4">4</a>. <a href="https://eur-lex.europa.eu/legal-content/en/ALL/?uri=CELEX:32014L0024">Directive 2014/24/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AJOL_2014_094_R_0001_01">Directive 2014/23/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014L0025">Directive 2014/25/EU</a>, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32009L0081">Directive 2009/81/EC</a> and <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32014L0055">Directive 2014/55/EU</a>
 </div>
 <div class="footnote" id="_footnote_5">
-<a href="#_footnoteref_5">5</a>. <strong>A note about codes</strong>: although the CCTS library defines a data type for code (CodeType), we decided to use SKOS to represent code list and taxonomy concepts. Therefore this CCTS element is not used in ePO (see the ePO Conceptual Data Map "<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">ccts package</a>" and the <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">ccts.ttl</a> file for these definitions). There are some good reasons on which this decisions was based: (1) The OP&#8217;s MDR site does already maintain and supply the largest part of the code lists needed by ePO as a SKOS-XL syntax (named SKOS-AP-EU); and (2) SKOS, and specially SKOS-XL, cater for a rich expressivity and metadata extensibility
+<a href="#_footnoteref_5">5</a>. <strong>A note about codes</strong>: although the CCTS library defines a data type for code (CodeType), we decided to use SKOS to represent code list and taxonomy concepts. Therefore this CCTS element is not used in ePO (see the ePO Conceptual Data Map "<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/03_Analysis%20and%20design/EA-Conceptual%20Model/ePO-CM_v2.0.0.eap">ccts package</a>" and the <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">ccts.ttl</a> file for these definitions). There are some good reasons for this decision: (1) The OP&#8217;s MDR site already maintains and supplies the largest part of the code lists needed by ePO as a SKOS-XL syntax (named SKOS-AP-EU); and (2) SKOS, and specially SKOS-XL, cater for a rich expressivity and metadata extensibility
 </div>
 <div class="footnote" id="_footnote_6">
-<a href="#_footnoteref_6">6</a>. currently maintained by UN/CEFACT, see UNECE&#8217;s <a href="https://www.unece.org/cefact/codesfortrade/ccts_index.html">CCTS</a>
+<a href="#_footnoteref_6">6</a>. The version of the XMI specification used for the exportation of the Conceptual Data Model is "2.1". Please do not confound this with the version of the ePO development, currently "v2.0.0"
+</div>
+<div class="footnote" id="_footnote_7">
+<a href="#_footnoteref_7">7</a>. currently maintained by UN/CEFACT
+</div>
+<div class="footnote" id="_footnote_8">
+<a href="#_footnoteref_8">8</a>. these figures are produced automatically by the <a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/epo-etl/src/main/java/epo/process/TedXMLProcess.java">transformation algorithm</a> and logged into a csv file in the directory <code>LOG_DATA_DIR</code> specified in the <code>/home/user/epo.properties</code> file.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-01 22:11:01 CEST
+Last updated 2018-08-02 20:01:38 CEST
 </div>
 </div>
 </body>

@@ -71,11 +71,13 @@ The essential distinctive features between identifiers and codes are:
 . Identifiers point at specific occurrences of objects (instances). Codes replace concepts, e.g. economic operator identifiers;
 
 . Identifiers are virtually limitless while codes are finite. In other words, identifier lists are “open”
-(the lists may grow) and code list are “quited closed” (they grow very slowly, once consolidated: new concepts
+(the lists may grow) and code list are “quite closed” (they grow very slowly, once consolidated: new concepts
 appear rarely, and when an existing code needs to be modified a new code is added and the old one is
-marked as "deprecated", i.e. not to be used anymore at some point in time).
-Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.
+marked as "deprecated", i.e. not to be used anymore at some point in time. Beware that "deprecation" doesn't imply
+the elimination of the code from the code list, thus allowing for the coexistence of the deprecated code with new code(s)
+that replace it.
 
+Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.
 
 . Identifiers are in principle maintained in the business domain, e.g. procurement procedure identifiers,
 economic operator identifiers, product identifiers, etc.
@@ -90,9 +92,9 @@ footnote:[currently maintained by UN/CEFACT] to implement the data types `Identi
 The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
 link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[05_Implementation/ttl/].
 
-Codes, in ePO, are implemented as link:[SKOS]
-concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).
-See also the link:https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System[Wikipedia] about SKOS, which contains a comprehensible summary of what SKOS is about and links to interesting references.
+Codes have been implemented as link:https://www.w3.org/2006/07/SWD/wiki/SkosDesign/SKOS-XL.html[SKOS-XL] concepts, which allows to specify
+metadata about each concept thus making possible to set values for the attributes defined in the Core Component Technical Specification (CCTS),
+e.g. listAgencyID, listVersionID, etc. (see next section below, on codes and code lists).
 
 ==== Codes and code lists
 
