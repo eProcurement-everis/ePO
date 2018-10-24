@@ -1081,12 +1081,9 @@ Working Group.</p>
 <div class="sect3">
 <h4 id="content-of-the-ded"><a class="anchor" href="#content-of-the-ded"></a><a class="link" href="#content-of-the-ded">Content of the DED</a></h4>
 <div class="paragraph">
-<p>The content of the DED is organised based on the UBL-2.2 file "UBL-Entities-2.2-Pre-award.xls". You can
-download a version from <a href="https://www.oasis-open.org/committees/document.php?document_id=60554">here</a>.</p>
-</div>
-<div class="paragraph">
 <p>To the effects of using the DED to get a quick glimpse of the terms used in the ePO, their definitions just look
-into the columns "Component Name" and "Definitions".</p>
+into the columns "Component Name" and "Definitions". The rest of columns are used to indicate the cardinality of the data element, to compose
+the name of the class or property, and other information needed during the transformation of the DED into a specific syntax (e.g. into XML, Turtle, etc.).</p>
 </div>
 <div class="paragraph">
 <p>The colour of the rows mean is intended to distinguish classes from properties:</p>
@@ -1947,11 +1944,19 @@ uniquely, one occurrence of an object following a pattern.</p>
 </li>
 <li>
 <p>Identifiers are virtually limitless while codes are finite. In other words, identifier lists are “open”
-(the lists may grow) and code list are “quited closed” (they grow very slowly, once consolidated: new concepts
+(the lists may grow) and code list are “quite closed” (they grow very slowly, once consolidated: new concepts
 appear rarely, and when an existing code needs to be modified a new code is added and the old one is
-marked as "deprecated", i.e. not to be used anymore at some point in time).
-Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.</p>
+marked as "deprecated", i.e. not to be used anymore at some point in time. Beware that "deprecation" doesn&#8217;t imply
+the elimination of the code from the code list, thus allowing for the coexistence of the deprecated code with new code(s)
+that replace it.</p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Hence codes are maintained in 'Code Lists' whilst identifiers are usually kept in databases.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Identifiers are in principle maintained in the business domain, e.g. procurement procedure identifiers,
 economic operator identifiers, product identifiers, etc.</p>
@@ -1968,12 +1973,8 @@ use the <a href="https://www.unece.org/cefact/codesfortrade/ccts_index.html">UN/
 </div>
 <div class="paragraph">
 <p>The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
-<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">05_Implementation/ttl/</a>.</p>
-</div>
-<div class="paragraph">
-<p>Codes, in ePO, are implemented as <a href="">SKOS</a>
-concepts, but they are also aligned to the requirements commonly needed in eProcurement (see sections below, on codes and code lists).
-See also the <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">Wikipedia</a> about SKOS, which contains a comprehensible summary of what SKOS is about and links to interesting references.</p>
+<a href="https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl">05_Implementation/ttl/</a>.
+Beware that codes are implemented as SKOS concepts (see also next section "Codes and code lists").</p>
 </div>
 </div>
 <div class="sect3">
@@ -2648,7 +2649,22 @@ you will need to register as a User of the TED website and to have an ECAS accou
 </li>
 <li>
 <p>The <a href="ftp://ted.europa.eu/">FTP</a> server supplied by the OP at: <a href="ftp://ted.europa.eu/" class="bare">ftp://ted.europa.eu/</a>
-(user: <strong>guest</strong>, password: <strong>guest</strong>).</p>
+(user: <strong>guest</strong>, password: <strong>guest</strong>). If you use this FTP Server note that there is  a restriction on maximum number of connections to the ftp,
+with the following criteria:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Maximum number of overall connections: ~1050 but can be decreased to ~525 if the server  is under maintenance;</p>
+</li>
+<li>
+<p>Maximum 3 concurrent connections by IP or user;</p>
+</li>
+<li>
+<p>A maximum of 100 concurrent connections for “legacy” user (i.e. not guest account) as same account could be used by several IPs.
+Once the limit is reached, the server will refuse new connections from the IP/user.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>

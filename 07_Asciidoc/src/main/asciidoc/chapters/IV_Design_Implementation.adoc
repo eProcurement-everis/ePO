@@ -91,10 +91,7 @@ footnote:[currently maintained by UN/CEFACT] to implement the data types `Identi
 
 The package containing the OWL-TTL definition of these data type can be download from the ePO GitHub repository folder
 link:https://github.com/eprocurementontology/eprocurementontology/blob/master/v2.0.0/05_Implementation/ttl/ccts.ttl[05_Implementation/ttl/].
-
-Codes have been implemented as link:https://www.w3.org/2006/07/SWD/wiki/SkosDesign/SKOS-XL.html[SKOS-XL] concepts, which allows to specify
-metadata about each concept thus making possible to set values for the attributes defined in the Core Component Technical Specification (CCTS),
-e.g. listAgencyID, listVersionID, etc. (see next section below, on codes and code lists).
+Beware that codes are implemented as SKOS concepts (see also next section "Codes and code lists").
 
 ==== Codes and code lists
 
